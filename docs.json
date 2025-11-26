@@ -1,122 +1,79 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Centro de Ayuda",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#1E3A8A",
+    "light": "#3F51B5",
+    "dark": "#162E70"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
+        "group": "Panel",
+        "pages": ["panel/inicio"]
+      },
+      {
+        "group": "Contabilidad",
+        "pages": [
+          "contabilidad/compras",
+          "contabilidad/ventas",
+          "contabilidad/boletas/index",
+          "contabilidad/boletas/honorarios",
+          "contabilidad/boletas/prestacion-servicios",
+          "contabilidad/asientos-contables",
+          "contabilidad/conciliacion-bancaria",
+          "contabilidad/informes/index",
+          "contabilidad/informes/libro-diario",
+          "contabilidad/informes/libro-mayor",
+          "contabilidad/informes/balance-8-columnas",
+          "contabilidad/informes/estado-resultados",
+          "contabilidad/informes/ifrs",
+          "contabilidad/impuestos"
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "Utilidades",
+        "pages": [
+          "utilidades/activo-fijo",
+          "utilidades/renta",
+          "utilidades/declaraciones-juradas"
+        ]
+      },
+      {
+        "group": "Gestión",
+        "pages": [
+          "gestion/proveedores",
+          "gestion/clientes",
+          "gestion/cobros-pagos"
+        ]
+      },
+      {
+        "group": "Empresa",
+        "pages": [
+          "empresa/informacion",
+          "empresa/centros-costos",
+          "empresa/bancos",
+          "empresa/plan-cuentas",
+          "empresa/claves-portales",
+          "empresa/integraciones"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo-single.png",
+    "dark": "/logo/logo-single.png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://contago.codegennials.com"
     }
   },
   "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "options": ["copy", "view"]
   }
 }
