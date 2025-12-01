@@ -1,0 +1,382 @@
+---
+title: "Prestación de Servicios"
+description: "Sistema integral para la gestión de boletas de prestación de servicios, controlando tanto servicios emitidos como recibidos con tratamiento contable especializado."
+---
+
+## 🏠 Vista Principal del Módulo
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Boletas de Prestación de Servicios
+- **Permisos requeridos**:
+  - Administrador
+  - Jefe Contable
+  - Contador General
+  - Contador Junior
+  - Usuario de Operaciones
+  - Usuario de RRHH
+  - Auditor
+  - Supervisor
+
+### Estructura del Módulo
+
+El sistema está organizado en **2 pestañas principales** con navegación mediante tabs:
+
+<CardGroup cols={2}>
+  <Card title="📤 Boletas Emitidas" icon="user" color="#28a745">
+    Servicios profesionales que su empresa presta
+  </Card>
+  <Card title="📥 Boletas Recibidas" icon="id-card" color="#17a2b8">
+    Servicios profesionales que su empresa contrata
+  </Card>
+</CardGroup>
+
+## 📤 Pestaña: Boletas Emitidas
+
+### Descripción
+
+Gestiona las Boletas de Prestación de Servicios que su empresa emite a clientes o terceros por servicios profesionales prestados.
+
+### 2.1 Características Principales
+
+- **Ícono**: 👤 Usuario (solar:user-rounded-bold)
+- **URL**: /service-provision-receipt/ (pestaña por defecto)
+- **Propósito**: Control de ingresos por servicios profesionales
+
+### 2.2 Funcionalidades Típicas
+
+#### Gestión de Servicios Emitidos:
+
+- **Registro de servicios**: Crear nuevas boletas por servicios prestados
+- **Control de cobros**: Seguimiento de pagos pendientes
+- **Facturación profesional**: Documentación de servicios especializados
+
+#### Información Gestionada:
+
+- **Datos del Cliente**: RUT, razón social, contacto
+- **Descripción del Servicio**: Detalle específico del trabajo realizado
+- **Período de Prestación**: Fechas de inicio y término del servicio
+- **Montos**: Honorarios brutos, exenciones, totales
+- **Retenciones**: Aplicación de retenciones según normativa
+- **Estado**: Emitida, cobrada, pendiente, anulada
+
+### 2.3 Acciones Disponibles
+
+<CardGroup cols={3}>
+  <Card title="➕ Obtener boletas" icon="plus">
+    Obtiene las boletas para servicios prestados directamente desde el SII
+  </Card>
+  <Card title="👁️ Ver Detalle" icon="eye">
+    Revisar información completa del servicio
+  </Card>
+  <Card title="✏️ Editar" icon="edit">
+    Modificar datos antes del cobro
+  </Card>
+  <Card title="💰 Registrar Cobro" icon="credit-card">
+    Marcar como cobrada
+  </Card>
+  <Card title="📄 Generar PDF" icon="file-pdf">
+    Descargar documento oficial
+  </Card>
+  <Card title="📊 Generar Asiento" icon="calculator">
+    Crear registro contable
+  </Card>
+</CardGroup>
+
+## 📥 Pestaña: Boletas Recibidas
+
+### Descripción
+
+Gestiona las Boletas de Prestación de Servicios que terceros emiten a su empresa por servicios profesionales recibidos.
+
+### 3.1 Características Principales
+
+- **Ícono**: 🆔 ID Usuario (solar:user-id-bold)
+- **URL**: /service-provision-receipt/?tab=received
+- **Propósito**: Control de gastos por servicios profesionales contratados
+
+### 3.2 Funcionalidades Típicas
+
+#### Gestión de Servicios Recibidos:
+
+- **Registro de recepciones**: Ingresar boletas recibidas de proveedores
+- **Control de pagos**: Seguimiento de obligaciones pendientes
+- **Contabilización**: Registro contable de gastos por servicios
+
+#### Información Controlada:
+
+- **Datos del Proveedor**: RUT, nombre del profesional o empresa
+- **Servicio Recibido**: Descripción detallada del trabajo contratado
+- **Documentación**: Número de boleta, fecha de emisión
+- **Montos**: Valor del servicio, retenciones aplicadas, neto a pagar
+- **Clasificación Contable**: Centro de costo, cuenta contable
+- **Estado de Pago**: Registrada, aprobada, pagada
+
+### 3.3 Acciones de Control
+
+<CardGroup cols={3}>
+  <Card title="📝 Obtener Boleta" icon="plus-circle">
+    Obtiene las boletas para servicios recibidos directamente desde el SII
+  </Card>
+  <Card title="✅ Validar Datos" icon="check">
+    Verificar información y montos
+  </Card>
+  <Card title="💼 Asignar Centro de Costo" icon="sitemap">
+    Imputar al área correspondiente
+  </Card>
+  <Card title="🏦 Asignar Cuenta Contable" icon="university">
+    Clasificar el tipo de gasto
+  </Card>
+  <Card title="📊 Generar Asiento" icon="calculator">
+    Crear registro contable automático
+  </Card>
+</CardGroup>
+
+## 💼 Gestión Contable Especializada
+
+### 4.1 Tratamiento de Boletas Emitidas
+
+**Registro Contable Típico**:
+
+```
+Debe: Clientes por Boletas de Servicios    $119.000
+Haber: Ingresos por Servicios Profesionales $100.000
+Haber: IVA Débito Fiscal                    $ 19.000
+```
+
+### 4.2 Tratamiento de Boletas Recibidas
+
+**Registro Contable Típico**:
+
+```
+Debe: Gastos por Servicios Profesionales    $100.000
+Debe: IVA Crédito Fiscal                    $ 19.000
+Haber: Proveedores por Boletas de Servicios $119.000
+```
+
+### 4.3 Centros de Costo por Servicio
+
+<CardGroup cols={2}>
+  <Card title="Servicios Administrativos" icon="building">
+    Servicios Legales, Auditoría Externa
+  </Card>
+  <Card title="Servicios Tecnológicos" icon="laptop">
+    Consultoría IT, Desarrollo de Software
+  </Card>
+  <Card title="Servicios Comerciales" icon="chart-line">
+    Marketing, Estudios de Mercado
+  </Card>
+  <Card title="Servicios de RRHH" icon="users">
+    Capacitación, Reclutamiento
+  </Card>
+</CardGroup>
+
+### 4.4 Cuentas Contables Específicas
+
+#### Cuentas para servicios emitidos:
+
+- **Ingresos por Servicios Profesionales**
+- **Clientes por Boletas de Servicios**
+- **IVA Débito Fiscal** (si aplica)
+
+#### Cuentas para servicios recibidos:
+
+- **Gastos por Servicios Profesionales**
+- **Gastos por Asesorías**
+- **Gastos por Consultoría**
+- **Proveedores por Boletas de Servicios**
+
+## 🔄 Navegación entre Pestañas
+
+### 5.1 Sistema de Tabs Dinámico
+
+- **Pestaña Activa**: Se resalta visualmente con color e ícono
+- **Cambio Instantáneo**: Un clic para alternar entre emitidas/recibidas
+- **URLs Específicas**: Cada pestaña tiene su propia dirección web
+- **Estado Persistente**: El sistema recuerda la última pestaña visitada
+
+### 5.2 Breadcrumbs (Migas de Pan)
+
+- **Navegación**: Dashboard → Boletas de Prestación de Servicios
+- **Ubicación Clara**: Siempre visible en la parte superior
+- **Enlaces Funcionales**: Permite regresar a secciones anteriores
+
+## 📊 Indicadores y Control
+
+### 6.1 Métricas Importantes
+
+#### Para Boletas Emitidas:
+
+- **Total de servicios** pendientes de cobro
+- **Monto acumulado** por cobrar
+- **Servicios vencidos**
+- **Promedio de días** de cobro
+
+#### Para Boletas Recibidas:
+
+- **Servicios pendientes** de pago
+- **Monto total** de obligaciones
+- **Retenciones acumuladas**
+- **Distribución por** centro de costo
+
+### 6.2 Estados de Seguimiento
+
+- 🟢 **Cobrada/Pagada**: Proceso completado
+- 🟡 **Pendiente**: En proceso de cobro/pago
+- 🔵 **Emitida/Recibida**: Recién registrada
+- 🔴 **Vencida**: Requiere atención inmediata
+- ⚫ **Anulada**: Cancelada por corrección
+
+## 🎯 Diferencias con Boletas de Honorarios
+
+### 7.1 Características Distintivas
+
+<CardGroup cols={2}>
+  <Card title="Boletas de Prestación de Servicios" icon="briefcase">
+    • Servicios empresariales especializados
+    <br />
+    • Pueden incluir IVA según el tipo
+    <br />
+    • Retenciones variables según normativa
+    <br />• Mayor formalidad comercial
+  </Card>
+  <Card title="Boletas de Honorarios" icon="user-tie">
+    • Servicios profesionales independientes
+    <br />
+    • Generalmente exentas de IVA
+    <br />
+    • Retención fija del 10%
+    <br />• Más enfocadas a personas naturales
+  </Card>
+</CardGroup>
+
+### 7.2 Tratamiento Fiscal
+
+- **Retenciones**: Pueden variar según tipo de servicio y monto
+- **IVA**: Aplicable según la naturaleza del servicio
+- **Deducibilidad**: Gasto aceptado tributariamente
+- **Documentación**: Requiere respaldo detallado del servicio
+
+## 💡 Mejores Prácticas
+
+### 8.1 Flujo Operativo Recomendado
+
+#### Para Servicios Emitidos:
+
+1. **Contratación**: Definir alcance y valor del servicio
+2. **Prestación**: Ejecutar el trabajo profesional
+3. **Emisión**: Crear la boleta con detalle completo
+4. **Seguimiento**: Monitorear el cobro
+5. **Contabilización**: Registrar ingreso al cobrar
+
+#### Para Servicios Recibidos:
+
+1. **Recepción**: Validar el servicio recibido
+2. **Registro**: Ingresar la boleta al sistema
+3. **Clasificación**: Asignar centro de costo y cuenta
+4. **Aprobación**: Autorizar el pago
+5. **Contabilización**: Generar asiento y pagar
+
+<Tip>
+  **Flujo eficiente**: Mantenga contratos claros que definan alcance, plazos y
+  condiciones de pago para evitar disputas posteriores.
+</Tip>
+
+### 8.2 Control de Calidad
+
+- **Validación Diaria**: Revisar boletas ingresadas
+- **Conciliación Semanal**: Contrastar con contratos de servicio
+- **Control Mensual**: Verificar asignaciones contables
+- **Auditoría Trimestral**: Revisar clasificaciones y pagos
+
+### 8.3 Organización por Tipo de Servicio
+
+**Servicios Profesionales Típicos**:
+
+- **Legales**: Asesoría jurídica, constitución de sociedades
+- **Contables**: Auditorías externas, consultoría tributaria
+- **Tecnológicos**: Desarrollo de software, soporte IT
+- **Marketing**: Publicidad, estudios de mercado
+- **Consultoría**: Estudios especializados, capacitación
+
+## ⚙️ Configuraciones del Sistema
+
+### 9.1 Parametrización Inicial
+
+- **Numeración**: Secuencia de folios internos
+- **Retenciones**: Configurar tasas según tipo de servicio
+- **Cuentas por Defecto**: Asignación automática de cuentas contables
+- **Centros de Costo**: Configurar según estructura organizacional
+
+### 9.2 Validaciones Automáticas
+
+- **RUT**: Verificación de dígito verificador
+- **Duplicados**: Prevención de registros repetidos
+- **Montos**: Validación de cálculos de retenciones
+- **Fechas**: Control de períodos fiscales válidos
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: No puedo cambiar de pestaña
+
+**Solución**:
+
+- ✅ Verificar permisos de usuario
+- ✅ Limpiar caché del navegador
+- ✅ Validar conectividad de red
+- 📞 Contactar soporte técnico
+
+### Problema: Los asientos no se generan correctamente
+
+**Lista de verificación**:
+
+- ✅ Centro de costo asignado
+- ✅ Cuenta contable seleccionada
+- ✅ Plan de cuentas configurado
+- ✅ Montos ingresados correctamente
+
+### Problema: Cálculos incorrectos de retenciones
+
+**Revisar**:
+
+- **Configuración** de tasas de retención
+- **Tipo de servicio** clasificado correctamente
+- **Montos base** para cálculo
+- **Normativa fiscal** vigente
+
+### Problema: No aparece en reportes
+
+**Validar**:
+
+- ✅ Estado de la boleta (confirmada vs. borrador)
+- ✅ Período seleccionado en el reporte
+- ✅ Filtros aplicados en la consulta
+- ✅ Permisos de acceso a la información
+
+<Warning>
+  **Documentación crítica**: Mantenga siempre respaldo detallado de los
+  servicios prestados/recibidos para cumplir con fiscalizaciones del SII.
+</Warning>
+
+## 📚 Normativa y Cumplimiento
+
+### 11.1 Aspectos Legales
+
+- **Documentación**: Mantener respaldo de servicios prestados/recibidos
+- **Plazos**: Cumplir términos contractuales de pago
+- **Retenciones**: Aplicar según normativa SII vigente
+- **Registro**: Mantener orden cronológico de emisión
+
+### 11.2 Mejores Prácticas Fiscales
+
+- **Contratos**: Definir claramente alcance y condiciones
+- **Facturación**: Emitir boletas dentro de plazos legales
+- **Pagos**: Respetar términos acordados
+- **Archivo**: Mantener documentación ordenada para fiscalizaciones
+
+## Próximos pasos
+
+- [Boletas de Honorarios](/contabilidad/boletas/honorarios)
+- [Asientos Contables](/contabilidad/asientos-contables)
+- [Gestión de Clientes](/gestion/clientes)
+- [Plan de Cuentas](/empresa/plan-cuentas)

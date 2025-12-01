@@ -19,17 +19,16 @@
         "pages": [
           "contabilidad/compras",
           "contabilidad/ventas",
-          "contabilidad/boletas/index",
-          "contabilidad/boletas/honorarios",
-          "contabilidad/boletas/prestacion-servicios",
+          "contabilidad/honorarios",
+          "contabilidad/prestacion-servicios",
           "contabilidad/asientos-contables",
           "contabilidad/conciliacion-bancaria",
-          "contabilidad/informes/index",
-          "contabilidad/informes/libro-diario",
-          "contabilidad/informes/libro-mayor",
-          "contabilidad/informes/balance-8-columnas",
-          "contabilidad/informes/estado-resultados",
-          "contabilidad/informes/ifrs",
+          "contabilidad/libro-diario",
+          "contabilidad/libro-mayor",
+          "contabilidad/flujo-de-caja",
+          "contabilidad/balance-8-columnas",
+          "contabilidad/estado-resultados",
+          "contabilidad/ifrs",
           "contabilidad/impuestos"
         ]
       },
@@ -46,7 +45,8 @@
         "pages": [
           "gestion/proveedores",
           "gestion/clientes",
-          "gestion/cobros-pagos"
+          "gestion/cobros-pagos",
+          "gestion/pagos"
         ]
       },
       {
@@ -70,7 +70,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://contago.codegennials.com"
+      "href": "https://dashboard.contagopro.com/"
     }
   },
   "contextual": {

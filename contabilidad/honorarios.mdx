@@ -1,0 +1,305 @@
+---
+title: "Boletas de Honorarios"
+description: "Sistema integral para la gestión de boletas de honorarios, tanto emitidas como recibidas, con control contable completo."
+---
+
+## 🏠 Vista Principal del Módulo
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Boletas de Honorarios
+- **Permisos requeridos**:
+  - Administrador
+  - Jefe Contable
+  - Contador General
+  - Contador Junior
+  - Usuario de Operaciones
+  - Usuario de RRHH
+  - Auditor
+  - Supervisor
+
+### Estructura Principal
+
+El módulo está organizado en **2 pestañas principales**:
+
+<CardGroup cols={2}>
+  <Card title="📤 Boletas Emitidas" icon="paper-plane" color="#28a745">
+    Gestiona boletas que su empresa emite a terceros
+  </Card>
+  <Card title="📥 Boletas Recibidas" icon="inbox" color="#17a2b8">
+    Controla boletas de servicios profesionales recibidos
+  </Card>
+</CardGroup>
+
+## 📤 Pestaña: Boletas Emitidas
+
+### Descripción
+
+Gestiona las boletas de honorarios que su empresa emite a terceros (profesionales independientes, consultores, etc.)
+
+### 2.1 Gestión de Boletas Emitidas
+
+**Propósito**: Control de pagos a profesionales externos
+
+**Información típica mostrada**:
+
+- **Datos del Profesional**: RUT, nombre completo
+- **Detalles del Servicio**: Descripción, período de trabajo
+- **Montos**: Honorario bruto, retención (10%), líquido a pagar
+- **Fechas**: Emisión, vencimiento, pago
+- **Estado**: Emitida, pagada, anulada
+
+### 2.2 Acciones Disponibles
+
+<CardGroup cols={3}>
+  <Card title="➕ Nueva Boleta" icon="plus">
+    Obtiene directamente las boletas desde el SII
+  </Card>
+  <Card title="👁️ Ver Detalle" icon="eye">
+    Revisar información completa
+  </Card>
+  <Card title="✏️ Editar" icon="edit">
+    Modificar datos antes del pago
+  </Card>
+  <Card title="💰 Registrar Pago" icon="credit-card">
+    Marcar como pagada
+  </Card>
+  <Card title="📄 Generar PDF" icon="file-pdf">
+    Descargar documento oficial
+  </Card>
+</CardGroup>
+
+### 2.3 Filtros y Búsqueda
+
+- **Por Profesional**: RUT o nombre
+- **Por Período**: Rango de fechas
+- **Por Estado**: Emitida, pagada, pendiente
+- **Por Monto**: Rango de honorarios
+
+## 📥 Pestaña: Boletas Recibidas
+
+### Descripción
+
+Gestiona las boletas de honorarios que terceros emiten a su empresa (servicios recibidos)
+
+### 3.1 Gestión de Boletas Recibidas
+
+**Propósito**: Control de servicios profesionales contratados
+
+**Información típica mostrada**:
+
+- **Datos del Emisor**: RUT, nombre del profesional
+- **Servicio Recibido**: Descripción del trabajo realizado
+- **Montos**: Honorario bruto, retención aplicada, neto
+- **Fechas**: Recepción, período del servicio
+- **Estado Contable**: Registrada, contabilizada, pagada
+
+### 3.2 Acciones de Control
+
+<CardGroup cols={3}>
+  <Card title="📝 Registrar Boleta" icon="plus-circle">
+    Obtiene las boletas directamente del SII
+  </Card>
+  <Card title="✅ Validar" icon="check">
+    Verificar datos y montos
+  </Card>
+  <Card title="💼 Asignar Centro de Costo" icon="sitemap">
+    Imputar al área correspondiente
+  </Card>
+  <Card title="🏦 Asignar Cuenta Contable" icon="university">
+    Clasificar el gasto
+  </Card>
+  <Card title="📊 Generar Asiento" icon="calculator">
+    Crear registro contable
+  </Card>
+</CardGroup>
+
+## 💼 Gestión Contable
+
+### 4.1 Asignación de Centros de Costo
+
+#### Para boletas recibidas:
+
+- **Asignar el gasto** al departamento o proyecto correcto
+- **Opciones**: Administración, Ventas, Operaciones, Proyectos específicos
+
+#### Para boletas emitidas:
+
+- **Clasificar el costo** de los servicios externos
+- **Ayuda** en el control de gastos por área
+
+### 4.2 Cuentas Contables
+
+**Cuentas típicas utilizadas**:
+
+- **Gastos por Honorarios**: Para servicios recibidos
+- **Honorarios por Pagar**: Provisión de pagos pendientes
+- **Retenciones por Pagar**: 10% retenido a profesionales
+- **PPM por Pagar**: Pago provisional mensual cuando aplica
+
+### 4.3 Generación de Asientos
+
+#### Automática para boletas recibidas:
+
+```
+Debe: Gastos por Honorarios        $100.000
+Haber: Honorarios por Pagar         $ 90.000
+Haber: Retenciones por Pagar        $ 10.000
+```
+
+#### Automática para boletas emitidas:
+
+```
+Debe: Honorarios por Pagar          $ 90.000
+Debe: Retenciones por Pagar         $ 10.000
+Haber: Banco                        $100.000
+```
+
+## 📊 Reportes y Control
+
+### 5.1 Reportes Disponibles
+
+<CardGroup cols={2}>
+  <Card title="📈 Resumen Mensual" icon="chart-line">
+    Total de honorarios emitidos/recibidos
+  </Card>
+  <Card title="💰 Control de Retenciones" icon="percent">
+    Montos retenidos por período
+  </Card>
+  <Card title="👥 Por Profesional" icon="users">
+    Detalle individual de cada prestador
+  </Card>
+  <Card title="🏢 Por Centro de Costo" icon="building">
+    Distribución de gastos por área
+  </Card>
+  <Card title="📅 Vencimientos" icon="calendar-alt">
+    Boletas próximas a vencer
+  </Card>
+</CardGroup>
+
+### 5.2 Indicadores Clave
+
+- **Asientos Pendientes**: Boletas sin contabilizar
+- **Pagos Pendientes**: Honorarios por cancelar
+- **Retenciones Acumuladas**: Para declaración mensual
+- **Total Período**: Monto total de honorarios del mes
+
+## ⚙️ Funciones Administrativas
+
+### 6.1 Configuraciones
+
+- **Tasa de Retención**: Configurar 10% estándar
+- **Cuentas por Defecto**: Plan de cuentas predeterminado
+- **Numeración**: Secuencia de folios internos
+- **Formato de Documentos**: Plantilla de PDF
+
+### 6.2 Validaciones del Sistema
+
+- **RUT**: Verificación automática de dígito verificador
+- **Montos**: Cálculo automático de retenciones
+- **Duplicados**: Prevención de registros repetidos
+- **Fechas**: Validación de períodos fiscales
+
+## 📱 Interfaz de Usuario
+
+### 7.1 Navegación entre Pestañas
+
+- **Pestaña Activa**: Resaltada con color e ícono
+- **Cambio Rápido**: Un clic para alternar entre emitidas/recibidas
+- **URL Amigable**: Direcciones específicas para cada pestaña
+
+### 7.2 Elementos Visuales
+
+- 🟢 **Estado Pagado**: Verde para boletas canceladas
+- 🟡 **Estado Pendiente**: Amarillo para pendientes de pago
+- 🔵 **Estado Emitida**: Azul para recién emitidas
+- 🔴 **Estado Vencida**: Rojo para boletas vencidas
+
+## 💡 Mejores Prácticas
+
+### 8.1 Flujo Mensual Recomendado
+
+1. **Registro**: Ingresar todas las boletas recibidas
+2. **Clasificación**: Asignar centros de costo y cuentas
+3. **Contabilización**: Generar asientos contables
+4. **Emisión**: Crear boletas a profesionales externos
+5. **Pagos**: Procesar cancelaciones
+6. **Declaración**: Preparar información para PPM
+
+<Tip>
+  **Flujo eficiente**: Procese todas las boletas recibidas al inicio del mes,
+  luego genere las emitidas según necesidades de pago.
+</Tip>
+
+### 8.2 Control de Calidad
+
+- **Revisión Diaria**: Boletas ingresadas
+- **Verificación Semanal**: Asignaciones contables
+- **Control Mensual**: Retenciones acumuladas
+- **Cierre**: Confirmar todos los asientos generados
+
+### 8.3 Organización
+
+- **Por Tipo de Servicio**: Consultoría, asesoría, trabajos específicos
+- **Por Profesional**: Mantener histórico por persona
+- **Por Proyecto**: Si los servicios son para proyectos específicos
+
+## ⚠️ Aspectos Fiscales y Legales
+
+### 9.1 Retenciones Obligatorias
+
+- **10% sobre honorarios**: Retención automática
+- **Declaración mensual**: F29 con retenciones del período
+- **Certificados**: Emitir certificados de retención anualmente
+
+### 9.2 Documentación Requerida
+
+- **Boleta original**: Del profesional prestador
+- **Contrato**: Si corresponde para servicios mayores
+- **Informe de trabajo**: Respaldo del servicio realizado
+- **Orden de compra**: Si existe proceso de aprobación
+
+### 9.3 Cumplimiento Normativo
+
+- **Plazos de pago**: Según acuerdo o ley
+- **Límites anuales**: Control de montos por profesional
+- **Clasificación tributaria**: Gasto aceptado/rechazado
+
+<Warning>
+  **Cumplimiento fiscal**: Las retenciones de honorarios deben declararse
+  mensualmente en el F29. El incumplimiento genera multas e intereses.
+</Warning>
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: No puedo generar el asiento contable
+
+**Lista de verificación**:
+
+- ✅ Centro de costo asignado
+- ✅ Cuenta contable seleccionada
+- ✅ Montos correctamente ingresados
+- ✅ Plan de cuentas configurado
+
+### Problema: Cálculo incorrecto de retención
+
+**Solución**:
+
+- **Verificar configuración** de tasa (debe ser 10%)
+- **Revisar** si hay exenciones configuradas
+- **Validar** que el monto base sea correcto
+
+### Problema: No aparece en reportes
+
+**Verificar**:
+
+- ✅ Estado de la boleta (debe estar confirmada)
+- ✅ Período seleccionado en el reporte
+- ✅ Filtros aplicados en la consulta
+
+## Próximos pasos
+
+- [Prestación de Servicios](/contabilidad/boletas/prestacion-servicios)
+- [Asientos Contables](/contabilidad/asientos-contables)
+- [Impuestos](/contabilidad/impuestos)
+- [Plan de Cuentas](/empresa/plan-cuentas)

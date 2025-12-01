@@ -1,0 +1,389 @@
+---
+title: "Balance de 8 Columnas"
+description: "Herramienta contable avanzada que presenta la información financiera organizada en 8 columnas analíticas para análisis integral de balance y resultados."
+---
+
+## 🏠 Vista Principal del Balance de 8 Columnas
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Balance 8 Columnas
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Filtros de Período**: Control de fechas para el análisis
+- **Tabla de 8 Columnas**: Estructura analítica completa
+- **Totales y Resultados**: Filas de resumen y balance final
+- **Interactividad**: Click en cuentas para ver asientos detallados
+
+## 🔧 Estructura del Balance de 8 Columnas
+
+<CardGroup cols={2}>
+  <Card title="Análisis Integral" icon="table" color="#0066cc">
+    Visualización completa de la situación financiera en una sola vista
+  </Card>
+  <Card title="Columnas Analíticas" icon="columns" color="#17a2b8">
+    Ocho perspectivas diferentes de cada cuenta contable
+  </Card>
+  <Card title="Exportación Avanzada" icon="download" color="#28a745">
+    Formato profesional para análisis financiero
+  </Card>
+  <Card title="Navegación Interactiva" icon="mouse-pointer" color="#6c757d">
+    Click en cuentas para ver asientos contables detallados
+  </Card>
+</CardGroup>
+
+### 2.1 Las 8 Columnas Analíticas
+
+**Estructura Completa**:
+
+| Columna             | Descripción                  | Propósito              |
+| ------------------- | ---------------------------- | ---------------------- |
+| **Cuenta Contable** | Código y nombre de la cuenta | Identificación         |
+| **Débito**          | Suma de débitos del período  | Movimientos deudores   |
+| **Crédito**         | Suma de créditos del período | Movimientos acreedores |
+| **Deudor**          | Saldo deudor de la cuenta    | Balance deudor         |
+| **Acreedor**        | Saldo acreedor de la cuenta  | Balance acreedor       |
+| **Activo**          | Clasificación de activos     | Balance General        |
+| **Pasivo**          | Clasificación de pasivos     | Balance General        |
+| **Pérdida**         | Cuentas de pérdida/gastos    | Estado de Resultados   |
+| **Ganancia**        | Cuentas de ganancia/ingresos | Estado de Resultados   |
+
+### 2.2 Lógica de Clasificación Automática
+
+<Info>
+  **Clasificación Inteligente**: El sistema clasifica automáticamente cada
+  cuenta en las columnas apropiadas según su naturaleza contable y saldo final.
+</Info>
+
+**Criterios de clasificación**:
+
+- **Activo/Pasivo**: Según naturaleza de la cuenta y saldo final
+- **Ganancia/Pérdida**: Según clasificación como cuenta de resultado
+- **Deudor/Acreedor**: Según el signo del saldo final
+
+## 📊 Interactividad y Navegación
+
+### 3.1 Función Click-to-Drill
+
+**Navegación hacia el detalle**:
+
+- **Click en Cuenta**: Abre ventana con asientos contables relacionados
+- **Visualización**: Todos los asientos que afectaron esa cuenta
+- **Período**: Limitado al rango de fechas seleccionado
+- **Retorno**: Cierre fácil para continuar con el análisis
+
+### 3.2 Ventana de Asientos Detallados
+
+Cuando hace click en una cuenta, se muestra:
+
+```
+┌─────────────────────────────────────────┐
+│ ASIENTOS CONTABLES                      │
+│ Cuenta: (1110001) Banco Estado          │
+│ Período: 01/03/2024 - 31/03/2024       │
+├─────────────────────────────────────────┤
+│ Asiento | Fecha     | Descripción      │
+│ 001     | 05/03/24  | Depósito inicial │
+│ 002     | 15/03/24  | Pago proveedor   │
+│ 003     | 25/03/24  | Cobro cliente    │
+│         | ...       | ...              │
+└─────────────────────────────────────────┘
+```
+
+## 📋 Filas de Totales y Análisis
+
+### 4.1 Tres Niveles de Totales
+
+El balance incluye tres filas especiales de resumen:
+
+<CardGroup cols={3}>
+  <Card title="TOTALES" icon="calculator" color="#28a745">
+    - Suma de todas las columnas - Verificación de balances - Base para análisis
+  </Card>
+  <Card title="RESULTADO" icon="chart-line" color="#17a2b8">
+    - Cálculo automático del resultado - Diferencia entre ganancias y pérdidas -
+    Utilidad o pérdida del período
+  </Card>
+  <Card title="TOTALES IGUALES" icon="balance-scale" color="#6c757d">
+    - Verificación final de balance - Confirmación de partida doble - Validación
+    de integridad
+  </Card>
+</CardGroup>
+
+### 4.2 Validaciones Automáticas del Sistema
+
+**Principios contables verificados**:
+
+<Tabs>
+  <Tab title="Partida Doble">
+    - La suma de débitos debe ser igual a la suma de créditos - Verificación
+    automática en fila "TOTALES IGUALES" - Alerta visual si hay desbalance
+  </Tab>
+  <Tab title="Balance General">
+    - Activos = Pasivos + Patrimonio - Clasificación automática según naturaleza
+    de cuentas - Resultado integrado al patrimonio
+  </Tab>
+  <Tab title="Estado de Resultados">
+    - Ingresos - Gastos = Resultado - Clasificación automática de cuentas de
+    resultado - Integración con balance general
+  </Tab>
+</Tabs>
+
+## 🔍 Análisis Financiero Integral
+
+### 5.1 Interpretación de las Columnas
+
+**Análisis por columnas**:
+
+<Steps>
+  <Step title="Débito/Crédito">
+    Analizar la actividad contable del período - volumen de transacciones por
+    cuenta
+  </Step>
+  <Step title="Deudor/Acreedor">
+    Identificar saldos finales - qué cuentas tienen saldo deudor vs acreedor
+  </Step>
+  <Step title="Activo/Pasivo">
+    Evaluar la posición financiera - estructura del balance general
+  </Step>
+  <Step title="Pérdida/Ganancia">
+    Determinar rentabilidad - análisis del estado de resultados
+  </Step>
+</Steps>
+
+### 5.2 Indicadores Clave Derivados
+
+**Métricas calculables**:
+
+- **Liquidez**: Activos corrientes vs Pasivos corrientes
+- **Rentabilidad**: Proporción de ganancias vs total de ingresos
+- **Actividad**: Volumen de débitos y créditos por tipo de cuenta
+- **Estructura**: Distribución entre activos, pasivos y patrimonio
+
+### 5.3 Análisis Comparativo
+
+<Warning>
+  **Análisis Temporal**: Para obtener máximo valor, compare balances de 8
+  columnas entre diferentes períodos para identificar tendencias y cambios
+  estructurales.
+</Warning>
+
+**Comparaciones útiles**:
+
+- **Mes actual vs mes anterior**: Cambios en estructura financiera
+- **Trimestre actual vs anterior**: Tendencias estacionales
+- **Año actual vs año anterior**: Crecimiento y evolución
+- **Presupuesto vs real**: Cumplimiento de metas (si disponible)
+
+## 💡 Casos de Uso Especializados
+
+### 6.1 Preparación de Estados Financieros
+
+**Para Balance General**:
+
+1. **Columna Activo**: Base para el lado izquierdo del balance
+2. **Columna Pasivo**: Base para pasivos en balance general
+3. **Resultado**: Se integra al patrimonio automáticamente
+4. **Validación**: Verificar que "TOTALES IGUALES" esté balanceado
+
+**Para Estado de Resultados**:
+
+1. **Columna Ganancia**: Ingresos del período
+2. **Columna Pérdida**: Gastos y costos del período
+3. **Fila RESULTADO**: Utilidad o pérdida neta
+4. **Análisis**: Evaluar estructura de ingresos vs gastos
+
+### 6.2 Auditoría y Control Interno
+
+**Proceso de auditoría**:
+
+<Steps>
+  <Step title="Verificación General">
+    Confirmar que "TOTALES IGUALES" está balanceado en todas las columnas
+  </Step>
+  <Step title="Análisis por Cuenta">
+    Click en cuentas significativas para revisar asientos de soporte
+  </Step>
+  <Step title="Validación Cruzada">
+    Comparar totales con libro diario y mayor del mismo período
+  </Step>
+  <Step title="Documentación">
+    Exportar para archivo y evidencia de auditoría
+  </Step>
+</Steps>
+
+### 6.3 Análisis Gerencial
+
+**Para toma de decisiones**:
+
+- **Estructura de Costos**: Analizar distribución en columna "Pérdida"
+- **Fuentes de Ingreso**: Revisar composición en columna "Ganancia"
+- **Posición Financiera**: Evaluar equilibrio Activo/Pasivo
+- **Eficiencia Operacional**: Comparar actividad (débitos/créditos) vs resultados
+
+## 🔧 Funciones Técnicas Avanzadas
+
+### 7.1 Exportación Especializada
+
+**Opciones de exportación**:
+
+<Tabs>
+  <Tab title="Exportar PDF">
+    - **Formato**: Balance de 8 columnas tradicional - **Uso**: Presentaciones
+    ejecutivas y archivo formal - **Contenido**: Incluye todas las filas de
+    totales y validaciones - **Layout**: Optimizado para impresión en formato
+    horizontal
+  </Tab>
+  <Tab title="Exportar Excel">
+    - **Formato**: Hoja de cálculo con todas las columnas - **Análisis**:
+    Permite cálculos adicionales y gráficos - **Flexibilidad**: Filtros y
+    ordenamiento personalizado - **Integración**: Compatible con otros sistemas
+    de análisis
+  </Tab>
+</Tabs>
+
+### 7.2 Rendimiento y Optimización
+
+**Consideraciones técnicas**:
+
+- **Período Recomendado**: Máximo 12 meses para rendimiento óptimo
+- **Volumen de Cuentas**: Sistema optimizado para hasta 1,000 cuentas activas
+- **Carga Dinámica**: Los asientos se cargan solo al hacer click en cuenta
+- **Cache Inteligente**: Datos se almacenan temporalmente para navegación rápida
+
+## 📊 Integración y Consistencia
+
+### 8.1 Coherencia con Otros Módulos
+
+**Validación cruzada**:
+
+<Info>
+  **Integridad de Datos**: Los totales del balance de 8 columnas deben coincidir
+  exactamente con los totales del libro diario y libro mayor para el mismo
+  período.
+</Info>
+
+- **Libro Diario**: Totales de débito/crédito deben coincidir
+- **Libro Mayor**: Saldos por cuenta deben ser consistentes
+- **Estado de Resultados**: Columnas ganancia/pérdida deben coincidir
+- **Balance General**: Columnas activo/pasivo deben ser coherentes
+
+### 8.2 Flujo de Información
+
+**Origen de datos**:
+
+1. **Asientos Contables**: Base de toda la información
+2. **Clasificación Automática**: Según plan de cuentas configurado
+3. **Cálculos**: Sistema realiza todas las sumas y clasificaciones
+4. **Presentación**: Formato de 8 columnas con totales validados
+
+## 🚨 Mejores Prácticas
+
+### 9.1 Frecuencia de Consulta
+
+**Recomendaciones por usuario**:
+
+- **Contador General**: Revisión mensual completa
+- **Auditor Interno**: Consulta trimestral para validaciones
+- **Gerencia Financiera**: Análisis mensual de tendencias
+- **Auditor Externo**: Revisión anual con comparativos
+
+### 9.2 Procedimiento de Control
+
+<Steps>
+  <Step title="Validación Inicial">
+    Verificar que "TOTALES IGUALES" esté perfectamente balanceado
+  </Step>
+  <Step title="Análisis de Variaciones">
+    Identificar cuentas con cambios significativos vs período anterior
+  </Step>
+  <Step title="Revisión Detallada">
+    Usar función click para revisar asientos de cuentas con variaciones
+  </Step>
+  <Step title="Documentación">
+    Exportar y archivar para histórico y auditoría
+  </Step>
+</Steps>
+
+### 9.3 Indicadores de Alerta
+
+<Warning>
+  **Señales de Revisión Requerida**: - Balance desbalanceado en fila "TOTALES
+  IGUALES" - Cuentas de activo con saldo acreedor inusual - Cuentas de pasivo
+  con saldo deudor inesperado - Resultado muy diferente a períodos anteriores
+</Warning>
+
+## 🔧 Solución de Problemas
+
+### Problema: Balance no está balanceado
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificación Inmediata">
+- ✅ Confirmar que no hay asientos en proceso de aprobación
+- ✅ Verificar que el período seleccionado esté completo
+- ✅ Validar que no hay asientos duplicados o eliminados
+</Accordion>
+
+<Accordion title="Análisis Detallado">
+- 🔍 Comparar totales con libro diario del mismo período
+- 🔍 Revisar asientos creados o modificados recientemente
+- 🔍 Verificar configuración del plan de cuentas
+- 🔍 Contactar soporte si persiste el desbalance
+</Accordion>
+</AccordionGroup>
+
+### Problema: Clasificación incorrecta de cuentas
+
+**Pasos de corrección**:
+
+1. **Identificar Cuenta**: Localizar la cuenta mal clasificada
+2. **Revisar Configuración**: Verificar naturaleza en plan de cuentas
+3. **Corregir Origen**: Ajustar configuración en módulo de cuentas contables
+4. **Validar Resultado**: Refrescar balance para ver corrección
+
+### Problema: Asientos no aparecen al hacer click
+
+**Soluciones posibles**:
+
+- **Verificar Período**: Confirmar que asientos estén en rango de fechas
+- **Estado de Asientos**: Verificar que estén aprobados y contabilizados
+- **Refrescar Sistema**: Actualizar la página y volver a intentar
+- **Permisos**: Confirmar acceso a módulo de asientos contables
+
+## 📞 Soporte Especializado
+
+### Contacto para Balance de 8 Columnas
+
+<Card title="Equipo de Análisis Financiero" icon="chart-bar">
+  - **Email Especializado**: balance8@contago.cl - **Teléfono Directo**: +56 2
+  1234 5680 - **Horario**: Lunes a Viernes, 9:00 - 18:00 - **Especialidad**:
+  Balances, análisis financiero y auditoría
+</Card>
+
+### Recursos Adicionales
+
+- **Curso Online**: "Interpretación del Balance de 8 Columnas"
+- **Plantillas Excel**: Análisis comparativo automático
+- **Webinar Trimestral**: Casos de uso avanzados
+- **Documentación**: Guía completa de interpretación contable
+
+## 📋 Resumen Ejecutivo
+
+El Balance de 8 Columnas es fundamental para:
+
+- **Visión Integral**: Análisis completo de la situación financiera en una vista
+- **Control de Calidad**: Verificación automática de principios contables
+- **Toma de Decisiones**: Base sólida para análisis gerencial
+- **Auditoría**: Herramienta esencial para validación y control interno
+
+<Tip>
+  **Valor Estratégico**: El balance de 8 columnas es la síntesis perfecta entre
+  detalle contable y análisis financiero. Use esta herramienta para obtener una
+  fotografía completa y balanceada de la situación de su empresa.
+</Tip>

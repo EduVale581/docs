@@ -1,0 +1,372 @@
+---
+title: "Balance IFRS"
+description: "Sistema de consulta del balance contable bajo estándares IFRS (International Financial Reporting Standards) para empresas que requieren reportes bajo normativa internacional."
+---
+
+## 🏠 Vista Principal del Balance IFRS
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Balance IFRS
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Auditor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Filtros de Período**: Control de fechas según normativa IFRS
+- **Clasificación IFRS**: Cuentas organizadas según códigos internacionales
+- **Totales Consolidados**: Balance final con validación automática
+
+## 🔧 Características del Sistema IFRS
+
+<CardGroup cols={2}>
+  <Card title="Estándares Internacionales" icon="globe" color="#0066cc">
+    Clasificación según códigos IFRS reconocidos globalmente
+  </Card>
+  <Card title="Estructura Normalizada" icon="sitemap" color="#17a2b8">
+    Organización estándar para comparabilidad internacional
+  </Card>
+  <Card title="Validación Automática" icon="check-circle" color="#28a745">
+    Verificación de balance según principios IFRS
+  </Card>
+  <Card title="Reporte Especializado" icon="file-alt" color="#6c757d">
+    Formato optimizado para usuarios internacionales
+  </Card>
+</CardGroup>
+
+### 2.1 Estructura de Clasificación IFRS
+
+**Organización de cuentas**:
+
+| Campo           | Descripción                        | Ejemplo                 |
+| --------------- | ---------------------------------- | ----------------------- |
+| **Código IFRS** | Numeración internacional estándar  | 1.1.01                  |
+| **Nombre IFRS** | Denominación según estándares      | Efectivo y Equivalentes |
+| **Débito**      | Movimientos deudores del período   | $1,500,000              |
+| **Crédito**     | Movimientos acreedores del período | $800,000                |
+| **Balance**     | Saldo neto de la cuenta IFRS       | $700,000                |
+
+### 2.2 Período de Consulta Especializado
+
+**Configuración temporal**:
+
+- **Fecha de Inicio**: Desde inicio del período contable
+- **Fecha de Fin**: Hasta la fecha actual (máximo)
+- **Período por Defecto**: Desde inicio del mes hasta hoy
+- **Validación**: No permite fechas futuras según estándares IFRS
+
+<Info>
+  **Normativa IFRS**: Los períodos de consulta siguen las mejores prácticas de
+  reporte bajo estándares internacionales, asegurando consistencia con reportes
+  globales.
+</Info>
+
+## 📊 Estructura de Información IFRS
+
+### 3.1 Tabla Principal de Balance
+
+**Columnas informativas**:
+
+```
+┌─────────────────────────────────────────┐
+│ BALANCE IFRS - PERÍODO SELECCIONADO     │
+├─────────────────────────────────────────┤
+│ Código IFRS | Nombre IFRS    | Débito  │
+│ 1.1.01      | Efectivo       | $1.5M   │
+│ 1.1.02      | Inversiones    | $800K   │
+│ 2.1.01      | Proveedores    | -       │
+│             |                |         │
+│ TOTALES:    | Balance Final  | Total   │
+└─────────────────────────────────────────┘
+```
+
+### 3.2 Interpretación de Saldos
+
+**Lógica de presentación**:
+
+<Tabs>
+  <Tab title="Saldos Deudores">
+    - Aparecen en columna "Débito" - Representan activos o gastos - Saldo
+    positivo según naturaleza de cuenta
+  </Tab>
+  <Tab title="Saldos Acreedores">
+    - Aparecen en columna "Crédito" - Representan pasivos, patrimonio o ingresos
+    - Saldo positivo según naturaleza de cuenta
+  </Tab>
+  <Tab title="Saldo Balance">
+    - Diferencia neta entre débito y crédito - Puede ser positivo o negativo -
+    Refleja la posición real de cada cuenta IFRS
+  </Tab>
+</Tabs>
+
+### 3.3 Fila de Totales Consolidados
+
+**Validación final del balance**:
+
+- **Total Débito**: Suma de todos los saldos deudores
+- **Total Crédito**: Suma de todos los saldos acreedores
+- **Balance Total**: Debe ser cero para confirmar balance IFRS
+- **Fondo Verde**: Indicador visual de balance correcto
+
+<Warning>
+  **Balance IFRS**: Si el balance total no es cero, indica un problema en la
+  clasificación de cuentas o en la integridad de los datos que requiere revisión
+  inmediata.
+</Warning>
+
+## 🔍 Análisis Según Estándares IFRS
+
+### 4.1 Categorías Principales IFRS
+
+**Clasificación estándar**:
+
+<CardGroup cols={2}>
+  <Card title="Activos (1.x.xx)" icon="chart-line">
+    - **Corrientes**: Efectivo, inventarios, cuentas por cobrar - **No
+    Corrientes**: Propiedades, equipos, intangibles - **Financieros**:
+    Inversiones, instrumentos derivados
+  </Card>
+  <Card title="Pasivos y Patrimonio (2.x.xx - 3.x.xx)" icon="balance-scale">
+    - **Pasivos Corrientes**: Proveedores, deudas corto plazo - **Pasivos No
+    Corrientes**: Deudas largo plazo, provisiones - **Patrimonio**: Capital,
+    reservas, resultados acumulados
+  </Card>
+</CardGroup>
+
+### 4.2 Análisis de Liquidez IFRS
+
+**Indicadores derivados**:
+
+- **Ratio Corriente**: Activos corrientes / Pasivos corrientes
+- **Prueba Ácida**: (Activos corrientes - Inventarios) / Pasivos corrientes
+- **Capital de Trabajo**: Activos corrientes - Pasivos corrientes
+- **Endeudamiento**: Total pasivos / Total activos
+
+### 4.3 Comparabilidad Internacional
+
+<Info>
+  **Ventaja Estratégica**: La clasificación IFRS permite comparar los estados
+  financieros con empresas de cualquier país que adopte estos estándares
+  internacionales.
+</Info>
+
+**Beneficios de comparabilidad**:
+
+- **Inversionistas Extranjeros**: Facilita análisis de inversión
+- **Benchmarking Global**: Comparación con competidores internacionales
+- **Acceso a Mercados**: Cumplimiento para listado en bolsas extranjeras
+- **Auditoría Internacional**: Facilita procesos de auditoría global
+
+## 💡 Casos de Uso Especializados
+
+### 5.1 Preparación de Estados Financieros IFRS
+
+<Steps>
+  <Step title="Configurar Período">
+    Establecer el período de reporte según calendario IFRS
+  </Step>
+  <Step title="Verificar Clasificación">
+    Confirmar que todas las cuentas estén correctamente clasificadas
+  </Step>
+  <Step title="Validar Balance">
+    Asegurar que el total del balance sea cero
+  </Step>
+  <Step title="Generar Reporte">
+    Exportar para uso en estados financieros oficiales
+  </Step>
+</Steps>
+
+### 5.2 Análisis para Inversionistas
+
+**Información clave para stakeholders**:
+
+- **Transparencia**: Clasificación según estándares reconocidos
+- **Consistencia**: Formato estándar año tras año
+- **Comparabilidad**: Facilita análisis vs competencia internacional
+- **Confiabilidad**: Auditable según normas internacionales
+
+### 5.3 Cumplimiento Regulatorio
+
+**Para empresas que requieren IFRS**:
+
+- **Empresas Públicas**: Listadas en bolsas de valores
+- **Subsidiarias Extranjeras**: Filiales de multinacionales
+- **Sector Bancario**: Instituciones financieras reguladas
+- **Grandes Empresas**: Según normativa local aplicable
+
+## 🔧 Funciones Técnicas
+
+### 6.1 Configuración del Plan de Cuentas IFRS
+
+**Requisitos del sistema**:
+
+<Tabs>
+  <Tab title="Mapeo de Cuentas">
+    - Cada cuenta local debe estar mapeada a código IFRS - Validación de
+    completitud del mapeo - Actualización según cambios en estándares
+  </Tab>
+  <Tab title="Validación Automática">
+    - Verificación de códigos IFRS válidos - Control de duplicidades en
+    clasificación - Alerta de cuentas sin clasificar
+  </Tab>
+</Tabs>
+
+### 6.2 Actualización de Estándares
+
+**Mantenimiento del sistema**:
+
+- **Actualizaciones Anuales**: Según nuevos pronunciamientos IFRS
+- **Validación Continua**: Verificación de cambios en estándares
+- **Notificaciones**: Alertas sobre actualizaciones requeridas
+- **Soporte Técnico**: Asistencia en implementación de cambios
+
+## 📊 Limitaciones y Consideraciones
+
+### 7.1 Alcance Actual del Sistema
+
+**Estado de implementación**:
+
+<Warning>
+  **Funcionalidad en Desarrollo**: Actualmente, el módulo de Balance IFRS no
+  incluye exportación automática. Esta funcionalidad está planificada para
+  futuras versiones del sistema.
+</Warning>
+
+**Funciones disponibles**:
+
+- ✅ Consulta de balance IFRS por período
+- ✅ Clasificación automática según códigos IFRS
+- ✅ Validación de balance y totales
+- ⏳ Exportación (en desarrollo)
+- ⏳ Reportes comparativos (planificado)
+
+### 7.2 Requerimientos Previos
+
+**Para uso efectivo**:
+
+- **Plan de Cuentas IFRS**: Debe estar configurado y mapeado
+- **Clasificación Completa**: Todas las cuentas deben tener código IFRS
+- **Validación Inicial**: Verificar integridad antes del primer uso
+- **Capacitación**: Personal debe entender conceptos IFRS básicos
+
+## 🚨 Mejores Prácticas
+
+### 8.1 Implementación Gradual
+
+<Steps>
+  <Step title="Fase 1: Configuración">
+    Mapear las cuentas principales del balance general
+  </Step>
+  <Step title="Fase 2: Validación">
+    Probar con períodos históricos para verificar correctitud
+  </Step>
+  <Step title="Fase 3: Producción">
+    Usar para reportes oficiales una vez validado completamente
+  </Step>
+  <Step title="Fase 4: Optimización">
+    Refinar clasificaciones según experiencia de uso
+  </Step>
+</Steps>
+
+### 8.2 Control de Calidad
+
+**Procedimientos recomendados**:
+
+- **Revisión Mensual**: Verificar balance esté en cero
+- **Validación Cruzada**: Comparar con balance local para consistencia
+- **Documentación**: Mantener registro de cambios en clasificación
+- **Capacitación Continua**: Actualizar conocimiento en estándares IFRS
+
+### 8.3 Análisis Comparativo
+
+**Uso estratégico**:
+
+- **Tendencias**: Comparar mismo período años anteriores
+- **Benchmarking**: Analizar vs empresas similares con IFRS
+- **Ratios Financieros**: Calcular indicadores según IFRS
+- **Reportes Gerenciales**: Usar para toma de decisiones estratégicas
+
+## 🔧 Solución de Problemas
+
+### Problema: Balance total no es cero
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificación Inmediata">
+- ✅ Confirmar que todas las cuentas tengan clasificación IFRS
+- ✅ Verificar que no hay cuentas duplicadas en mapeo
+- ✅ Validar que el período seleccionado esté completo
+</Accordion>
+
+<Accordion title="Análisis Detallado">
+- 🔍 Revisar configuración del plan de cuentas IFRS
+- 🔍 Comparar totales con balance local del mismo período
+- 🔍 Verificar asientos de apertura y cierre
+- 🔍 Contactar soporte para revisión de configuración
+</Accordion>
+</AccordionGroup>
+
+### Problema: Cuentas aparecen sin clasificación IFRS
+
+**Pasos de corrección**:
+
+1. **Identificar Cuentas**: Localizar cuentas sin código IFRS
+2. **Configurar Mapeo**: Asignar código IFRS apropiado
+3. **Validar Clasificación**: Confirmar que sea correcta según estándares
+4. **Refrescar Balance**: Actualizar para ver cambios reflejados
+
+### Problema: Diferencias con balance local
+
+**Análisis de causa**:
+
+- **Diferencias Temporales**: Verificar que los períodos sean idénticos
+- **Clasificación**: Confirmar que el mapeo IFRS sea correcto
+- **Moneda**: Validar que ambos balances usen la misma moneda
+- **Ajustes IFRS**: Verificar si se requieren ajustes específicos IFRS
+
+## 📞 Soporte Especializado IFRS
+
+### Contacto de Expertos IFRS
+
+<Card title="Equipo IFRS Especializado" icon="users">
+  - **Email Directo**: ifrs@contago.cl - **Teléfono Especializado**: +56 2 1234
+  5681 - **Horario**: Lunes a Viernes, 9:00 - 18:00 - **Expertise**: Estándares
+  IFRS, normativa internacional, auditoría
+</Card>
+
+### Recursos de Capacitación IFRS
+
+- **Curso Certificado**: "Implementación de IFRS en Sistemas Contables"
+- **Webinars Trimestrales**: Actualizaciones en estándares IFRS
+- **Documentación**: Guía completa de mapeo de cuentas
+- **Consultoría**: Servicio de implementación personalizada
+
+### Red de Expertos
+
+- **Contadores Públicos**: Con certificación IFRS
+- **Auditores Internacionales**: Experiencia en multinacionales
+- **Consultores**: Especialistas en transición a IFRS
+- **Academia**: Vínculos con instituciones de formación contable
+
+## 📋 Resumen Ejecutivo
+
+El Balance IFRS es esencial para:
+
+- **Cumplimiento Internacional**: Reportes según estándares globales
+- **Transparencia**: Información comparable internacionalmente
+- **Acceso a Mercados**: Facilita expansión y financiamiento internacional
+- **Gestión Profesional**: Eleva el nivel de reporte financiero empresarial
+
+<Tip>
+  **Inversión Estratégica**: Implementar correctamente el balance IFRS posiciona
+  a su empresa para oportunidades de crecimiento internacional y mejora
+  significativamente la calidad de la información financiera.
+</Tip>
+
+<Info>
+  **Desarrollo Continuo**: Este módulo está en constante evolución. Manténgase
+  actualizado sobre nuevas funcionalidades y mejoras que se incorporarán según
+  las necesidades del mercado.
+</Info>

@@ -1,51 +1,505 @@
 ---
 title: "Conciliación Bancaria"
-description: "Proceso de conciliación entre registros contables y extractos bancarios"
+description: "Sistema avanzado de conciliación bancaria que automatiza la comparación entre registros contables y estados bancarios para asegurar la precisión financiera."
 ---
 
-# Conciliación Bancaria
+## 🏠 Vista Principal de Conciliación Bancaria
 
-Aprende a realizar la conciliación entre tus registros contables y los extractos bancarios.
+### Acceso al Sistema
 
-## ¿Qué es la conciliación bancaria?
+- **Ruta**: Dashboard → Conciliación Bancaria
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Usuario de Tesorería, Auditor, Supervisor
 
-La conciliación bancaria es el proceso de comparar y ajustar los registros contables con los movimientos del extracto bancario.
+### Panel de Control
 
-## Importancia de la conciliación
+La vista principal presenta:
+
+- **Lista de Bancos**: Tarjetas visuales con información de cada cuenta bancaria
+- **Estado de Conciliación**: Indicadores visuales de transacciones pendientes y conciliadas
+- **Saldos en Tiempo Real**: Montos actualizados por cada cuenta bancaria
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Control financiero" icon="shield-check">
-    Mantiene control sobre los recursos financieros
+  <Card title="Gestión de Transacciones" icon="exchange-alt" color="#0066cc">
+    Registro y administración de movimientos bancarios
   </Card>
-  <Card title="Detección de errores" icon="exclamation-triangle">
-    Identifica errores y discrepancias
+  <Card title="Conciliación Automática" icon="magic" color="#17a2b8">
+    Coincidencia automática entre registros contables y bancarios
   </Card>
-  <Card title="Prevención de fraudes" icon="lock">
-    Ayuda a detectar movimientos no autorizados
+  <Card title="Conciliación Manual" icon="hand-paper" color="#17a2b8">
+    Proceso manual para casos complejos y diferencias
   </Card>
-  <Card title="Información confiable" icon="check-circle">
-    Garantiza información financiera precisa
+  <Card title="Reportes Especializados" icon="chart-line" color="#6c757d">
+    Informes detallados de conciliación y diferencias
   </Card>
 </CardGroup>
 
-## Proceso de conciliación
+### ¿Qué es la Conciliación Bancaria?
 
-1. **Obtener extracto bancario**: Descarga el extracto del banco
-2. **Comparar movimientos**: Contrasta con registros contables
-3. **Identificar diferencias**: Marca partidas no conciliadas
-4. **Realizar ajustes**: Registra ajustes necesarios
-5. **Generar reporte**: Documenta la conciliación
+La conciliación bancaria es el proceso de comparar y ajustar los registros contables de la empresa con los estados de cuenta bancarios para asegurar que coincidan. Este proceso es fundamental para:
 
-## Diferencias comunes
+- **Verificar exactitud**: De los registros contables empresariales
+- **Identificar pendientes**: Transacciones no registradas o en tránsito
+- **Detectar errores**: Discrepancias entre sistemas contable y bancario
+- **Mantener control**: Financiero preciso y actualizado
 
-- **Cheques en tránsito**: Emitidos pero no cobrados
-- **Depósitos en tránsito**: Realizados pero no reflejados
-- **Cargos bancarios**: Comisiones y gastos del banco
-- **Intereses**: Ganados o pagados por el banco
-- **Errores**: Tanto del banco como propios
+## 📋 Gestión de Cuentas Bancarias
 
-## Próximos pasos
+### Permisos del Sistema
 
-- [Gestión de Bancos](/empresa/bancos)
-- [Asientos Contables](/contabilidad/asientos-contables)
-- [Informes Financieros](/contabilidad/informes/index)
+<CardGroup cols={2}>
+  <Card title="Acceso Completo" icon="crown">
+    **Administrador**, **Jefe Contable**, **Contador General** - Gestión
+    completa del módulo y todas las operaciones
+  </Card>
+  <Card title="Acceso Operativo" icon="users">
+    **Contador Junior**, **Usuario de Tesorería**, **Auditor**, **Supervisor** -
+    Operaciones específicas según rol
+  </Card>
+</CardGroup>
+
+### 2.1 Vista de Lista de Bancos
+
+**Pantalla principal**: Muestra todas las cuentas bancarias configuradas en formato de tarjetas
+
+**Información por banco**:
+
+- **Identificación**: Nombre del banco, tipo de cuenta, número
+- **Saldo actual**: Monto total de transacciones registradas
+- **Estado**: Activo/Inactivo con indicador visual
+- **Moneda**: CLP, USD, EUR según configuración
+- **Color distintivo**: Identificación visual rápida
+
+### 2.2 Acceso a Transacciones Bancarias
+
+**Botón**: "Gestionar Transacciones" en cada tarjeta de banco
+
+**Proceso**:
+
+1. **Seleccionar banco**: Click en la tarjeta correspondiente
+2. **Acceder al detalle**: Sistema carga todas las transacciones del banco
+3. **Vista de pestañas**: "Transacciones" y "Conciliar" disponibles
+
+### 2.3 Actualización de Información
+
+- **Botón**: "Actualizar" (en cada tarjeta)
+- **Función**: Refresca saldos y estados en tiempo real
+- **Indicador**: Loading spinner durante la actualización
+- **Respuesta**: Confirmación visual al completar
+
+## 📋 Gestión Detallada de Transacciones
+
+### 3.1 Pestaña "Transacciones" - Vista Principal
+
+**Ubicación**: Panel derecho al seleccionar un banco
+
+**Contenido completo**:
+
+- **Lista de transacciones**: Todos los movimientos bancarios registrados
+- **Información detallada**: Fecha, concepto, monto, tipo, estado
+- **Filtros avanzados**: Por concepto, monto, fecha, estado de conciliación
+- **Acciones individuales**: Conciliar, editar, ver detalles
+
+### 3.2 Registro de Nuevas Transacciones
+
+**Botón**: "Agregar Transacciones" (Azul/Primary)
+
+**Formulario completo**:
+
+- **Fecha**: Selector de fecha de la transacción
+- **Concepto**: Descripción clara y detallada del movimiento
+- **Monto**: Valor numérico con validación automática
+- **Tipo**: Débito/Crédito con indicadores visuales
+- **Referencia**: Número de cheque, transferencia, etc.
+- **Centro de Costo**: Asignación opcional para clasificación
+
+**Validaciones automáticas**:
+
+- ✅ Formato de fecha válido
+- ✅ Monto numérico positivo
+- ✅ Campos obligatorios completos
+- ✅ Referencia única (si aplica)
+
+### 3.3 Campos Detallados por Transacción
+
+<CardGroup cols={2}>
+  <Card title="Información Básica" icon="info-circle">
+    **Fecha**, **Concepto detallado**, **Referencia bancaria**
+  </Card>
+  <Card title="Información Financiera" icon="dollar-sign">
+    **Monto**, **Tipo (Débito/Crédito)**, **Moneda**, **Saldo resultante**
+  </Card>
+  <Card title="Estado de Conciliación" icon="check-circle">
+    **Pendiente**, **Conciliada**, **Con diferencias**, **Revisión requerida**
+  </Card>
+  <Card title="Acciones Disponibles" icon="cogs">
+    **Conciliar manual**, **Ver detalles**, **Editar**, **Eliminar** (si no
+    conciliada)
+  </Card>
+</CardGroup>
+
+### 3.4 Sistema de Filtros Avanzados
+
+**Filtros disponibles**:
+
+- **Por concepto**: Búsqueda de texto libre en descripciones
+- **Por monto**: Rango específico o valor exacto
+- **Por fecha**: Período personalizable (desde/hasta)
+- **Por estado**: Conciliadas, pendientes, con diferencias
+- **Por tipo**: Débitos, créditos, o ambos
+- **Por centro de costo**: Clasificación organizacional
+
+<Tip>
+  **Búsqueda inteligente**: El sistema busca coincidencias parciales en
+  conceptos y permite filtros combinados para mayor precisión.
+</Tip>
+
+### 3.5 Proceso de Registro de Transacciones
+
+**Flujo completo optimizado**:
+
+1. **Acceso al formulario**: Botón "Agregar Transacciones" en la barra superior
+2. **Captura de datos**: Formulario con validación en tiempo real
+3. **Revisión**: Vista previa antes de confirmar
+4. **Confirmación**: Guardado con mensaje de éxito
+5. **Integración**: Actualización automática de la lista
+
+**Características del formulario**:
+
+- **Validación instantánea**: Campos se validan mientras escribe
+- **Autocompletado**: Sugiere conceptos basados en historial
+- **Cálculo automático**: Actualiza saldos en tiempo real
+- **Duplicado inteligente**: Detecta posibles transacciones duplicadas
+
+## 🔄 Sistema de Conciliación Avanzada
+
+### 4.1 Pestaña "Conciliar" - Centro de Control
+
+**Ubicación**: Segunda pestaña al seleccionar un banco
+**Función principal**: Gestionar la coincidencia entre registros contables y bancarios
+
+**Panel de estado**:
+
+- **Asientos pendientes**: Contador en tiempo real con indicador visual
+- **Conciliaciones del día**: Progreso de las conciliaciones realizadas
+- **Diferencias detectadas**: Alertas de discrepancias que requieren atención
+
+### 4.2 Estados de Conciliación del Sistema
+
+<CardGroup cols={3}>
+  <Card title="Pendiente" icon="clock" color="#ffc107">
+    Asientos contables sin asociar a transacciones bancarias
+  </Card>
+  <Card title="Conciliado" icon="check-circle" color="#28a745">
+    Asientos correctamente asociados y validados
+  </Card>
+  <Card title="Con Diferencias" icon="exclamation-triangle" color="#dc3545">
+    Discrepancias que requieren revisión manual
+  </Card>
+</CardGroup>
+
+### 4.3 Conciliación Manual - Proceso Detallado
+
+**Botón principal**: "Conciliar Manualmente" (Info/Celeste)
+
+**Proceso optimizado paso a paso**:
+
+1. **Selección de asiento**:
+
+   - Lista de asientos contables pendientes ordenada por fecha
+   - Información completa: fecha, cuenta, concepto, monto
+   - Click en el asiento para iniciar conciliación
+
+2. **Identificación de transacción bancaria**:
+
+   - Sistema sugiere coincidencias automáticamente
+   - Filtros por monto y fecha para búsqueda precisa
+   - Comparación visual lado a lado
+
+3. **Validación de coincidencias**:
+
+   - Verificación automática de montos
+   - Comparación de fechas (dentro de rango permitido)
+   - Análisis de conceptos por similitud
+
+4. **Confirmación de conciliación**:
+   - Diálogo de confirmación con resumen detallado
+   - Campo de observaciones para documentar diferencias
+   - Botón "Conciliar" para finalizar el proceso
+
+### 4.4 Conciliación Automática Inteligente
+
+**Botón**: "Conciliación Automática" (Primary/Azul)
+
+**Criterios de coincidencia automática**:
+
+- ✅ **Montos idénticos**: Coincidencia exacta en valores
+- ✅ **Fechas dentro del rango**: Máximo 3 días de diferencia
+- ✅ **Conceptos similares**: Análisis de texto por IA
+- ✅ **Sin conflictos**: Una transacción por asiento
+
+**Resultado del proceso**:
+
+- **Coincidencias encontradas**: Lista de conciliaciones propuestas
+- **Revisión requerida**: Casos que necesitan validación manual
+- **Conciliaciones aplicadas**: Contador de procesos exitosos
+
+### 4.5 Interfaz de Conciliación Manual
+
+**Diálogo especializado** con sección dividida:
+
+**Panel izquierdo - Asiento Contable**:
+
+- **Fecha del asiento**: Fecha de registro contable
+- **Cuenta contable**: Código y descripción completa
+- **Concepto**: Descripción del movimiento contable
+- **Monto**: Valor debe/haber con indicación de tipo
+- **Referencia**: Número de comprobante o documento
+
+**Panel derecho - Transacción Bancaria**:
+
+- **Selección de transacción**: Dropdown con opciones filtradas
+- **Fecha bancaria**: Fecha del movimiento en el banco
+- **Concepto bancario**: Descripción según estado bancario
+- **Monto bancario**: Valor con indicación Débito/Crédito
+- **Referencia bancaria**: Número de operación
+
+**Sección de validación**:
+
+- **Indicador de coincidencia**: Semaforo visual (Verde/Amarillo/Rojo)
+- **Diferencias detectadas**: Lista de discrepancias si existen
+- **Campo de observaciones**: Texto libre para documentar el proceso
+- **Botones de acción**: "Cancelar", "Conciliar", "Revisar más tarde"
+
+<Warning>
+  **Validación automática**: El sistema siempre valida las conciliaciones
+  automáticas antes de aplicarlas. Revise los resultados en el panel de
+  "Conciliaciones Sugeridas".
+</Warning>
+
+## ⚖️ Gestión Avanzada de Diferencias
+
+### 5.1 Tipos de Diferencias Identificadas
+
+<CardGroup cols={2}>
+  <Card title="Diferencias de Tiempo" icon="clock" color="#ffc107">
+    **Cheques emitidos no cobrados**, **Depósitos en tránsito**,
+    **Transferencias pendientes**, **Notas de crédito/débito no procesadas**
+  </Card>
+  <Card title="Diferencias de Registro" icon="edit" color="#dc3545">
+    **Errores de captura**, **Comisiones bancarias**, **Intereses no
+    registrados**, **Cargos automáticos**
+  </Card>
+  <Card title="Diferencias de Monto" icon="dollar-sign" color="#17a2b8">
+    **Errores de digitación**, **Tipos de cambio**, **Redondeos**, **Comisiones
+    no contempladas**
+  </Card>
+  <Card title="Diferencias Sistemáticas" icon="cogs" color="#6c757d">
+    **Configuración incorrecta**, **Duplicación de registros**, **Falta de
+    sincronización**
+  </Card>
+</CardGroup>
+
+### 5.2 Proceso Automatizado de Resolución
+
+**Identificación inteligente**:
+
+1. **Análisis automático**: Sistema compara registros y detecta discrepancias
+2. **Clasificación por tipo**: Categoriza automáticamente las diferencias encontradas
+3. **Priorización**: Ordena por impacto financiero y urgencia
+4. **Sugerencias de solución**: Propone acciones correctivas específicas
+
+**Flujo de resolución**:
+
+1. **Diferencias temporales**: Marcadas para seguimiento automático
+2. **Diferencias permanentes**: Generación de asientos de ajuste
+3. **Validación**: Revisión por supervisor antes de aplicar cambios
+4. **Documentación**: Registro automático de todas las resoluciones
+
+## 📊 Sistema de Reportes Especializados
+
+### 6.1 Generación Automática de Informes
+
+**Botón principal**: "Generar Reportes" (Success/Verde)
+
+<CardGroup cols={2}>
+  <Card title="Reporte de Conciliación" icon="chart-bar">
+    Estado completo de todas las conciliaciones, movimientos pendientes,
+    diferencias por banco
+  </Card>
+  <Card title="Estado Contable vs Bancario" icon="balance-scale">
+    Comparación detallada entre registros contables y bancarios del período
+  </Card>
+  <Card title="Análisis de Diferencias" icon="search">
+    Detalle de discrepancias, clasificación por tipo, acciones correctivas
+    sugeridas
+  </Card>
+  <Card title="Reporte Ejecutivo" icon="chart-line">
+    Resumen para dirección con KPIs de conciliación y alertas importantes
+  </Card>
+</CardGroup>
+
+### 6.2 Opciones de Exportación Avanzadas
+
+**Formatos disponibles**:
+
+- **Excel (.xlsx)**: Análisis detallado con múltiples hojas y fórmulas
+- **PDF**: Presentación formal para reportes ejecutivos y auditoría
+- **CSV**: Integración con sistemas externos y análisis de datos
+- **XML**: Intercambio con sistemas contables especializados
+
+**Configuración de exportación**:
+
+- **Período personalizable**: Desde/hasta fechas específicas
+- **Filtros aplicables**: Por banco, tipo de transacción, estado
+- **Nivel de detalle**: Resumen ejecutivo vs detalle completo
+- **Formato de moneda**: CLP, USD, EUR según configuración
+
+## 💡 Mejores Prácticas y Flujo Recomendado
+
+### 7.1 Proceso Mensual Optimizado
+
+**Cronograma recomendado**:
+
+1. **Días 1-3 del mes**: Obtener estados bancarios y completar registros pendientes
+2. **Días 4-7**: Ejecutar conciliación automática y revisar coincidencias
+3. **Días 8-12**: Procesar conciliaciones manuales y resolver diferencias
+4. **Días 13-15**: Generar ajustes contables y validar saldos finales
+5. **Día 15**: Completar reportes y documentación para cierre
+
+### 7.2 Estrategias de Eficiencia
+
+<CardGroup cols={2}>
+  <Card title="Conciliación Automática Primero" icon="magic">
+    Procese el 80% de transacciones con coincidencia automática antes de revisar
+    casos complejos
+  </Card>
+  <Card title="Priorización por Monto" icon="sort-amount-up">
+    Inicie con transacciones de mayor valor para maximizar el impacto de la
+    conciliación
+  </Card>
+  <Card title="Revisión de Patrones" icon="chart-line">
+    Identifique diferencias recurrentes para ajustar procesos automáticos
+  </Card>
+  <Card title="Documentación Sistemática" icon="file-alt">
+    Mantenga registro de todas las decisiones para auditorías futuras
+  </Card>
+</CardGroup>
+
+### 7.3 Control de Calidad Mensual
+
+**Validaciones obligatorias**:
+
+- ✅ **100% de transacciones conciliadas**: Sin movimientos pendientes
+- ✅ **Saldos cuadrados**: Coincidencia exacta entre contable y bancario
+- ✅ **Diferencias documentadas**: Todas las discrepancias explicadas
+- ✅ **Aprobación supervisora**: Validación por contador senior
+
+<Tip>
+  **Estrategia recomendada**: Configure alertas automáticas para transacciones
+  que superen cierto monto o antigüedad, permitiendo intervención temprana.
+</Tip>
+
+## 🔧 Solución de Problemas Comunes
+
+### 8.1 Diagnóstico Automático de Problemas
+
+**Herramientas de diagnóstico integradas**:
+
+- **Verificador de conectividad**: Prueba conexión con entidades bancarias
+- **Validador de configuración**: Revisa parametrización de cuentas
+- **Analizador de rendimiento**: Identifica cuellos de botella
+- **Monitor de integridad**: Detecta inconsistencias en datos
+
+### 8.2 Problemas Frecuentes y Soluciones
+
+**Transacciones no aparecen**:
+
+**Diagnóstico paso a paso**:
+
+- ✅ Verificar conectividad con banco (botón "Probar Conexión")
+- ✅ Confirmar configuración de cuenta bancaria
+- ✅ Validar permisos de usuario para el banco específico
+- ✅ Revisar filtros de fecha aplicados
+- 📞 Contactar administrador si persiste
+
+**Conciliaciones fallan constantemente**:
+
+**Lista de verificación**:
+
+- ✅ Plan de cuentas debe estar configurado correctamente
+- ✅ Centros de costo deben estar asignados si son obligatorios
+- ✅ Monedas deben coincidir entre sistema y banco
+- ✅ Fechas deben estar dentro del período fiscal vigente
+
+**Sistema lento durante conciliación**:
+
+**Optimización recomendada**:
+
+1. **Reducir período**: Procesar máximo 3 meses por vez
+2. **Horarios óptimos**: Ejecutar fuera de horario laboral peak
+3. **Filtros específicos**: Usar filtros por banco o tipo de transacción
+4. **Caché del navegador**: Limpiar caché si hay lentitud persistente
+
+## 🚨 Casos Especiales y Consideraciones
+
+### 9.1 Conciliación de Múltiples Monedas
+
+- **Configuración especial**: Cuentas en USD, EUR requieren parametrización específica
+- **Tipo de cambio**: Sistema debe tener tipos de cambio actualizados diariamente
+- **Diferencias cambiarias**: Se generan automáticamente asientos de ajuste por diferencia de tipo de cambio
+
+### 9.2 Transacciones de Alto Valor
+
+- **Validación adicional**: Transacciones superiores a $1.000.000 requieren aprobación supervisora
+- **Documentación obligatoria**: Respaldo documental debe estar adjunto antes de conciliar
+- **Alerta automática**: Sistema notifica a jefe contable para transacciones excepcionales
+
+### 9.3 Cheques en Tránsito y Depósitos Diferidos
+
+- **Seguimiento automático**: Sistema marca cheques emitidos no cobrados por más de 30 días
+- **Alertas de antigüedad**: Notificaciones para cheques pendientes por más de 60 días
+- **Proceso de anulación**: Flujo específico para cheques vencidos o extraviados
+
+## ⚠️ Sistema de Alertas y Validaciones
+
+### 10.1 Alertas Críticas del Sistema
+
+- **Saldos desbalanceados**: Banner rojo cuando hay diferencias superiores al 0,01%
+- **Transacciones duplicadas**: Sistema previene registros duplicados automáticamente
+- **Conciliaciones vencidas**: Alertas para bancos sin conciliar por más de 45 días
+
+### 10.2 Validaciones Preventivas
+
+**Al registrar transacciones**:
+
+- **Fecha válida**: No permite fechas futuras o anteriores al período fiscal
+- **Monto válido**: Validación de rangos según configuración de la cuenta
+- **Concepto obligatorio**: Campo de descripción no puede estar vacío
+- **Referencia única**: Sistema valida que no existan referencias duplicadas
+
+### 10.3 Mensajes de Confirmación
+
+- **Conciliación exitosa**: "Transacción conciliada correctamente"
+- **Diferencias resueltas**: "Ajustes aplicados y diferencias resueltas"
+- **Reportes generados**: "Reporte de conciliación generado exitosamente"
+
+## 💼 Integración con Otros Módulos
+
+### 11.1 Conexión con Contabilidad General
+
+- **Asientos automáticos**: Las conciliaciones generan asientos contables en tiempo real
+- **Plan de cuentas**: Integración directa con configuración de cuentas bancarias
+- **Centro de costos**: Asignación automática según configuración por defecto
+
+### 11.2 Integración con Tesorería
+
+- **Flujo de caja**: Conciliaciones actualizan automáticamente proyecciones de caja
+- **Pagos programados**: Sistema considera pagos pendientes en conciliación
+- **Cobranzas**: Integración con módulo de cobranzas para depósitos automáticos
+
+<Tip>
+  **Integración inteligente**: El sistema mantiene sincronización en tiempo real
+  entre todos los módulos relacionados, asegurando consistencia de datos.
+</Tip>

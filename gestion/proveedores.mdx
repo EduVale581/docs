@@ -1,88 +1,463 @@
 ---
 title: "Proveedores"
-description: "Gestión integral de proveedores"
+description: "Sistema integral de gestión de proveedores que optimiza las relaciones comerciales, controla la cadena de suministro y automatiza procesos de compras y pagos."
 ---
 
-# Proveedores
+## 🏠 Vista Principal de Proveedores
 
-Gestiona toda la información y relaciones comerciales con tus proveedores.
+### Acceso al Sistema
 
-## ¿Qué es un proveedor?
+- **Ruta**: Dashboard → Proveedores
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Usuario de Operaciones, Jefe de Compras
 
-Un proveedor es una persona natural o jurídica que suministra bienes o servicios a tu empresa.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Maestro de proveedores**: Lista completa con información esencial
+- **Filtros inteligentes**: Búsqueda avanzada por múltiples criterios
+- **Gestión centralizada**: Creación y edición unificada
+
+## 🏭 Gestión Integral de Proveedores
 
 <CardGroup cols={2}>
-  <Card title="Registro de proveedores" icon="user-plus">
-    Registra nuevos proveedores en el sistema
+  <Card title="Información Corporativa" icon="building" color="#0066cc">
+    Datos legales, tributarios y de contacto completos
   </Card>
-  <Card title="Gestión de datos" icon="edit">
-    Mantén actualizada la información
+  <Card title="Términos Comerciales" icon="contract" color="#28a745">
+    Condiciones de compra, plazos y formas de pago
   </Card>
-  <Card title="Historial de compras" icon="history">
-    Consulta el historial completo
+  <Card title="Evaluación y Performance" icon="star" color="#ffc107">
+    Scoring de proveedores y métricas de desempeño
   </Card>
-  <Card title="Reportes" icon="chart-bar">
-    Genera reportes de proveedores
+  <Card title="Gestión de Riesgos" icon="shield-alt" color="#dc3545">
+    Control de cumplimiento y evaluación de riesgos
   </Card>
 </CardGroup>
 
-## Información del proveedor
+## 📋 Tabla Principal de Proveedores
 
-### Datos básicos
+### 2.1 Información Básica del Proveedor
 
-- **RUT**: Rol Único Tributario
-- **Razón social**: Nombre legal del proveedor
-- **Nombre de fantasía**: Nombre comercial
-- **Giro**: Actividad económica principal
+**Datos de identificación**:
 
-### Datos de contacto
+#### Identificación Tributaria
 
-- **Dirección**: Ubicación física
-- **Teléfonos**: Números de contacto
-- **Email**: Correo electrónico
-- **Sitio web**: Página web (opcional)
+- **RUT**: Rol Único Tributario con validación automática
+- **Razón Social**: Denominación legal completa
+- **Nombre de Fantasía**: Nombre comercial utilizado
+- **Tipo de Proveedor**: Empresa, persona natural, extranjero
 
-### Información comercial
+#### Datos de Contacto Principal
 
-- **Condiciones de pago**: Plazo y forma de pago
-- **Descuentos**: Descuentos por pronto pago
-- **Límite de crédito**: Monto máximo autorizado
-- **Moneda**: Moneda de operación
+- **Dirección**: Ubicación física o comercial
+- **Comuna**: División administrativa
+- **Región**: Territorio nacional o país (si es extranjero)
+- **Teléfono**: Número principal de contacto
+- **Email**: Correo electrónico para comunicaciones comerciales
 
-## Categorías de proveedores
+#### Información Comercial
 
-- **Proveedores de materias primas**
-- **Proveedores de servicios**
-- **Proveedores de activos fijos**
-- **Proveedores de servicios profesionales**
-- **Proveedores de suministros**
+- **Giro**: Actividad económica o especialidad
+- **Categoría**: Clasificación interna (materias primas, servicios, etc.)
+- **Comprador**: Ejecutivo de compras asignado
+- **Estado**: Activo, inactivo, bloqueado, en evaluación
 
-## Estado del proveedor
+### 2.2 Clasificación y Categorización
 
-- **Activo**: Proveedor habilitado para compras
-- **Inactivo**: Temporalmente suspendido
-- **Bloqueado**: No disponible para nuevas compras
+**Sistema de segmentación**:
 
-## Evaluación de proveedores
+#### Estados Operativos
 
-### Criterios de evaluación
+- 🟢 **Activo**: Proveedor habilitado para operaciones
+- 🟡 **En evaluación**: Proceso de homologación pendiente
+- 🔴 **Bloqueado**: Suspendido por incumplimientos
+- ⚫ **Inactivo**: Sin operaciones actuales
 
-- **Calidad**: Calidad de productos/servicios
-- **Precio**: Competitividad de precios
-- **Entrega**: Cumplimiento de plazos
-- **Servicio**: Atención al cliente
-- **Confiabilidad**: Cumplimiento de compromisos
+#### Categorías de Productos/Servicios
 
-### Clasificación
+- **Materias Primas**: Insumos para producción
+- **Servicios Profesionales**: Consultoría, asesorías, outsourcing
+- **Servicios Básicos**: Utilities, telecomunicaciones, seguros
+- **Equipamiento**: Maquinaria, tecnología, mobiliario
+- **Mantenimiento**: Servicios técnicos y reparaciones
 
-- **A**: Proveedores estratégicos
-- **B**: Proveedores importantes
-- **C**: Proveedores ocasionales
+#### Clasificación Estratégica
 
-## Próximos pasos
+- **Estratégicos**: Proveedores críticos para operaciones
+- **Preferenciales**: Proveedores con ventajas competitivas
+- **Estándar**: Proveedores regulares con múltiples alternativas
+- **Ocasionales**: Proveedores para necesidades específicas puntuales
 
-- [Compras](/contabilidad/compras)
-- [Cobros y Pagos](/gestion/cobros-pagos)
-- [Asientos Contables](/contabilidad/asientos-contables)
+### 2.3 Evaluación y Scoring
+
+**Sistema de calificación**:
+
+#### Criterios de Evaluación
+
+- **Calidad**: Cumplimiento de especificaciones y estándares
+- **Puntualidad**: Entrega según plazos acordados
+- **Precio**: Competitividad en condiciones comerciales
+- **Servicio**: Atención, soporte y responsiveness
+- **Financiero**: Solidez económica y estabilidad
+
+#### Scoring Automático
+
+- **Puntuación**: Escala 1-100 basada en performance histórica
+- **Tendencia**: Mejora o deterioro en el tiempo
+- **Benchmark**: Comparación con promedio de categoría
+- **Alertas**: Notificaciones por cambios significativos
+
+## 🔍 Búsqueda y Filtros Especializados
+
+### 3.1 Filtros por Categoría
+
+**Segmentación inteligente**:
+
+#### Filtros Operativos
+
+- **Por estado**: Activos, inactivos, bloqueados
+- **Por categoría**: Tipo de productos o servicios
+- **Por región**: Ubicación geográfica
+- **Por comprador**: Ejecutivo asignado
+
+#### Filtros Comerciales
+
+- **Por volumen de compras**: Rangos de facturación anual
+- **Por términos de pago**: Contado, crédito, consignación
+- **Por moneda**: Pesos, dólares, euros, UF
+- **Por descuentos**: Proveedores con condiciones especiales
+
+#### Filtros de Performance
+
+- **Por scoring**: Rangos de evaluación (A, B, C)
+- **Por cumplimiento**: Porcentaje de entregas a tiempo
+- **Por calidad**: Nivel de defectos o devoluciones
+- **Por innovación**: Proveedores que aportan mejoras
+
+### 3.2 Búsqueda Avanzada
+
+**Herramientas de localización**:
+
+#### Búsqueda Multifaceta
+
+- **RUT y razón social**: Identificación directa
+- **Giro o especialidad**: Por actividad económica
+- **Productos/servicios**: Por keywords en descripción
+- **Contactos**: Por nombre de ejecutivos o vendedores
+
+#### Búsqueda Geográfica
+
+- **Por proximidad**: Distancia desde ubicaciones de empresa
+- **Por zona de cobertura**: Área de servicio del proveedor
+- **Nacional vs. internacional**: Clasificación por origen
+- **Logística**: Capacidad de distribución o entrega
+
+## ✏️ Gestión Detallada de Proveedores
+
+### 4.1 Vista de Edición de Proveedor
+
+**Formulario integral**:
+
+#### Sección 1: Datos Corporativos
+
+- **Información legal**: RUT, razón social, representante legal
+- **Datos tributarios**: Régimen, actividad económica, retenciones
+- **Certificaciones**: ISO, sellos de calidad, habilitaciones
+- **Estructura**: Casa matriz, sucursales, filiales
+
+#### Sección 2: Contactos Comerciales
+
+- **Contacto principal**: Ejecutivo comercial o vendedor asignado
+- **Contacto técnico**: Especialista para consultas de productos/servicios
+- **Contacto administrativo**: Facturación, cobranzas, documentación
+- **Contacto de emergencia**: Para situaciones críticas o urgentes
+
+#### Sección 3: Información Operativa
+
+- **Capacidad de producción**: Volúmenes máximos suministrables
+- **Tiempo de entrega**: Lead times estándar por producto
+- **Cobertura geográfica**: Zonas de servicio o despacho
+- **Horarios de atención**: Disponibilidad comercial y técnica
+
+### 4.2 Configuración Comercial
+
+**Términos y condiciones**:
+
+#### Condiciones de Compra
+
+- **Plazo de pago**: Días para cancelar facturas
+- **Forma de pago**: Transferencia, cheque, efectivo, carta de crédito
+- **Moneda**: Pesos chilenos, dólares, euros, UF
+- **Descuentos**: Por volumen, pronto pago, temporadas
+
+#### Términos Logísticos
+
+- **Incoterms**: FOB, CIF, DAP, etc. (para importaciones)
+- **Lugar de entrega**: Bodega proveedor, cliente, puerto
+- **Embalaje**: Especificaciones de packaging
+- **Seguro**: Cobertura de mercancía en tránsito
+
+#### Garantías y SLAs
+
+- **Garantía de productos**: Período y cobertura
+- **SLA de servicios**: Tiempos de respuesta y resolución
+- **Penalidades**: Por incumplimiento de acuerdos
+- **Bonificaciones**: Incentivos por superación de metas
+
+### 4.3 Evaluación y Homologación
+
+**Proceso de calificación**:
+
+#### Evaluación Inicial
+
+- **Documentación legal**: Verificación de antecedentes
+- **Capacidad técnica**: Evaluación de competencias
+- **Solidez financiera**: Análisis de estados financieros
+- **Referencias comerciales**: Validación con otros clientes
+
+#### Auditorías y Visitas
+
+- **Auditoría de calidad**: Verificación de procesos y sistemas
+- **Inspección de instalaciones**: Evaluación de capacidades
+- **Certificaciones**: Validación de estándares y normas
+- **Plan de mejoras**: Identificación de oportunidades
+
+#### Monitoreo Continuo
+
+- **KPIs de desempeño**: Métricas regulares de evaluación
+- **Revisiones periódicas**: Evaluaciones trimestrales o anuales
+- **Feedback**: Comunicación bidireccional de mejoras
+- **Re-certificación**: Renovación de habilitaciones
+
+## 📊 Historial y Analytics de Proveedores
+
+### 5.1 Historial de Transacciones
+
+**Registro completo de operaciones**:
+
+#### Compras Realizadas
+
+- **Órdenes de compra**: Lista cronológica de pedidos
+- **Facturas recibidas**: Documentos tributarios procesados
+- **Productos/servicios**: Detalle de items adquiridos
+- **Montos**: Valor de cada transacción y acumulados
+- **Estado**: Entregado, pendiente, devuelto
+
+#### Análisis Temporal
+
+- **Evolución de compras**: Tendencia mensual/anual
+- **Estacionalidad**: Patrones de compra por período
+- **Frecuencia**: Regularidad de órdenes
+- **Crecimiento**: Variación versus períodos anteriores
+
+### 5.2 Performance y Métricas
+
+**Evaluación cuantitativa**:
+
+#### Métricas de Cumplimiento
+
+- **On-time delivery**: Porcentaje de entregas puntuales
+- **Calidad**: Tasa de productos conformes vs. defectuosos
+- **Fill rate**: Porcentaje de pedidos completados totalmente
+- **Flexibilidad**: Capacidad de adaptarse a cambios
+
+#### Métricas Financieras
+
+- **Costo total**: Precio + logística + calidad + servicio
+- **Competitividad**: Comparación con otros proveedores
+- **Ahorro generado**: Mejoras de precios o eficiencias
+- **Costo de no-calidad**: Impacto de defectos o retrasos
+
+### 5.3 Análisis de Riesgos
+
+**Gestión proactiva de riesgos**:
+
+#### Riesgos Operacionales
+
+- **Dependencia**: Concentración en pocos proveedores
+- **Capacidad**: Límites de producción o suministro
+- **Continuidad**: Riesgo de interrupción de servicio
+- **Sustitutos**: Disponibilidad de alternativas
+
+#### Riesgos Financieros
+
+- **Solidez**: Estabilidad económica del proveedor
+- **Exposición**: Montos comprometidos sin garantías
+- **Variación de precios**: Volatilidad en commodities
+- **Tipo de cambio**: Riesgo en compras internacionales
+
+## 🔔 Alertas y Monitoreo Inteligente
+
+### 6.1 Alertas de Performance
+
+**Monitoreo automático**:
+
+#### Deterioro en Desempeño
+
+- 📉 **Caída en scoring**: Disminución significativa en evaluación
+- 📉 **Retrasos frecuentes**: Incremento en entregas tardías
+- 📉 **Problemas de calidad**: Aumento en defectos o devoluciones
+- 📉 **Servicio deficiente**: Deterioro en atención o soporte
+
+#### Oportunidades de Mejora
+
+- 📈 **Mejor performance**: Mejoras que permiten reclasificar
+- 📈 **Nuevos productos**: Ampliación de catálogo o servicios
+- 📈 **Mejores precios**: Oportunidades de renegociación
+- 📈 **Innovaciones**: Nuevas tecnologías o procesos
+
+### 6.2 Alertas de Riesgo
+
+**Sistema preventivo**:
+
+#### Riesgos Críticos
+
+- 🚨 **Proveedor único**: Dependencia excesiva sin alternativas
+- 🚨 **Problemas financieros**: Indicadores de inestabilidad económica
+- 🚨 **Incumplimientos críticos**: Faltas graves que requieren acción
+- 🚨 **Certificaciones vencidas**: Pérdida de habilitaciones importantes
+
+#### Alertas Preventivas
+
+- ⚠️ **Concentración alta**: Excesivo volumen en pocos proveedores
+- ⚠️ **Vencimientos próximos**: Contratos, certificaciones, seguros
+- ⚠️ **Cambios en condiciones**: Modificaciones en términos comerciales
+- ⚠️ **Nuevas regulaciones**: Impacto de cambios normativos
+
+## 📈 Reportes y Análisis Estratégico
+
+### 7.1 Reportes Operativos
+
+**Gestión de la cadena de suministro**:
+
+#### Análisis de Gastos
+
+- **Spend analysis**: Distribución de gastos por categoría y proveedor
+- **Concentración**: Análisis de dependencia y riesgos
+- **Oportunidades**: Identificación de potenciales ahorros
+- **Benchmarking**: Comparación de precios por categoría
+
+#### Performance de Proveedores
+
+- **Ranking**: Clasificación por scoring y performance
+- **Tendencias**: Evolución de métricas en el tiempo
+- **Comparativo**: Performance relativa entre proveedores similares
+- **Mejores prácticas**: Identificación de casos de éxito
+
+### 7.2 Análisis Financiero
+
+**Optimización económica**:
+
+#### Análisis de Costos
+
+- **TCO (Total Cost of Ownership)**: Costo total por proveedor
+- **Savings tracking**: Seguimiento de ahorros logrados
+- **Price variance**: Análisis de variaciones de precios
+- **Payment terms**: Optimización de condiciones de pago
+
+#### Gestión de Riesgos Financieros
+
+- **Exposición**: Análisis de riesgo por proveedor y categoría
+- **Diversificación**: Estrategias de reducción de dependencia
+- **Contingencias**: Planes de continuidad de negocio
+- **Seguros**: Cobertura de riesgos de suministro
+
+### 7.3 Inteligencia de Mercado
+
+**Análisis estratégico**:
+
+#### Market Intelligence
+
+- **Tendencias de mercado**: Evolución de precios y tecnologías
+- **Nuevos proveedores**: Identificación de alternativas
+- **Benchmarking externo**: Comparación con mejores prácticas
+- **Oportunidades**: Identificación de mejoras potenciales
+
+#### Desarrollo de Proveedores
+
+- **Programa de mejoras**: Planes de desarrollo conjunto
+- **Innovación colaborativa**: Proyectos de mejora mutua
+- **Capacity building**: Fortalecimiento de capacidades
+- **Partnership strategies**: Alianzas estratégicas de largo plazo
+
+## 🔧 Configuración y Automatización
+
+### 8.1 Workflows Automatizados
+
+**Procesos inteligentes**:
+
+#### Evaluación Automática
+
+- **Scoring dinámico**: Cálculo automático basado en KPIs
+- **Alertas predictivas**: Identificación temprana de riesgos
+- **Re-clasificación**: Cambios automáticos de categoría
+- **Reportes programados**: Generación automática de informes
+
+#### Gestión de Documentos
+
+- **Validación automática**: Verificación de certificaciones
+- **Recordatorios**: Alertas de vencimientos próximos
+- **Renovaciones**: Seguimiento de procesos de actualización
+- **Archivo digital**: Organización automática de documentación
+
+### 8.2 Integración con Otros Módulos
+
+**Ecosistema conectado**:
+
+#### Módulo de Compras
+
+- **Órdenes automáticas**: Pre-llenado con datos del proveedor
+- **Validaciones**: Control de límites y condiciones
+- **Tracking**: Seguimiento automático de entregas
+- **Evaluación**: Feedback automático post-entrega
+
+#### Sistema Financiero
+
+- **Cuentas por pagar**: Integración con obligaciones pendientes
+- **Pagos programados**: Automatización según términos acordados
+- **Análisis crediticio**: Evaluación de solidez financiera
+- **Reporting**: Inclusión en reportes financieros consolidados
+
+## 💡 Estrategias de Gestión Avanzada
+
+### 9.1 Segmentación Estratégica
+
+**Clasificación para optimización**:
+
+1. **Proveedores estratégicos**: Alianzas de largo plazo, desarrollo conjunto
+2. **Proveedores preferenciales**: Condiciones mejoradas, mayor volumen
+3. **Proveedores competitivos**: Negociación por precio, múltiples fuentes
+4. **Proveedores transaccionales**: Automatización, procesamiento eficiente
+
+### 9.2 Desarrollo de Proveedores
+
+**Programas de mejora continua**:
+
+- **Capacity building**: Fortalecimiento de capacidades técnicas
+- **Quality improvement**: Programas de mejora de calidad
+- **Cost reduction**: Proyectos colaborativos de reducción de costos
+- **Innovation**: Desarrollo conjunto de nuevas soluciones
+- **Sustainability**: Iniciativas de responsabilidad social y ambiental
+
+<Tip>
+  **Estrategia de diversificación**: Evita la excesiva dependencia de pocos
+  proveedores manteniendo un portafolio balanceado que combine eficiencia con
+  seguridad de suministro.
+</Tip>
+
+### 9.3 Mejores Prácticas de Evaluación
+
+**Sistema de evaluación integral**:
+
+- **Métricas balanceadas**: No solo precio, sino calidad, servicio y riesgo
+- **Evaluaciones regulares**: Revisiones periódicas programadas
+- **Feedback bidireccional**: Comunicación abierta para mejora mutua
+- **Planes de desarrollo**: Roadmaps de mejora específicos por proveedor
+- **Benchmarking continuo**: Comparación con estándares de industria
+
+<Warning>
+  **Gestión de riesgos**: Mantén siempre proveedores alternativos para servicios
+  críticos y monitorea continuamente la salud financiera de proveedores
+  estratégicos.
+</Warning>

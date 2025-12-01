@@ -1,0 +1,372 @@
+---
+title: "Libro Mayor"
+description: "Sistema avanzado de consulta del libro mayor contable con movimientos detallados por cuenta y análisis de saldos acumulados."
+---
+
+## 🏠 Vista Principal del Libro Mayor
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Libro Mayor
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Filtros de Período**: Control de fechas para definir el rango de consulta
+- **Tabla por Cuentas**: Cuentas contables con totales de debe y haber
+- **Movimientos Detallados**: Cada cuenta muestra sus transacciones individuales
+
+## 🔧 Funciones Principales del Sistema
+
+<CardGroup cols={2}>
+  <Card title="Consulta por Cuenta" icon="book" color="#0066cc">
+    Visualización organizada por cuenta contable con saldos
+  </Card>
+  <Card title="Movimientos Expandidos" icon="expand" color="#17a2b8">
+    Cada cuenta muestra el detalle de todos sus movimientos
+  </Card>
+  <Card title="Exportación Especializada" icon="download" color="#28a745">
+    Exporta en PDF o Excel con formato de libro mayor
+  </Card>
+  <Card title="Análisis de Saldos" icon="calculator" color="#6c757d">
+    Totales automáticos por cuenta y análisis de balance
+  </Card>
+</CardGroup>
+
+### 2.1 Estructura de Visualización
+
+**Organización Jerárquica**:
+
+- **Nivel Superior**: Cuenta contable con código y nombre
+- **Totales por Cuenta**: Suma de débitos y créditos de la cuenta
+- **Nivel Detallado**: Movimientos individuales que conforman los totales
+
+### 2.2 Exportación Avanzada
+
+**Opciones de Descarga**:
+
+<Tabs>
+  <Tab title="Exportar PDF">
+    - **Formato**: Libro mayor tradicional en PDF - **Estructura**: Por cuentas
+    con movimientos detallados - **Uso**: Presentaciones formales y archivo
+    físico - **Validación**: Incluye totales y subtotales por cuenta
+  </Tab>
+  <Tab title="Exportar Excel">
+    - **Formato**: Hoja de cálculo estructurada - **Análisis**: Permite filtros
+    y tablas dinámicas - **Flexibilidad**: Datos manipulables para análisis
+    avanzado - **Integración**: Compatible con otros sistemas contables
+  </Tab>
+</Tabs>
+
+## 📊 Estructura de Información Contable
+
+### 3.1 Tabla Principal de Cuentas
+
+**Columnas de información**:
+
+| Columna             | Descripción                        | Formato                      |
+| ------------------- | ---------------------------------- | ---------------------------- |
+| **Cuenta Contable** | Código y nombre completo           | (Código) Nombre de la Cuenta |
+| **Debe**            | Total débitos de la cuenta         | Formato CLP                  |
+| **Haber**           | Total créditos de la cuenta        | Formato CLP                  |
+| **Movimientos**     | Detalle expandido de transacciones | Tabla anidada                |
+
+### 3.2 Detalle de Movimientos por Cuenta
+
+Cada cuenta contable incluye una tabla expandida con:
+
+**Información por Movimiento**:
+
+```
+┌─────────────────────────────────────────┐
+│ CUENTA: (1110001) Banco Estado          │
+├─────────────────────────────────────────┤
+│ DEBE: $1.500.000    HABER: $800.000    │
+├─────────────────────────────────────────┤
+│ MOVIMIENTOS DETALLADOS:                 │
+│                                         │
+│ Asiento | Fecha     | Descripción | Debe | Haber │
+│ 001     | 01/03/24  | Depósito   | 500K |   -   │
+│ 002     | 05/03/24  | Pago       |  -   | 300K  │
+│ 003     | 10/03/24  | Transfere  | 1.0M |   -   │
+│ 004     | 15/03/24  | Retiro     |  -   | 500K  │
+└─────────────────────────────────────────┘
+```
+
+### 3.3 Campos del Detalle de Movimientos
+
+<CardGroup cols={2}>
+  <Card title="Información de Origen" icon="file">
+    - **Asiento**: Código del asiento contable - **Fecha**: Fecha de la
+    transacción - **Descripción**: Detalle de la operación
+  </Card>
+  <Card title="Valores Contables" icon="dollar-sign">
+    - **Debe**: Monto del débito (si aplica) - **Haber**: Monto del crédito (si
+    aplica) - **Formato**: CLP con separadores de miles
+  </Card>
+</CardGroup>
+
+## 🔍 Control de Período y Filtros
+
+### 4.1 Selectores de Fecha
+
+**Configuración de Período**:
+
+- **Fecha de Inicio**: Define el inicio del período de consulta
+- **Fecha de Fin**: Límite superior (máximo hasta hoy)
+- **Período por Defecto**: Inicio y fin del mes actual
+- **Actualización Dinámica**: Los datos se refrescan al cambiar fechas
+
+### 4.2 Validaciones de Período
+
+<Info>
+  **Restricciones Temporales**: El sistema no permite consultar fechas futuras,
+  asegurando la integridad de los datos históricos registrados.
+</Info>
+
+**Validaciones automáticas**:
+
+- ✅ Fecha de inicio no puede ser posterior a fecha de fin
+- ✅ Fecha de fin no puede ser futura
+- ✅ Período máximo recomendado de 12 meses para rendimiento óptimo
+
+## 📋 Casos de Uso Especializados
+
+### 5.1 Análisis de Cuenta Individual
+
+<Steps>
+  <Step title="Seleccionar Período">
+    Configurar las fechas según el análisis requerido
+  </Step>
+  <Step title="Localizar Cuenta">
+    Buscar la cuenta específica en la tabla principal
+  </Step>
+  <Step title="Revisar Totales">
+    Verificar los totales de debe y haber de la cuenta
+  </Step>
+  <Step title="Analizar Movimientos">
+    Examinar cada transacción en el detalle expandido
+  </Step>
+  <Step title="Validar Balance">
+    Confirmar que la suma de movimientos coincida con totales
+  </Step>
+</Steps>
+
+### 5.2 Reconciliación de Saldos
+
+**Proceso de verificación**:
+
+1. **Saldo Inicial**: Verificar saldo al inicio del período
+2. **Movimientos del Período**: Sumar débitos y créditos
+3. **Saldo Final**: Calcular saldo resultante
+4. **Validación**: Comparar con reportes externos (ej. bancos)
+
+### 5.3 Auditoría de Transacciones
+
+**Para auditores externos**:
+
+- **Trazabilidad Completa**: Cada movimiento referencia su asiento original
+- **Cronología**: Orden temporal de todas las transacciones
+- **Documentación**: Descripción detallada de cada operación
+- **Respaldo**: Posibilidad de exportar evidencia completa
+
+## 💡 Análisis Financiero Avanzado
+
+### 6.1 Análisis de Tendencias por Cuenta
+
+**Indicadores clave**:
+
+<CardGroup cols={3}>
+  <Card title="Actividad de la Cuenta" icon="activity">
+    - Frecuencia de movimientos - Montos promedio por transacción - Variabilidad
+    en el tiempo
+  </Card>
+  <Card title="Patrón de Saldos" icon="trending-up">
+    - Evolución del saldo en el tiempo - Picos y valles de actividad -
+    Estacionalidad de movimientos
+  </Card>
+  <Card title="Tipos de Operación" icon="category">
+    - Proporción de débitos vs créditos - Tipos de transacciones más frecuentes
+    - Fuentes de los asientos contables
+  </Card>
+</CardGroup>
+
+### 6.2 Identificación de Irregularidades
+
+**Señales de alerta**:
+
+<Warning>
+  **Indicadores de Revisión**: - Movimientos con montos inusuales -
+  Transacciones fuera de horarios normales - Cuentas con actividad inesperada -
+  Asientos sin descripción clara - Patrones de movimiento anómalos
+</Warning>
+
+### 6.3 Análisis Comparativo
+
+**Comparaciones útiles**:
+
+- **Períodos Anteriores**: Mismo período del año anterior
+- **Meses Consecutivos**: Evolución mensual de cuentas clave
+- **Presupuesto vs Real**: Si se cuenta con información presupuestaria
+- **Cuentas Relacionadas**: Análisis conjunto de cuentas del mismo grupo
+
+## 🔧 Funciones Técnicas y Navegación
+
+### 7.1 Estados de Carga del Sistema
+
+El sistema proporciona:
+
+- **Skeleton Loaders**: Indicadores durante la carga de datos
+- **Manejo de Errores**: Mensajes claros si hay problemas de conectividad
+- **Validación de Datos**: Verificación de integridad antes de mostrar
+- **Notificación de Estado**: "Sin datos" cuando no hay registros en el período
+
+### 7.2 Rendimiento y Optimización
+
+**Recomendaciones de uso**:
+
+- **Períodos Extensos**: Para más de un año, dividir en trimestres
+- **Cuentas con Alto Volumen**: Usar períodos más específicos
+- **Exportaciones Grandes**: Considerar exportar por grupos de cuentas
+- **Consultas Frecuentes**: Usar períodos estándar (mensual, trimestral)
+
+## 📊 Integración con Otros Módulos
+
+### 8.1 Origen de los Datos
+
+El libro mayor consolida información de:
+
+<Tabs>
+  <Tab title="Módulos Transaccionales">
+    - **Ventas**: Facturas y notas de crédito/débito - **Compras**: Facturas de
+    proveedores y gastos - **Bancos**: Movimientos bancarios y conciliaciones -
+    **Activos Fijos**: Depreciaciones y revaluaciones
+  </Tab>
+  <Tab title="Asientos Manuales">
+    - **Asientos de Ajuste**: Correcciones contables - **Asientos de Cierre**:
+    Procesos de fin de período - **Reclasificaciones**: Movimientos entre
+    cuentas - **Provisiones**: Estimaciones y reservas
+  </Tab>
+</Tabs>
+
+### 8.2 Trazabilidad de Asientos
+
+<Info>
+  **Referencia Completa**: Cada movimiento mantiene la referencia al asiento
+  original, permitiendo navegar desde el libro mayor hasta la transacción
+  fuente.
+</Info>
+
+## 🚨 Mejores Prácticas de Uso
+
+### 9.1 Frecuencia de Consulta Recomendada
+
+**Por tipo de usuario**:
+
+- **Contadores**: Revisión diaria de cuentas críticas
+- **Auditores**: Análisis mensual completo por cuentas
+- **Gerencia**: Consultas mensuales de cuentas de resultado
+- **Administrativos**: Verificaciones específicas según necesidad
+
+### 9.2 Procedimientos de Control
+
+<Steps>
+  <Step title="Control Diario">
+    Revisar cuentas de mayor movimiento (bancos, clientes, proveedores)
+  </Step>
+  <Step title="Control Semanal">
+    Analizar cuentas de ingresos y gastos principales
+  </Step>
+  <Step title="Control Mensual">
+    Revisión completa de todas las cuentas con movimiento
+  </Step>
+  <Step title="Control Trimestral">
+    Análisis comparativo y tendencias por cuenta
+  </Step>
+</Steps>
+
+### 9.3 Documentación de Hallazgos
+
+**Proceso recomendado**:
+
+1. **Identificar Irregularidades**: Marcar movimientos inusuales
+2. **Documentar Consultas**: Registrar fecha y motivo de consultas
+3. **Seguimiento**: Crear tareas de seguimiento para pendientes
+4. **Resolución**: Documentar acciones correctivas tomadas
+
+## 🔧 Solución de Problemas
+
+### Problema: Diferencias entre libro mayor y otros reportes
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificación de Períodos">
+- ✅ Confirmar que los períodos de comparación sean idénticos
+- ✅ Verificar inclusión de fechas límite (inicio/fin)
+- ✅ Validar que no hay diferencias de zona horaria
+</Accordion>
+
+<Accordion title="Fuente de Datos">
+- 🔍 Verificar que ambos reportes usen la misma base de datos
+- 🔍 Confirmar que no hay asientos en proceso de aprobación
+- 🔍 Validar que los filtros aplicados sean equivalentes
+</Accordion>
+</AccordionGroup>
+
+### Problema: Cuenta no muestra todos los movimientos esperados
+
+**Pasos de resolución**:
+
+1. **Ampliar Período**: Verificar si las transacciones están en fechas fuera del rango
+2. **Revisar Asientos**: Confirmar que los asientos estén aprobados y contabilizados
+3. **Validar Cuenta**: Asegurar que se está consultando el código correcto
+4. **Estado de Asientos**: Verificar que no haya asientos en borrador o pendientes
+
+### Problema: Exportación no incluye todos los datos
+
+<Warning>
+  **Limitaciones Técnicas**: Para exportaciones muy grandes (más de 10,000
+  movimientos), el sistema puede requerir división en períodos más pequeños.
+</Warning>
+
+**Soluciones**:
+
+- **Dividir Período**: Exportar por meses o trimestres
+- **Filtrar Cuentas**: Exportar grupos específicos de cuentas
+- **Formato Alternativo**: Probar con Excel si PDF presenta problemas
+- **Soporte Técnico**: Contactar para exportaciones masivas
+
+## 📞 Soporte Especializado
+
+### Contacto de Soporte Contable
+
+<Card title="Equipo Especializado en Libros Contables" icon="users">
+  - **Email Directo**: libros@contago.cl - **Teléfono Especializado**: +56 2
+  1234 5679 - **Horario Extendido**: Lunes a Viernes, 8:00 - 19:00 -
+  **Expertise**: Análisis contable, auditoría y reconciliaciones
+</Card>
+
+### Recursos de Capacitación
+
+- **Webinar Mensual**: "Análisis Avanzado del Libro Mayor"
+- **Guías PDF**: Procedimientos de auditoría con libro mayor
+- **Videos Tutoriales**: Casos de uso específicos por industria
+- **Plantillas Excel**: Análisis comparativos y tendencias
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Libro Mayor es esencial para:
+
+- **Análisis por Cuenta**: Seguimiento detallado del comportamiento de cada cuenta
+- **Control de Gestión**: Monitoreo de la actividad contable por categorías
+- **Auditoría Interna**: Revisión sistemática de transacciones
+- **Cumplimiento**: Documentación completa según normativas contables
+
+<Tip>
+  **Uso Estratégico**: El libro mayor es la herramienta principal para entender
+  el "por qué" detrás de cada saldo contable. Use el detalle de movimientos para
+  investigar y validar cada cifra de sus balances.
+</Tip>

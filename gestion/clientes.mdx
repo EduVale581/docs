@@ -1,99 +1,444 @@
 ---
 title: "Clientes"
-description: "Gestión integral de clientes"
+description: "Sistema completo de gestión de clientes que centraliza información comercial, crediticia y transaccional para optimizar relaciones comerciales y procesos de ventas."
 ---
 
-# Clientes
+## 🏠 Vista Principal de Clientes
 
-Gestiona toda la información y relaciones comerciales con tus clientes.
+### Acceso al Sistema
 
-## ¿Qué es un cliente?
+- **Ruta**: Dashboard → Clientes
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Usuario de Operaciones, Vendedor (según configuración)
 
-Un cliente es una persona natural o jurídica que adquiere bienes o servicios de tu empresa.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Lista maestra de clientes**: Tabla completa con información clave
+- **Filtros avanzados**: Búsqueda y segmentación inteligente
+- **Acciones rápidas**: Creación y edición eficiente
+
+## 👥 Gestión Integral de Clientes
 
 <CardGroup cols={2}>
-  <Card title="Registro de clientes" icon="user-plus">
-    Registra nuevos clientes en el sistema
+  <Card title="Información Básica" icon="user" color="#0066cc">
+    Datos de identificación y contacto completos
   </Card>
-  <Card title="Gestión de datos" icon="edit">
-    Mantén actualizada la información
+  <Card title="Información Comercial" icon="handshake" color="#28a745">
+    Condiciones de venta, límites y términos comerciales
   </Card>
-  <Card title="Historial de ventas" icon="history">
-    Consulta el historial completo
+  <Card title="Historial Transaccional" icon="chart-line" color="#17a2b8">
+    Registro completo de ventas y comportamiento de pago
   </Card>
-  <Card title="Reportes" icon="chart-line">
-    Genera reportes de clientes
+  <Card title="Análisis de Riesgo" icon="shield-alt" color="#dc3545">
+    Evaluación crediticia y scoring automático
   </Card>
 </CardGroup>
 
-## Información del cliente
+## 📋 Tabla Principal de Clientes
 
-### Datos básicos
+### 2.1 Información Básica del Cliente
 
-- **RUT**: Rol Único Tributario
-- **Razón social**: Nombre legal del cliente
-- **Nombre de fantasía**: Nombre comercial
+**Datos de identificación**:
+
+#### Identificación Tributaria
+
+- **RUT**: Rol Único Tributario con validación automática
+- **Razón Social**: Denominación legal completa
+- **Nombre de Fantasía**: Nombre comercial utilizado
+- **Tipo de Cliente**: Persona natural, empresa, gobierno, etc.
+
+#### Datos de Contacto
+
+- **Dirección**: Ubicación física principal
+- **Comuna**: División administrativa
+- **Región**: Territorio nacional
+- **Teléfono**: Número principal de contacto
+- **Email**: Correo electrónico para comunicaciones
+
+#### Información Comercial
+
 - **Giro**: Actividad económica principal
+- **Segmento**: Clasificación comercial (A, B, C, VIP, etc.)
+- **Ejecutivo**: Vendedor o ejecutivo asignado
+- **Estado**: Activo, inactivo, bloqueado, prospecto
 
-### Datos de contacto
+### 2.2 Estados y Clasificaciones
 
-- **Dirección de facturación**: Para envío de documentos
-- **Dirección de despacho**: Para entrega de productos
-- **Teléfonos**: Números de contacto
-- **Email**: Correo electrónico
-- **Contacto principal**: Persona de contacto
+**Sistema de categorización**:
 
-### Información comercial
+#### Estados Operativos
 
-- **Condiciones de pago**: Plazo y forma de pago
-- **Descuentos**: Descuentos especiales acordados
-- **Límite de crédito**: Monto máximo autorizado
-- **Lista de precios**: Precios especiales si corresponde
+- 🟢 **Activo**: Cliente habilitado para operaciones
+- 🟡 **Inactivo**: Temporalmente sin operaciones
+- 🔴 **Bloqueado**: Restringido por políticas internas
+- 🔵 **Prospecto**: Potencial cliente en evaluación
 
-## Tipos de clientes
+#### Clasificaciones Comerciales
 
-- **Cliente final**: Consumidor final del producto/servicio
-- **Cliente corporativo**: Empresas que compran para reventa
-- **Cliente mayorista**: Compra grandes volúmenes
-- **Cliente minorista**: Compra para venta al detalle
-
-## Estado del cliente
-
-- **Activo**: Cliente habilitado para ventas
-- **Inactivo**: Temporalmente suspendido
-- **Moroso**: Con pagos pendientes
-- **Bloqueado**: No disponible para nuevas ventas
-
-## Segmentación de clientes
-
-### Por volumen de compras
-
-- **VIP**: Clientes de alto volumen
-- **Premium**: Clientes importantes
+- **VIP**: Clientes de máxima prioridad
+- **Premium**: Clientes de alto valor
 - **Estándar**: Clientes regulares
-- **Ocasional**: Clientes esporádicos
+- **Básico**: Clientes de bajo volumen
+- **Estratégico**: Clientes clave por sector o región
 
-### Por ubicación geográfica
+#### Evaluación de Riesgo
 
-- **Local**: Misma ciudad
-- **Regional**: Misma región
-- **Nacional**: Otras regiones del país
-- **Internacional**: Clientes extranjeros
+- **AAA**: Riesgo mínimo, máximas facilidades
+- **AA**: Bajo riesgo, condiciones preferenciales
+- **A**: Riesgo normal, condiciones estándar
+- **B**: Riesgo moderado, condiciones restrictivas
+- **C**: Alto riesgo, solo contado o garantías
 
-## Análisis de clientes
+## 🔍 Búsqueda y Filtros Avanzados
 
-### Indicadores clave
+### 3.1 Opciones de Filtrado
 
-- **Volumen de ventas**: Total de compras
-- **Frecuencia**: Periodicidad de compras
-- **Margen**: Rentabilidad por cliente
-- **Antigüedad**: Tiempo como cliente
-- **Pagos**: Comportamiento de pago
+**Criterios disponibles**:
 
-## Próximos pasos
+#### Filtros Básicos
 
-- [Ventas](/contabilidad/ventas)
-- [Cobros y Pagos](/gestion/cobros-pagos)
-- [Boletas y Documentos](/contabilidad/boletas/index)
+- **Por RUT**: Búsqueda exacta por identificación
+- **Por nombre**: Coincidencia en razón social o fantasía
+- **Por ejecutivo**: Clientes asignados a vendedor específico
+- **Por estado**: Activos, inactivos, bloqueados
+
+#### Filtros Comerciales
+
+- **Por segmento**: Clasificación A, B, C, VIP
+- **Por zona geográfica**: Región, comuna, sector
+- **Por canal**: Presencial, online, distribuidor
+- **Por volumen de ventas**: Rangos de facturación anual
+
+#### Filtros Financieros
+
+- **Por días de pago**: Comportamiento histórico
+- **Por límite de crédito**: Rangos asignados
+- **Por morosidad**: Clientes con atrasos actuales
+- **Por scoring**: Evaluación de riesgo crediticio
+
+### 3.2 Búsqueda Inteligente
+
+**Funcionalidades avanzadas**:
+
+#### Autocompletado
+
+- **Búsqueda dinámica**: Resultados mientras se escribe
+- **Múltiples campos**: RUT, nombre, teléfono, email
+- **Coincidencias parciales**: Búsqueda flexible
+- **Historial**: Últimas búsquedas realizadas
+
+#### Búsqueda Fonética
+
+- **Similitud de nombres**: Encuentra variaciones de escritura
+- **Corrección automática**: Sugerencias de búsquedas similares
+- **Alias**: Búsqueda por nombres alternativos
+- **Referencias cruzadas**: Conexiones entre entidades relacionadas
+
+## ✏️ Edición y Gestión de Clientes
+
+### 4.1 Vista de Edición de Cliente
+
+**Formulario completo**:
+
+#### Sección 1: Información Básica
+
+- **RUT**: Campo protegido una vez creado
+- **Razón Social**: Denominación legal actualizable
+- **Nombre de Fantasía**: Nombre comercial
+- **Tipo de Persona**: Natural o jurídica
+- **Fecha de Registro**: Automática del sistema
+- **Estado**: Selector de estados disponibles
+
+#### Sección 2: Datos de Contacto
+
+- **Dirección Principal**: Ubicación física
+- **Dirección de Facturación**: Si difiere de la principal
+- **Dirección de Despacho**: Para entregas específicas
+- **Teléfono Principal**: Contacto preferencial
+- **Teléfono Secundario**: Contacto alternativo
+- **Email Principal**: Comunicaciones oficiales
+- **Email Facturación**: Para envío de documentos tributarios
+
+#### Sección 3: Información Comercial
+
+- **Giro o Actividad**: Descripción de negocio
+- **Segmento Comercial**: Clasificación interna
+- **Ejecutivo Asignado**: Vendedor responsable
+- **Canal de Venta**: Presencial, online, distribuidor
+- **Origen del Cliente**: Referido, marketing, web, etc.
+- **Observaciones**: Notas importantes para ventas
+
+### 4.2 Configuración Financiera
+
+**Parámetros crediticios**:
+
+#### Límites de Crédito
+
+- **Límite Autorizado**: Monto máximo de crédito
+- **Límite Disponible**: Crédito actual disponible
+- **Utilización**: Porcentaje usado del límite
+- **Fecha de Revisión**: Próxima evaluación de límite
+
+#### Condiciones de Pago
+
+- **Plazo de Pago**: Días para cancelar facturas
+- **Tipo de Pago**: Contado, crédito, mixto
+- **Descuentos**: Porcentajes por pronto pago
+- **Recargos**: Penalizaciones por atraso
+
+#### Garantías y Respaldos
+
+- **Tipo de Garantía**: Pagarés, avales, seguros
+- **Monto Garantizado**: Valor de respaldos
+- **Vigencia**: Fecha de vencimiento de garantías
+- **Observaciones**: Detalles específicos
+
+### 4.3 Información Adicional
+
+**Campos especializados**:
+
+#### Datos Tributarios
+
+- **Actividad Económica**: Código CIIU principal
+- **Régimen Tributario**: Primera categoría, 14 ter, etc.
+- **Retenciones**: Si aplica retención de impuestos
+- **Exenciones**: IVA exento u otras exenciones
+
+#### Preferencias Comerciales
+
+- **Lista de Precios**: Asignación de tarifario específico
+- **Descuentos Especiales**: Porcentajes preferenciales
+- **Condiciones Especiales**: Términos únicos acordados
+- **Restricciones**: Limitaciones en productos o servicios
+
+## 📊 Historial y Analytics del Cliente
+
+### 5.1 Historial Transaccional
+
+**Registro completo de operaciones**:
+
+#### Ventas Realizadas
+
+- **Facturas**: Lista cronológica de documentos emitidos
+- **Montos**: Valor de cada transacción
+- **Productos/Servicios**: Detalle de items vendidos
+- **Fechas**: Emisión, vencimiento, pago
+- **Estado**: Pagado, pendiente, vencido
+
+#### Evolución Temporal
+
+- **Ventas mensuales**: Gráfico de evolución
+- **Estacionalidad**: Patrones de compra por período
+- **Tendencias**: Crecimiento o decrecimiento
+- **Comparativos**: Versus períodos anteriores
+
+### 5.2 Comportamiento de Pago
+
+**Análisis crediticio**:
+
+#### Métricas de Pago
+
+- **DSO Promedio**: Días promedio de pago del cliente
+- **Puntualidad**: Porcentaje de pagos a tiempo
+- **Atrasos Promedio**: Días de demora cuando paga tarde
+- **Récord Histórico**: Máximo atraso registrado
+
+#### Scoring Crediticio
+
+- **Puntaje Actual**: Evaluación automática 1-100
+- **Factores**: Componentes que afectan el scoring
+- **Evolución**: Tendencia del puntaje en el tiempo
+- **Benchmark**: Comparación con promedio de segmento
+
+### 5.3 Análisis de Rentabilidad
+
+**Evaluación comercial**:
+
+#### Rentabilidad por Cliente
+
+- **Margen Bruto**: Utilidad promedio por venta
+- **Volumen Anual**: Facturación total del período
+- **Costo de Servicio**: Recursos dedicados al cliente
+- **Rentabilidad Neta**: Utilidad después de costos
+
+#### Valor del Cliente (CLV)
+
+- **Valor Histórico**: Contribución acumulada
+- **Valor Proyectado**: Estimación futura basada en tendencias
+- **Frecuencia**: Regularidad de compras
+- **Retención**: Probabilidad de mantener al cliente
+
+## 🔔 Alertas y Notificaciones
+
+### 6.1 Alertas Comerciales
+
+**Notificaciones automáticas**:
+
+#### Oportunidades
+
+- 💡 **Cliente sin compras**: Inactividad por X días
+- 💡 **Incremento de compras**: Oportunidad de up-selling
+- 💡 **Nuevo segmento**: Cliente califica para mejor categoría
+- 💡 **Cross-selling**: Productos complementarios sugeridos
+
+#### Riesgos Comerciales
+
+- ⚠️ **Deterioro de relación**: Disminución en frecuencia o monto
+- ⚠️ **Competencia**: Señales de pérdida de participación
+- ⚠️ **Insatisfacción**: Indicadores de problemas de servicio
+- ⚠️ **Cambios en el cliente**: Modificaciones en estructura o contactos
+
+### 6.2 Alertas Financieras
+
+**Monitoreo de riesgo**:
+
+#### Alertas de Crédito
+
+- 🚨 **Límite excedido**: Sobregiro del crédito autorizado
+- 🚨 **Morosidad**: Facturas vencidas sin pago
+- 🚨 **Deterioro crediticio**: Empeoramiento del scoring
+- 🚨 **Garantías vencidas**: Respaldos próximos a expirar
+
+#### Alertas Preventivas
+
+- ⚠️ **Utilización alta**: Uso del 80%+ del límite de crédito
+- ⚠️ **Patrón de atraso**: Tendencia hacia pagos tardíos
+- ⚠️ **Concentración**: Cliente representa >X% de ventas
+- ⚠️ **Estacionalidad**: Períodos críticos para el cliente
+
+## 📈 Reportes y Análisis de Clientes
+
+### 7.1 Reportes Operativos
+
+**Informes de gestión**:
+
+#### Reporte de Cartera de Clientes
+
+- **Segmentación**: Distribución por categorías
+- **Concentración**: Análisis de dependencia de grandes clientes
+- **Actividad**: Clientes activos vs. total
+- **Nuevos vs. Perdidos**: Balance de captación y retención
+
+#### Análisis de Ventas por Cliente
+
+- **Top 10**: Clientes de mayor facturación
+- **Crecimiento**: Clientes con mayor incremento
+- **Decrecimiento**: Clientes con mayor reducción
+- **Potencial**: Clientes con oportunidades identificadas
+
+### 7.2 Reportes Financieros
+
+**Análisis crediticio y de cobros**:
+
+#### Reporte de Riesgo Crediticio
+
+- **Distribución por scoring**: Clientes por categoría de riesgo
+- **Límites asignados**: Exposición total autorizada
+- **Utilización**: Uso efectivo de líneas de crédito
+- **Provisiones**: Estimación de pérdidas esperadas
+
+#### Análisis de Cobranza
+
+- **DSO por cliente**: Días de cobranza individual
+- **Aging**: Antigüedad de cuentas por cobrar
+- **Efectividad**: Tasa de recuperación por segmento
+- **Tendencias**: Evolución del comportamiento de pago
+
+### 7.3 Análisis Predictivo
+
+**Intelligence comercial**:
+
+#### Churn Analysis
+
+- **Probabilidad de abandono**: Score de riesgo de pérdida
+- **Factores de riesgo**: Variables que predicen abandono
+- **Acciones preventivas**: Recomendaciones para retención
+- **Segmentos vulnerables**: Grupos con mayor riesgo
+
+#### Cross-selling y Up-selling
+
+- **Productos recomendados**: Basado en perfil y comportamiento
+- **Momento óptimo**: Timing para ofertas comerciales
+- **Probabilidad de éxito**: Score de propensión a comprar
+- **Valor potencial**: Incremento esperado en ventas
+
+## 🔧 Configuración y Personalización
+
+### 8.1 Campos Personalizables
+
+**Adaptación a necesidades específicas**:
+
+#### Campos Adicionales
+
+- **Información sectorial**: Campos específicos por industria
+- **Datos normativos**: Requisitos regulatorios especiales
+- **Preferencias**: Configuraciones específicas del cliente
+- **Métricas custom**: KPIs específicos del negocio
+
+#### Validaciones Personalizadas
+
+- **Reglas de negocio**: Validaciones específicas por campo
+- **Formatos requeridos**: Máscaras para teléfonos, códigos, etc.
+- **Dependencias**: Campos que se habilitan según otros valores
+- **Cálculos automáticos**: Fórmulas para campos derivados
+
+### 8.2 Integración con Otros Módulos
+
+**Conexiones automáticas**:
+
+#### Módulo de Ventas
+
+- **Cotizaciones**: Información del cliente en propuestas
+- **Facturas**: Datos automáticos en documentos tributarios
+- **Órdenes**: Pre-llenado de información comercial
+- **Historial**: Acceso completo desde documentos de venta
+
+#### Módulo Financiero
+
+- **Cobranzas**: Integración con gestión de cuentas por cobrar
+- **Límites**: Control automático en nuevas ventas
+- **Reporting**: Inclusión en reportes financieros
+- **Provisiones**: Cálculo automático de incobrables
+
+## 💡 Mejores Prácticas de Gestión
+
+### 9.1 Segmentación Efectiva
+
+**Estrategias de clasificación**:
+
+1. **Por valor**: Segmentación ABC por facturación anual
+2. **Por potencial**: Clasificación por crecimiento esperado
+3. **Por riesgo**: Agrupación por perfil crediticio
+4. **Por necesidades**: Segmentación por tipo de productos/servicios
+5. **Por canal**: Clasificación por método de venta preferido
+
+### 9.2 Mantenimiento de Información
+
+**Procesos recomendados**:
+
+- **Actualización regular**: Revisión trimestral de datos básicos
+- **Validación de contactos**: Verificación anual de información
+- **Limpieza de base**: Eliminación de duplicados y obsoletos
+- **Enriquecimiento**: Incorporación de nueva información relevante
+
+<Tip>
+  **Estrategia de datos**: Mantén la base de clientes actualizada asignando
+  responsables específicos y estableciendo rutinas regulares de verificación y
+  actualización de información crítica.
+</Tip>
+
+### 9.3 Aprovechamiento de Analytics
+
+**Uso inteligente de datos**:
+
+- **Scoring predictivo**: Utiliza el historial para predecir comportamiento futuro
+- **Personalización**: Adapta ofertas y comunicaciones según perfil del cliente
+- **Prevención de churn**: Identifica y actúa sobre señales tempranas de abandono
+- **Optimización de recursos**: Asigna esfuerzo comercial según potencial
+
+<Warning>
+  **Protección de datos**: Cumple con normativas de protección de datos
+  personales y mantén la información confidencial segura. Implementa controles
+  de acceso apropiados según rol del usuario.
+</Warning>

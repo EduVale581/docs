@@ -1,128 +1,396 @@
 ---
-title: "Centros de Costos"
-description: "Gestión de centros de costos para análisis detallado"
+title: "Centros de Costo"
+description: "Sistema avanzado de gestión de centros de costo con configuración por tipos, ubicaciones geográficas y análisis detallado para control de gestión empresarial."
 ---
 
-# Centros de Costos
+## 🏠 Vista Principal de Centros de Costo
 
-Organiza y controla los costos de tu empresa mediante centros de costos específicos.
+### Acceso al Sistema
 
-## ¿Qué son los centros de costos?
+- **Ruta**: Dashboard → Centros de Costo
+- **Permisos requeridos**: Administrador, Contador General, Jefe Contable, Usuario de Operaciones
 
-Los centros de costos son unidades organizacionales que permiten agrupar y controlar los gastos por área, proyecto o actividad específica.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Lista Completa**: Tabla con todos los centros de costo configurados
+- **Botón de Creación**: Acceso directo para crear nuevos centros de costo
+- **Información Detallada**: Vista completa de datos geográficos y organizacionales
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Crear centros" icon="plus-circle">
-    Define nuevos centros de costos
+  <Card title="Tipología Flexible" icon="sitemap" color="#0066cc">
+    Clasificación por tipos de centro de costo según estructura organizacional
   </Card>
-  <Card title="Asignar costos" icon="arrow-right">
-    Asigna gastos a centros específicos
+  <Card title="Geolocalización" icon="map-pin" color="#17a2b8">
+    Registro completo de ubicación geográfica con direcciones y coordenadas
   </Card>
-  <Card title="Reportes" icon="chart-pie">
-    Analiza costos por centro
+  <Card title="Control Tributario" icon="file-text" color="#28a745">
+    Gestión de ROL de avalúo y información catastral
   </Card>
-  <Card title="Presupuestos" icon="calculator">
-    Controla presupuestos por centro
+  <Card title="Gestión Integral" icon="building" color="#6c757d">
+    Administración completa desde creación hasta análisis de costos
   </Card>
 </CardGroup>
 
-## Tipos de centros de costos
+### 2.1 Información de Centros de Costo
 
-### Por área funcional
+**Datos gestionados por cada centro**:
 
-- **Administración**: Gastos administrativos generales
-- **Ventas**: Gastos del área comercial
-- **Producción**: Costos de manufactura
-- **Marketing**: Gastos de marketing y publicidad
-- **RRHH**: Gastos de recursos humanos
+| Campo                    | Descripción                  | Uso                                    |
+| ------------------------ | ---------------------------- | -------------------------------------- |
+| **Tipo Centro de Costo** | Clasificación organizacional | Departamento, Sucursal, Proyecto, etc. |
+| **Código**               | Identificador único interno  | Codificación para reportes y análisis  |
+| **Nombre**               | Denominación descriptiva     | Identificación clara del centro        |
+| **Dirección**            | Ubicación física completa    | Geolocalización y correspondencia      |
+| **ROL**                  | Número de rol de avalúo      | Identificación tributaria del inmueble |
+| **Comuna**               | Comuna de ubicación          | Jurisdicción administrativa            |
+| **Teléfono**             | Contacto directo             | Comunicación con el centro             |
 
-### Por proyecto
+### 2.2 Tipos de Centros de Costo
 
-- **Proyecto A**: Costos específicos del proyecto
-- **Proyecto B**: Gastos independientes
-- **Investigación**: Costos de I+D
-- **Expansión**: Gastos de crecimiento
+**Clasificaciones organizacionales**:
 
-### Por ubicación geográfica
+<Tabs>
+  <Tab title="Por Estructura Organizacional">
+    - **Departamentos**: Áreas funcionales (Ventas, RRHH, Finanzas) -
+    **Divisiones**: Unidades de negocio independientes - **Gerencias**: Centros
+    de responsabilidad gerencial - **Áreas de Soporte**: Servicios compartidos y
+    apoyo
+  </Tab>
+  <Tab title="Por Ubicación Geográfica">
+    - **Sucursales**: Oficinas en diferentes ciudades - **Plantas**: Centros de
+    producción o manufactura - **Bodegas**: Centros de almacenamiento y
+    distribución - **Oficinas Regionales**: Representaciones territoriales
+  </Tab>
+  <Tab title="Por Tipo de Proyecto">
+    - **Proyectos Temporales**: Iniciativas con duración específica -
+    **Contratos Específicos**: Trabajos para clientes particulares -
+    **Inversiones**: Proyectos de expansión o mejora - **I+D**: Centros de
+    investigación y desarrollo
+  </Tab>
+</Tabs>
 
-- **Sucursal Santiago**: Costos de la sucursal
-- **Sucursal Valparaíso**: Gastos regionales
-- **Oficina central**: Costos corporativos
+## 📍 Gestión Geográfica Avanzada
 
-## Configuración de centros
+### 3.1 Información de Ubicación
 
-### Información básica
+**Datos geográficos completos**:
 
-- **Código**: Identificador único
-- **Nombre**: Descripción del centro
-- **Descripción**: Detalle de la función
-- **Responsable**: Encargado del centro
-- **Estado**: Activo/Inactivo
+<Steps>
+  <Step title="Dirección Completa">
+    Calle, número, departamento, piso y referencias de ubicación
+  </Step>
+  <Step title="Comuna y Región">
+    Jurisdicción administrativa para efectos tributarios y legales
+  </Step>
+  <Step title="ROL de Avalúo">
+    Número de identificación tributaria del inmueble según SII
+  </Step>
+  <Step title="Información de Contacto">
+    Teléfonos, emails y responsables de cada ubicación
+  </Step>
+</Steps>
 
-### Jerarquía
+### 3.2 Integración Tributaria
 
-- **Centro padre**: Centro superior
-- **Centros hijos**: Subcentros dependientes
-- **Nivel**: Posición en la jerarquía
+**Gestión del ROL de avalúo**:
 
-## Asignación de costos
+<Info>
+  **ROL de Avalúo**: Número único asignado por el SII a cada propiedad inmueble,
+  fundamental para declaraciones de bienes raíces y cálculo de contribuciones.
+</Info>
 
-### Gastos directos
+**Usos del ROL en el sistema**:
 
-Costos que se pueden asignar directamente:
+- **Declaraciones de Renta**: Inclusión automática en F22
+- **Contribuciones**: Cálculo y seguimiento de pagos
+- **Avalúo Fiscal**: Registro del valor fiscal del inmueble
+- **Depreciación**: Cálculo de depreciación de bienes raíces
 
-- Sueldos por área
-- Gastos específicos del centro
-- Materiales utilizados
-- Servicios exclusivos
+### 3.3 Mapeo Organizacional
 
-### Gastos indirectos
+**Estructura jerárquica**:
 
-Costos que requieren distribución:
+```
+┌─────────────────────────────────────────┐
+│ ESTRUCTURA DE CENTROS DE COSTO          │
+├─────────────────────────────────────────┤
+│ Empresa Principal                       │
+│ ├── División Norte                      │
+│ │   ├── Sucursal Antofagasta           │
+│ │   └── Sucursal Iquique               │
+│ ├── División Centro                     │
+│ │   ├── Casa Matriz Santiago           │
+│ │   └── Planta Producción Melipilla    │
+│ └── División Sur                        │
+│     ├── Sucursal Concepción            │
+│     └── Oficina Puerto Montt           │
+└─────────────────────────────────────────┘
+```
 
-- Arriendos (por superficie)
-- Servicios básicos (por consumo estimado)
-- Depreciación (por uso de activos)
-- Gastos generales (por criterio definido)
+## 💼 Casos de Uso Empresariales
 
-## Criterios de distribución
+### 4.1 Análisis de Rentabilidad por Centro
 
-### Por personal
+**Para control de gestión**:
 
-- **Número de empleados**: Distribución proporcional
-- **Masa salarial**: Según remuneraciones
-- **Horas trabajadas**: Por dedicación
+<CardGroup cols={3}>
+  <Card title="Análisis por Sucursal" icon="store">
+    - Ingresos generados por ubicación - Costos operacionales específicos -
+    Rentabilidad neta por sucursal
+  </Card>
+  <Card title="Control de Proyectos" icon="tasks">
+    - Seguimiento de costos por proyecto - Análisis de presupuesto vs real -
+    Rentabilidad por contrato o cliente
+  </Card>
+  <Card title="Eficiencia Departamental" icon="users">
+    - Costos por área funcional - Productividad por departamento - Optimización
+    de recursos internos
+  </Card>
+</CardGroup>
 
-### Por superficie
+### 4.2 Reporting Gerencial
 
-- **Metros cuadrados**: Para arriendos y mantención
-- **Áreas específicas**: Según uso de espacios
+**Para toma de decisiones ejecutivas**:
 
-### Por ingresos
+- **Dashboard por Centro**: KPIs específicos de cada centro de costo
+- **Comparación Inter-Centros**: Benchmarking interno de performance
+- **Análisis Temporal**: Evolución de costos y rentabilidad en el tiempo
+- **Alertas Automáticas**: Notificaciones de desviaciones presupuestarias
 
-- **Ventas**: Proporcional a ingresos generados
-- **Facturación**: Por centro que genera ingresos
+### 4.3 Cumplimiento Tributario
 
-## Reportes de centros de costos
+**Para obligaciones fiscales**:
 
-### Informes disponibles
+- **Declaración de Bienes Raíces**: Automatización con datos de ROL
+- **Contribuciones**: Cálculo automático por propiedad
+- **Depreciación de Inmuebles**: Registro sistemático de depreciaciones
+- **Auditoría**: Trazabilidad completa de asignación de costos
 
-- **Costos por centro**: Resumen de gastos
-- **Comparativo**: Entre períodos y centros
-- **Presupuesto vs real**: Control presupuestario
-- **Rentabilidad**: Análisis de rentabilidad
+## 🔧 Proceso de Creación de Centros de Costo
 
-### Análisis financiero
+### 5.1 Formulario de Nuevo Centro
 
-- **Eficiencia**: Costo por unidad producida
-- **Productividad**: Indicadores de desempeño
-- **Variaciones**: Análisis de desviaciones
-- **Tendencias**: Evolución en el tiempo
+**Campos del formulario de creación**:
 
-## Próximos pasos
+<Steps>
+  <Step title="Tipo de Centro">
+    Selección del tipo según clasificación organizacional
+  </Step>
+  <Step title="Identificación">
+    Código único y nombre descriptivo del centro
+  </Step>
+  <Step title="Ubicación">Dirección completa, comuna y región</Step>
+  <Step title="Información Tributaria">
+    ROL de avalúo y datos catastrales si aplica
+  </Step>
+  <Step title="Contacto">Teléfono y responsable del centro de costo</Step>
+</Steps>
 
-- [Plan de Cuentas](/empresa/plan-cuentas)
-- [Asientos Contables](/contabilidad/asientos-contables)
-- [Estado de Resultados](/contabilidad/informes/estado-resultados)
+### 5.2 Validaciones Automáticas
+
+**El sistema valida**:
+
+- **Unicidad de Código**: No duplicación de códigos de centro
+- **Formato de ROL**: Validación de formato de rol de avalúo
+- **Coherencia Geográfica**: Verificación de comuna vs región
+- **Completitud**: Todos los campos obligatorios completos
+
+### 5.3 Configuración Avanzada
+
+**Opciones adicionales**:
+
+- **Centros Padre/Hijo**: Jerarquías de centros de costo
+- **Distribución Automática**: Reglas de asignación de costos
+- **Presupuesto**: Configuración de metas por centro
+- **Reportes Personalizados**: Templates específicos por tipo
+
+## 📊 Análisis y Reportes
+
+### 6.1 Reportes Estándar
+
+**Informes automáticos disponibles**:
+
+<Tabs>
+  <Tab title="Reporte de Costos">
+    - Costos totales por centro de costo - Desglose por tipo de gasto -
+    Comparación presupuesto vs real - Análisis de variaciones
+  </Tab>
+  <Tab title="Reporte Geográfico">
+    - Distribución de centros por región - Análisis de costos por ubicación -
+    Densidad de operaciones territoriales - Eficiencia por zona geográfica
+  </Tab>
+  <Tab title="Reporte de Rentabilidad">
+    - Ingresos vs costos por centro - Margen de contribución - ROI por centro de
+    costo - Centros más/menos rentables
+  </Tab>
+</Tabs>
+
+### 6.2 Análisis Comparativo
+
+**Métricas de comparación**:
+
+- **Costo por m² de Oficina**: Eficiencia de espacios físicos
+- **Costo por Empleado**: Productividad del personal por centro
+- **Ingresos por Centro**: Generación de valor por ubicación
+- **Rotación de Activos**: Utilización de recursos por centro
+
+### 6.3 Indicadores Clave (KPIs)
+
+**KPIs automáticos por centro**:
+
+```
+┌─────────────────────────────────────────┐
+│ KPIs CENTRO DE COSTO                    │
+├─────────────────────────────────────────┤
+│ Costo Total Mensual:    $XXX.XXX       │
+│ Costo por Empleado:     $XX.XXX        │
+│ % del Costo Total:      XX.X%          │
+│ Variación vs Mes Ant:   ±XX.X%         │
+│ Presupuesto Utilizado:  XX.X%          │
+│ ROI del Centro:         XX.X%          │
+└─────────────────────────────────────────┘
+```
+
+## 🚨 Mejores Prácticas
+
+### 7.1 Estructura de Codificación
+
+**Convenciones recomendadas**:
+
+<Steps>
+  <Step title="Códigos Jerárquicos">
+    Usar estructura numérica que refleje jerarquía organizacional
+  </Step>
+  <Step title="Prefijos por Tipo">
+    Diferentes prefijos para departamentos, sucursales, proyectos
+  </Step>
+  <Step title="Sufijos Geográficos">
+    Incluir código de ciudad o región en el identificador
+  </Step>
+  <Step title="Códigos Temporales">
+    Sistema especial para proyectos con fecha de término
+  </Step>
+</Steps>
+
+### 7.2 Gestión del Ciclo de Vida
+
+**Administración temporal de centros**:
+
+- **Creación**: Procedimiento estándar de configuración inicial
+- **Activación**: Inicio formal de asignación de costos
+- **Monitoreo**: Seguimiento continuo de performance
+- **Desactivación**: Proceso controlado de cierre temporal
+- **Eliminación**: Procedimiento de eliminación definitiva con respaldos
+
+### 7.3 Control de Calidad de Datos
+
+<Warning>
+  **Calidad de Información**: La precisión de los análisis de centros de costo
+  depende directamente de la calidad de los datos ingresados. Revise
+  regularmente la información para mantener su utilidad gerencial.
+</Warning>
+
+**Checklist de calidad**:
+
+- ✅ Códigos únicos y consistentes
+- ✅ Direcciones completas y actualizadas
+- ✅ ROL de avalúo verificado con SII
+- ✅ Responsables actualizados
+- ✅ Jerarquías organizacionales correctas
+
+## 🔧 Solución de Problemas
+
+### Problema: No se puede crear nuevo centro de costo
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Validaciones de Formulario">
+- ✅ Verificar que el código no esté duplicado
+- ✅ Confirmar que todos los campos obligatorios estén completos
+- ✅ Validar formato del ROL de avalúo si se proporciona
+- ✅ Verificar que el tipo de centro esté seleccionado
+</Accordion>
+
+<Accordion title="Problemas de Permisos">
+- 🔧 Confirmar que el usuario tenga permisos de creación
+- 🔧 Verificar que no hay restricciones por rol organizacional
+- 🔧 Validar acceso a la empresa correcta
+- 📞 Contactar administrador si persisten problemas de acceso
+</Accordion>
+</AccordionGroup>
+
+### Problema: Información geográfica incorrecta
+
+**Pasos de corrección**:
+
+1. **Verificar Direcciones**: Confirmar direcciones con fuentes oficiales
+2. **Validar ROL**: Verificar ROL de avalúo en sitio web del SII
+3. **Actualizar Comuna**: Confirmar jurisdicción administrativa actual
+4. **Corregir Datos**: Usar función de edición para actualizar información
+
+### Problema: Centros no aparecen en reportes
+
+**Solución de visibilidad**:
+
+<Steps>
+  <Step title="Verificar Estado">
+    Confirmar que los centros estén activos y configurados
+  </Step>
+  <Step title="Revisar Filtros">
+    Verificar que filtros de reporte incluyan los centros requeridos
+  </Step>
+  <Step title="Validar Asignaciones">
+    Confirmar que haya transacciones asignadas a los centros
+  </Step>
+  <Step title="Refrescar Sistema">Actualizar caché y regenerar reportes</Step>
+</Steps>
+
+## 📞 Soporte Especializado en Centros de Costo
+
+### Contacto de Control de Gestión
+
+<Card title="Equipo de Centros de Costo" icon="building">
+  - **Email Especializado**: centroscosto@contago.cl - **Teléfono Directo**: +56
+  2 1234 5687 - **Horario**: Lunes a Viernes, 9:00 - 18:00 - **Especialidad**:
+  Centros de costo, control de gestión, análisis de rentabilidad
+</Card>
+
+### Recursos de Capacitación
+
+- **Curso Avanzado**: "Diseño e Implementación de Centros de Costo Efectivos"
+- **Webinar Trimestral**: "Análisis de Rentabilidad por Centros de Costo"
+- **Plantillas**: Estructuras de codificación por industria
+- **Casos de Estudio**: Implementaciones exitosas por sector
+
+### Red de Consultores
+
+- **Especialistas en Control de Gestión**: Consultores en análisis de costos
+- **Expertos en Estructura Organizacional**: Diseñadores de jerarquías empresariales
+- **Analistas de Rentabilidad**: Especialistas en ROI por centro
+- **Consultores Tributarios**: Expertos en aspectos fiscales de bienes raíces
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Centros de Costo es fundamental para:
+
+- **Control de Gestión Avanzado**: Análisis detallado de rentabilidad por área
+- **Toma de Decisiones Estratégicas**: Base sólida para decisiones de inversión y cierre
+- **Compliance Tributario**: Gestión automatizada de bienes raíces y contribuciones
+- **Optimización Operacional**: Identificación de oportunidades de eficiencia
+
+<Tip>
+  **Diseño Estratégico**: La estructura de centros de costo debe reflejar cómo
+  la empresa toma decisiones y asigna responsabilidades. Una buena configuración
+  inicial facilita años de análisis gerencial efectivo.
+</Tip>
+
+<Info>
+  **Evolución Organizacional**: El sistema permite modificar y reorganizar
+  centros de costo según evolucione la estructura empresarial, manteniendo
+  siempre la trazabilidad histórica para análisis comparativos.
+</Info>

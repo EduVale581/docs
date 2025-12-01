@@ -1,71 +1,518 @@
 ---
-title: "Activo Fijo"
-description: "Gestión y control de activos fijos de la empresa"
+title: "Activos Fijos"
+description: "Sistema avanzado de gestión de activos fijos que automatiza depreciaciones, revaluaciones y disposiciones bajo normas IFRS con control contable integral."
 ---
 
-# Activo Fijo
+## 🏠 Vista Principal de Activos Fijos
 
-Gestiona y controla todos los activos fijos de tu empresa de manera eficiente.
+### Acceso al Sistema
 
-## ¿Qué son los activos fijos?
+- **Ruta**: Dashboard → Activos Fijos
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Auditor
 
-Los activos fijos son bienes tangibles de uso duradero que la empresa utiliza en sus operaciones y no están destinados para la venta.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Registro maestro**: Lista completa de activos con información consolidada
+- **Gestión individual**: Creación, edición y consulta detallada por activo
+- **Procesos masivos**: Depreciación, revaluación y disposición en lotes
+
+## 🏢 Gestión Integral de Activos Fijos
 
 <CardGroup cols={2}>
-  <Card title="Registro de activos" icon="plus">
-    Registra nuevos activos fijos
+  <Card title="Registro y Catalogación" icon="clipboard-list" color="#0066cc">
+    Control detallado de activos con clasificación IFRS
   </Card>
-  <Card title="Depreciaciones" icon="trending-down">
-    Calcula depreciaciones automáticamente
+  <Card title="Depreciación Automática" icon="calculator" color="#28a745">
+    Cálculos automáticos según métodos contables y tributarios
   </Card>
-  <Card title="Inventario" icon="clipboard-list">
-    Mantén un inventario actualizado
+  <Card title="Revaluaciones IFRS" icon="chart-line" color="#17a2b8">
+    Ajustes por valor razonable con impacto contable automático
   </Card>
-  <Card title="Reportes" icon="chart-bar">
-    Genera reportes de activos fijos
+  <Card title="Disposición de Activos" icon="exchange-alt" color="#dc3545">
+    Ventas, bajas y retiros con liquidación contable completa
   </Card>
 </CardGroup>
 
-## Tipos de activos fijos
+## 📋 Maestro de Activos Fijos
 
-- **Terrenos**: No se deprecian
-- **Edificios y construcciones**: Vida útil 20-50 años
-- **Maquinarias y equipos**: Vida útil 8-10 años
-- **Vehículos**: Vida útil 7 años
-- **Muebles y útiles**: Vida útil 7 años
-- **Equipos computacionales**: Vida útil 6 años
+### 2.1 Información Básica del Activo
 
-## Información requerida
+**Datos de identificación**:
 
-Para cada activo fijo necesitas:
+#### Identificación del Activo
 
-- **Descripción**: Detalle del bien
-- **Fecha de adquisición**: Cuándo se adquirió
-- **Valor de adquisición**: Costo histórico
-- **Vida útil**: Años de vida útil estimada
-- **Método de depreciación**: Lineal, acelerada, etc.
-- **Ubicación**: Dónde se encuentra el activo
+- **Código interno**: Identificador único del sistema
+- **Descripción**: Denominación completa del activo
+- **Marca/Modelo**: Especificaciones técnicas del bien
+- **Número de serie**: Identificación del fabricante
+- **Placa patrimonial**: Código de inventario físico
 
-## Depreciación
+#### Clasificación Contable
 
-La depreciación distribuye el costo del activo a lo largo de su vida útil:
+- **Categoría**: Terrenos, edificios, maquinaria, vehículos, etc.
+- **Subcategoría**: Clasificación detallada por tipo específico
+- **Cuenta contable**: Asignación en plan de cuentas
+- **Centro de costo**: Departamento o área responsable
+- **Ubicación física**: Donde se encuentra el activo
 
-### Método lineal
+#### Información Financiera
 
-```
-Depreciación anual = (Valor - Valor residual) / Vida útil
-```
+- **Costo histórico**: Valor de adquisición original
+- **Fecha de adquisición**: Cuándo se incorporó al patrimonio
+- **Valor residual**: Valor estimado al final de vida útil
+- **Vida útil**: Años estimados de uso productivo
+- **Método de depreciación**: Lineal, acelerada, unidades producidas
 
-### Información tributaria
+### 2.2 Estados y Clasificaciones
 
-- Considera las normas tributarias vigentes
-- Aplica tasas de depreciación permitidas
-- Mantiene registros para fines fiscales
+**Sistema de categorización**:
 
-## Próximos pasos
+#### Estados Operativos
 
-- [Plan de Cuentas](/empresa/plan-cuentas)
-- [Asientos Contables](/contabilidad/asientos-contables)
-- [Renta](/utilidades/renta)
+- 🟢 **Activo**: En uso productivo normal
+- 🟡 **Inactivo temporal**: Fuera de servicio temporalmente
+- 🔵 **En mantenimiento**: En proceso de reparación mayor
+- 🟠 **Obsoleto**: Tecnológicamente superado pero aún en uso
+- 🔴 **Dado de baja**: Retirado del patrimonio
+
+#### Clasificación IFRS
+
+- **Propiedades, planta y equipo**: Activos tangibles operacionales
+- **Propiedades de inversión**: Inmuebles para renta o plusvalía
+- **Activos intangibles**: Software, licencias, patentes
+- **Activos biológicos**: Para empresas agrícolas o forestales
+
+#### Clasificación Tributaria
+
+- **Primera categoría**: Depreciación normal
+- **Acelerada**: Depreciación tributaria acelerada
+- **Instantánea**: Gasto inmediato permitido
+- **No depreciable**: Terrenos y otros no depreciables
+
+### 2.3 Información Adicional
+
+**Datos complementarios**:
+
+#### Información del Proveedor
+
+- **Proveedor**: Empresa vendedora del activo
+- **Factura de compra**: Documento de adquisición
+- **Garantías**: Período y cobertura de garantías
+- **Contratos de mantenimiento**: Servicios contratados
+
+#### Seguros y Protecciones
+
+- **Póliza de seguros**: Cobertura contra siniestros
+- **Valor asegurado**: Monto de la cobertura
+- **Vigencia**: Período de protección
+- **Deducibles**: Montos no cubiertos por seguro
+
+## ➕ Creación de Nuevos Activos
+
+### 3.1 Vista de Adición de Activos
+
+**Formulario completo**:
+
+#### Sección 1: Datos Básicos
+
+- **Descripción detallada**: Nombre completo y características
+- **Código**: Generación automática o manual según configuración
+- **Categoría**: Selección de clasificación principal
+- **Marca y modelo**: Especificaciones del fabricante
+- **Número de serie**: Identificación única del bien
+
+#### Sección 2: Información Financiera
+
+- **Costo de adquisición**: Valor pagado incluye todos los conceptos
+- **Fecha de compra**: Fecha de adquisición legal
+- **Fecha de puesta en uso**: Inicio de operación productiva
+- **Moneda**: Pesos, dólares, UF, según transacción original
+- **Factura**: Referencia al documento de compra
+
+#### Sección 3: Configuración Contable
+
+- **Cuenta de activo**: Asignación en balance
+- **Cuenta de depreciación acumulada**: Para contrapartida
+- **Cuenta de gasto por depreciación**: Para resultados
+- **Centro de costo**: Asignación departamental
+- **Proyecto**: Si corresponde a proyecto específico
+
+#### Sección 4: Parámetros de Depreciación
+
+- **Método contable**: Lineal, acelerada, unidades de producción
+- **Vida útil contable**: Años para depreciación IFRS
+- **Método tributario**: Depreciación según SII
+- **Vida útil tributaria**: Años según normativa fiscal
+- **Valor residual**: Estimación de valor final
+
+### 3.2 Validaciones Automáticas
+
+**Controles del sistema**:
+
+#### Validaciones Básicas
+
+- **Código único**: No duplicación en el sistema
+- **Costo positivo**: Valor mayor a cero
+- **Fechas lógicas**: Puesta en uso posterior a adquisición
+- **Cuentas válidas**: Existencia en plan de cuentas
+- **Vida útil**: Coherente con tipo de activo
+
+#### Validaciones Avanzadas
+
+- **Consistencia IFRS**: Cumplimiento normativo contable
+- **Límites tributarios**: Respeto a topes legales SII
+- **Centro de costo**: Verificación de asignación válida
+- **Moneda funcional**: Conversión automática si es necesaria
+
+## ✏️ Edición y Gestión Individual
+
+### 4.1 Vista de Edición de Activos
+
+**Modificación controlada**:
+
+#### Campos Editables
+
+- ✏️ **Descripción**: Actualización de denominación
+- ✏️ **Ubicación**: Cambio de localización física
+- ✏️ **Centro de costo**: Reasignación departamental
+- ✏️ **Estado**: Modificación de situación operativa
+- ✏️ **Información complementaria**: Datos adicionales
+
+#### Campos Protegidos
+
+- 🔒 **Costo histórico**: No editable para preservar trazabilidad
+- 🔒 **Fecha de adquisición**: Inmutable una vez registrada
+- 🔒 **Depreciación acumulada**: Calculada automáticamente
+- 🔒 **Código**: Protegido para mantener integridad referencial
+
+#### Cambios que Requieren Proceso Especial
+
+- **Revaluación**: Mediante diálogo especializado
+- **Cambio de vida útil**: Con recálculo de depreciaciones
+- **Reclasificación**: Con ajustes contables correspondientes
+- **Baja del activo**: Proceso de disposición controlado
+
+### 4.2 Vista Individual Detallada
+
+**Información completa del activo**:
+
+#### Panel de Información General
+
+- **Resumen ejecutivo**: Datos principales del activo
+- **Historia**: Timeline de eventos importantes
+- **Documentos**: Facturas, contratos, certificados adjuntos
+- **Fotografías**: Registro visual del activo
+
+#### Panel Financiero
+
+- **Valor en libros**: Costo menos depreciación acumulada
+- **Depreciación del período**: Gasto del ejercicio actual
+- **Proyección**: Evolución futura de valores
+- **Comparativas**: Valor contable vs. tributario vs. comercial
+
+#### Panel de Mantenimiento
+
+- **Historial de mantenciones**: Registro de servicios realizados
+- **Próximas mantenciones**: Programación de servicios
+- **Costos acumulados**: Gastos de mantenimiento por período
+- **Proveedores**: Empresas de servicio técnico
+
+## 🔄 Procesos Especializados
+
+### 5.1 Diálogo de Depreciación
+
+**Cálculo automático de depreciaciones**:
+
+#### Depreciación Individual
+
+- **Método**: Selección entre opciones disponibles
+- **Período**: Desde fecha específica hasta fecha de corte
+- **Ajustes**: Modificaciones manuales justificadas
+- **Vista previa**: Simulación antes de contabilizar
+
+#### Depreciación Masiva
+
+- **Filtros**: Por categoría, centro de costo, rango de fechas
+- **Validaciones**: Verificación de parámetros correctos
+- **Procesamiento**: Cálculo automático en lote
+- **Reporte**: Resumen de depreciaciones calculadas
+
+#### Métodos de Depreciación Disponibles
+
+- **Lineal**: Cuota fija durante toda la vida útil
+- **Acelerada**: Mayor gasto en primeros años
+- **Unidades de producción**: Basado en uso real del activo
+- **Suma de dígitos**: Método decreciente por años
+
+### 5.2 Diálogo de Revaluación
+
+**Ajustes por valor razonable**:
+
+#### Información de Revaluación
+
+- **Fecha de tasación**: Cuándo se realizó la evaluación
+- **Tasador**: Profesional o empresa evaluadora
+- **Método de valuación**: Costo de reposición, mercado, etc.
+- **Valor razonable**: Nuevo valor determinado
+- **Justificación**: Motivo y respaldo de la revaluación
+
+#### Impacto Contable Automático
+
+- **Ajuste de valor**: Diferencia entre valor libro y razonable
+- **Depreciación acumulada**: Eliminación o ajuste proporcional
+- **Superávit de revaluación**: Registro en patrimonio
+- **Nueva depreciación**: Recálculo basado en nuevo valor
+
+#### Validaciones IFRS
+
+- **Periodicidad**: Verificación de frecuencia adecuada
+- **Documentación**: Respaldo suficiente de valuación
+- **Materialidad**: Significancia del ajuste
+- **Revelaciones**: Información para notas de EEFF
+
+### 5.3 Diálogo de Venta de Activos
+
+**Proceso integral de disposición**:
+
+#### Información de la Transacción
+
+- **Comprador**: Identificación del adquiriente
+- **Fecha de venta**: Cuándo se perfecciona la transacción
+- **Precio de venta**: Monto acordado de la transacción
+- **Forma de pago**: Contado, crédito, permuta
+- **Gastos asociados**: Comisiones, impuestos, otros costos
+
+#### Cálculo Automático de Resultados
+
+- **Valor libro**: Costo menos depreciación acumulada
+- **Resultado de la venta**: Utilidad o pérdida en la disposición
+- **Impacto tributario**: Diferencias temporales si aplican
+- **Asientos contables**: Generación automática de registros
+
+#### Documentación Requerida
+
+- **Contrato de compraventa**: Documento legal de la transacción
+- **Factura de venta**: Documento tributario emitido
+- **Liquidación de comisiones**: Gastos de intermediación
+- **Certificados**: Libre de gravámenes u otros
+
+### 5.4 Diálogo de Reversión
+
+**Anulación de procesos erróneos**:
+
+#### Tipos de Reversión Disponibles
+
+- **Reversión de depreciación**: Anular cálculos incorrectos
+- **Reversión de revaluación**: Deshacer ajustes por valor razonable
+- **Reversión de baja**: Reactivar activos dados de baja por error
+- **Reversión de transferencia**: Anular movimientos entre centros
+
+#### Validaciones de Reversión
+
+- **Período abierto**: Solo reversiones en ejercicios no cerrados
+- **Impacto contable**: Verificación de efectos en balances
+- **Autorizaciones**: Permisos especiales para reversiones
+- **Documentación**: Justificación del motivo de reversión
+
+#### Proceso de Reversión
+
+- **Identificación**: Selección del proceso a revertir
+- **Validación**: Verificación de viabilidad técnica
+- **Ejecución**: Anulación automática de registros
+- **Confirmación**: Registro de la operación de reversión
+
+## 📊 Reportes y Analytics
+
+### 6.1 Reportes Operativos
+
+**Informes de gestión de activos**:
+
+#### Reporte de Inventario de Activos
+
+- **Lista completa**: Todos los activos por categoría
+- **Valores**: Costo, depreciación acumulada, valor libro
+- **Estados**: Distribución por situación operativa
+- **Ubicaciones**: Inventario por centro de costo o ubicación
+
+#### Análisis de Depreciaciones
+
+- **Depreciación del período**: Gasto por mes y acumulado
+- **Proyecciones**: Depreciaciones futuras por año
+- **Comparativo**: Contable vs. tributario
+- **Vencimientos**: Activos próximos a depreciación total
+
+### 6.2 Reportes Financieros
+
+**Informes contables especializados**:
+
+#### Estado de Activos Fijos
+
+- **Movimientos del período**: Altas, bajas, transferencias
+- **Conciliación**: Saldo inicial + movimientos = saldo final
+- **Depreciación**: Acumulada por tipo de activo
+- **Revelaciones**: Información para notas de EEFF
+
+#### Análisis de Rentabilidad
+
+- **ROA por activo**: Retorno sobre activos individuales
+- **Utilización**: Grado de uso productivo
+- **Obsolescencia**: Identificación de activos subutilizados
+- **Renovación**: Necesidades de reemplazo de activos
+
+### 6.3 Reportes de Control
+
+**Auditoría y cumplimiento**:
+
+#### Reporte de Diferencias
+
+- **Contable vs. tributario**: Diferencias temporales
+- **Revaluaciones**: Impacto de ajustes por valor razonable
+- **Deterioro**: Evaluación de pérdidas por deterioro
+- **Reconciliación**: Cuadre con contabilidad general
+
+#### Control de Cumplimiento
+
+- **Políticas internas**: Adherencia a procedimientos
+- **Normativa IFRS**: Cumplimiento de estándares contables
+- **Regulaciones SII**: Conformidad con normas tributarias
+- **Auditoría**: Preparación para revisiones externas
+
+## 🔔 Alertas y Notificaciones
+
+### 7.1 Alertas de Gestión
+
+**Notificaciones automáticas**:
+
+#### Alertas de Mantenimiento
+
+- 🔧 **Mantenimiento vencido**: Servicios atrasados según programación
+- 🔧 **Próximos mantenimientos**: Servicios programados en próximos 30 días
+- 🔧 **Garantías por vencer**: Pérdida próxima de cobertura
+- 🔧 **Seguros vencidos**: Pólizas que requieren renovación
+
+#### Alertas Financieras
+
+- 💰 **Depreciación completa**: Activos totalmente depreciados
+- 💰 **Valores negativos**: Activos con problemas de valorización
+- 💰 **Revaluaciones pendientes**: Activos que requieren actualización
+- 💰 **Obsolescencia**: Activos candidatos para baja
+
+### 7.2 Alertas de Cumplimiento
+
+**Control normativo**:
+
+#### Alertas IFRS
+
+- 📋 **Deterioro requerido**: Activos que requieren test de deterioro
+- 📋 **Revaluaciones obligatorias**: Por política de valor razonable
+- 📋 **Revelaciones faltantes**: Información requerida en EEFF
+- 📋 **Inconsistencias**: Diferencias que requieren revisión
+
+#### Alertas Tributarias
+
+- 🏛️ **Límites SII**: Excesos en depreciaciones aceleradas
+- 🏛️ **Documentación**: Respaldos faltantes para fiscalización
+- 🏛️ **Cambios normativos**: Actualizaciones en regulación
+- 🏛️ **Declaraciones**: Información requerida en formularios
+
+## ⚙️ Configuración y Parametrización
+
+### 8.1 Configuración de Categorías
+
+**Personalización por tipo de negocio**:
+
+#### Categorías de Activos
+
+- **Definición**: Creación de clasificaciones específicas
+- **Cuentas contables**: Asignación automática por categoría
+- **Parámetros**: Vida útil y método de depreciación por defecto
+- **Validaciones**: Reglas específicas por tipo de activo
+
+#### Subcategorías Detalladas
+
+- **Especialización**: Divisiones dentro de cada categoría
+- **Atributos específicos**: Campos adicionales por subcategoría
+- **Reportes**: Agrupaciones para informes especializados
+- **Control**: Validaciones particulares por subcategoría
+
+### 8.2 Configuración de Depreciación
+
+**Métodos y parámetros**:
+
+#### Métodos Disponibles
+
+- **Lineal**: Configuración de vida útil estándar por categoría
+- **Acelerada**: Factores de aceleración permitidos
+- **Unidades**: Configuración para activos productivos
+- **Personalizado**: Métodos específicos para casos especiales
+
+#### Parámetros Tributarios
+
+- **Tablas SII**: Vidas útiles según normativa fiscal
+- **Límites**: Montos máximos para depreciación instantánea
+- **Excepciones**: Casos especiales autorizados
+- **Actualizaciones**: Incorporación de cambios normativos
+
+### 8.3 Integración Contable
+
+**Conexión con sistema contable**:
+
+#### Asientos Automáticos
+
+- **Depreciación**: Generación automática mensual
+- **Revaluaciones**: Asientos por ajustes de valor razonable
+- **Disposiciones**: Contabilización de ventas y bajas
+- **Transferencias**: Movimientos entre centros de costo
+
+#### Validaciones Contables
+
+- **Plan de cuentas**: Verificación de cuentas asignadas
+- **Centros de costo**: Validación de asignaciones
+- **Períodos**: Control de períodos abiertos/cerrados
+- **Balances**: Verificación de cuadre contable
+
+## 💡 Mejores Prácticas y Estrategias
+
+### 9.1 Gestión Eficiente de Activos
+
+**Estrategias recomendadas**:
+
+1. **Inventario regular**: Verificación física periódica de activos
+2. **Mantenimiento preventivo**: Programas que extiendan vida útil
+3. **Evaluación continua**: Revisión de obsolescencia y utilización
+4. **Documentación completa**: Respaldo de todas las transacciones
+5. **Capacitación**: Personal entrenado en normativas IFRS y tributarias
+
+### 9.2 Control de Cumplimiento
+
+**Adherencia normativa**:
+
+- **IFRS actualizadas**: Mantenerse al día con cambios normativos
+- **Políticas internas**: Definir y comunicar procedimientos claros
+- **Revisiones periódicas**: Auditorías internas regulares
+- **Documentación**: Mantener respaldos completos y organizados
+- **Capacitación continua**: Actualización en mejores prácticas
+
+<Tip>
+  **Estrategia de revaluación**: Si adoptas el modelo de revaluación, asegúrate
+  de aplicarlo consistentemente y con frecuencia suficiente para que los valores
+  libros no difieran materialmente del valor razonable.
+</Tip>
+
+### 9.3 Optimización Financiera
+
+**Maximización del valor de activos**:
+
+- **Análisis de ROI**: Evaluación regular del retorno de cada activo
+- **Planes de renovación**: Estrategia de reemplazo de activos obsoletos
+- **Optimización tributaria**: Aprovechamiento de beneficios fiscales
+- **Gestión de seguros**: Cobertura adecuada sin sobrecostos
+- **Disposal planning**: Estrategia para disposición de activos no productivos
+
+<Warning>
+  **Test de deterioro obligatorio**: Para activos con indicios de pérdida de
+  valor, es obligatorio realizar test de deterioro según IFRS. No omitas esta
+  evaluación para evitar sobrevaloración de activos.
+</Warning>

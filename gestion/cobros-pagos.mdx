@@ -1,109 +1,425 @@
 ---
-title: "Cobros y Pagos"
-description: "Gestión de cobros a clientes y pagos a proveedores"
+title: "Cobranzas y Pagos"
+description: "Sistema integral de gestión de cobranzas y pagos que automatiza el seguimiento de cuentas por cobrar y por pagar, optimizando el flujo de caja y las relaciones comerciales."
 ---
 
-# Cobros y Pagos
+## 🏠 Vista Principal de Cobranzas y Pagos
 
-Gestiona eficientemente los cobros a clientes y pagos a proveedores de tu empresa.
+### Acceso al Sistema
 
-## ¿Qué son cobros y pagos?
+- **Ruta**: Dashboard → Cobranzas y Pagos
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Usuario de Operaciones, Tesorero
 
-Los cobros y pagos son las transacciones de entrada y salida de dinero relacionadas con las operaciones comerciales.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Tabs principales**: Cobranzas y Pagos en pestañas separadas
+- **Dashboards especializados**: Métricas y KPIs por cada área
+- **Gestión centralizada**: Control unified de flujo de caja
+
+## 💰 Sistema de Cobranzas
 
 <CardGroup cols={2}>
-  <Card title="Cobros" icon="money-bill-wave">
-    Registra y gestiona cobros de clientes
+  <Card title="Cuentas por Cobrar" icon="file-invoice-dollar" color="#28a745">
+    Gestión completa de facturas pendientes de cobro
   </Card>
-  <Card title="Pagos" icon="credit-card">
-    Registra y gestiona pagos a proveedores
+  <Card title="Seguimiento de Cobranza" icon="chart-line" color="#17a2b8">
+    Herramientas avanzadas para tracking y gestión de morosidad
   </Card>
-  <Card title="Conciliación" icon="balance-scale">
-    Concilia documentos con pagos
+  <Card title="Automatización de Procesos" icon="robot" color="#6f42c1">
+    Recordatorios automáticos y escalamiento programado
   </Card>
-  <Card title="Reportes" icon="chart-mixed">
-    Genera reportes de flujo de caja
+  <Card title="Reportes de Gestión" icon="chart-pie" color="#fd7e14">
+    Analytics detallados de efectividad de cobranza
   </Card>
 </CardGroup>
 
-## Gestión de Cobros
+### 2.1 Tab de Cobranzas
 
-### Formas de cobro
+**Panel de cuentas por cobrar**:
 
-- **Efectivo**: Pago inmediato en efectivo
-- **Cheque**: Cheques al día y a fecha
-- **Transferencia**: Transferencias electrónicas
-- **Tarjetas**: Débito y crédito
-- **Otros**: Compensaciones, descuentos
+#### Dashboard de Métricas
 
-### Proceso de cobro
+- **Total por cobrar**: Monto pendiente consolidado
+- **Vencido**: Facturas con fecha de vencimiento superada
+- **Por vencer**: Documentos próximos a vencimiento (0-30 días)
+- **Morosidad promedio**: Días de atraso ponderado por monto
 
-1. **Identificar documento**: Factura o documento por cobrar
-2. **Registrar cobro**: Ingresa el pago recibido
-3. **Aplicar cobro**: Vincula pago con documento
-4. **Generar recibo**: Emite comprobante de pago
-5. **Actualizar saldo**: Modifica cuenta corriente
+#### Segmentación por Antigüedad
 
-### Control de cobranza
+- **Al día (0 días)**: Facturas dentro del plazo comercial
+- **1-30 días**: Vencimiento reciente, gestión preventiva
+- **31-60 días**: Morosidad temprana, seguimiento activo
+- **61-90 días**: Morosidad media, gestión intensiva
+- **+90 días**: Morosidad crítica, acciones legales
 
-- **Documentos pendientes**: Lista de documentos por cobrar
-- **Antigüedad de saldos**: Análisis por antigüedad
-- **Gestión de cobranza**: Seguimiento de cobros
-- **Notas de crédito**: Aplicación de ajustes
+#### Filtros Avanzados de Cobranza
 
-## Gestión de Pagos
+- **Por cliente**: RUT, razón social, tipo de cliente
+- **Por vendedor**: Responsable comercial asignado
+- **Por zona geográfica**: Región, comuna, sector
+- **Por tipo de documento**: Facturas, notas de débito, otros
+- **Por canal de venta**: Presencial, online, distribuidor
 
-### Formas de pago
+### 2.2 Gestión Individual de Documentos por Cobrar
 
-- **Efectivo**: Pago inmediato en efectivo
-- **Cheque**: Emisión de cheques
-- **Transferencia**: Transferencias bancarias
-- **Débito automático**: Pagos automáticos
-- **Otros**: Compensaciones, retenciones
+**Tabla detallada de facturas**:
 
-### Proceso de pago
+#### Información del Documento
 
-1. **Seleccionar documento**: Factura o documento por pagar
-2. **Generar pago**: Crea orden de pago
-3. **Autorizar pago**: Aprueba el pago
-4. **Ejecutar pago**: Realiza la transacción
-5. **Registrar pago**: Actualiza registros contables
+- **Número**: Folio del documento tributario
+- **Fecha emisión**: Cuando se generó la factura
+- **Fecha vencimiento**: Límite para pago sin recargo
+- **Días de atraso**: Cálculo automático desde vencimiento
+- **Monto original**: Valor total del documento
+- **Saldo pendiente**: Monto restante por cobrar
 
-### Control de pagos
+#### Datos del Cliente
 
-- **Documentos por pagar**: Lista de obligaciones pendientes
-- **Flujo de caja**: Proyección de pagos
-- **Autorización**: Control de autorizaciones
-- **Programación**: Calendarización de pagos
+- **RUT**: Identificación tributaria única
+- **Razón social**: Nombre completo del cliente
+- **Contacto**: Teléfono y email de cobranza
+- **Ejecutivo**: Vendedor o ejecutivo responsable
+- **Condiciones**: Plazo de pago pactado
 
-## Cuentas Corrientes
+#### Estados de Cobranza
 
-### Clientes
+- 🟢 **Al día**: Dentro del plazo comercial
+- 🟡 **Por vencer**: 1-7 días antes del vencimiento
+- 🟠 **Vencido**: 1-30 días de atraso
+- 🔴 **Moroso**: Más de 30 días de atraso
+- ⚫ **Incobrable**: Marcado para castigo contable
 
-- **Saldo deudor**: Monto que debe el cliente
-- **Límite de crédito**: Monto máximo autorizado
-- **Días de mora**: Días de atraso en pagos
-- **Historial**: Movimientos históricos
+### 2.3 Herramientas de Gestión de Cobranza
 
-### Proveedores
+**Acciones disponibles por documento**:
 
-- **Saldo acreedor**: Monto que debemos al proveedor
-- **Condiciones**: Plazos y condiciones acordadas
-- **Descuentos**: Por pronto pago o volumen
-- **Evaluación**: Cumplimiento de compromisos
+#### Comunicaciones Automáticas
 
-## Reportes disponibles
+- **Email de recordatorio**: Plantilla personalizable por cliente
+- **SMS de aviso**: Mensaje corto con datos del documento
+- **Carta formal**: Documento PDF con membrete corporativo
+- **WhatsApp Business**: Mensaje directo con link de pago
 
-- **Estado de cuenta**: Por cliente o proveedor
-- **Antigüedad de saldos**: Análisis por vencimiento
-- **Flujo de caja**: Proyección de ingresos y egresos
-- **Cobranza**: Eficiencia en cobros
-- **Pagos**: Cumplimiento de compromisos
+#### Seguimiento y Notas
 
-## Próximos pasos
+- **Registro de gestiones**: Log de todas las comunicaciones realizadas
+- **Notas del cobrador**: Comentarios y observaciones específicas
+- **Acuerdos de pago**: Reprogramaciones documentadas
+- **Promesas de pago**: Compromisos del cliente registrados
 
-- [Clientes](/gestion/clientes)
-- [Proveedores](/gestion/proveedores)
-- [Conciliación Bancaria](/contabilidad/conciliacion-bancaria)
+#### Procesos de Escalamiento
+
+- **Gestión administrativa**: Primer nivel de cobranza interna
+- **Gestión prejurídica**: Cartas formales y notificaciones
+- **Gestión judicial**: Derivación a estudio jurídico
+- **Castigo contable**: Provisión por incobrabilidad
+
+### 2.4 Automatización de Cobranza
+
+**Workflows programados**:
+
+#### Recordatorios Automáticos
+
+- **7 días antes**: Email preventivo de próximo vencimiento
+- **Día de vencimiento**: Notificación de fecha límite
+- **1 día después**: Primer recordatorio de vencimiento
+- **7 días después**: Recordatorio formal con recargo
+- **15 días después**: Notificación de morosidad
+- **30 días después**: Aviso prejurídico
+
+#### Escalamiento Inteligente
+
+- **Criterios configurables**: Monto, días, tipo de cliente
+- **Asignación automática**: Distribución a cobradores por reglas
+- **Priorización**: Ranking por impacto en flujo de caja
+- **Excepciones**: Clientes VIP con tratamiento especial
+
+## 💸 Sistema de Pagos
+
+<CardGroup cols={2}>
+  <Card title="Cuentas por Pagar" icon="credit-card" color="#dc3545">
+    Control completo de obligaciones pendientes con proveedores
+  </Card>
+  <Card title="Planificación de Pagos" icon="calendar-check" color="#28a745">
+    Programación inteligente según disponibilidad de caja
+  </Card>
+  <Card title="Aprovechamiento de Descuentos" icon="percentage" color="#17a2b8">
+    Identificación automática de oportunidades de ahorro
+  </Card>
+  <Card title="Control de Tesorería" icon="wallet" color="#6c757d">
+    Gestión centralizada de múltiples cuentas bancarias
+  </Card>
+</CardGroup>
+
+### 3.1 Tab de Pagos
+
+**Panel de cuentas por pagar**:
+
+#### Dashboard de Obligaciones
+
+- **Total por pagar**: Monto pendiente consolidado
+- **Vence hoy**: Facturas con vencimiento inmediato
+- **Próximos 7 días**: Obligaciones de corto plazo
+- **Descuentos disponibles**: Ahorros por pronto pago identificados
+
+#### Clasificación por Prioridad
+
+- **Críticos**: Servicios básicos, impuestos, nómina
+- **Importantes**: Proveedores estratégicos, materias primas
+- **Normales**: Proveedores regulares con condiciones estándar
+- **Diferibles**: Pagos que pueden postergarse sin penalización
+
+#### Análisis de Flujo de Caja
+
+- **Disponible**: Saldo actual en cuentas corrientes
+- **Proyectado**: Estimación considerando cobranzas esperadas
+- **Déficit/Superávit**: Balance entre obligaciones y recursos
+- **Líneas de crédito**: Disponibilidad en facilidades bancarias
+
+### 3.2 Gestión Individual de Documentos por Pagar
+
+**Tabla detallada de facturas de proveedores**:
+
+#### Información del Documento
+
+- **Número**: Folio de factura del proveedor
+- **Fecha recepción**: Cuándo se recibió el documento
+- **Fecha vencimiento**: Límite para mantener condiciones
+- **Días restantes**: Tiempo disponible para pago
+- **Monto total**: Valor completo de la obligación
+- **Descuento pronto pago**: Ahorro disponible si aplica
+
+#### Datos del Proveedor
+
+- **RUT**: Identificación del proveedor
+- **Razón social**: Denominación completa
+- **Condiciones**: Plazo de pago acordado
+- **Descuentos**: Porcentaje por pronto pago disponible
+- **Forma de pago**: Transferencia, cheque, efectivo
+
+#### Estados de Pago
+
+- 🔵 **Programado**: Incluido en próximo lote de pagos
+- 🟢 **Disponible**: Listo para pago inmediato
+- 🟡 **Próximo vencimiento**: 1-7 días restantes
+- 🟠 **Vence hoy**: Último día para mantener condiciones
+- 🔴 **Vencido**: Superó fecha límite, posibles recargos
+
+### 3.3 Herramientas de Planificación de Pagos
+
+**Sistema inteligente de programación**:
+
+#### Algoritmo de Optimización
+
+- **Priorización automática**: Según criticidad y descuentos
+- **Disponibilidad de caja**: Consideración de saldos bancarios
+- **Cobranzas esperadas**: Integración con proyecciones de ingresos
+- **Múltiples escenarios**: Simulación de diferentes estrategias
+
+#### Lotes de Pago Programados
+
+- **Creación automática**: Generación de lotes según reglas
+- **Validación de fondos**: Verificación previa de disponibilidad
+- **Aprobación por niveles**: Workflow según montos y tipos
+- **Ejecución programada**: Procesamiento en fechas específicas
+
+#### Aprovechamiento de Descuentos
+
+- **Identificación automática**: Detección de oportunidades de ahorro
+- **Cálculo de rentabilidad**: ROI de adelantar pagos vs. costo financiero
+- **Recomendaciones**: Sugerencias de pagos prioritarios
+- **Seguimiento**: Métricas de ahorros obtenidos
+
+### 3.4 Gestión de Múltiples Formas de Pago
+
+**Métodos disponibles**:
+
+#### Transferencias Electrónicas
+
+- **TEF**: Transferencias electrónicas de fondos
+- **Múltiples bancos**: Soporte para diversas entidades
+- **Programación**: Ejecución automática en fechas específicas
+- **Confirmación**: Validación de ejecución exitosa
+
+#### Otros Métodos de Pago
+
+- **Cheques**: Generación e impresión de documentos
+- **Efectivo**: Registro de pagos en caja chica
+- **Tarjetas corporativas**: Registro de gastos empresariales
+- **Compensación**: Offset con cuentas por cobrar del mismo cliente
+
+## 📊 Analytics y Reportes Especializados
+
+### 4.1 Métricas de Cobranza
+
+**KPIs principales**:
+
+#### Efectividad de Cobranza
+
+- **DSO (Days Sales Outstanding)**: Días promedio de cobranza
+- **Tasa de morosidad**: Porcentaje de cartera vencida
+- **Efectividad por cobrador**: Performance individual del equipo
+- **Rotación de cartera**: Velocidad de conversión a efectivo
+
+#### Análisis de Clientes
+
+- **Top morosos**: Clientes con mayor impacto negativo
+- **Mejores pagadores**: Clientes con mejor comportamiento
+- **Análisis de riesgo**: Scoring de clientes por comportamiento histórico
+- **Segmentación**: Clustering por patrones de pago
+
+### 4.2 Métricas de Pagos
+
+**KPIs de gestión de proveedores**:
+
+#### Optimización Financiera
+
+- **DPO (Days Payable Outstanding)**: Días promedio de pago
+- **Ahorros por descuentos**: Valor capturado por pronto pago
+- **Costo financiero**: Impacto de diferentes estrategias de pago
+- **Liquidez**: Análisis de posición de caja proyectada
+
+#### Gestión de Proveedores
+
+- **Proveedores críticos**: Identificación de dependencias clave
+- **Condiciones negociadas**: Análisis de términos por proveedor
+- **Cumplimiento**: Porcentaje de pagos dentro de plazo
+- **Relación comercial**: Scoring de proveedores por importancia
+
+### 4.3 Reportes Integrados
+
+**Informes especializados**:
+
+#### Reporte de Flujo de Caja
+
+- **Proyección 30/60/90 días**: Estimación basada en históricos
+- **Escenarios optimista/pesimista**: Análisis de sensibilidad
+- **Puntos de quiebre**: Identificación de períodos críticos
+- **Recomendaciones**: Sugerencias para optimización
+
+#### Análisis de Antigüedad
+
+- **Aging de cobranza**: Distribución por tramos de días
+- **Aging de pagos**: Análisis de obligaciones por vencimiento
+- **Tendencias**: Evolución temporal de carteras
+- **Benchmarking**: Comparación con indicadores de industria
+
+## 🔔 Sistema de Alertas y Notificaciones
+
+### 5.1 Alertas de Cobranza
+
+**Notificaciones automáticas**:
+
+#### Alertas Críticas
+
+- 🚨 **Morosidad crítica**: Clientes con +90 días de atraso
+- 🚨 **Metas no cumplidas**: Objetivos de cobranza por debajo de target
+- 🚨 **Clientes de riesgo**: Deterioro significativo en comportamiento de pago
+- 🚨 **Cartera concentrada**: Excesiva dependencia de pocos clientes
+
+#### Alertas Preventivas
+
+- ⚠️ **Próximos vencimientos**: Facturas que vencen en 1-3 días
+- ⚠️ **Clientes nuevos morosos**: Primeros atrasos de clientes sin historial
+- ⚠️ **Deterioro de DSO**: Incremento en días promedio de cobranza
+- ⚠️ **Cobradores sobrecargados**: Asignación excesiva de casos
+
+### 5.2 Alertas de Pagos
+
+**Notificaciones de tesorería**:
+
+#### Alertas de Oportunidad
+
+- 💡 **Descuentos disponibles**: Ahorros por pronto pago identificados
+- 💡 **Saldo excedente**: Oportunidades de inversión temporal
+- 💡 **Mejores condiciones**: Proveedores con términos negociables
+- 💡 **Optimización de timing**: Momentos óptimos para pagos
+
+#### Alertas de Riesgo
+
+- ⚠️ **Fondos insuficientes**: Riesgo de incumplimiento por falta de liquidez
+- ⚠️ **Proveedores críticos**: Vencimientos de servicios esenciales
+- ⚠️ **Penalizaciones**: Riesgo de recargos por retraso
+- ⚠️ **Límites de crédito**: Proximidad a topes de líneas bancarias
+
+## 🔧 Configuración y Personalización
+
+### 6.1 Configuración de Workflows
+
+**Personalización de procesos**:
+
+#### Reglas de Cobranza
+
+- **Criterios de escalamiento**: Montos, días, tipo de cliente
+- **Plantillas de comunicación**: Emails, SMS, cartas personalizables
+- **Asignación automática**: Distribución por zona, vendedor, monto
+- **Excepciones**: Clientes VIP con tratamiento diferenciado
+
+#### Reglas de Pagos
+
+- **Priorización**: Algoritmos de ordenamiento por criterios múltiples
+- **Aprobaciones**: Workflow por niveles según montos
+- **Programación**: Calendarios de pago por tipo de proveedor
+- **Métodos preferidos**: Formas de pago por proveedor o categoría
+
+### 6.2 Integración con Otros Módulos
+
+**Conexiones automáticas**:
+
+#### Sistema Contable
+
+- **Asientos automáticos**: Generación de movimientos contables
+- **Conciliación**: Match automático con movimientos bancarios
+- **Provisiones**: Cálculo automático de incobrables
+- **Reportes financieros**: Integración con estados contables
+
+#### CRM y Ventas
+
+- **Historial de pagos**: Información en ficha de cliente
+- **Límites de crédito**: Control automático en nuevas ventas
+- **Alertas comerciales**: Notificaciones a vendedores
+- **Scoring de clientes**: Evaluación de riesgo integrada
+
+## 💡 Mejores Prácticas y Estrategias
+
+### 7.1 Optimización de Cobranza
+
+**Estrategias recomendadas**:
+
+1. **Prevención**: Evaluación crediticia previa a ventas
+2. **Comunicación temprana**: Contacto antes del vencimiento
+3. **Personalización**: Tratamiento según perfil del cliente
+4. **Persistencia**: Seguimiento sistemático y documentado
+5. **Flexibilidad**: Opciones de pago que faciliten cobranza
+
+### 7.2 Gestión Inteligente de Pagos
+
+**Principios de optimización**:
+
+- **Aprovechamiento de descuentos**: ROI positivo vs. costo de oportunidad
+- **Negociación de plazos**: Extensión sin penalización cuando convenga
+- **Diversificación de riesgo**: Evitar concentración en pocos proveedores
+- **Mantenimiento de relaciones**: Balance entre ahorro y relaciones comerciales
+
+<Tip>
+  **Estrategia integrada**: Coordina políticas de cobranza y pago para optimizar
+  el ciclo de conversión de efectivo y mantener relaciones comerciales
+  saludables.
+</Tip>
+
+### 7.3 Indicadores de Control
+
+**Métricas críticas para monitorear**:
+
+- **Ciclo de conversión de efectivo**: DSO + DIO - DPO
+- **Liquidez corriente**: Capacidad de cumplir obligaciones de corto plazo
+- **Rotación de cuentas por cobrar**: Eficiencia en cobranza
+- **Aprovechamiento de descuentos**: Porcentaje de oportunidades capturadas
+
+<Warning>
+  **Riesgo de liquidez**: Siempre mantén un colchón de seguridad en caja y
+  líneas de crédito disponibles para situaciones imprevistas que afecten el
+  flujo de caja.
+</Warning>

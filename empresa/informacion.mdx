@@ -1,106 +1,427 @@
 ---
-title: "Información de la Empresa"
-description: "Configuración y datos básicos de la empresa"
+title: "Información de Empresa"
+description: "Sistema completo de gestión de información corporativa que centraliza todos los datos legales, fiscales y operativos de la empresa en un formato organizado y accesible."
 ---
 
-# Información de la Empresa
+## 🏠 Vista Principal de Información de Empresa
 
-Configura y mantén actualizada toda la información básica de tu empresa.
+### Acceso al Sistema
 
-## Datos básicos de la empresa
+- **Ruta**: Dashboard → Información → Información de Empresa
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Usuario de Operaciones, Auditor
 
-### Información legal
+### Panel de Control
 
-- **RUT**: Rol Único Tributario de la empresa
-- **Razón social**: Nombre legal registrado
-- **Nombre de fantasía**: Nombre comercial
-- **Giro**: Actividad económica principal
-- **Tipo de sociedad**: SPA, LTDA, SA, etc.
+La vista principal presenta:
 
-### Información de contacto
+- **Navegación lateral**: Menú organizado por categorías de información
+- **Cards informativas**: Visualización clara y estructurada de datos
+- **Sistema responsive**: Adaptación automática a diferentes dispositivos
 
-- **Dirección**: Domicilio comercial
-- **Comuna y región**: Ubicación geográfica
-- **Teléfono**: Números de contacto
-- **Email**: Correo electrónico corporativo
-- **Sitio web**: Página web oficial
-
-## Configuraciones importantes
+## 🗂️ Estructura de Información Organizacional
 
 <CardGroup cols={2}>
-  <Card title="Datos tributarios" icon="file-text">
-    RUT, giro, régimen tributario
+  <Card title="Información General" icon="building" color="#0066cc">
+    Datos básicos de identificación y contacto empresarial
   </Card>
-  <Card title="Contacto" icon="phone">
-    Teléfonos, email, dirección
+  <Card title="Actividades Económicas" icon="briefcase" color="#28a745">
+    Códigos CIIU y actividades registradas ante el SII
   </Card>
-  <Card title="Representante legal" icon="user-tie">
-    Información del representante
+  <Card title="Socios y Representantes" icon="users" color="#17a2b8">
+    Información de accionistas y representantes legales
   </Card>
-  <Card title="Configuraciones" icon="cog">
-    Parámetros del sistema
+  <Card title="Documentos Autorizados" icon="file-contract" color="#6c757d">
+    Tipos de documentos tributarios habilitados
   </Card>
 </CardGroup>
 
-## Representante legal
+## 📋 Módulos de Información Detallada
 
-### Información requerida
+### 2.1 Información General de la Empresa
 
-- **Nombre completo**: Nombres y apellidos
-- **RUT**: Rol Único Tributario
-- **Cargo**: Posición en la empresa
-- **Poderes**: Facultades otorgadas
-- **Contacto**: Teléfono y email personal
+**Card de datos básicos**:
 
-## Información financiera
+#### Identificación Corporativa
 
-### Datos bancarios principales
+- **RUT**: Rol Único Tributario con formato y validación
+- **Razón Social**: Denominación legal completa
+- **Nombre de Fantasía**: Nombre comercial utilizado
+- **Tipo de Empresa**: S.A., LTDA, SPA, E.I.R.L., etc.
 
-- **Banco principal**: Entidad bancaria preferida
-- **Cuenta corriente**: Número de cuenta
-- **Email bancario**: Para notificaciones
-- **Ejecutivo**: Contacto en el banco
+#### Datos de Contacto Principal
 
-### Moneda funcional
+- **Dirección Legal**: Domicilio registrado ante SII y Registro Civil
+- **Comuna**: Ubicación administrativa
+- **Región**: División territorial
+- **Código Postal**: Para correspondencia oficial
 
-- **Moneda base**: Generalmente pesos chilenos
-- **Monedas secundarias**: Otras monedas utilizadas
-- **Tipo de cambio**: Fuente para conversiones
+#### Información de Contacto
 
-## Configuraciones del sistema
+- **Teléfono Principal**: Número de contacto comercial
+- **Email Corporativo**: Correo electrónico oficial
+- **Sitio Web**: URL de presencia digital
+- **Redes Sociales**: Enlaces a perfiles corporativos
 
-### Parámetros contables
+### 2.2 Actividades Económicas Registradas
 
-- **Período contable**: Mes de inicio del año contable
-- **Plan de cuentas**: Plan contable utilizado
-- **Método de valorización**: FIFO, promedio ponderado
-- **Depreciación**: Métodos de depreciación
+**Card de actividades CIIU**:
 
-### Parámetros tributarios
+#### Actividad Principal
 
-- **Régimen tributario**: General, simplificado, etc.
-- **IVA**: Tasa de IVA aplicable
-- **Retenciones**: Tasas de retención
-- **Formularios**: Formularios utilizados
+- **Código CIIU**: Clasificación Industrial Internacional Uniforme
+- **Descripción**: Detalle de la actividad económica principal
+- **Categoría**: Sector económico correspondiente
+- **Fecha de registro**: Cuándo se registró ante el SII
 
-## Políticas de la empresa
+#### Actividades Secundarias
 
-### Políticas comerciales
+- **Lista completa**: Todas las actividades económicas adicionales
+- **Códigos específicos**: Cada actividad con su código CIIU
+- **Estados**: Activas, suspendidas, en trámite
+- **Porcentaje estimado**: Distribución de ingresos por actividad
 
-- **Condiciones de venta**: Plazos y formas de pago
-- **Descuentos**: Políticas de descuentos
-- **Crédito**: Evaluación y otorgamiento
-- **Garantías**: Políticas de garantía
+#### Información Tributaria
 
-### Políticas contables
+- **Régimen tributario**: Primera categoría, 14 ter, Pro Pyme, etc.
+- **IVA**: Afecto o exento según actividades
+- **Retenciones**: Obligaciones como agente retenedor
+- **Declaraciones**: Formularios que debe presentar
 
-- **Reconocimiento de ingresos**: Cuándo reconocer ingresos
-- **Provisiones**: Criterios para provisiones
-- **Depreciación**: Vidas útiles utilizadas
-- **Inventarios**: Método de valorización
+### 2.3 Socios y Accionistas
 
-## Próximos pasos
+**Card de estructura societaria**:
 
-- [Plan de Cuentas](/empresa/plan-cuentas)
-- [Centros de Costos](/empresa/centros-costos)
-- [Bancos](/empresa/bancos)
+#### Información de Socios
+
+- **RUT del socio**: Identificación única
+- **Nombre completo**: Persona natural o jurídica
+- **Participación**: Porcentaje de propiedad
+- **Tipo de aporte**: Capital, bienes, servicios
+- **Fecha de ingreso**: Cuándo se incorporó a la sociedad
+
+#### Representantes Legales
+
+- **RUT**: Identificación del representante
+- **Nombre**: Denominación completa
+- **Cargo**: Gerente General, Presidente, Administrador
+- **Poderes**: Alcance de la representación legal
+- **Vigencia**: Período de validez del nombramiento
+
+#### Directorio (para S.A.)
+
+- **Composición**: Miembros del directorio
+- **Cargos**: Presidente, Vicepresidente, Directores
+- **Período**: Duración del mandato
+- **Facultades**: Atribuciones específicas
+
+### 2.4 Documentos Tributarios Autorizados
+
+**Card de documentos habilitados**:
+
+#### Documentos de Venta
+
+- **Facturas Electrónicas**: Tipos 33, 34 (exenta)
+- **Boletas Electrónicas**: Tipo 39, 41 (exenta)
+- **Notas de Crédito**: Tipo 61
+- **Notas de Débito**: Tipo 56
+- **Guías de Despacho**: Tipo 52
+
+#### Documentos Especiales
+
+- **Factura de Exportación**: Tipo 110
+- **Liquidación Factura**: Tipo 43
+- **Factura de Compra**: Tipo 46
+- **Documentos no tributarios**: Cotizaciones, órdenes de compra
+
+#### Estado y Configuración
+
+- **Estado actual**: Autorizado, suspendido, revocado
+- **Fecha de autorización**: SII otorga habilitación
+- **Numeración**: Rangos asignados y disponibles
+- **Certificados**: Vigencia de firma electrónica
+
+## 🏢 Información Operativa y Ubicaciones
+
+### 3.1 Direcciones y Sucursales
+
+**Card de ubicaciones**:
+
+#### Dirección Principal
+
+- **Dirección comercial**: Ubicación de operaciones principales
+- **Dirección postal**: Para correspondencia administrativa
+- **Coordenadas**: Geolocalización para servicios
+- **Tipo de propiedad**: Propia, arrendada, comodato
+
+#### Sucursales y Locales
+
+- **Lista de ubicaciones**: Todas las sedes operativas
+- **Código de sucursal**: Identificación interna
+- **Responsable**: Encargado de cada ubicación
+- **Actividades**: Qué operaciones se realizan en cada sede
+
+### 3.2 Información de Contacto Detallada
+
+**Card de comunicaciones**:
+
+#### Canales Corporativos
+
+- **Email principal**: Contacto general de la empresa
+- **Teléfonos**: Principal, secundario, fax
+- **Horarios de atención**: Días y horarios de funcionamiento
+- **Idiomas**: Idiomas de atención disponibles
+
+#### Contactos Especializados
+
+- **Email contabilidad**: Asuntos financieros y tributarios
+- **Email comercial**: Consultas de ventas y servicios
+- **Email soporte**: Atención técnica y postventa
+- **Teléfonos directos**: Líneas específicas por área
+
+### 3.3 Anotaciones y Observaciones
+
+**Card de notas corporativas**:
+
+#### Notas Internas
+
+- **Observaciones**: Información relevante para operaciones
+- **Recordatorios**: Fechas importantes y vencimientos
+- **Configuraciones**: Parámetros especiales del sistema
+- **Historial**: Cambios relevantes en la información
+
+#### Documentación Adjunta
+
+- **Escrituras**: Referencias a documentos constitutivos
+- **Poderes**: Documentos de representación vigentes
+- **Certificados**: SII, Registro Civil, otros organismos
+- **Contratos**: Acuerdos relevantes para operaciones
+
+## 📞 Gestión de Comunicaciones
+
+### 4.1 Notificaciones del Sistema
+
+**Card de configuración de alertas**:
+
+#### Tipos de Notificaciones
+
+- **Email automático**: Alertas por correo electrónico
+- **SMS**: Mensajes de texto para urgencias
+- **Push notifications**: Alertas en dispositivos móviles
+- **Dashboard**: Notificaciones en panel principal
+
+#### Configuración de Alertas
+
+- **Vencimientos**: CAF, certificados, poderes
+- **Umbrales**: Límites de facturación, stock, etc.
+- **Procesos**: Confirmaciones de operaciones críticas
+- **Mantenimiento**: Notificaciones de sistema
+
+### 4.2 Cartas y Correspondencia
+
+**Card de gestión documental**:
+
+#### Plantillas de Comunicación
+
+- **Cartas comerciales**: Formato corporativo estándar
+- **Emails automáticos**: Templates para procesos
+- **Documentos oficiales**: Comunicaciones con organismos
+- **Reportes**: Formatos para informes externos
+
+#### Configuración de Envío
+
+- **Remitente**: Configuración de emails corporativos
+- **Firma digital**: Certificados para documentos oficiales
+- **Encabezados**: Logo y datos corporativos
+- **Pie de página**: Información legal y contacto
+
+## 💰 Información Financiera y Fiscal
+
+### 5.1 Cumplimientos Tributarios
+
+**Card de obligaciones fiscales**:
+
+#### Declaraciones Mensuales
+
+- **IVA**: Formulario 29, fechas de vencimiento
+- **Retenciones**: 2° categoría, honorarios, otros
+- **PPM**: Pagos provisionales mensuales
+- **Otros impuestos**: Específicos según actividad
+
+#### Declaraciones Anuales
+
+- **Renta**: Formulario 22, balance tributario
+- **IVA anual**: Resumen del período
+- **Información exógena**: Operaciones con terceros
+- **Estados financieros**: IFRS, tributarios
+
+### 5.2 Aportes y Contribuciones
+
+**Card de obligaciones sociales**:
+
+#### Seguridad Social
+
+- **AFP**: Administradora de fondos de pensiones
+- **Salud**: FONASA o Isapre
+- **Seguro cesantía**: AFC
+- **Accidentes laborales**: Mutual o ISL
+
+#### Otros Aportes
+
+- **Sence**: Capacitación laboral
+- **Cámara de Comercio**: Afiliaciones gremiales
+- **Colegios profesionales**: Membresías obligatorias
+- **Seguros**: Pólizas corporativas requeridas
+
+### 5.3 Transferencias y Pagos
+
+**Card de medios de pago**:
+
+#### Cuentas Bancarias
+
+- **Banco principal**: Cuenta corriente principal
+- **Cuentas secundarias**: Para operaciones específicas
+- **Cuentas en UF**: Para operaciones reajustables
+- **Cuentas extranjeras**: Para comercio internacional
+
+#### Medios de Pago Electrónico
+
+- **Tarjetas corporativas**: Para gastos empresariales
+- **Transferencias**: Configuración para proveedores
+- **Webpay**: Para ventas online
+- **Factoring**: Líneas de financiamiento
+
+## 🔧 Funciones de Administración
+
+### 6.1 Navegación Lateral Responsive
+
+**Sistema de navegación**:
+
+#### Menú Desplegable
+
+- **Categorización**: Información agrupada lógicamente
+- **Iconografía**: Identificación visual clara
+- **Estado activo**: Resalta sección actual
+- **Responsive**: Se adapta a dispositivos móviles
+
+#### Búsqueda Rápida
+
+- **Filtro de contenido**: Búsqueda en todas las secciones
+- **Resultados relevantes**: Destacados según consulta
+- **Navegación directa**: Acceso inmediato a información
+- **Historial**: Últimas consultas realizadas
+
+### 6.2 Gestión de Cambios
+
+**Control de modificaciones**:
+
+#### Autorizaciones
+
+- **Niveles de acceso**: Quién puede modificar qué información
+- **Aprobaciones**: Flujo para cambios críticos
+- **Validaciones**: Verificaciones automáticas
+- **Respaldos**: Historial de cambios realizados
+
+#### Trazabilidad
+
+- **Log de cambios**: Registro detallado de modificaciones
+- **Usuario responsable**: Quién realizó cada cambio
+- **Fecha y hora**: Timestamps de todas las operaciones
+- **Motivo**: Justificación documentada
+
+## 📊 Reportes e Informes
+
+### 7.1 Exportación de Información
+
+**Formatos disponibles**:
+
+#### Documentos Oficiales
+
+- **PDF corporativo**: Con formato y logo empresarial
+- **Excel completo**: Toda la información en hojas organizadas
+- **Word editable**: Para personalización adicional
+- **JSON/XML**: Para integraciones con otros sistemas
+
+#### Reportes Específicos
+
+- **Ficha empresarial**: Resumen ejecutivo completo
+- **Información tributaria**: Datos fiscales consolidados
+- **Estructura societaria**: Organigrama y participaciones
+- **Contactos**: Directorio completo actualizado
+
+### 7.2 Validaciones de Información
+
+**Sistema de verificación**:
+
+#### Validaciones Automáticas
+
+- **RUT**: Verificación de dígito verificador
+- **Códigos CIIU**: Validez ante registros oficiales
+- **Direcciones**: Verificación de existencia
+- **Emails**: Formato y deliverabilidad
+
+#### Alertas de Inconsistencias
+
+- **Información desactualizada**: Datos con más de X meses
+- **Campos incompletos**: Información faltante crítica
+- **Conflictos**: Datos contradictorios entre secciones
+- **Vencimientos**: Documentos próximos a vencer
+
+## ⚠️ Alertas y Notificaciones Críticas
+
+### 8.1 Vencimientos Importantes
+
+**Sistema de alertas proactivas**:
+
+- 🔴 **Crítico (0-7 días)**: Certificados digitales, poderes, autorizaciones SII
+- 🟡 **Advertencia (8-30 días)**: Renovaciones de documentos, actualizaciones de datos
+- 🔵 **Informativo (30+ días)**: Recordatorios de revisión periódica
+
+### 8.2 Validaciones de Cumplimiento
+
+**Verificaciones regulares**:
+
+- ✅ **Información actualizada**: Datos modificados en últimos 12 meses
+- ✅ **Documentos vigentes**: Certificados y autorizaciones al día
+- ✅ **Consistencia de datos**: Coherencia entre diferentes secciones
+- ✅ **Completitud**: Todos los campos obligatorios completos
+
+## 💡 Mejores Prácticas de Gestión
+
+### 9.1 Mantenimiento de Información
+
+**Actividades recomendadas**:
+
+1. **Revisión mensual**: Verificar vigencia de certificados y documentos
+2. **Actualización trimestral**: Confirmar datos de contacto y ubicaciones
+3. **Validación semestral**: Revisar estructura societaria y representantes
+4. **Auditoría anual**: Verificación completa con fuentes oficiales
+
+### 9.2 Seguridad de la Información
+
+**Medidas de protección**:
+
+- **Acceso controlado**: Permisos granulares por tipo de información
+- **Respaldos regulares**: Copias de seguridad automatizadas
+- **Cifrado**: Protección de datos sensibles
+- **Auditoría**: Registro de todos los accesos y modificaciones
+
+<Tip>
+  **Estrategia de actualización**: Asigna responsables específicos para mantener
+  actualizada cada categoría de información y establece recordatorios
+  periódicos.
+</Tip>
+
+### 9.3 Integración con Otros Módulos
+
+**Conexiones automáticas**:
+
+- **Facturación**: Datos corporativos en documentos tributarios
+- **Reportes**: Información en estados financieros y declaraciones
+- **Correspondencia**: Datos en comunicaciones oficiales
+- **Cumplimiento**: Alertas integradas con calendario fiscal
+
+<Warning>
+  **Información crítica**: Los cambios en datos básicos como RUT, razón social o
+  actividades económicas pueden requerir actualizaciones en organismos oficiales
+  y afectar otros procesos del sistema.
+</Warning>

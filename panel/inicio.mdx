@@ -1,117 +1,448 @@
 ---
-title: "Inicio"
-description: "Panel principal del sistema"
+title: "Dashboard Ejecutivo"
+description: "Panel de control integral que centraliza métricas financieras clave, indicadores IFRS y herramientas de comunicación ejecutiva para la toma de decisiones estratégicas."
 ---
 
-# Panel de Inicio
+## 🏠 Vista Principal del Dashboard
 
-Bienvenido al centro de control de tu sistema contable. Desde aquí puedes acceder a todas las funcionalidades principales.
+### Acceso al Sistema
 
-## Dashboard principal
+- **Ruta**: Dashboard → Vista Principal
+- **Permisos requeridos**: Todos los usuarios (vista personalizada según rol)
+- **Actualización**: Tiempo real con datos actualizados automáticamente
 
-El panel de inicio te proporciona una vista general del estado de tu empresa y acceso rápido a las funciones más utilizadas.
+### Panel de Control
 
-## Accesos rápidos
+La vista principal presenta:
+
+- **KPIs ejecutivos**: Métricas financieras críticas consolidadas
+- **Gráficos interactivos**: Visualizaciones dinámicas de tendencias
+- **Alertas inteligentes**: Notificaciones proactivas de situaciones críticas
+
+## 📊 Sistema de Métricas Ejecutivas
 
 <CardGroup cols={2}>
-  <Card title="Contabilidad" icon="calculator" href="/contabilidad/compras">
-    Compras, ventas, asientos contables e informes
+  <Card title="Indicadores Financieros" icon="chart-line" color="#28a745">
+    Métricas clave de rentabilidad, liquidez y eficiencia operacional
   </Card>
-  <Card title="Gestión" icon="users" href="/gestion/clientes">
-    Clientes, proveedores, cobros y pagos
+  <Card title="Análisis IFRS" icon="balance-scale" color="#17a2b8">
+    Seguimiento de cumplimiento normativo y ajustes contables
   </Card>
-  <Card title="Utilidades" icon="tools" href="/utilidades/renta">
-    Activo fijo, renta, declaraciones juradas
+  <Card title="Comunicación Ejecutiva" icon="envelope" color="#6f42c1">
+    Herramientas de comunicación directa con stakeholders
   </Card>
-  <Card title="Empresa" icon="building" href="/empresa/informacion">
-    Configuración y datos de la empresa
+  <Card title="Alertas Inteligentes" icon="bell" color="#ffc107">
+    Sistema proactivo de notificaciones y excepciones
   </Card>
 </CardGroup>
 
-## Resumen ejecutivo
+## 📈 Indicadores Financieros Clave
 
-### Indicadores clave
+### 2.1 KPIs de Liquidez y Solvencia
 
-- **Ventas del mes**: Ingresos actuales
-- **Gastos del mes**: Egresos registrados
-- **Saldo bancario**: Posición de efectivo
-- **Documentos pendientes**: Por procesar
+**Métricas de salud financiera**:
 
-### Estado tributario
+#### Liquidez Corriente
 
-- **Próximos vencimientos**: Fechas importantes
-- **Declaraciones pendientes**: Por presentar
-- **PPM del mes**: Estado actual
-- **IVA por pagar**: Saldo pendiente
+- **Ratio actual**: Activos corrientes / Pasivos corrientes
+- **Tendencia**: Evolución en últimos 12 meses
+- **Benchmark**: Comparación con estándares de industria
+- **Alerta**: Notificación si ratio < 1.2 (configurable)
 
-## Actividad reciente
+#### Disponibilidad de Caja
 
-### Últimos movimientos
+- **Saldo consolidado**: Suma de todas las cuentas bancarias
+- **Proyección 30 días**: Flujo de caja estimado
+- **Compromisos**: Pagos programados próximos 7 días
+- **Líneas de crédito**: Disponibilidad en facilidades bancarias
 
-- Últimas ventas registradas
-- Compras recientes
-- Pagos realizados
-- Cobros recibidos
+#### Capital de Trabajo
 
-### Documentos recientes
+- **Monto actual**: Activos corrientes menos pasivos corrientes
+- **Variación mensual**: Cambio versus mes anterior
+- **Rotación**: Días de capital de trabajo
+- **Composición**: Distribución por componentes principales
 
-- Facturas emitidas
-- Boletas generadas
-- Asientos contables
-- Conciliaciones bancarias
+### 2.2 KPIs de Rentabilidad
 
-## Notificaciones importantes
+**Métricas de performance operacional**:
+
+#### Margen Operacional
+
+- **Porcentaje actual**: (Resultado operacional / Ingresos) × 100
+- **Comparativo mensual**: Versus mismo mes año anterior
+- **Tendencia trimestral**: Evolución últimos 4 trimestres
+- **Desglose**: Contribución por línea de negocio
+
+#### ROE y ROA
+
+- **ROE**: Rentabilidad sobre patrimonio anualizada
+- **ROA**: Rentabilidad sobre activos totales
+- **Descomposición DuPont**: Margen × Rotación × Apalancamiento
+- **Benchmarking**: Comparación con competidores del sector
+
+#### EBITDA
+
+- **Monto mensual**: Resultado antes de intereses, impuestos, depreciación
+- **Margen EBITDA**: Porcentaje sobre ingresos totales
+- **Evolución anual**: Crecimiento interanual
+- **Proyección**: Estimación basada en tendencias actuales
+
+### 2.3 KPIs Operacionales
+
+**Eficiencia y gestión**:
+
+#### Rotación de Inventarios
+
+- **Días de inventario**: Stock promedio × 365 / Costo de ventas
+- **Rotación anual**: Veces que rota el inventario por año
+- **Stock obsoleto**: Porcentaje de inventario sin movimiento
+- **Valor del stock**: Valorización a costo y precio de mercado
+
+#### Gestión de Cobranzas
+
+- **DSO (Days Sales Outstanding)**: Días promedio de cobranza
+- **Cartera vencida**: Porcentaje de ventas con atraso
+- **Provisión incobrables**: Estimación de pérdidas esperadas
+- **Efectividad cobranza**: Tasa de recuperación mensual
+
+#### Gestión de Pagos
+
+- **DPO (Days Payable Outstanding)**: Días promedio de pago
+- **Descuentos capturados**: Ahorros por pronto pago obtenidos
+- **Relación con proveedores**: Scoring promedio de proveedores
+- **Ciclo de conversión**: DSO + DIO - DPO
+
+## 📊 Análisis IFRS y Cumplimiento
+
+### 3.1 Gráfico de Indicadores Financieros
+
+**Visualización interactiva de métricas**:
+
+#### Panel de Ratios Financieros
+
+- **Liquidez**: Ratios corriente, ácido, disponible
+- **Endeudamiento**: Ratios de leverage y cobertura
+- **Actividad**: Rotación de activos y eficiencia operacional
+- **Rentabilidad**: Márgenes y retornos sobre inversión
+
+#### Tendencias Temporales
+
+- **Serie histórica**: Últimos 24 meses de evolución
+- **Comparativos**: Mismo período año anterior
+- **Proyecciones**: Tendencias futuras basadas en regresión
+- **Bandas de control**: Rangos objetivo y alerta
+
+#### Benchmarking Sectorial
+
+- **Percentiles**: Posición versus empresas similares
+- **Mejores prácticas**: Comparación con líderes del sector
+- **Gaps de performance**: Brechas por cerrar
+- **Oportunidades**: Áreas de mejora identificadas
+
+### 3.2 Historial IFRS y Ajustes
+
+**Seguimiento de cumplimiento normativo**:
+
+#### Ajustes por Adopción IFRS
+
+- **Diferencias identificadas**: Entre GAAP local e IFRS
+- **Impacto cuantitativo**: Efecto en patrimonio y resultados
+- **Cronograma**: Plan de implementación de estándares
+- **Estado actual**: Porcentaje de cumplimiento alcanzado
+
+#### Revisiones de Deterioro
+
+- **Activos evaluados**: Lista de activos sometidos a test
+- **Pérdidas reconocidas**: Deterioros contabilizados
+- **Reversiones**: Mejoras de valor reconocidas
+- **Próximas evaluaciones**: Calendario de revisiones programadas
+
+#### Instrumentos Financieros
+
+- **Clasificación**: Costo amortizado, valor razonable, patrimonio
+- **Medición**: Valorización según categoría IFRS 9
+- **Coberturas**: Hedge accounting aplicado
+- **Revelaciones**: Información para notas explicativas
+
+### 3.3 Control de Estimaciones Contables
+
+**Gestión de juicios y estimaciones críticas**:
+
+#### Estimaciones Significativas
+
+- **Vida útil de activos**: Revisión anual de parámetros
+- **Provisiones**: Estimación de obligaciones futuras
+- **Valor razonable**: Activos medidos a fair value
+- **Pérdidas esperadas**: Modelo de deterioro crediticio
+
+#### Sensibilidad de Variables
+
+- **Análisis de escenarios**: Impacto de cambios en assumptions
+- **Variables críticas**: Parámetros con mayor sensibilidad
+- **Rangos de confianza**: Intervalos estadísticos de estimaciones
+- **Documentación**: Respaldo de metodologías aplicadas
+
+## 💬 Herramientas de Comunicación Ejecutiva
+
+### 4.1 Diálogo de Email a Clientes
+
+**Comunicación directa con stakeholders**:
+
+#### Configuración de Comunicaciones
+
+- **Destinatarios**: Lista de clientes segmentada
+- **Plantillas**: Templates predefinidos por tipo de comunicación
+- **Personalización**: Campos variables por destinatario
+- **Programación**: Envío inmediato o programado
+
+#### Tipos de Comunicación Disponibles
+
+- **Estados financieros**: Envío de EEFF trimestrales/anuales
+- **Comunicados**: Noticias relevantes de la empresa
+- **Invitaciones**: Eventos corporativos y juntas de accionistas
+- **Reportes especiales**: Informes ad-hoc para inversionistas
+
+#### Seguimiento y Métricas
+
+- **Tasa de apertura**: Porcentaje de emails abiertos
+- **Click-through rate**: Interacción con contenido
+- **Respuestas**: Feedback recibido de stakeholders
+- **Bounce rate**: Emails no entregados o rebotados
+
+### 4.2 Reportes Automáticos
+
+**Distribución automatizada de información**:
+
+#### Reportes Ejecutivos
+
+- **Dashboard semanal**: Resumen de KPIs principales
+- **Reporte mensual**: Análisis financiero detallado
+- **Cierre trimestral**: Estados financieros consolidados
+- **Análisis anual**: Revisión integral de performance
+
+#### Personalización por Audiencia
+
+- **Directorio**: Métricas estratégicas de alto nivel
+- **Gerencias**: Información operacional detallada
+- **Inversionistas**: Focus en rentabilidad y crecimiento
+- **Reguladores**: Cumplimiento normativo y riesgos
+
+### 4.3 Alertas y Notificaciones Inteligentes
+
+**Sistema proactivo de comunicaciones**:
+
+#### Alertas Críticas Automáticas
+
+- 🚨 **Liquidez crítica**: Caja por debajo de límite mínimo
+- 🚨 **Pérdidas significativas**: Resultados negativos materiales
+- 🚨 **Incumplimiento covenant**: Violación de compromisos financieros
+- 🚨 **Deterioro material**: Pérdidas por deterioro significativas
+
+#### Notificaciones Preventivas
+
+- ⚠️ **Tendencias negativas**: Deterioro en KPIs clave
+- ⚠️ **Umbrales de alerta**: Aproximación a límites críticos
+- ⚠️ **Estacionalidad**: Períodos históricamente complejos
+- ⚠️ **Vencimientos**: Compromisos financieros próximos
+
+## 📱 Información Detallada de KPIs
+
+### 5.1 Componente de Detalle de KPIs
+
+**Drill-down de métricas ejecutivas**:
+
+#### Navegación Interactiva
+
+- **Click-through**: Acceso a detalle desde gráficos principales
+- **Filtros dinámicos**: Por período, sucursal, línea de negocio
+- **Comparativos**: Múltiples períodos simultáneos
+- **Exportación**: Datos a Excel, PDF, dashboard móvil
+
+#### Análisis de Variaciones
+
+- **Análisis horizontal**: Comparación temporal de métricas
+- **Análisis vertical**: Composición porcentual de componentes
+- **Variaciones absolutas**: Cambios en valores monetarios
+- **Variaciones relativas**: Cambios porcentuales y ratios
+
+#### Descomposición de Drivers
+
+- **Factores explicativos**: Variables que impactan cada KPI
+- **Contribución**: Peso relativo de cada factor
+- **Sensibilidad**: Impacto de cambios unitarios
+- **Palancas de gestión**: Acciones para mejorar métricas
+
+### 5.2 Análisis de Tendencias
+
+**Inteligencia predictiva**:
+
+#### Modelos Estadísticos
+
+- **Regresión temporal**: Proyecciones basadas en históricos
+- **Análisis estacional**: Patrones cíclicos identificados
+- **Correlaciones**: Relaciones entre variables financieras
+- **Outliers**: Identificación de valores atípicos
+
+#### Escenarios Futuros
+
+- **Escenario base**: Proyección más probable
+- **Escenario optimista**: Mejores condiciones esperadas
+- **Escenario pesimista**: Condiciones adversas posibles
+- **Análisis de sensibilidad**: Impacto de variables críticas
+
+### 5.3 Benchmarking y Comparativos
+
+**Análisis competitivo**:
+
+#### Comparación Sectorial
+
+- **Percentiles de industria**: Posicionamiento relativo
+- **Empresas comparables**: Peer group definido
+- **Best-in-class**: Líderes del sector por métrica
+- **Gaps de performance**: Brechas por cerrar
+
+#### Evolución Competitiva
+
+- **Market share**: Participación de mercado relativa
+- **Crecimiento**: Velocidad versus competidores
+- **Márgenes**: Rentabilidad comparativa
+- **Eficiencia**: Ratios operacionales versus peers
+
+## 🎯 Configuración y Personalización
+
+### 6.1 Customización de Dashboard
+
+**Adaptación por usuario y rol**:
+
+#### Widgets Personalizables
+
+- **KPIs relevantes**: Selección por importancia para el rol
+- **Períodos de análisis**: Rangos temporales preferidos
+- **Formatos de visualización**: Gráficos, tablas, gauges
+- **Colores y alertas**: Semáforos personalizados por métrica
+
+#### Layouts Adaptativos
+
+- **Pantallas**: Optimización para desktop, tablet, móvil
+- **Resolución**: Adaptación automática de elementos
+- **Navegación**: Menús contextuales por tipo de usuario
+- **Accesos rápidos**: Shortcuts a funciones más utilizadas
+
+### 6.2 Configuración de Alertas
+
+**Sistema de notificaciones inteligente**:
+
+#### Umbrales Configurables
+
+- **Límites críticos**: Valores que disparan alertas rojas
+- **Zonas de advertencia**: Rangos que generan alertas amarillas
+- **Tendencias**: Cambios porcentuales que requieren atención
+- **Timing**: Frecuencia y horarios de evaluación
+
+#### Canales de Notificación
+
+- **Email**: Alertas por correo electrónico
+- **SMS**: Mensajes de texto para urgencias críticas
+- **Push notifications**: Notificaciones en app móvil
+- **Dashboard**: Alertas visuales en pantalla principal
+
+### 6.3 Integraciones y APIs
+
+**Conectividad con sistemas externos**:
+
+#### Fuentes de Datos
+
+- **ERP principal**: Integración con sistema contable core
+- **Sistemas auxiliares**: CRM, inventarios, nómina
+- **Bancos**: Conexión directa para saldos en tiempo real
+- **Mercados**: Feeds de tipos de cambio e indicadores económicos
+
+#### Exportación de Datos
+
+- **APIs REST**: Acceso programático para terceros
+- **Webhooks**: Notificaciones automáticas de eventos
+- **Formatos estándar**: JSON, XML, CSV para integraciones
+- **Seguridad**: Autenticación y autorización para accesos
+
+## 📊 Reportes Ejecutivos Automáticos
+
+### 7.1 Reportes Programados
+
+**Distribución automática de información**:
+
+#### Frecuencias Disponibles
+
+- **Diario**: Métricas de caja y operaciones críticas
+- **Semanal**: Resumen de KPIs principales
+- **Mensual**: Estados financieros y análisis detallado
+- **Trimestral**: Reportes regulatorios y estratégicos
+
+#### Personalización por Destinatario
+
+- **CEO/Directorio**: Focus estratégico y resultados consolidados
+- **CFO**: Métricas financieras detalladas y riesgos
+- **Gerencias operacionales**: KPIs específicos por área
+- **Inversionistas**: Rentabilidad, crecimiento y dividendos
+
+### 7.2 Análisis de Performance
+
+**Evaluación integral de resultados**:
+
+#### Variance Analysis
+
+- **Budget vs. Actual**: Desviaciones presupuestarias
+- **Forecast accuracy**: Precisión de proyecciones anteriores
+- **Trend analysis**: Evolución de métricas en el tiempo
+- **Exception reporting**: Desviaciones significativas destacadas
+
+#### Management Commentary
+
+- **Narrativa automática**: Explicaciones generadas por IA
+- **Key insights**: Hallazgos principales destacados
+- **Action items**: Recomendaciones de gestión sugeridas
+- **Risk factors**: Riesgos identificados automáticamente
+
+## 💡 Mejores Prácticas de Gestión
+
+### 8.1 Uso Efectivo del Dashboard
+
+**Estrategias para maximizar valor**:
+
+1. **Revisión regular**: Consulta diaria de métricas críticas
+2. **Drill-down inteligente**: Profundizar en variaciones significativas
+3. **Análisis integrado**: Conectar métricas financieras con operacionales
+4. **Acción oportuna**: Respuesta rápida a alertas críticas
+5. **Comunicación efectiva**: Compartir insights con equipos relevantes
+
+### 8.2 Interpretación de Métricas
+
+**Lectura inteligente de KPIs**:
+
+- **Contexto temporal**: Considerar estacionalidad y ciclos de negocio
+- **Benchmarking**: Comparar siempre con referencias relevantes
+- **Correlaciones**: Entender relaciones entre diferentes métricas
+- **Leading indicators**: Identificar métricas predictivas
+- **Calidad de datos**: Validar consistencia y confiabilidad
+
+<Tip>
+  **Dashboard como herramienta estratégica**: Utiliza el dashboard no solo para
+  monitoreo, sino como herramienta de planificación y comunicación estratégica
+  con stakeholders clave.
+</Tip>
+
+### 8.3 Optimización Continua
+
+**Mejora del sistema de métricas**:
+
+- **Revisión periódica**: Evaluar relevancia de KPIs trimestralmente
+- **Feedback de usuarios**: Incorporar sugerencias de mejora
+- **Automatización**: Reducir tareas manuales mediante algoritmos
+- **Visualización**: Mejorar clarity y usabilidad de gráficos
+- **Predictive analytics**: Evolucionar hacia análisis predictivos
 
 <Warning>
-  Revisa regularmente las notificaciones para mantener tu contabilidad al día.
+  **Sobrecarga de información**: Evita el exceso de métricas que puede generar
+  parálisis de análisis. Enfócate en los KPIs más críticos para la toma de
+  decisiones estratégicas.
 </Warning>
-
-### Alertas del sistema
-
-- **Vencimientos tributarios**: Fechas límite próximas
-- **Saldos pendientes**: Clientes con pagos atrasados
-- **Conciliaciones**: Cuentas por conciliar
-- **Respaldos**: Estado de copias de seguridad
-
-## Acceso rápido a reportes
-
-### Informes más consultados
-
-- [Estado de Resultados](/contabilidad/informes/estado-resultados)
-- [Libro Diario](/contabilidad/informes/libro-diario)
-- [Balance 8 Columnas](/contabilidad/informes/balance-8-columnas)
-- [Posición Bancaria](/empresa/bancos)
-
-### Análisis de gestión
-
-- Antigüedad de saldos por cobrar
-- Flujo de caja proyectado
-- Análisis de ventas por período
-- Control de gastos por centro de costos
-
-## Configuración rápida
-
-### Para comenzar a usar el sistema
-
-1. **Configura tu empresa**: [Información básica](/empresa/informacion)
-2. **Define el plan de cuentas**: [Plan contable](/empresa/plan-cuentas)
-3. **Agrega bancos**: [Cuentas bancarias](/empresa/bancos)
-4. **Configura portales**: [Claves SII](/empresa/claves-portales)
-5. **Registra clientes y proveedores**: [Gestión](/gestion/clientes)
-
-## Soporte y ayuda
-
-¿Necesitas ayuda? Explora nuestra documentación completa o contacta al equipo de soporte.
-
-### Recursos disponibles
-
-- **Documentación completa**: Guías detalladas
-- **Videos tutoriales**: Aprendizaje visual
-- **Soporte técnico**: Asistencia especializada
-- **Capacitación**: Entrenamientos personalizados
-
-## Próximos pasos
-
-- [Configurar información de empresa](/empresa/informacion)
-- [Registrar primera venta](/contabilidad/ventas)
-- [Configurar plan de cuentas](/empresa/plan-cuentas)

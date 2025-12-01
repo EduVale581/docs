@@ -1,52 +1,351 @@
 ---
 title: "Asientos Contables"
-description: "Registro y gestión de asientos contables"
+description: "Generación de Asientos Contables Automáticos"
 ---
 
-# Asientos Contables
+# Índice
 
-Aprende a registrar y gestionar los asientos contables de tu empresa.
+- [Introducción](#introducción)
+- [Cuentas Contables por Defecto](#cuentas-contables-por-defecto)
+- [Tipos de Documentos Soportados](#tipo-de-documentos-soportados)
+- [Generación de Asientos por Tipo](#generacion-de-asientos-por-tipo)
+- [Validaciones y Balances](#validaciones-y-balances)
+- [Casos Especiales](#casos-especiales)
+- [Resolución de Problemas](#resolución-de-problemas)
+- [Mejores Prácticas](#mejores-prácticas)
+- [Soporte](#soporte)
 
-## ¿Qué son los asientos contables?
+## Introducción
 
-Los asientos contables son registros que documentan las transacciones financieras de la empresa según el principio de partida doble.
+El sistema genera asientos contables automáticamente a partir de diferentes tipos de documentos comerciales. Cada documento se traduce en líneas contables que respetan los principios de contabilidad por partida doble, donde la suma de débitos debe ser igual a la suma de créditos.
 
-## Funcionalidades principales
+Características principales:
 
-<CardGroup cols={2}>
-  <Card title="Crear asientos" icon="plus">
-    Registra nuevos asientos contables
-  </Card>
-  <Card title="Consultar asientos" icon="search">
-    Busca y filtra asientos registrados
-  </Card>
-  <Card title="Editar asientos" icon="edit">
-    Modifica asientos existentes
-  </Card>
-  <Card title="Eliminar asientos" icon="trash">
-    Elimina asientos incorrectos
-  </Card>
-</CardGroup>
+- Generación automática de asientos contables
+- Validación de balance (Débitos = Créditos)
+- Soporte multi-documento (Facturas, Boletas, Notas de Crédito, etc.)
+- Manejo de IVA (Crédito y Débito Fiscal)
+- Tratamiento de retenciones y otros impuestos
+- Estados de borrador para asientos desbalanceados
 
-## Tipos de asientos
+## Cuentas Contables por Defecto
 
-- **Asientos de apertura**: Al inicio del período contable
-- **Asientos de operación**: Transacciones del día a día
-- **Asientos de ajuste**: Correcciones y ajustes
-- **Asientos de cierre**: Al finalizar el período contable
+El sistema utiliza las siguientes cuentas contables estándar:
 
-## Estructura de un asiento
+Activos
 
-Todo asiento contable debe incluir:
+| Cuenta  | Nombre              | Uso                                    |
+| ------- | ------------------- | -------------------------------------- |
+| 1110101 | IVA Crédito Fiscal  | IVA recuperable de compras             |
+| 1210101 | Clientes por Cobrar | Ventas a crédito y honorarios emitidos |
 
-- **Fecha**: Fecha de la transacción
-- **Descripción**: Detalle de la operación
-- **Cuentas**: Cuentas afectadas (debe y haber)
-- **Montos**: Importes correspondientes
-- **Referencia**: Documento que respalda
+Pasivos
 
-## Próximos pasos
+| Cuenta  | Nombre                 | Uso                                  |
+| ------- | ---------------------- | ------------------------------------ |
+| 2110101 | Cuentas por Pagar      | IVA recuperable de compras           |
+| 2130101 | IVA Débito Fiscal      | IVA por pagar de ventas              |
+| 2130301 | Retenciones por Pagar  | Retenciones de boletas de honorarios |
+| 2130401 | Retenciones por Cobrar | Retenciones de servicios emitidos    |
 
-- [Plan de Cuentas](/empresa/plan-cuentas)
-- [Libro Diario](/contabilidad/informes/libro-diario)
-- [Libro Mayor](/contabilidad/informes/libro-mayor)
+Cuentas Variables
+
+Cuentas de Ingreso/Gasto: Se definen por documento según la cuenta asociada
+
+## Tipos de Documentos Soportados
+
+1. Compras (Facturas de Proveedores)
+
+- Tipos:
+  - Factura (33)
+  - Factura Exenta (34)
+  - Nota de Crédito (61)
+- Genera:
+  - Gasto
+  - IVA Crédito
+  - Cuentas por Pagar
+
+2. Ventas (Facturas a Clientes)
+
+- Tipos:
+  - Factura (33)
+  - Factura Exenta (34)
+  - Nota de Crédito (61)
+- Genera:
+  - Ingreso
+  - IVA Débito
+  - Clientes por Cobrar
+
+3. Boletas de Honorarios Recibidas
+
+- Genera:
+  - Clientes por Cobrar
+  - Ingresos por Honorarios
+
+4. Boletas de Honorarios Emitidas
+
+- Genera:
+  - Clientes por Cobrar
+  - Ingresos por Honorarios
+
+5. Prestaciones de Servicios Emitidas
+
+- Genera:
+  - Clientes por Cobrar
+  - Ingreso por Servicios
+  - Retenciones por Cobrar
+
+6. Prestaciones de Servicios Recibidas
+
+- Genera:
+  - Gasto por Servicios
+  - Proveedores por Pagar
+
+7. Pagos de Facturas
+
+- Genera:
+  - Cuentas por Pagar
+  - Banco
+
+8. Cobranzas de Facturas
+
+- Genera:
+  - Banco
+  - Clientes por Cobrar
+
+## Generación de Asientos por Tipo
+
+1. Compras (Facturas de Proveedores)
+
+Estructura del Asiento:
+
+| DEBE                         | HABER                       |
+| ---------------------------- | --------------------------- |
+| Gasto (Cuenta Variable)      | Cuentas por Pagar (2110101) |
+| IVA Crédito Fiscal (1110101) |
+
+Cálculos:
+
+- Gasto Total = neto + exento + iva_no_recuperable + otros_impuestos
+- IVA Crédito = iva_recuperable (solo si no es factura exenta)
+- Cuentas por Pagar = total_factura
+
+Casos Especiales:
+
+- Factura Exenta (Tipo 34): No genera IVA Crédito Fiscal
+- Nota de Crédito (Tipo 61): Invierte los signos (multiplica por -1)
+
+Ejemplo - Factura de $100.000 + IVA:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Gasto Oficina 100.000           | Cuentas por Pagar 119.000        |
+| IVA Crédito Fiscal 19.000       |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 119.000                  | TOTAL: 119.000                   |
+
+2. Ventas (Facturas a Clientes)
+
+Estructura del Asiento:
+
+| DEBE                          | HABER                       |
+| ----------------------------- | --------------------------- |
+| Clientes por Cobrar (1210101) | Ingreso (Cuenta Variable)   |
+|                               | IVA Débito Fiscal (2130101) |
+
+Cálculos:
+
+- Ingreso = neto + exento + otros_impuestos
+- IVA Débito = iva_amount (solo si no es factura exenta)
+- Clientes por Cobrar = total_factura
+
+Ejemplo - Venta de $100.000 + IVA:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Clientes por Cobrar 119.000     | Ingreso por Ventas 100.000       |
+|                                 | IVA Débito Fiscal 19.000         |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 119.000                  | TOTAL: 119.000                   |
+
+3. Boletas de Honorarios Recibidas
+
+Estructura del Asiento:
+
+| DEBE                        | HABER                       |
+| --------------------------- | --------------------------- |
+| Gasto Honorarios (Variable) | Retenciones (2130301)       |
+|                             | Cuentas por Pagar (2110101) |
+
+Cálculos:
+
+- Gasto = monto_bruto
+- Retención = retencion (generalmente 10.75%)
+- Por Pagar = monto_liquido (bruto - retención)
+
+Ejemplo - Honorarios $1.000.000:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Gasto Honorarios 1.000.000      | Retenciones 107.500              |
+|                                 | Cuentas por Pagar 892.500        |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 1.000.000                | TOTAL: 1.000.000                 |
+
+4. Boletas de Honorarios Emitidas
+
+Estructura del Asiento:
+
+| DEBE                          | HABER                         |
+| ----------------------------- | ----------------------------- |
+| Clientes por Cobrar (1210101) | Ingreso Honorarios (Variable) |
+
+Ejemplo - Honorarios Emitidos $1.000.000:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Clientes por Cobrar 1.000.000   | Ingreso Profesional 1.000.000    |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 1.000.000                | TOTAL: 1.000.000                 |
+
+5. Pagos de Facturas
+
+Estructura del Asiento:
+
+| DEBE                        | HABER            |
+| --------------------------- | ---------------- |
+| Cuentas por Pagar (2110101) | Banco (Variable) |
+
+Ejemplo - Pago $500.000:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Cuentas por Pagar 500.000       | Banco Santander 500.000          |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 500.000                  | TOTAL: 500.000                   |
+
+6. Cobranzas de Facturas
+
+Estructura del Asiento:
+
+| DEBE             | HABER                         |
+| ---------------- | ----------------------------- |
+| Banco (Variable) | Clientes por Cobrar (1210101) |
+
+Ejemplo - Cobranza $750.000:
+
+| DEBE                            | HABER                            |
+| ------------------------------- | -------------------------------- |
+| Banco Chile 750.000             | Clientes por Cobrar 750.000      |
+| ------------------------------- | -------------------------------- |
+| TOTAL: 750.000                  | TOTAL: 750.000                   |
+
+## Validaciones y Balances
+
+Estados del Asiento
+
+Todos los asientos se validan automáticamente:
+
+1. Si el asiento se encuentra balanceado, se encuentra listo para contabilizar
+2. Si el asiento no se encuentra balanceado, requiere de una revisión manual
+
+Validaciones Previas
+
+1. Se valida si la cuenta contable asociada existe.
+2. Disponibilidad de cuentas por defecto en el plan contable
+3. Montos válidos (no negativos donde no corresponde)
+4. Fechas válidas y normalizadas
+
+## Casos Especiales
+
+Notas de Crédito (Tipo 61)
+
+- Invierte todos los signos del asiento
+- Revierte el asiento original de la factura
+
+Facturas Exentas (Tipo 34)
+
+- No generan movimientos de IVA
+- Solo Gasto/Ingreso y Cuentas por Pagar/Cobrar
+
+IVA No Recuperable
+
+- Se suma al gasto en lugar de ir a IVA Crédito Fiscal
+- Empresas con giro exento parcial
+
+Normalización de Fechas
+
+El sistema acepta múltiples formatos:
+
+- DD/MM/YYYY
+- YYYY-MM-DD
+- DD-MM-YYYY
+
+## Resolución de Problemas
+
+❌ Problema: "Cuenta contable no encontrada"
+Causa: La cuenta asociada al documento no existe o está inactiva
+
+Solución:
+
+- Verificar que la cuenta asociada sea válido
+- Confirmar que la cuenta se encuentre habilitada y no eliminada
+
+❌ Problema: "Cuenta por defecto no existe"
+Causa: Cuentas estándar (IVA, CxP, CxC) no están en el plan contable
+
+Solución:
+Crear las cuentas faltantes:
+
+- 1110101: IVA Crédito Fiscal
+- 1210101: Clientes por Cobrar
+- 2110101: Cuentas por Pagar
+- 2130101: IVA Débito Fiscal
+
+❌ Problema: "Asiento desbalanceado"
+Causa: Error en cálculos o datos del documento
+
+Solución:
+
+- Revisar montos del documento fuente
+- Verificar configuración de IVA y retenciones
+- El asiento se marca como borrador para revisión manual
+
+❌ Problema: "Fecha inválida"
+Causa: Formato de fecha no reconocido
+Solución: Usar formatos soportados o el sistema usará la fecha actual
+
+## Mejores Prácticas
+
+Configuración Inicial
+
+1. Crear plan contable completo con todas las cuentas estándar
+2. Asociar cuentas a cada tipo de documento/producto
+3. Validar configuración con documentos de prueba
+
+Monitoreo Continuo
+
+1. Revisar asientos borradores periódicamente
+2. Verificar balances de cuentas de control (IVA, CxP, CxC)
+3. Actualizar cuentas según cambios en el plan contable
+
+Mantenimiento
+
+1. Mantener activas las cuentas estándar del sistema
+2. Configurar nuevas cuentas para nuevos tipos de documentos
+3. Revisar logs para identificar patrones de error
+
+## Soporte
+
+Para problemas técnicos o dudas sobre la generación de asientos:
+
+1. Verificar logs del sistema para mensajes de error específicos
+2. Revisar configuración de cuentas contables
+3. Validar datos del documento fuente
+4. Contactar soporte técnico con el mensaje de error completo
+
+<Tip>
+  El sistema está diseñado para automatizar la contabilidad, pero siempre revisa
+  los asientos generados para asegurar que reflejen correctamente la realidad
+  económica de tu empresa.
+</Tip>

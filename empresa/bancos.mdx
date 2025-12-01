@@ -1,136 +1,381 @@
 ---
-title: "Bancos"
-description: "Gestión de cuentas bancarias y movimientos financieros"
+title: "Gestión de Bancos"
+description: "Sistema completo de administración de cuentas bancarias con configuración avanzada, múltiples monedas y tipos de cuenta para gestión integral de tesorería."
 ---
 
-# Bancos
+## 🏠 Vista Principal de Bancos
 
-Gestiona todas las cuentas bancarias y movimientos financieros de tu empresa.
+### Acceso al Sistema
 
-## ¿Qué incluye la gestión bancaria?
+- **Ruta**: Dashboard → Bancos
+- **Permisos requeridos**: Administrador, Jefe Contable, Usuario de Tesorería
 
-La gestión bancaria permite controlar todas las cuentas corrientes, de ahorro y otros productos financieros de la empresa.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Lista de Bancos**: Tabla completa con todas las cuentas bancarias configuradas
+- **Botón de Creación**: Acceso rápido para agregar nuevas cuentas bancarias
+- **Gestión Completa**: Visualización y eliminación de cuentas existentes
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Cuentas bancarias" icon="building-columns">
-    Registra y gestiona cuentas bancarias
+  <Card
+    title="Configuración Multi-Banco"
+    icon="building-columns"
+    color="#0066cc"
+  >
+    Gestión centralizada de cuentas en múltiples instituciones bancarias
   </Card>
-  <Card title="Movimientos" icon="exchange-alt">
-    Registra depósitos, giros y transferencias
+  <Card title="Soporte Multi-Moneda" icon="coins" color="#17a2b8">
+    Manejo de cuentas en diferentes monedas con símbolos específicos
   </Card>
-  <Card title="Conciliación" icon="check-double">
-    Concilia extractos bancarios
+  <Card title="Tipos de Cuenta Flexibles" icon="credit-card" color="#28a745">
+    Configuración de cuentas corrientes, vista, ahorro y especializadas
   </Card>
-  <Card title="Reportes" icon="chart-line">
-    Genera reportes de posición bancaria
+  <Card title="Gestión Segura" icon="shield-check" color="#6c757d">
+    Control de acceso y confirmación para operaciones críticas
   </Card>
 </CardGroup>
 
-## Configuración de cuentas bancarias
+### 2.1 Lista de Bancos Configurados
 
-### Información básica
+**Información mostrada por cada banco**:
 
-- **Banco**: Nombre de la entidad bancaria
-- **Tipo de cuenta**: Corriente, ahorro, etc.
-- **Número de cuenta**: Número identificador
-- **Moneda**: CLP, USD, EUR, etc.
-- **Titular**: Nombre del titular de la cuenta
+| Campo                | Descripción                         | Ejemplo          |
+| -------------------- | ----------------------------------- | ---------------- |
+| **Banco**            | Nombre de la institución bancaria   | Banco Estado     |
+| **Tipo Moneda**      | Denominación completa de la moneda  | Peso Chileno     |
+| **Símbolo**          | Símbolo de la moneda                | CLP              |
+| **Tipo de Cuenta**   | Clasificación de la cuenta bancaria | Cuenta Corriente |
+| **Número de Cuenta** | Identificador único de la cuenta    | 12345678-9       |
+| **Acciones**         | Opciones de gestión                 | Eliminar         |
 
-### Información adicional
+### 2.2 Gestión de Cuentas Bancarias
 
-- **Ejecutivo**: Contacto en el banco
-- **Teléfono banco**: Número de contacto
-- **Email**: Correo para notificaciones
-- **Sucursal**: Sucursal de origen
-- **Estado**: Activa/Inactiva
+**Operaciones disponibles**:
 
-## Tipos de cuentas
+<Tabs>
+  <Tab title="Crear Nueva Cuenta">
+    - **Acceso**: Botón "Nuevo Banco" con ícono plus - **Proceso**: Formulario
+    guiado paso a paso - **Validación**: Verificación automática de datos -
+    **Confirmación**: Diálogo de confirmación antes de crear
+  </Tab>
+  <Tab title="Eliminar Cuenta">
+    - **Acceso**: Ícono de eliminación en cada fila - **Seguridad**: Diálogo de
+    confirmación obligatorio - **Validación**: Verificación de uso antes de
+    eliminar - **Proceso**: Eliminación segura con confirmación
+  </Tab>
+</Tabs>
 
-### Cuentas corrientes
+## 📋 Proceso de Creación de Cuentas Bancarias
 
-- **Uso general**: Para operaciones diarias
-- **Chequera**: Emisión de cheques
-- **Línea de crédito**: Sobregiro autorizado
-- **Comisiones**: Costos de mantención
+### 3.1 Formulario de Nueva Cuenta Bancaria
 
-### Cuentas de ahorro
+**Campos obligatorios del formulario**:
 
-- **Rentabilidad**: Genera intereses
-- **Restricciones**: Límites de giros
-- **Uso**: Para reservas de efectivo
+<Steps>
+  <Step title="Seleccionar País">
+    Elegir el país donde está ubicada la cuenta bancaria
+  </Step>
+  <Step title="Seleccionar Banco">
+    Elegir la institución bancaria de una lista predefinida
+  </Step>
+  <Step title="Configurar Moneda">
+    Seleccionar tipo de moneda y símbolo correspondiente
+  </Step>
+  <Step title="Definir Tipo de Cuenta">
+    Especificar si es cuenta corriente, vista, ahorro, etc.
+  </Step>
+  <Step title="Ingresar Número de Cuenta">
+    Proporcionar el número identificatorio único de la cuenta
+  </Step>
+</Steps>
 
-### Cuentas especiales
+### 3.2 Validaciones Automáticas
 
-- **Moneda extranjera**: USD, EUR, etc.
-- **Depósito a plazo**: Inversiones temporales
-- **Cuentas recaudadoras**: Para cobranzas
-- **Factoring**: Adelanto de facturas
+**El sistema valida automáticamente**:
 
-## Movimientos bancarios
+<CardGroup cols={2}>
+  <Card title="Integridad de Datos" icon="check-circle">
+    - Todos los campos obligatorios completos - Formato correcto del número de
+    cuenta - Coherencia entre país, banco y moneda
+  </Card>
+  <Card title="Unicidad" icon="fingerprint">
+    - No duplicación de número de cuenta - Verificación de combinaciones únicas
+    - Prevención de conflictos de configuración
+  </Card>
+</CardGroup>
 
-### Tipos de movimientos
+### 3.3 Configuración Jerárquica
 
-#### Ingresos
+**Dependencias entre campos**:
 
-- **Depósitos**: Dinero recibido
-- **Transferencias recibidas**: De otras cuentas
-- **Cobros**: Por ventas o servicios
-- **Intereses**: Ganados por saldos
+```
+┌─────────────────────────────────────────┐
+│ CONFIGURACIÓN JERÁRQUICA                │
+├─────────────────────────────────────────┤
+│ 1. País → Determina opciones disponibles│
+│ 2. Banco → Lista filtrada por país      │
+│ 3. Moneda → Tipos disponibles por país  │
+│ 4. Tipo Cuenta → Según banco y país     │
+│ 5. Número → Formato según tipo          │
+└─────────────────────────────────────────┘
+```
 
-#### Egresos
+<Info>
+  **Configuración Inteligente**: Al seleccionar un país, el sistema
+  automáticamente filtra y muestra solo los bancos, monedas y tipos de cuenta
+  disponibles para esa jurisdicción.
+</Info>
 
-- **Giros**: Retiros de efectivo
-- **Transferencias enviadas**: A otras cuentas
-- **Pagos**: A proveedores o servicios
-- **Comisiones**: Cobradas por el banco
+## 🌍 Gestión Internacional de Cuentas
 
-### Registro de movimientos
+### 4.1 Soporte Multi-País
 
-- **Fecha valor**: Fecha efectiva del movimiento
-- **Descripción**: Detalle de la operación
-- **Monto**: Importe del movimiento
-- **Saldo**: Saldo resultante
-- **Referencia**: Documento asociado
+**Configuración por jurisdicción**:
 
-## Conciliación bancaria
+- **Chile**: Bancos locales con pesos chilenos y dólares
+- **Argentina**: Instituciones argentinas con pesos argentinos
+- **Colombia**: Bancos colombianos con pesos colombianos
+- **Perú**: Bancos peruanos con soles
+- **Estados Unidos**: Bancos estadounidenses con dólares USD
+- **Europa**: Bancos europeos con euros
 
-### Proceso de conciliación
+### 4.2 Tipos de Moneda Soportados
 
-1. **Obtener extracto**: Del banco
-2. **Comparar movimientos**: Con registros propios
-3. **Identificar diferencias**: Partidas no conciliadas
-4. **Realizar ajustes**: Corregir diferencias
-5. **Generar reporte**: Documento la conciliación
+**Monedas principales disponibles**:
 
-### Diferencias comunes
+<CardGroup cols={3}>
+  <Card title="Monedas Latinoamericanas" icon="map">
+    - **CLP**: Peso Chileno ($) - **ARS**: Peso Argentino ($) - **COP**: Peso
+    Colombiano ($) - **PEN**: Sol Peruano (S/) - **BRL**: Real Brasileño (R$)
+  </Card>
+  <Card title="Monedas Internacionales" icon="globe">
+    - **USD**: Dólar Estadounidense ($) - **EUR**: Euro (€) - **GBP**: Libra
+    Esterlina (£) - **CAD**: Dólar Canadiense (C$) - **JPY**: Yen Japonés (¥)
+  </Card>
+  <Card title="Monedas Emergentes" icon="trending-up">
+    - **MXN**: Peso Mexicano ($) - **UYU**: Peso Uruguayo ($) - **BOB**:
+    Boliviano (Bs.) - **PYG**: Guaraní (₲)
+  </Card>
+</CardGroup>
 
-- **Cheques en tránsito**: Emitidos pero no cobrados
-- **Depósitos en tránsito**: No reflejados aún
-- **Cargos bancarios**: Comisiones no registradas
-- **Intereses**: No contabilizados
-- **Errores**: Del banco o propios
+### 4.3 Tipos de Cuenta Especializados
 
-## Reportes bancarios
+**Clasificaciones disponibles**:
 
-### Informes disponibles
+- **Cuenta Corriente**: Para operaciones comerciales diarias
+- **Cuenta Vista**: Para transacciones rápidas sin chequera
+- **Cuenta de Ahorro**: Para reservas y ahorros empresariales
+- **Cuenta USD**: Cuentas en dólares estadounidenses
+- **Cuenta Escrow**: Cuentas de garantía para transacciones especiales
+- **Línea de Crédito**: Facilidades crediticias pre-aprobadas
 
-- **Posición bancaria**: Saldos de todas las cuentas
-- **Flujo de caja**: Proyección de movimientos
-- **Movimientos**: Detalle por cuenta y período
-- **Conciliaciones**: Estado de conciliaciones
-- **Comisiones**: Análisis de costos bancarios
+## 💡 Casos de Uso Empresariales
 
-### Indicadores clave
+### 5.1 Empresas Multi-País
 
-- **Saldo promedio**: Por cuenta y período
-- **Rotación**: Movimientos vs saldo
-- **Costos**: Comisiones e intereses
-- **Liquidez**: Disponibilidad de efectivo
+**Para compañías con operaciones internacionales**:
 
-## Próximos pasos
+<Steps>
+  <Step title="Configuración por País">
+    Crear cuentas bancarias en cada país de operación
+  </Step>
+  <Step title="Gestión de Monedas">
+    Configurar cuentas en monedas locales y de reserva (USD/EUR)
+  </Step>
+  <Step title="Consolidación Corporativa">
+    Mantener visibilidad centralizada de todas las cuentas
+  </Step>
+  <Step title="Reporting Unificado">
+    Generar reportes consolidados multi-moneda
+  </Step>
+</Steps>
 
-- [Conciliación Bancaria](/contabilidad/conciliacion-bancaria)
-- [Cobros y Pagos](/gestion/cobros-pagos)
-- [Flujo de Caja](/contabilidad/informes/estado-resultados)
+### 5.2 Gestión de Tesorería Avanzada
+
+**Para CFOs y tesoreros**:
+
+- **Diversificación Bancaria**: Distribución de riesgo entre múltiples bancos
+- **Optimización de Monedas**: Estrategias de cobertura cambiaria
+- **Gestión de Liquidez**: Control centralizado de disponibilidades
+- **Planificación de Cash Flow**: Base para proyecciones financieras
+
+### 5.3 Cumplimiento y Auditoría
+
+**Para control interno**:
+
+- **Trazabilidad Completa**: Registro de todas las configuraciones y cambios
+- **Segregación de Funciones**: Diferentes roles para crear y aprobar cuentas
+- **Auditoría de Accesos**: Log de todas las operaciones realizadas
+- **Compliance Internacional**: Cumplimiento de regulaciones por país
+
+## 🔧 Configuración Técnica Avanzada
+
+### 6.1 Integración con Sistemas Bancarios
+
+**Preparación para conectividad**:
+
+<CardGroup cols={2}>
+  <Card title="APIs Bancarias" icon="plug">
+    - Configuración de credenciales de acceso - Endpoints específicos por banco
+    - Protocolos de seguridad requeridos
+  </Card>
+  <Card title="Sincronización" icon="sync">
+    - Frecuencia de actualización de saldos - Horarios de sincronización
+    automática - Manejo de timeouts y reconexiones
+  </Card>
+</CardGroup>
+
+### 6.2 Seguridad y Accesos
+
+**Niveles de seguridad implementados**:
+
+- **Autenticación Multi-Factor**: Para operaciones sensibles
+- **Roles Diferenciados**: Creación vs eliminación de cuentas
+- **Auditoría Completa**: Log de todas las acciones realizadas
+- **Confirmaciones Obligatorias**: Diálogos de confirmación para cambios críticos
+
+## 🚨 Mejores Prácticas
+
+### 7.1 Nomenclatura y Organización
+
+**Convenciones recomendadas**:
+
+<Steps>
+  <Step title="Códigos Estándar">
+    Usar nomenclatura consistente para números de cuenta
+  </Step>
+  <Step title="Clasificación por Tipo">
+    Agrupar cuentas por finalidad (operacional, inversión, reserva)
+  </Step>
+  <Step title="Identificación por Moneda">
+    Incluir código de moneda en nomenclatura interna
+  </Step>
+  <Step title="Documentación">
+    Mantener registro de propósito y responsable de cada cuenta
+  </Step>
+</Steps>
+
+### 7.2 Gestión de Riesgos Bancarios
+
+**Estrategias de mitigación**:
+
+- **Diversificación**: No concentrar más del 40% en un solo banco
+- **Respaldo de Información**: Mantener copias de configuraciones críticas
+- **Monitoreo Regular**: Verificar estados y saldos periódicamente
+- **Plan de Contingencia**: Procedimientos para cambios de banco urgentes
+
+### 7.3 Mantenimiento Periódico
+
+<Warning>
+  **Revisión Trimestral**: Es recomendable revisar trimestralmente la
+  configuración de cuentas bancarias para eliminar cuentas inactivas y
+  actualizar información de contacto.
+</Warning>
+
+**Checklist de mantenimiento**:
+
+- ✅ Verificar vigencia de cuentas bancarias
+- ✅ Actualizar información de contacto con bancos
+- ✅ Revisar límites y condiciones de cuentas
+- ✅ Eliminar cuentas cerradas o inactivas
+- ✅ Validar configuración de monedas y tipos
+
+## 🔧 Solución de Problemas
+
+### Problema: No se puede crear nueva cuenta bancaria
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Validaciones de Formulario">
+- ✅ Verificar que todos los campos obligatorios estén completos
+- ✅ Confirmar que el número de cuenta tenga formato válido
+- ✅ Validar que la combinación país-banco-moneda sea coherente
+- ✅ Asegurar que no exista duplicación de número de cuenta
+</Accordion>
+
+<Accordion title="Problemas de Conectividad">
+- 🔧 Verificar conexión a internet estable
+- 🔧 Comprobar que el servidor de aplicaciones esté respondiendo
+- 🔧 Validar que no hay restricciones de firewall
+- 📞 Contactar soporte si persisten problemas técnicos
+</Accordion>
+</AccordionGroup>
+
+### Problema: Error al eliminar cuenta bancaria
+
+**Pasos de resolución**:
+
+1. **Verificar Uso Activo**: Confirmar que la cuenta no tenga transacciones pendientes
+2. **Revisar Dependencias**: Verificar que no esté vinculada a procesos automáticos
+3. **Validar Permisos**: Asegurar que el usuario tenga permisos de eliminación
+4. **Proceso Gradual**: Desactivar primero, eliminar después de verificaciones
+
+### Problema: Configuración de país/banco no disponible
+
+**Solución de configuración**:
+
+<Steps>
+  <Step title="Verificar Catálogos">
+    Confirmar que el país y banco estén en catálogos del sistema
+  </Step>
+  <Step title="Solicitar Adición">
+    Contactar soporte para agregar nuevos países o bancos
+  </Step>
+  <Step title="Configuración Temporal">
+    Usar configuración genérica mientras se agrega la específica
+  </Step>
+  <Step title="Actualización Posterior">
+    Actualizar configuración una vez disponible la opción específica
+  </Step>
+</Steps>
+
+## 📞 Soporte Especializado en Bancos
+
+### Contacto de Tesorería y Bancos
+
+<Card title="Equipo de Tesorería" icon="vault">
+  - **Email Especializado**: bancos@contago.cl - **Teléfono Directo**: +56 2
+  1234 5686 - **Horario**: Lunes a Viernes, 8:00 - 19:00 - **Especialidad**:
+  Configuración bancaria, multi-moneda, integración APIs
+</Card>
+
+### Recursos de Capacitación
+
+- **Guía de Setup**: Configuración paso a paso por país
+- **Webinar Mensual**: "Mejores Prácticas en Gestión Bancaria Empresarial"
+- **Plantillas**: Formularios de solicitud para nuevos bancos/países
+- **Videos Tutoriales**: Casos de uso por tipo de empresa
+
+### Red de Especialistas
+
+- **Gerentes de Cuentas Bancarias**: Contactos directos en instituciones financieras
+- **Especialistas en Tesorería**: Consultores en gestión de liquidez
+- **Expertos en Multi-Moneda**: Asesores en gestión cambiaria
+- **Soporte Técnico 24/7**: Para problemas críticos de conectividad
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Gestión de Bancos es fundamental para:
+
+- **Centralización Bancaria**: Gestión unificada de todas las cuentas empresariales
+- **Flexibilidad Internacional**: Soporte completo para operaciones multi-país
+- **Control de Tesorería**: Base sólida para gestión avanzada de liquidez
+- **Compliance Financiero**: Cumplimiento de regulaciones bancarias internacionales
+
+<Tip>
+  **Configuración Estratégica**: Una correcta configuración inicial de cuentas
+  bancarias es la base para una gestión de tesorería eficiente y reportes
+  financieros precisos. Invierta tiempo en configurar apropiadamente desde el
+  inicio.
+</Tip>
+
+<Info>
+  **Escalabilidad Global**: El sistema está diseñado para crecer con su empresa.
+  Puede agregar nuevos países, bancos y monedas según se expanda
+  internacionalmente, manteniendo siempre una gestión centralizada y eficiente.
+</Info>

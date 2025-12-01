@@ -1,0 +1,335 @@
+---
+title: "Libro Diario"
+description: "Sistema de registro cronológico de asientos contables con exportación avanzada y filtros de período para un control contable preciso."
+---
+
+## 🏠 Vista Principal del Libro Diario
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Libro Diario
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor, Supervisor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Filtros de Período**: Control de fechas para definir el rango de consulta
+- **Indicadores Resumen**: Totales de débitos, créditos y número de asientos
+- **Lista Detallada**: Asientos contables organizados cronológicamente
+
+## 🔧 Funciones Principales del Sistema
+
+<CardGroup cols={2}>
+  <Card title="Filtrado por Fechas" icon="calendar" color="#0066cc">
+    Control preciso de períodos con fechas de inicio y fin
+  </Card>
+  <Card title="Exportación Avanzada" icon="download" color="#17a2b8">
+    Exporta en PDF o Excel con formato profesional
+  </Card>
+  <Card title="Totales Automáticos" icon="calculator" color="#28a745">
+    Suma automática de débitos, créditos y conteo de asientos
+  </Card>
+  <Card title="Vista Detallada" icon="list" color="#6c757d">
+    Cada asiento muestra todas sus líneas contables
+  </Card>
+</CardGroup>
+
+### 2.1 Control de Período
+
+**Filtros de Fecha**:
+
+- **Fecha de Inicio**: Selector de fecha inicial del período
+- **Fecha de Fin**: Selector de fecha final del período (máximo hasta hoy)
+- **Configuración por Defecto**: Inicio y fin del mes actual
+- **Actualización Automática**: Los datos se actualizan al cambiar las fechas
+
+### 2.2 Exportación de Documentos
+
+**Botón de Exportación Split**: Opciones múltiples de descarga
+
+<Tabs>
+  <Tab title="Exportar PDF">
+    - **Formato**: Documento PDF con diseño profesional - **Contenido**: Todos
+    los asientos del período seleccionado - **Descarga**: Automática con nombre
+    de archivo generado - **Validación**: Sistema valida que existan datos antes
+    de exportar
+  </Tab>
+  <Tab title="Exportar Excel">
+    - **Formato**: Hoja de cálculo compatible con Excel - **Estructura**:
+    Tabular para análisis avanzado - **Filtros**: Mantiene los filtros de
+    período aplicados - **Uso**: Ideal para análisis de datos y reportes
+    personalizados
+  </Tab>
+</Tabs>
+
+## 📊 Indicadores de Resumen Financiero
+
+### 3.1 Panel de Totales
+
+Tres cards informativos muestran:
+
+<CardGroup cols={3}>
+  <Card title="Total Débitos" icon="arrow-up" color="#28a745">
+    - Suma de todos los débitos del período - Color verde con ícono hacia arriba
+    - Formato de moneda chilena (CLP)
+  </Card>
+  <Card title="Total Créditos" icon="arrow-down" color="#dc3545">
+    - Suma de todos los créditos del período - Color rojo con ícono hacia abajo
+    - Validación automática de balance
+  </Card>
+  <Card title="Total Asientos" icon="file-text" color="#17a2b8">
+    - Cantidad total de asientos registrados - Color azul con ícono de documento
+    - Contador dinámico por período
+  </Card>
+</CardGroup>
+
+### 3.2 Validación de Balance
+
+<Info>
+  **Principio Contable**: El sistema verifica automáticamente que la suma de
+  débitos sea igual a la suma de créditos, cumpliendo con el principio
+  fundamental de la partida doble.
+</Info>
+
+## 📋 Estructura Detallada de Asientos
+
+### 4.1 Información por Asiento
+
+Cada asiento contable muestra:
+
+- **Encabezado del Asiento**:
+  - Número de asiento (código único)
+  - Fecha del asiento (formato DD/MM/YYYY)
+  - Presentación en card individual
+
+### 4.2 Tabla de Líneas Contables
+
+**Columnas de la tabla**:
+
+| Columna         | Descripción                           | Formato                      |
+| --------------- | ------------------------------------- | ---------------------------- |
+| **Cuenta**      | Código y nombre de la cuenta contable | (Código) Nombre Completo     |
+| **Descripción** | Detalle de la transacción             | Texto descriptivo            |
+| **Debe**        | Monto del débito                      | Formato CLP o "-" si es cero |
+| **Haber**       | Monto del crédito                     | Formato CLP o "-" si es cero |
+
+### 4.3 Subtotales por Asiento
+
+Al final de cada asiento se muestra:
+
+```
+┌─────────────────────────────────────────┐
+│ SUBTOTAL ASIENTO                        │
+├─────────────────┬───────────────────────┤
+│ DEBE:           │ $XXX.XXX              │
+│ HABER:          │ $XXX.XXX              │
+│ BALANCE:        │ ✅ Balanceado         │
+└─────────────────┴───────────────────────┘
+```
+
+<Tip>
+  **Validación Automática**: Si un asiento no está balanceado (debe ≠ haber), el
+  sistema lo destacará visualmente para corrección inmediata.
+</Tip>
+
+## 🔍 Funciones de Navegación y Control
+
+### 5.1 Navegación por Períodos
+
+**Estrategias recomendadas**:
+
+- **Consulta Mensual**: Para revisiones regulares de gestión
+- **Consulta Diaria**: Para seguimiento de operaciones específicas
+- **Consulta Anual**: Para cierres contables y análisis anuales
+- **Períodos Personalizados**: Para auditorías o análisis específicos
+
+### 5.2 Estados de Carga
+
+El sistema proporciona:
+
+- **Skeleton Loaders**: Indicadores visuales durante la carga
+- **Mensajes de Error**: Notificaciones claras si hay problemas
+- **Validación de Datos**: Verificación de integridad antes de mostrar
+
+## 📄 Casos de Uso y Aplicaciones
+
+### 6.1 Revisión Contable Diaria
+
+<Steps>
+  <Step title="Configurar Período">
+    Establecer las fechas del día o período específico a revisar
+  </Step>
+  <Step title="Analizar Totales">
+    Verificar que los totales de débito y crédito coincidan
+  </Step>
+  <Step title="Revisar Asientos">
+    Examinar cada asiento línea por línea para verificar correctitud
+  </Step>
+  <Step title="Validar Balance">
+    Confirmar que cada asiento esté perfectamente balanceado
+  </Step>
+</Steps>
+
+### 6.2 Preparación de Informes
+
+**Para Gerencia**:
+
+- Exportar en PDF para presentaciones formales
+- Incluir análisis de períodos comparativos
+- Destacar movimientos significativos
+
+**Para Auditoría**:
+
+- Exportar en Excel para análisis detallado
+- Proporcionar períodos completos sin filtros
+- Mantener trazabilidad completa de transacciones
+
+### 6.3 Control de Calidad Contable
+
+<Warning>
+  **Puntos de Validación Críticos**: - Verificar que no existan asientos
+  desbalanceados - Confirmar que las fechas estén dentro del período fiscal
+  correcto - Validar que las descripciones sean claras y comprensibles -
+  Asegurar que las cuentas contables sean apropiadas para cada transacción
+</Warning>
+
+## 💡 Mejores Prácticas
+
+### 7.1 Frecuencia de Revisión Recomendada
+
+- **Diaria**: Para empresas con alto volumen de transacciones
+- **Semanal**: Para empresas medianas con flujo moderado
+- **Mensual**: Para empresas pequeñas o como revisión general
+
+### 7.2 Análisis de Tendencias
+
+Use el libro diario para identificar:
+
+<CardGroup cols={2}>
+  <Card title="Patrones de Transacciones" icon="chart-line">
+    - Tipos de operaciones más frecuentes - Cuentas con mayor movimiento -
+    Tendencias estacionales
+  </Card>
+  <Card title="Indicadores de Calidad" icon="check-circle">
+    - Porcentaje de asientos balanceados - Consistencia en descripciones - Uso
+    apropiado del plan de cuentas
+  </Card>
+</CardGroup>
+
+### 7.3 Organización del Trabajo
+
+**Proceso recomendado**:
+
+1. **Revisión Matutina**: Verificar asientos del día anterior
+2. **Control Semanal**: Analizar tendencias y patrones
+3. **Cierre Mensual**: Exportar y archivar documentación completa
+4. **Auditoría Trimestral**: Revisión exhaustiva con Excel para análisis avanzado
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: No se muestran asientos en el período seleccionado
+
+**Diagnóstico y solución**:
+
+<AccordionGroup>
+<Accordion title="Verificaciones Básicas">
+- ✅ Confirmar que existen asientos en el rango de fechas
+- ✅ Verificar que las fechas estén en orden correcto (inicio < fin)
+- ✅ Revisar permisos de usuario para el módulo
+- ✅ Validar conexión con la base de datos
+</Accordion>
+
+<Accordion title="Soluciones Avanzadas">
+- 🔄 Refrescar la página y volver a aplicar filtros
+- 📅 Ampliar el rango de fechas para incluir más registros
+- 👤 Verificar que el usuario tenga acceso a la empresa seleccionada
+- 🔧 Contactar soporte si el problema persiste
+</Accordion>
+</AccordionGroup>
+
+### Problema: Error en exportación de documentos
+
+**Pasos de resolución**:
+
+1. **Verificar Datos**: Asegurar que existan registros en el período
+2. **Revisar Permisos**: Confirmar permisos de descarga del navegador
+3. **Formato de Archivo**: Verificar que el navegador soporte el tipo de archivo
+4. **Tamaño de Datos**: Para períodos muy grandes, dividir en rangos más pequeños
+
+### Problema: Asientos muestran como desbalanceados
+
+**Proceso de corrección**:
+
+<Steps>
+  <Step title="Identificar el Problema">
+    Localizar qué líneas del asiento tienen diferencias entre debe y haber
+  </Step>
+  <Step title="Revisar Fuente">
+    Verificar el asiento original en el módulo correspondiente
+  </Step>
+  <Step title="Corregir Origen">
+    Realizar las correcciones en el módulo donde se originó el asiento
+  </Step>
+  <Step title="Validar Resultado">
+    Refrescar el libro diario para confirmar la corrección
+  </Step>
+</Steps>
+
+## 🚨 Consideraciones Especiales
+
+### 9.1 Rendimiento del Sistema
+
+**Para períodos extensos**:
+
+- **Períodos Largos**: Dividir consultas de más de un año en trimestres
+- **Alto Volumen**: Para empresas con miles de asientos, usar filtros específicos
+- **Exportación Masiva**: Exportar por meses individuales para mejor rendimiento
+
+### 9.2 Integridad de Datos
+
+<Info>
+  **Automatización**: El libro diario se actualiza automáticamente cuando se
+  generan nuevos asientos desde otros módulos como Ventas, Compras, o Asientos
+  Manuales.
+</Info>
+
+### 9.3 Aspectos Regulatorios
+
+El libro diario cumple con:
+
+- **Normativa Tributaria Chilena**: Formato y contenido según SII
+- **Principios Contables**: PCGA (Principios de Contabilidad Generalmente Aceptados)
+- **Auditoría Externa**: Estructura compatible con requerimientos de auditores
+
+## 📞 Soporte y Ayuda
+
+### Contacto de Soporte Técnico
+
+<Card title="Soporte Especializado" icon="phone">
+  - **Email**: soporte@contago.cl - **Teléfono**: +56 2 1234 5678 - **Horario**:
+  Lunes a Viernes, 9:00 - 18:00 - **Especialidad**: Módulos contables y reportes
+  financieros
+</Card>
+
+### Recursos Adicionales
+
+- **Base de Conocimientos**: Documentación técnica completa
+- **Videos Tutorial**: Guías paso a paso para funciones avanzadas
+- **Webinars Mensuales**: Capacitaciones sobre mejores prácticas contables
+- **Foro de Usuarios**: Comunidad para compartir experiencias y soluciones
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Libro Diario es fundamental para:
+
+- **Control Contable**: Supervisión completa de todos los asientos
+- **Cumplimiento Regulatorio**: Documentación según normativas chilenas
+- **Análisis Financiero**: Base para informes y análisis avanzados
+- **Auditoría**: Trazabilidad completa para procesos de auditoría
+
+<Tip>
+  **Recordatorio Clave**: El libro diario es la columna vertebral del sistema
+  contable. Una revisión regular y sistemática garantiza la integridad de toda
+  la información financiera de la empresa.
+</Tip>

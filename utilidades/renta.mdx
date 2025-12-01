@@ -1,85 +1,384 @@
 ---
 title: "Renta"
-description: "Gestión de impuesto a la renta y declaración anual"
+description: "Sistema de gestión y actualización de información de renta desde el SII con procesamiento automático mediante formulario F22 y monitoreo en tiempo real."
 ---
 
-# Renta
+## 🏠 Vista Principal de Renta
 
-Gestiona el impuesto a la renta y prepara la declaración anual de tu empresa.
+### Acceso al Sistema
 
-## ¿Qué es el impuesto a la renta?
+- **Ruta**: Dashboard → Renta
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor, Supervisor
 
-El impuesto a la renta grava las utilidades obtenidas por la empresa durante el año comercial.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Botón de Actualización**: Obtención automática de datos F22 desde el SII
+- **Monitoreo Automático**: Polling cada 60 segundos para actualizaciones
+- **Vista Especializada F22**: Presentación organizada de información de renta
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Cálculo automático" icon="calculator">
-    Calcula el impuesto basado en utilidades
+  <Card title="Integración F22" icon="file-invoice" color="#0066cc">
+    Conexión directa con SII para obtener formularios F22 actualizados
   </Card>
-  <Card title="PPM aplicados" icon="credit-card">
-    Considera pagos provisionales realizados
+  <Card title="Procesamiento Automático" icon="cog" color="#17a2b8">
+    Análisis y estructuración automática de datos de renta
   </Card>
-  <Card title="Formulario 22" icon="file-text">
-    Genera formulario de declaración
+  <Card title="Monitoreo Continuo" icon="refresh" color="#28a745">
+    Verificación automática cada 60 segundos de cambios en SII
   </Card>
-  <Card title="Análisis tributario" icon="chart-line">
-    Analiza la situación tributaria
+  <Card title="Gestión Centralizada" icon="archive" color="#6c757d">
+    Almacenamiento y organización de toda la información de renta
   </Card>
 </CardGroup>
 
-## Proceso de declaración
+### 2.1 Formulario F22 - Base del Sistema
 
-### 1. Determinación de la renta líquida imponible
+**¿Qué es el F22?**:
 
-- **Resultado contable**: Utilidad o pérdida del ejercicio
-- **Agregados**: Gastos rechazados tributariamente
-- **Deducciones**: Beneficios tributarios aplicables
-- **Renta líquida imponible**: Base para el cálculo
+El formulario F22 es el documento oficial del SII que contiene la información detallada de la declaración anual de renta de las empresas, incluyendo:
 
-### 2. Cálculo del impuesto
+- **Ingresos Declarados**: Todos los ingresos del ejercicio tributario
+- **Gastos Deducibles**: Gastos aceptados tributariamente
+- **Base Imponible**: Cálculo de la renta líquida imponible
+- **Impuestos**: Determinación y cálculo de impuestos anuales
+- **Pagos Provisionales**: Registro de pagos mensuales realizados
+- **Saldo a Favor/Pagar**: Resultado final de la declaración
 
-- **Tasa**: 25% para empresas (27% si excede cierto monto)
-- **Impuesto determinado**: Renta líquida × tasa
-- **Créditos**: PPM pagados durante el año
-- **Impuesto a pagar**: Diferencia final
+### 2.2 Actualización desde el SII
 
-### 3. Formularios principales
+**Proceso de obtención**:
 
-- **Formulario 22**: Declaración de renta empresas
-- **Balance tributario**: Estados financieros para SII
-- **Formularios anexos**: Según corresponda
+<Steps>
+  <Step title="Iniciar Conexión">
+    Click en "Actualizar/Obtener Rentas" para conectar con SII
+  </Step>
+  <Step title="Autenticación">
+    Verificación automática de certificados digitales y permisos
+  </Step>
+  <Step title="Descarga F22">
+    Obtención del formulario F22 más reciente de la empresa
+  </Step>
+  <Step title="Procesamiento">
+    Análisis y estructuración de la información recibida
+  </Step>
+  <Step title="Actualización Continua">
+    Monitoreo automático cada 60 segundos de cambios
+  </Step>
+</Steps>
 
-## Agregados y deducciones comunes
+## 📊 Información de Renta Procesada
 
-### Agregados frecuentes
+### 3.1 Datos del Formulario F22
 
-- Gastos no necesarios para producir la renta
-- Provisiones no aceptadas tributariamente
-- Multas y sanciones
-- Exceso en gastos de representación
+**Categorías principales de información**:
 
-### Deducciones frecuentes
+<Tabs>
+  <Tab title="Ingresos y Rentas">
+    - **Ingresos del Giro**: Ventas y servicios del período - **Rentas de
+    Capital**: Dividendos, intereses, arriendos - **Otras Rentas**: Ingresos
+    extraordinarios o no operacionales - **Total Ingresos Brutos**: Suma de
+    todos los ingresos declarados
+  </Tab>
+  <Tab title="Gastos y Deducciones">
+    - **Gastos del Giro**: Gastos operacionales deducibles - **Gastos
+    Financieros**: Intereses y comisiones bancarias - **Depreciaciones**:
+    Depreciación de activos fijos - **Otros Gastos**: Gastos extraordinarios
+    aceptados
+  </Tab>
+  <Tab title="Cálculo Tributario">
+    - **Renta Líquida**: Ingresos menos gastos deducibles - **Base Imponible**:
+    Base para cálculo de impuestos - **Impuesto Determinado**: Impuesto de
+    primera categoría calculado - **Créditos y Rebaja**: Descuentos aplicables
+  </Tab>
+  <Tab title="Pagos y Saldos">
+    - **Pagos Provisionales Mensuales (PPM)**: Pagos realizados durante el año -
+    **Otros Pagos**: Retenciones y otros créditos - **Saldo a Pagar/Favor**:
+    Resultado final de la declaración
+  </Tab>
+</Tabs>
 
-- Donaciones (hasta límite legal)
-- Depreciación acelerada
-- Gastos de capacitación
-- Inversiones en investigación y desarrollo
+### 3.2 Estados de la Declaración de Renta
 
-## Fechas importantes
+**Monitoreo de estado F22**:
+
+- **Borrador**: Declaración en preparación, no presentada
+- **Presentada**: Declaración enviada dentro del plazo
+- **Fuera de Plazo**: Declaración presentada con retraso
+- **Rectificada**: Declaración corregida posteriormente
+- **Observada**: Con observaciones del SII que requieren aclaración
+- **Fiscalizada**: Bajo proceso de fiscalización del SII
+
+### 3.3 Análisis Financiero Automático
+
+**Métricas calculadas automáticamente**:
+
+```
+┌─────────────────────────────────────────┐
+│ RESUMEN TRIBUTARIO ANUAL                │
+├─────────────────────────────────────────┤
+│ Total Ingresos:         $XXX.XXX.XXX    │
+│ Total Gastos:           $XXX.XXX.XXX    │
+│ Renta Líquida:          $XXX.XXX.XXX    │
+│ Impuesto 1ª Categoría:  $XX.XXX.XXX     │
+│ PPM Pagados:            $XX.XXX.XXX     │
+│ Saldo Final:            $X.XXX.XXX      │
+│                                         │
+│ Tasa Efectiva:          XX.X%           │
+│ Margen Tributario:      XX.X%           │
+└─────────────────────────────────────────┘
+```
+
+## 🔍 Análisis y Gestión de Renta
+
+### 4.1 Análisis Comparativo
+
+**Comparaciones automáticas disponibles**:
+
+<CardGroup cols={3}>
+  <Card title="Año vs Año Anterior" icon="chart-line">
+    - Evolución de ingresos y gastos - Cambios en carga tributaria - Variación
+    en eficiencia fiscal
+  </Card>
+  <Card title="Presupuesto vs Real" icon="target">
+    - Cumplimiento de metas de ingresos - Control de gastos deducibles -
+    Efectividad de planificación tributaria
+  </Card>
+  <Card title="Tendencias Tributarias" icon="trending-up">
+    - Evolución de tasa efectiva de impuestos - Patrones de pagos provisionales
+    - Optimización de deducciones
+  </Card>
+</CardGroup>
+
+### 4.2 Indicadores Fiscales Clave
+
+**KPIs tributarios automáticos**:
+
+- **Tasa Efectiva de Impuestos**: (Impuesto Pagado / Renta Líquida) × 100
+- **Eficiencia en PPM**: Precisión de los pagos provisionales mensuales
+- **Margen de Deducibilidad**: Porcentaje de gastos deducibles vs totales
+- **Carga Tributaria**: Impuestos como porcentaje de ingresos totales
+
+### 4.3 Alertas y Recomendaciones
+
+<Info>
+  **Análisis Inteligente**: El sistema analiza automáticamente el F22 y genera
+  alertas sobre oportunidades de optimización tributaria y puntos que podrían
+  requerir atención.
+</Info>
+
+**Tipos de alertas automáticas**:
+
+- **Oportunidades de Ahorro**: Deducciones no aprovechadas al máximo
+- **Riesgos Fiscales**: Proporciones inusuales que podrían llamar atención del SII
+- **Planificación PPM**: Ajustes recomendados para el próximo año
+- **Fechas Críticas**: Vencimientos y plazos importantes próximos
+
+## 💡 Casos de Uso Estratégicos
+
+### 5.1 Planificación Tributaria Anual
+
+**Para la planificación del próximo período**:
+
+<Steps>
+  <Step title="Análisis del F22 Actual">
+    Revisar resultados del año fiscal cerrado
+  </Step>
+  <Step title="Identificación de Patrones">
+    Analizar tendencias en ingresos, gastos y carga tributaria
+  </Step>
+  <Step title="Proyección del Próximo Año">
+    Estimar ingresos y planificar gastos deducibles
+  </Step>
+  <Step title="Optimización de PPM">
+    Calcular pagos provisionales óptimos para minimizar saldos
+  </Step>
+</Steps>
+
+### 5.2 Control de Gestión Tributaria
+
+**Para CFOs y gerencias**:
+
+- **Dashboard Ejecutivo**: Vista consolidada de posición tributaria
+- **Comparación Sectorial**: Benchmarking con empresas similares
+- **Proyección de Cash Flow**: Impacto de obligaciones tributarias en flujo
+- **ROI Tributario**: Retorno de estrategias de optimización fiscal
+
+### 5.3 Preparación para Auditorías
+
+**Para procesos de fiscalización**:
+
+- **Documentación Completa**: Histórico de declaraciones y modificaciones
+- **Trazabilidad**: Respaldo de cada cifra del F22 con registros contables
+- **Análisis de Consistencia**: Verificación de coherencia entre períodos
+- **Evidencia Digital**: Comprobantes de presentación y actualizaciones
+
+## 🔧 Configuración y Requisitos Técnicos
+
+### 6.1 Configuración para Acceso al SII
+
+**Requisitos de conectividad**:
+
+<CardGroup cols={2}>
+  <Card title="Certificación Digital" icon="shield-check">
+    - Certificado digital de la empresa vigente - Representación legal
+    configurada en SII - Permisos específicos para F22
+  </Card>
+  <Card title="Infraestructura Técnica" icon="server">
+    - Conexión a internet de alta velocidad - Configuración de firewall para
+    dominios SII - Sincronización de fecha/hora del servidor
+  </Card>
+</CardGroup>
+
+### 6.2 Automatización del Proceso
+
+**Configuraciones de monitoreo**:
+
+- **Polling Interval**: Verificación cada 60 segundos (configurable)
+- **Horarios de Actualización**: Configurar ventanas de actualización automática
+- **Notificaciones**: Alertas por email de cambios importantes
+- **Backup Automático**: Respaldo de versiones anteriores del F22
+
+## 🚨 Mejores Prácticas
+
+### 7.1 Ciclo de Vida de la Declaración de Renta
+
+**Proceso anual recomendado**:
+
+<Steps>
+  <Step title="Enero-Marzo: Preparación">
+    Recopilar información contable del año anterior y preparar documentación
+  </Step>
+  <Step title="Abril: Declaración">
+    Presentar declaración de renta y monitorear aceptación en el sistema
+  </Step>
+  <Step title="Mayo-Diciembre: Seguimiento">
+    Monitorear estado y planificar optimizaciones para el próximo año
+  </Step>
+  <Step title="Todo el Año: Actualización">
+    Mantener sistema actualizado con último F22 para análisis continuo
+  </Step>
+</Steps>
+
+### 7.2 Controles de Calidad
+
+**Validaciones recomendadas**:
+
+- **Coherencia Contable**: Verificar que cifras del F22 coincidan con contabilidad
+- **Análisis de Variaciones**: Investigar cambios significativos vs año anterior
+- **Revisión de Deducciones**: Confirmar que gastos deducidos sean válidos
+- **Verificación de PPM**: Asegurar que pagos provisionales estén correctos
+
+### 7.3 Gestión de Riesgos Tributarios
+
+<Warning>
+  **Factores de Riesgo**: Ciertas proporciones en el F22 pueden activar alertas
+  automáticas del SII. El sistema ayuda a identificar estos patrones para
+  gestión proactiva del riesgo.
+</Warning>
+
+**Indicadores de riesgo a monitorear**:
+
+- **Margen de Utilidad Inusual**: Muy alto o bajo vs sector
+- **Proporción de Gastos**: Gastos excesivos vs ingresos
+- **Variaciones Bruscas**: Cambios significativos sin justificación aparente
+- **Deducciones Agresivas**: Uso máximo de beneficios tributarios
+
+## 🔧 Solución de Problemas
+
+### Problema: F22 no se actualiza desde el SII
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificaciones Inmediatas">
+- ✅ Confirmar que la declaración de renta esté presentada en SII
+- ✅ Verificar vigencia del certificado digital empresarial
+- ✅ Validar permisos de representación para información tributaria
+- ✅ Revisar conectividad a internet y acceso a dominios SII
+</Accordion>
+
+<Accordion title="Soluciones Avanzadas">
+- 🔧 Actualizar certificados digitales si están próximos a vencer
+- 🔧 Verificar con SII que no hay restricciones en la cuenta
+- 🔧 Revisar configuración de firewall empresarial
+- 📞 Contactar soporte técnico para validación de conectividad
+</Accordion>
+</AccordionGroup>
+
+### Problema: Datos del F22 parecen incorrectos
+
+**Pasos de validación**:
+
+1. **Verificación Directa**: Comparar con F22 descargado directamente del SII
+2. **Análisis Temporal**: Verificar si es la versión más reciente (podrían haber rectificatorias)
+3. **Validación Contable**: Comparar cifras principales con registros contables
+4. **Consulta Profesional**: Revisar con contador si hay discrepancias significativas
+
+### Problema: Sistema muestra error 409 al actualizar
+
+**Resolución del conflicto**:
+
+<Steps>
+  <Step title="Identificar Causa">
+    Revisar mensaje específico del error para entender el conflicto
+  </Step>
+  <Step title="Verificar Estado SII">
+    Confirmar estado de la declaración directamente en sitio web SII
+  </Step>
+  <Step title="Esperar y Reintentar">
+    Aguardar 30-60 minutos y volver a intentar la actualización
+  </Step>
+  <Step title="Soporte Técnico">
+    Si persiste, contactar soporte con detalles del error
+  </Step>
+</Steps>
+
+## 📞 Soporte Especializado en Renta
+
+### Contacto de Expertos Tributarios
+
+<Card title="Equipo de Renta y F22" icon="calculator">
+  - **Email Especializado**: renta@contago.cl - **Teléfono Directo**: +56 2 1234
+  5685 - **Horario Extendido**: Lunes a Viernes, 7:00 - 20:00 (abril), 9:00 -
+  18:00 (resto del año) - **Especialidad**: Declaración de renta, optimización
+  tributaria, F22
+</Card>
+
+### Recursos de Capacitación Tributaria
+
+- **Curso Anual**: "Optimización de la Declaración de Renta Empresarial"
+- **Webinar Marzo**: "Preparación para la Operación Renta"
+- **Calculadoras**: Herramientas de estimación de PPM y planificación
+- **Biblioteca**: Casos de uso por sector industrial
+
+### Red de Profesionales
+
+- **Contadores Especializados**: Expertos en tributación empresarial
+- **Abogados Tributarios**: Para casos complejos de fiscalización
+- **Consultores de Optimización**: Estrategias de eficiencia fiscal
+- **Mesa de Ayuda Abril**: Soporte 24/7 durante operación renta
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Renta es fundamental para:
+
+- **Gestión Tributaria Estratégica**: Transformar el F22 en herramienta de gestión
+- **Optimización Fiscal**: Identificar oportunidades de ahorro y eficiencia
+- **Cumplimiento Automatizado**: Mantener información siempre actualizada con SII
+- **Toma de Decisiones**: Base sólida para planificación tributaria anual
 
 <Tip>
-  Las declaraciones de renta tienen plazos estrictos según el último dígito del
-  RUT.
+  **Valor Estratégico**: Este módulo convierte la información de renta de un
+  simple reporte de cumplimiento en una poderosa herramienta de análisis
+  financiero y planificación tributaria estratégica.
 </Tip>
 
-- **Abril**: Mes de declaraciones de renta
-- **Fechas por RUT**: Según último dígito del RUT
-- **Formulario 22**: Hasta fines de abril
-- **Balance tributario**: Junto con formulario 22
-
-## Próximos pasos
-
-- [Impuestos](/contabilidad/impuestos)
-- [Estado de Resultados](/contabilidad/informes/estado-resultados)
-- [Declaraciones Juradas](/utilidades/declaraciones-juradas)
+<Info>
+  **Evolución Continua**: El sistema se actualiza automáticamente con cambios en
+  la normativa tributaria y mejoras en la conectividad con SII, asegurando
+  siempre el acceso a la información más reciente y precisa.
+</Info>

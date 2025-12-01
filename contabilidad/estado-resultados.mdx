@@ -1,0 +1,391 @@
+---
+title: "Estado de Resultados"
+description: "Sistema integral de análisis del estado de resultados con clasificación automática por ingresos, costos y gastos, incluyendo cálculo automático de utilidades."
+---
+
+## 🏠 Vista Principal del Estado de Resultados
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Estado de Resultados
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Filtros de Período**: Control de fechas para análisis de rentabilidad
+- **Resumen Ejecutivo**: Cards con resultado final y tipo de resultado
+- **Análisis Detallado**: Estructura completa de ingresos, costos y gastos
+- **Interactividad**: Click en cuentas para ver asientos de soporte
+
+## 🔧 Estructura del Estado de Resultados
+
+<CardGroup cols={2}>
+  <Card title="Análisis de Rentabilidad" icon="chart-line" color="#0066cc">
+    Evaluación completa del desempeño financiero del período
+  </Card>
+  <Card title="Clasificación Automática" icon="tags" color="#17a2b8">
+    Organización inteligente por ingresos, costos y gastos
+  </Card>
+  <Card title="Cálculos Automáticos" icon="calculator" color="#28a745">
+    Utilidad bruta, gastos operacionales y utilidad neta
+  </Card>
+  <Card title="Navegación Detallada" icon="search" color="#6c757d">
+    Click en cuentas para acceder a asientos de soporte
+  </Card>
+</CardGroup>
+
+### 2.1 Panel de Resultado Ejecutivo
+
+**Indicadores principales**:
+
+```
+┌─────────────────────────────────────────┐
+│ RESULTADO DEL PERÍODO                   │
+├─────────────────────────────────────────┤
+│ Resultado:      $XXX.XXX                │
+│ Tipo:           UTILIDAD / PÉRDIDA      │
+│ Color:          Verde / Rojo            │
+│ Período:        DD/MM/YYYY - DD/MM/YYYY │
+└─────────────────────────────────────────┘
+```
+
+**Interpretación visual**:
+
+- **Verde**: Utilidad (resultado positivo)
+- **Rojo**: Pérdida (resultado negativo)
+- **Tipo de Resultado**: Descripción automática del resultado
+
+### 2.2 Exportación Avanzada del Estado
+
+**Opciones de descarga**:
+
+<Tabs>
+  <Tab title="Exportar PDF">
+    - **Formato**: Estado de resultados formal y profesional - **Estructura**:
+    Clasificación completa por categorías - **Uso**: Presentaciones ejecutivas y
+    reportes oficiales - **Contenido**: Incluye todos los niveles de análisis
+  </Tab>
+  <Tab title="Exportar Excel">
+    - **Formato**: Hoja de cálculo con fórmulas - **Análisis**: Permite cálculos
+    adicionales y gráficos - **Flexibilidad**: Formato manipulable para análisis
+    personalizados - **Integración**: Compatible con sistemas de BI
+  </Tab>
+</Tabs>
+
+## 📊 Estructura Analítica Detallada
+
+### 3.1 Clasificación por Categorías
+
+**Organización del estado de resultados**:
+
+<Steps>
+  <Step title="INGRESOS">
+    Todas las cuentas de ingresos del período con total consolidado
+  </Step>
+  <Step title="COSTOS">Costos directos de ventas o servicios con subtotal</Step>
+  <Step title="UTILIDAD BRUTA">Cálculo automático: Ingresos - Costos</Step>
+  <Step title="GASTOS">Gastos operacionales y administrativos del período</Step>
+  <Step title="UTILIDAD NETA">Resultado final: Utilidad Bruta - Gastos</Step>
+</Steps>
+
+### 3.2 Información Detallada por Cuenta
+
+**Para cada cuenta se muestra**:
+
+| Campo             | Descripción               | Interactividad                    |
+| ----------------- | ------------------------- | --------------------------------- |
+| **Código**        | Número de cuenta contable | Click para asientos               |
+| **Nombre**        | Descripción de la cuenta  | Navegación activa                 |
+| **Total**         | Monto del período         | Débito o crédito según naturaleza |
+| **Clasificación** | Ingreso, costo o gasto    | Automática según configuración    |
+
+### 3.3 Cálculos Intermedios Automáticos
+
+**Subtotales calculados**:
+
+<CardGroup cols={3}>
+  <Card title="Total Ingresos" icon="arrow-up" color="#28a745">
+    - Suma de todas las cuentas de ingresos - Base para cálculo de rentabilidad
+    - Fondo verde en la presentación
+  </Card>
+  <Card title="Total Costos" icon="minus" color="#fd7e14">
+    - Suma de costos directos - Base para utilidad bruta - Fondo naranja en la
+    presentación
+  </Card>
+  <Card title="Total Gastos" icon="arrow-down" color="#dc3545">
+    - Suma de gastos operacionales - Impacto en utilidad neta - Fondo rojo en la
+    presentación
+  </Card>
+</CardGroup>
+
+## 🔍 Análisis Interactivo de Cuentas
+
+### 4.1 Función Click-to-Detail
+
+**Navegación hacia asientos**:
+
+- **Click en Cuenta**: Abre ventana con asientos contables
+- **Período Específico**: Solo asientos del rango de fechas
+- **Información Completa**: Fecha, descripción y montos de cada asiento
+- **Navegación Fácil**: Cierre simple para continuar análisis
+
+### 4.2 Ventana de Asientos Detallados
+
+**Información mostrada**:
+
+```
+┌─────────────────────────────────────────┐
+│ ASIENTOS CONTABLES - CUENTA INGRESOS    │
+│ (4110001) Ventas Nacionales             │
+│ Período: 01/03/2024 - 31/03/2024       │
+├─────────────────────────────────────────┤
+│ Asiento | Fecha     | Descripción      │
+│ 045     | 05/03/24  | Factura #001     │
+│ 052     | 12/03/24  | Factura #002     │
+│ 061     | 20/03/24  | Nota Crédito     │
+│ 078     | 28/03/24  | Factura #003     │
+└─────────────────────────────────────────┘
+```
+
+<Info>
+  **Trazabilidad Completa**: Esta funcionalidad permite rastrear cada monto del
+  estado de resultados hasta su asiento contable original, proporcionando
+  auditoría completa.
+</Info>
+
+## 💡 Análisis de Rentabilidad
+
+### 5.1 Indicadores Clave de Rendimiento
+
+**Métricas calculables**:
+
+- **Margen Bruto**: (Utilidad Bruta / Ingresos) × 100
+- **Margen Operacional**: (Utilidad Neta / Ingresos) × 100
+- **Eficiencia de Costos**: (Costos / Ingresos) × 100
+- **Control de Gastos**: (Gastos / Ingresos) × 100
+
+### 5.2 Análisis Vertical y Horizontal
+
+**Análisis vertical (estructura)**:
+
+<Steps>
+  <Step title="Base 100%">Ingresos totales = 100% de la base de cálculo</Step>
+  <Step title="Porcentajes">Cada categoría como % de ingresos totales</Step>
+  <Step title="Comparación">
+    Evaluar estructura vs estándares de la industria
+  </Step>
+  <Step title="Optimización">
+    Identificar oportunidades de mejora en estructura
+  </Step>
+</Steps>
+
+**Análisis horizontal (tendencias)**:
+
+- Comparar mismo período año anterior
+- Evaluar crecimiento/decrecimiento por categoría
+- Identificar tendencias estacionales
+- Medir efectividad de estrategias implementadas
+
+### 5.3 Interpretación del Resultado Final
+
+<Tabs>
+  <Tab title="Utilidad Positiva">
+    - **Indicador**: Card verde con resultado positivo - **Significado**: La
+    empresa generó utilidades en el período - **Análisis**: Evaluar
+    sostenibilidad y crecimiento - **Acciones**: Considerar reinversión y
+    distribución
+  </Tab>
+  <Tab title="Pérdida">
+    - **Indicador**: Card rojo con resultado negativo - **Significado**: Los
+    gastos superaron los ingresos netos - **Análisis**: Identificar causas y
+    áreas de mejora - **Acciones**: Plan de reducción de costos/gastos
+  </Tab>
+</Tabs>
+
+## 📊 Casos de Uso Gerenciales
+
+### 6.1 Análisis Mensual de Gestión
+
+**Para reuniones ejecutivas**:
+
+<Steps>
+  <Step title="Configurar Período">
+    Establecer mes específico o comparativo (mes actual vs anterior)
+  </Step>
+  <Step title="Evaluar Tendencias">
+    Comparar ingresos, costos y gastos vs período anterior
+  </Step>
+  <Step title="Identificar Variaciones">
+    Usar click en cuentas para investigar cambios significativos
+  </Step>
+  <Step title="Tomar Decisiones">
+    Definir acciones basadas en análisis de resultados
+  </Step>
+</Steps>
+
+### 6.2 Control Presupuestario
+
+**Comparación con presupuesto**:
+
+- **Ingresos vs Meta**: Evaluar cumplimiento de objetivos de ventas
+- **Costos vs Presupuesto**: Controlar eficiencia operacional
+- **Gastos vs Límites**: Verificar control de gastos administrativos
+- **Resultado vs Expectativa**: Medir desempeño vs plan de negocios
+
+### 6.3 Análisis de Productos o Servicios
+
+**Segmentación del negocio**:
+
+- **Ingresos por Línea**: Si las cuentas están segmentadas por producto
+- **Costos Directos**: Identificar productos más/menos rentables
+- **Gastos Asignados**: Evaluar carga administrativa por segmento
+- **Rentabilidad Neta**: Resultado final por línea de negocio
+
+## 🔧 Configuración y Personalización
+
+### 7.1 Configuración del Plan de Cuentas
+
+**Clasificación requerida**:
+
+<CardGroup cols={3}>
+  <Card title="Cuentas de Ingresos" icon="plus-circle" color="#28a745">
+    - Códigos 4xxxxx típicamente - Ventas, servicios, otros ingresos -
+    Naturaleza acreedora
+  </Card>
+  <Card title="Cuentas de Costos" icon="circle" color="#fd7e14">
+    - Códigos 5xxxxx típicamente - Costo de ventas directo - Naturaleza deudora
+  </Card>
+  <Card title="Cuentas de Gastos" icon="minus-circle" color="#dc3545">
+    - Códigos 6xxxxx típicamente - Gastos administrativos y operacionales -
+    Naturaleza deudora
+  </Card>
+</CardGroup>
+
+### 7.2 Personalización de la Presentación
+
+**Opciones configurables**:
+
+- **Orden de Cuentas**: Según código o importancia
+- **Agrupaciones**: Por centros de costo o departamentos
+- **Niveles de Detalle**: Mostrar subcuentas o consolidado
+- **Filtros Adicionales**: Por proyecto, sucursal, etc.
+
+## 🚨 Mejores Prácticas
+
+### 8.1 Frecuencia de Análisis
+
+**Recomendaciones por rol**:
+
+- **CEO/Gerencia**: Análisis mensual consolidado
+- **Contador General**: Revisión semanal de tendencias
+- **Analista Financiero**: Seguimiento diario de cuentas clave
+- **Auditor**: Revisión trimestral completa con detalle
+
+### 8.2 Proceso de Control de Calidad
+
+<Steps>
+  <Step title="Validación de Clasificación">
+    Verificar que todas las cuentas estén correctamente clasificadas
+  </Step>
+  <Step title="Consistencia Temporal">
+    Asegurar que los criterios de clasificación sean consistentes
+  </Step>
+  <Step title="Análisis de Variaciones">
+    Investigar cambios significativos usando función de drill-down
+  </Step>
+  <Step title="Documentación">Registrar hallazgos y acciones correctivas</Step>
+</Steps>
+
+### 8.3 Indicadores de Alerta
+
+<Warning>
+  **Señales que Requieren Atención Inmediata**: - Caída súbita en ingresos sin
+  explicación - Aumento desproporcionado en costos o gastos - Pérdida inesperada
+  en período normalmente rentable - Cuentas con clasificación inconsistente
+</Warning>
+
+## 🔧 Solución de Problemas
+
+### Problema: Resultado no coincide con expectativas
+
+**Proceso de investigación**:
+
+<AccordionGroup>
+<Accordion title="Verificación Inmediata">
+- ✅ Confirmar que el período seleccionado sea correcto
+- ✅ Verificar que todas las cuentas estén clasificadas apropiadamente
+- ✅ Validar que no hay asientos pendientes de contabilización
+</Accordion>
+
+<Accordion title="Análisis Detallado">
+- 🔍 Usar función click para revisar asientos de cuentas con variaciones
+- 🔍 Comparar con estado de resultados de períodos anteriores
+- 🔍 Verificar que asientos de cierre/apertura estén correctos
+- 🔍 Revisar reclasificaciones recientes en plan de cuentas
+</Accordion>
+</AccordionGroup>
+
+### Problema: Cuentas aparecen en categoría incorrecta
+
+**Pasos de corrección**:
+
+1. **Identificar Cuenta**: Localizar la cuenta mal clasificada
+2. **Revisar Configuración**: Verificar clasificación en plan de cuentas
+3. **Corregir Clasificación**: Actualizar la categoría (ingreso/costo/gasto)
+4. **Validar Resultado**: Refrescar estado de resultados para ver corrección
+
+### Problema: Asientos no aparecen al hacer click
+
+**Soluciones posibles**:
+
+- **Verificar Fechas**: Confirmar que asientos estén en período seleccionado
+- **Estado de Asientos**: Verificar que estén aprobados y contabilizados
+- **Permisos**: Confirmar acceso a módulo de asientos contables
+- **Refrescar Sistema**: Actualizar página y volver a intentar
+
+## 📞 Soporte Especializado
+
+### Contacto de Análisis Financiero
+
+<Card title="Equipo de Estados Financieros" icon="chart-bar">
+  - **Email Directo**: estados@contago.cl - **Teléfono**: +56 2 1234 5682 -
+  **Horario**: Lunes a Viernes, 8:30 - 18:30 - **Especialidad**: Estados
+  financieros, análisis de rentabilidad, KPIs
+</Card>
+
+### Recursos de Capacitación
+
+- **Curso Online**: "Interpretación Avanzada del Estado de Resultados"
+- **Plantillas Excel**: Análisis comparativo y cálculo de ratios
+- **Webinar Mensual**: "KPIs Financieros para la Toma de Decisiones"
+- **Biblioteca**: Casos de estudio por industria
+
+### Servicios Adicionales
+
+- **Consultoría Financiera**: Análisis personalizado de rentabilidad
+- **Benchmarking**: Comparación con empresas del sector
+- **Dashboards**: Desarrollo de cuadros de mando ejecutivos
+- **Capacitación In-House**: Entrenamiento personalizado para equipos
+
+## 📋 Resumen Ejecutivo
+
+El Estado de Resultados es fundamental para:
+
+- **Medición de Rentabilidad**: Evaluación precisa del desempeño financiero
+- **Toma de Decisiones**: Base sólida para decisiones estratégicas
+- **Control de Gestión**: Seguimiento de ingresos, costos y gastos
+- **Comunicación**: Reporte claro a stakeholders internos y externos
+
+<Tip>
+  **Clave del Éxito**: Use el estado de resultados no solo como reporte
+  histórico, sino como herramienta de gestión activa. La función de drill-down
+  le permite investigar cada cifra y tomar acciones correctivas oportunas.
+</Tip>
+
+<Info>
+  **Análisis Integral**: Combine el estado de resultados con otros módulos como
+  flujo de efectivo y balance general para obtener una visión completa de la
+  salud financiera de su empresa.
+</Info>

@@ -1,174 +1,390 @@
 ---
 title: "Plan de Cuentas"
-description: "Configuración y gestión del plan de cuentas contable"
+description: "Sistema avanzado de gestión del plan de cuentas que permite estructurar y organizar la información contable con clasificación automática y creación masiva de cuentas."
 ---
 
-# Plan de Cuentas
+## 🏠 Vista Principal del Plan de Cuentas
 
-El plan de cuentas es la estructura fundamental que organiza toda la información contable de tu empresa.
+### Acceso al Sistema
 
-## ¿Qué es el plan de cuentas?
+- **Ruta**: Dashboard → Plan de Cuentas
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Auditor
 
-Es la lista ordenada y codificada de todas las cuentas contables que utiliza la empresa para registrar sus operaciones.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Estructura jerárquica**: Visualización en árbol del plan de cuentas completo
+- **Gestión de grupos**: Organización por clasificaciones contables
+- **Herramientas de creación**: Individual y masiva de cuentas
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Crear cuentas" icon="plus">
-    Agrega nuevas cuentas al plan
+  <Card title="Agregar Cuenta Individual" icon="plus" color="#28a745">
+    Creación precisa de cuentas con validaciones automáticas
   </Card>
-  <Card title="Organizar estructura" icon="sitemap">
-    Organiza cuentas jerárquicamente
+  <Card title="Creación Masiva de Cuentas" icon="list" color="#17a2b8">
+    Importación y creación múltiple desde archivos estructurados
   </Card>
-  <Card title="Configurar propiedades" icon="cog">
-    Define comportamiento de cuentas
+  <Card title="Gestión de Subgrupos" icon="sitemap" color="#6c757d">
+    Organización jerárquica con clasificaciones personalizadas
   </Card>
-  <Card title="Reportes" icon="list">
-    Genera reportes del plan de cuentas
+  <Card title="Edición Avanzada" icon="edit" color="#ffc107">
+    Modificación integral con preservación de historial
   </Card>
 </CardGroup>
 
-## Estructura del plan de cuentas
+### 2.1 Creación Individual de Cuentas
 
-### Niveles jerárquicos
+**Formulario completo de nueva cuenta**:
 
-- **Nivel 1**: Grupos principales (1, 2, 3, 4, 5)
-- **Nivel 2**: Subgrupos (11, 12, 21, 22, etc.)
-- **Nivel 3**: Cuentas principales (111, 112, 211, etc.)
-- **Nivel 4**: Subcuentas (1111, 1112, 2111, etc.)
-- **Nivel 5**: Cuentas auxiliares (detalle específico)
+#### Información Básica
 
-### Grupos principales
+- **Código de Cuenta**: Numeración automática según estructura
+- **Nombre de Cuenta**: Denominación completa y descriptiva
+- **Clasificación**: Activo, Pasivo, Patrimonio, Ingresos, Gastos
+- **Nivel Jerárquico**: Posición en la estructura del plan
 
-#### 1. ACTIVOS
+#### Configuración Técnica
 
-- **11**: Activos circulantes
-- **12**: Activos fijos
-- **13**: Otros activos
+- **Tipo de Cuenta**: Cuenta madre, cuenta de movimiento, cuenta auxiliar
+- **Centro de Responsabilidad**: Asignación a departamentos específicos
+- **Naturaleza**: Deudora o acreedora según su función
+- **Estado**: Activa, inactiva, bloqueada
 
-#### 2. PASIVOS
+#### Validaciones Automáticas
 
-- **21**: Pasivos circulantes
-- **22**: Pasivos largo plazo
-- **23**: Otros pasivos
+- **Código único**: Sistema verifica no duplicación
+- **Estructura lógica**: Validación de jerarquía contable
+- **Nomenclatura**: Cumplimiento de estándares contables chilenos
 
-#### 3. PATRIMONIO
+### 2.2 Creación Masiva de Cuentas
 
-- **31**: Capital
-- **32**: Reservas
-- **33**: Resultados acumulados
+**Botón**: "Agregar Cuentas Masivo" (Celeste/Info)
 
-#### 4. INGRESOS
+**Proceso estructurado**:
 
-- **41**: Ingresos operacionales
-- **42**: Ingresos no operacionales
+1. **Preparación del archivo**:
 
-#### 5. GASTOS
+   - **Formato**: Excel (.xlsx) o CSV estructurado
+   - **Columnas requeridas**: Código, Nombre, Clasificación, Tipo
+   - **Plantilla**: Sistema proporciona template descargable
 
-- **51**: Costos de ventas
-- **52**: Gastos operacionales
-- **53**: Gastos no operacionales
+2. **Carga y validación**:
 
-## Propiedades de las cuentas
+   - **Arrastrar y soltar**: Interface intuitiva de carga
+   - **Validación previa**: Sistema verifica estructura antes de procesar
+   - **Vista previa**: Muestra cómo quedarán las cuentas antes de crear
 
-### Configuración básica
+3. **Procesamiento**:
+   - **Creación secuencial**: Respeta jerarquías y dependencias
+   - **Reporte de errores**: Detalla problemas específicos por fila
+   - **Confirmación**: Resumen de cuentas creadas exitosamente
 
-- **Código**: Identificador único
-- **Nombre**: Descripción de la cuenta
-- **Tipo**: Activo, Pasivo, Patrimonio, Ingreso, Gasto
-- **Clasificación**: Circulante, fijo, etc.
-- **Naturaleza**: Deudora o acreedora
+### 2.3 Gestión de Subgrupos Contables
 
-### Configuraciones avanzadas
+**Botón**: "Agregar Subgrupo" (Verde/Success)
 
-- **Acepta movimientos**: Si permite registros directos
-- **Centro de costos**: Si requiere centro de costos
-- **Moneda**: Si maneja moneda extranjera
-- **Auxiliar**: Si requiere información adicional
+**Características del subgrupo**:
 
-### Control y validaciones
+- **Denominación**: Nombre descriptivo del agrupamiento
+- **Código de rango**: Desde código X hasta código Y
+- **Clasificación madre**: Activo corriente, no corriente, etc.
+- **Descripción**: Detalle de qué cuentas abarca
+- **Configuración visual**: Color y iconografía para identificación
 
-- **Estado**: Activa/Inactiva
-- **Fecha creación**: Cuándo se creó
-- **Última modificación**: Última actualización
-- **Usuario**: Quien la modificó
+## 📋 Estructura y Organización del Plan
 
-## Cuentas especiales
+### 3.1 Clasificación Contable Estándar
 
-### Cuentas de mayor detalle
+<CardGroup cols={2}>
+  <Card title="Activos" icon="coins" color="#28a745">
+    Corrientes y No Corrientes con subdivisiones específicas
+  </Card>
+  <Card title="Pasivos" icon="credit-card" color="#dc3545">
+    Corto y largo plazo con clasificación por exigibilidad
+  </Card>
+  <Card title="Patrimonio" icon="building" color="#6f42c1">
+    Capital, reservas y resultados acumulados
+  </Card>
+  <Card title="Resultados" icon="chart-line" color="#fd7e14">
+    Ingresos operacionales y gastos por naturaleza
+  </Card>
+</CardGroup>
 
-#### Clientes (1131)
+### 3.2 Códigos y Numeración
 
-- **113101**: Cliente A
-- **113102**: Cliente B
-- **113103**: Cliente C
+**Estructura estándar chilena**:
 
-#### Proveedores (2111)
+- **1.xxx**: Activos (corrientes y no corrientes)
+- **2.xxx**: Pasivos (exigible a corto y largo plazo)
+- **3.xxx**: Patrimonio (capital y reservas)
+- **4.xxx**: Ingresos (operacionales y no operacionales)
+- **5.xxx**: Gastos (operacionales y financieros)
 
-- **211101**: Proveedor X
-- **211102**: Proveedor Y
-- **211103**: Proveedor Z
+**Subdivisiones por dígitos**:
 
-#### Bancos (1111)
+- **Primer dígito**: Clasificación principal
+- **Segundo dígito**: Subclasificación
+- **Tercer dígito**: Grupo específico
+- **Cuarto dígito y siguientes**: Cuenta individual
 
-- **111101**: Banco Estado CC 12345
-- **111102**: Banco Chile CC 67890
+### 3.3 Información Detallada por Cuenta
 
-### Cuentas analíticas
+#### Datos Principales
 
-- **Por sucursal**: Para empresas multi-ubicación
-- **Por proyecto**: Para control por proyecto
-- **Por producto**: Para análisis por línea
-- **Por región**: Para control geográfico
+- **Código completo**: Con todos los niveles jerárquicos
+- **Denominación oficial**: Nombre según estándares contables
+- **Clasificación IFRS**: Cumplimiento de normas internacionales
+- **Estado actual**: Activa, suspendida, en revisión
 
-## Configuración por tipo de empresa
+#### Datos Operativos
 
-### Empresa comercial
+- **Fecha de creación**: Cuándo se incorporó al plan
+- **Último movimiento**: Fecha de última transacción
+- **Saldo actual**: Balance al día de consulta
+- **Frecuencia de uso**: Estadística de utilización
 
-Enfoque en:
+#### Configuraciones Especiales
 
-- Inventarios (mercaderías)
-- Cuentas por cobrar (clientes)
-- Cuentas por pagar (proveedores)
-- Márgenes comerciales
+- **Requiere centro de costo**: Obligatorio para asientos
+- **Acepta auxiliares**: Permite subcuentas de detalle
+- **Moneda funcional**: Pesos, UF, dólares, etc.
+- **Tipo de análisis**: Presupuestaria, estadística, fiscal
 
-### Empresa de servicios
+## 🔍 Funciones de Edición y Mantenimiento
 
-Enfoque en:
+### 4.1 Edición Individual de Cuentas
 
-- Honorarios por cobrar
-- Servicios prestados
-- Gastos operacionales
-- Recursos humanos
+**Acceso**: Botón de edición en cada fila de la tabla
 
-### Empresa industrial
+**Formulario de modificación**:
 
-Enfoque en:
+#### Campos Editables
 
-- Materias primas
-- Productos en proceso
-- Productos terminados
-- Mano de obra
-- Costos indirectos
+- ✏️ **Nombre de cuenta**: Actualización de denominación
+- ✏️ **Descripción**: Detalle de uso y aplicación
+- ✏️ **Centro de costo**: Modificación de asignación
+- ✏️ **Estado**: Activación/desactivación controlada
 
-## Mantenimiento del plan
+#### Campos Protegidos
 
-### Mejores prácticas
+- 🔒 **Código**: No editable para preservar integridad
+- 🔒 **Clasificación**: Requiere proceso especial para cambiar
+- 🔒 **Historial**: Movimientos contables previos
 
-- **Codificación consistente**: Usa sistema lógico
-- **Nombres claros**: Descripciones precisas
-- **Estructura flexible**: Permite crecimiento
-- **Documentación**: Mantén manual de cuentas
+#### Validaciones de Edición
 
-### Actualizaciones
+- **Cuentas con saldo**: Restricciones especiales de modificación
+- **Cuentas con movimientos**: Validaciones de impacto en períodos cerrados
+- **Dependencias**: Verificación de subcuentas asociadas
 
-- **Nuevas cuentas**: Según necesidades
-- **Modificaciones**: Cambios en nombres o propiedades
-- **Inactivación**: Cuentas que ya no se usan
-- **Reagrupación**: Ajustes en estructura
+### 4.2 Gestión de Estados
 
-## Próximos pasos
+**Estados disponibles**:
 
-- [Asientos Contables](/contabilidad/asientos-contables)
-- [Centros de Costos](/empresa/centros-costos)
-- [Libro Mayor](/contabilidad/informes/libro-mayor)
+- 🟢 **Activa**: Disponible para movimientos contables
+- 🟡 **Suspendida**: Temporalmente inhabilitada
+- 🔴 **Inactiva**: Permanentemente cerrada
+- 🔵 **En revisión**: Bajo análisis contable
+
+**Proceso de cambio de estado**:
+
+1. **Validación de saldo**: Verificar que esté en cero (salvo excepciones)
+2. **Revisión de dependencias**: Confirmar impacto en subcuentas
+3. **Confirmación contable**: Aprobación del responsable autorizado
+4. **Registro del cambio**: Log detallado con fecha, usuario y motivo
+
+## 📊 Visualización y Reportes
+
+### 5.1 Vista Jerárquica
+
+**Características de visualización**:
+
+- **Árbol expandible**: Navegación por niveles de detalle
+- **Códigos alineados**: Estructura visual clara
+- **Indicadores de estado**: Íconos de activación/desactivación
+- **Filtros dinámicos**: Por clasificación, estado, rango de códigos
+
+### 5.2 Búsqueda Avanzada
+
+**Opciones de filtrado**:
+
+- **Por código**: Búsqueda exacta o por rango
+- **Por nombre**: Coincidencia parcial en denominación
+- **Por clasificación**: Filtro por tipo contable
+- **Por estado**: Activas, inactivas, todas
+- **Por fecha**: Creación o último movimiento
+- **Por saldo**: Con/sin movimientos, rangos de valores
+
+### 5.3 Exportación y Reportes
+
+**Formatos disponibles**:
+
+- **Excel completo**: Plan de cuentas con toda la información
+- **PDF estructurado**: Reporte formal para auditorías
+- **CSV para importación**: Compatible con otros sistemas
+- **Reporte de cambios**: Log de modificaciones por período
+
+## ⚙️ Configuración y Parametrización
+
+### 6.1 Estructura de Codificación
+
+**Configuración de numeración**:
+
+- **Longitud de código**: Cantidad de dígitos por nivel
+- **Separadores**: Puntos, guiones, sin separación
+- **Numeración automática**: Consecutiva o con saltos
+- **Reservas de rango**: Códigos especiales para futuro uso
+
+### 6.2 Validaciones del Sistema
+
+**Reglas de integridad**:
+
+- **Códigos únicos**: No duplicación en todo el plan
+- **Jerarquía lógica**: Cuentas padre deben existir antes que hijas
+- **Consistencia de clasificación**: Subcuentas heredan tipo de cuenta madre
+- **Límites de profundidad**: Máximo de niveles jerárquicos permitidos
+
+### 6.3 Integración con Otros Módulos
+
+**Conexiones automáticas**:
+
+- **Asientos contables**: Validación de cuentas en cada movimiento
+- **Presupuestos**: Estructura para planificación financiera
+- **Informes financieros**: Base para estados contables
+- **Auditoría**: Trazabilidad completa de cambios
+
+## 🚨 Alertas y Validaciones Críticas
+
+### 7.1 Validaciones de Creación
+
+**Al crear nueva cuenta**:
+
+- ⚠️ **Código duplicado**: "El código ya existe en el plan de cuentas"
+- ⚠️ **Jerarquía incorrecta**: "La cuenta padre no existe o está inactiva"
+- ⚠️ **Clasificación incompatible**: "La clasificación no corresponde al nivel jerárquico"
+
+### 7.2 Restricciones de Eliminación
+
+**Cuentas no eliminables**:
+
+- 🚫 **Con saldo diferente de cero**
+- 🚫 **Con movimientos en período abierto**
+- 🚫 **Con subcuentas dependientes**
+- 🚫 **Configuradas en otros módulos**
+
+### 7.3 Alertas de Modificación
+
+**Cambios que requieren confirmación**:
+
+- 🔄 **Cambio de clasificación**: Impacto en reportes financieros
+- 🔄 **Inactivación**: Verificar dependencias en otros procesos
+- 🔄 **Modificación de código**: Solo en casos excepcionales autorizados
+
+## 💡 Mejores Prácticas y Recomendaciones
+
+### 8.1 Diseño del Plan de Cuentas
+
+**Principios fundamentales**:
+
+1. **Simplicidad**: Evitar exceso de subdivisiones innecesarias
+2. **Flexibilidad**: Permitir crecimiento futuro sin reestructuración
+3. **Consistencia**: Mantener lógica uniforme en toda la estructura
+4. **Cumplimiento**: Alinearse con normas contables vigentes
+
+### 8.2 Nomenclatura Recomendada
+
+**Convenciones de nombres**:
+
+- **Claridad**: Denominaciones autoexplicativas
+- **Brevedad**: Evitar nombres excesivamente largos
+- **Consistencia**: Patrones similares para cuentas relacionadas
+- **Actualización**: Revisar vigencia de terminología
+
+### 8.3 Mantenimiento Periódico
+
+**Actividades recomendadas**:
+
+- **Mensual**: Revisión de nuevas cuentas creadas
+- **Trimestral**: Análisis de cuentas sin movimiento
+- **Semestral**: Validación de estructura y clasificaciones
+- **Anual**: Revisión integral y actualización normativa
+
+<Tip>
+  **Estrategia de implementación**: Comienza con una estructura básica y
+  expándela gradualmente según las necesidades operativas de la empresa.
+</Tip>
+
+### 8.4 Capacitación del Personal
+
+**Elementos clave para el equipo**:
+
+- **Comprensión de la estructura**: Lógica del plan de cuentas
+- **Uso de códigos**: Correcta aplicación en asientos contables
+- **Procedimientos de cambio**: Cuándo y cómo solicitar modificaciones
+- **Reportes de problemas**: Identificación y escalamiento de inconsistencias
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: No se puede crear una cuenta nueva
+
+**Diagnóstico y solución**:
+
+- ✅ Verificar que el código no esté duplicado
+- ✅ Confirmar que la cuenta padre existe y está activa
+- ✅ Validar permisos del usuario para crear cuentas
+- ✅ Revisar formato del código según estructura configurada
+
+### Problema: Error al importar cuentas masivamente
+
+**Lista de verificación**:
+
+- ✅ Archivo debe tener formato correcto (Excel/CSV)
+- ✅ Columnas obligatorias deben estar presentes
+- ✅ Códigos no deben estar duplicados en el archivo
+- ✅ Jerarquía debe ser consistente (padres antes que hijos)
+
+### Problema: No se puede modificar o eliminar cuenta
+
+**Pasos de solución**:
+
+1. **Verificar saldo**: La cuenta debe tener saldo cero
+2. **Revisar movimientos**: No debe haber transacciones en período abierto
+3. **Confirmar dependencias**: Verificar si está configurada en otros módulos
+4. **Validar permisos**: Usuario debe tener autorización para la operación
+
+<Warning>
+  **Modificaciones críticas**: Los cambios en cuentas con historial contable
+  requieren autorización especial y pueden impactar reportes históricos.
+</Warning>
+
+## 📈 Análisis y Métricas
+
+### 9.1 Indicadores de Uso
+
+**Métricas disponibles**:
+
+- **Cuentas activas vs. totales**: Porcentaje de utilización del plan
+- **Frecuencia de uso**: Cuentas más y menos utilizadas
+- **Movimientos por cuenta**: Estadísticas de actividad contable
+- **Crecimiento del plan**: Evolución en el tiempo
+
+### 9.2 Reportes de Control
+
+**Informes para gestión**:
+
+- **Cuentas sin movimiento**: Identificación de cuentas obsoletas
+- **Inconsistencias**: Problemas de estructura o clasificación
+- **Cambios recientes**: Log de modificaciones por período
+- **Validación de integridad**: Verificación de reglas contables
+
+### 9.3 Auditoría y Trazabilidad
+
+**Información de seguimiento**:
+
+- **Historial de cambios**: Quién, cuándo y qué modificó
+- **Justificaciones**: Motivos documentados para cada cambio
+- **Aprobaciones**: Cadena de autorización para modificaciones críticas
+- **Impacto**: Análisis de efectos en reportes y procesos

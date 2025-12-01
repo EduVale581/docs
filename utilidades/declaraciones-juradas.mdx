@@ -1,94 +1,361 @@
 ---
 title: "Declaraciones Juradas"
-description: "Gestión de declaraciones juradas y formularios especiales"
+description: "Sistema de gestión y actualización de declaraciones juradas desde el SII con procesamiento automático y monitoreo en tiempo real."
 ---
 
-# Declaraciones Juradas
+## 🏠 Vista Principal de Declaraciones Juradas
 
-Gestiona todas las declaraciones juradas y formularios especiales requeridos por el SII.
+### Acceso al Sistema
 
-## ¿Qué son las declaraciones juradas?
+- **Ruta**: Dashboard → Declaraciones Juradas
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor, Supervisor
 
-Son formularios especiales que deben presentar las empresas para informar sobre operaciones específicas o cumplir obligaciones tributarias particulares.
+### Panel de Control
 
-## Declaraciones disponibles
+La vista principal presenta:
+
+- **Botón de Actualización**: Obtención automática de datos desde el SII
+- **Monitoreo en Tiempo Real**: Polling automático cada 60 segundos
+- **Vista Tabular**: Presentación organizada de las declaraciones juradas
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="DJ 1879" icon="file-invoice">
-    Operaciones con partes relacionadas
+  <Card title="Actualización Automática" icon="refresh" color="#0066cc">
+    Conexión directa con el SII para obtener declaraciones juradas actualizadas
   </Card>
-  <Card title="DJ 1920" icon="users">
-    Beneficiarios finales de entidades
+  <Card title="Procesamiento en Tiempo Real" icon="clock" color="#17a2b8">
+    Monitoreo automático cada 60 segundos del estado de procesamiento
   </Card>
-  <Card title="DJ 1921" icon="building">
-    Información de socios y accionistas
+  <Card title="Gestión Centralizada" icon="database" color="#28a745">
+    Almacenamiento y organización de todas las declaraciones juradas
   </Card>
-  <Card title="Otras DJ" icon="folder">
-    Declaraciones según actividad específica
+  <Card title="Interface Intuitiva" icon="eye" color="#6c757d">
+    Visualización clara y organizada de la información tributaria
   </Card>
 </CardGroup>
 
-## DJ 1879 - Operaciones con Partes Relacionadas
+### 2.1 Actualización desde el SII
 
-### ¿Cuándo se presenta?
+**Función principal**:
 
-- Empresas con operaciones con partes relacionadas
-- Montos superiores a las UF establecidas por ley
-- Plazo: Generalmente junio de cada año
+- **Botón**: "Actualizar/Obtener DJ" (Azul/Primary)
+- **Conectividad**: Integración directa con sistemas del SII
+- **Automatización**: Descarga y procesamiento automático de datos
+- **Validación**: Verificación de integridad de la información recibida
 
-### Información requerida
+### 2.2 Procesamiento de Datos
 
-- Identificación de partes relacionadas
-- Tipo y monto de operaciones
-- Precios de transferencia aplicados
-- Documentación de respaldo
+**Flujo de trabajo**:
 
-## DJ 1920 - Beneficiarios Finales
+<Steps>
+  <Step title="Iniciar Actualización">
+    El usuario hace click en "Actualizar/Obtener DJ" para iniciar el proceso
+  </Step>
+  <Step title="Conexión con SII">
+    El sistema establece conexión segura con los servidores del SII
+  </Step>
+  <Step title="Descarga de Datos">
+    Se descargan las declaraciones juradas disponibles para la empresa
+  </Step>
+  <Step title="Procesamiento">
+    Los datos se procesan y almacenan en el sistema local
+  </Step>
+  <Step title="Actualización Automática">
+    El sistema continúa monitoreando cambios cada 60 segundos
+  </Step>
+</Steps>
 
-### Objetivo
+## 📊 Gestión de Declaraciones Juradas
 
-Informar sobre los beneficiarios finales de entidades jurídicas para prevenir lavado de activos.
+### 3.1 Tipos de Declaraciones Juradas
 
-### Quién debe presentarla
+**Categorías principales**:
 
-- Sociedades anónimas cerradas
-- Sociedades de responsabilidad limitada
-- Otras entidades según normativa
+<Tabs>
+  <Tab title="DJ Anuales">
+    - **Renta Anual**: Declaración anual de impuesto a la renta - **IVA Anual**:
+    Declaración anual de IVA para contribuyentes especiales - **Otras Anuales**:
+    Declaraciones específicas según tipo de contribuyente
+  </Tab>
+  <Tab title="DJ Mensuales">
+    - **F29**: Formulario mensual de impuestos - **F50**: Declaración mensual de
+    retenciones - **Declaraciones Especiales**: Según actividad de la empresa
+  </Tab>
+  <Tab title="DJ Extraordinarias">
+    - **Rectificatorias**: Correcciones a declaraciones previas -
+    **Complementarias**: Información adicional requerida por SII -
+    **Especiales**: Declaraciones por situaciones particulares
+  </Tab>
+</Tabs>
 
-## DJ 1921 - Socios y Accionistas
+### 3.2 Estados de las Declaraciones
 
-### Información a declarar
+**Monitoreo de estado**:
 
-- Identificación de socios/accionistas
-- Porcentaje de participación
-- Movimientos durante el período
-- Cambios en la estructura societaria
+- **Pendiente**: Declaración no presentada aún
+- **Presentada**: Declaración enviada al SII exitosamente
+- **Observada**: Declaración con observaciones del SII
+- **Aceptada**: Declaración aprobada por el SII
+- **Rechazada**: Declaración rechazada, requiere corrección
 
-## Funcionalidades del sistema
+### 3.3 Información Detallada
 
-- **Generación automática**: Crea formularios con información del sistema
-- **Validaciones**: Verifica consistencia de datos
-- **Exportación**: Genera archivos para envío al SII
-- **Seguimiento**: Control de declaraciones presentadas
-- **Alertas**: Recordatorios de fechas de vencimiento
+**Datos mostrados por cada DJ**:
 
-## Proceso de declaración
+```
+┌─────────────────────────────────────────┐
+│ DECLARACIÓN JURADA                      │
+├─────────────────────────────────────────┤
+│ Tipo: F29 - Enero 2024                 │
+│ Estado: Presentada                      │
+│ Fecha Presentación: 15/02/2024         │
+│ Número Folio: 123456789                │
+│ Monto Declarado: $XXX.XXX              │
+│ Observaciones: Sin observaciones        │
+└─────────────────────────────────────────┘
+```
 
-1. **Recopilación de información**: Revisa datos necesarios
-2. **Generación del formulario**: Crea la declaración
-3. **Revisión y validación**: Verifica información
-4. **Envío al SII**: Presenta la declaración
-5. **Confirmación**: Verifica recepción exitosa
+## 🔍 Monitoreo y Seguimiento
 
-## Calendario de declaraciones
+### 4.1 Actualizaciones Automáticas
+
+**Sistema de polling**:
+
+<Info>
+  **Monitoreo Continuo**: El sistema verifica automáticamente cada 60 segundos
+  si hay cambios en las declaraciones juradas, asegurando información siempre
+  actualizada.
+</Info>
+
+**Beneficios del monitoreo automático**:
+
+- **Información en Tiempo Real**: Datos siempre actualizados
+- **Detección de Cambios**: Identificación inmediata de nuevas declaraciones
+- **Alertas Automáticas**: Notificación de cambios de estado
+- **Sincronización**: Mantiene coherencia con sistemas del SII
+
+### 4.2 Gestión de Errores
+
+**Manejo de situaciones excepcionales**:
 
 <Warning>
-  Cada declaración jurada tiene fechas específicas de presentación. Revisa el
-  calendario tributario.
+  **Manejo de Errores**: El sistema gestiona automáticamente errores de
+  conectividad y problemas de sincronización, mostrando mensajes informativos al
+  usuario.
 </Warning>
 
-## Próximos pasos
+**Tipos de errores y respuestas**:
 
-- [Claves de Portales](/empresa/claves-portales)
-- [Renta](/utilidades/renta)
-- [Impuestos](/contabilidad/impuestos)
+- **Error 409**: Conflicto de datos - mensaje de advertencia específico
+- **Error de Conectividad**: Mensaje de error de conexión
+- **Timeout**: Reintento automático después de período de espera
+- **Datos Corruptos**: Validación y solicitud de nueva descarga
+
+## 💡 Casos de Uso Operacionales
+
+### 5.1 Proceso Mensual de DJ
+
+**Flujo recomendado**:
+
+<Steps>
+  <Step title="Inicio de Mes">
+    Acceder al módulo para verificar declaraciones pendientes del mes anterior
+  </Step>
+  <Step title="Actualización">
+    Usar "Actualizar/Obtener DJ" para sincronizar con SII
+  </Step>
+  <Step title="Revisión">
+    Revisar estados de todas las declaraciones del período
+  </Step>
+  <Step title="Seguimiento">
+    Dejar el sistema abierto para monitoreo automático durante el día
+  </Step>
+</Steps>
+
+### 5.2 Control de Vencimientos
+
+**Gestión de fechas críticas**:
+
+- **Identificación de Pendientes**: Declaraciones próximas a vencer
+- **Priorización**: Orden por fecha de vencimiento
+- **Alertas Tempranas**: Notificaciones de proximidad de vencimiento
+- **Seguimiento Post-presentación**: Verificación de aceptación por SII
+
+### 5.3 Auditoría y Compliance
+
+**Para cumplimiento tributario**:
+
+- **Historial Completo**: Registro de todas las declaraciones presentadas
+- **Trazabilidad**: Seguimiento desde creación hasta aceptación
+- **Documentación**: Respaldo de fechas y estados de cada DJ
+- **Evidencia**: Comprobantes para procesos de auditoría
+
+## 🔧 Configuración y Requisitos
+
+### 6.1 Configuración de Conectividad SII
+
+**Requisitos previos**:
+
+<CardGroup cols={2}>
+  <Card title="Certificados Digitales" icon="certificate">
+    - Certificado digital vigente de la empresa - Configuración correcta en
+    sistemas SII - Permisos de representación actualizados
+  </Card>
+  <Card title="Conectividad" icon="wifi">
+    - Conexión a internet estable - Firewall configurado para SII -
+    Sincronización de fecha y hora del sistema
+  </Card>
+</CardGroup>
+
+### 6.2 Permisos y Autorizaciones
+
+**Niveles de acceso**:
+
+- **Administrador**: Control total del módulo y configuración
+- **Contador General**: Gestión operativa de declaraciones
+- **Jefe Contable**: Supervisión y validación de DJ
+- **Analista Financiero**: Consulta y seguimiento de estados
+- **Auditor**: Acceso de solo lectura para verificaciones
+- **Supervisor**: Monitoreo general del cumplimiento
+
+## 🚨 Mejores Prácticas
+
+### 7.1 Frecuencia de Uso Recomendada
+
+**Por tipo de usuario**:
+
+- **Contador Tributario**: Acceso diario durante períodos de declaración
+- **Jefe Contable**: Revisión semanal de estados y pendientes
+- **Administrador**: Verificación mensual de funcionamiento del sistema
+- **Auditor**: Consultas trimestrales para validación de cumplimiento
+
+### 7.2 Procedimientos de Control
+
+<Steps>
+  <Step title="Verificación Diaria">
+    Revisar que el polling automático esté funcionando correctamente
+  </Step>
+  <Step title="Actualización Manual">
+    Ejecutar actualización manual al inicio de cada sesión de trabajo
+  </Step>
+  <Step title="Monitoreo de Estados">
+    Verificar cambios de estado de declaraciones presentadas
+  </Step>
+  <Step title="Documentación">
+    Registrar cualquier anomalía o error para seguimiento técnico
+  </Step>
+</Steps>
+
+### 7.3 Gestión de Períodos Críticos
+
+**Durante vencimientos masivos**:
+
+<Warning>
+  **Períodos de Alta Demanda**: Durante los vencimientos de F29 (día 12 de cada
+  mes) y declaraciones anuales (abril), el SII puede experimentar alta carga.
+  Planifique las actualizaciones en horarios de menor demanda.
+</Warning>
+
+**Estrategias recomendadas**:
+
+- **Horarios Óptimos**: Actualizar temprano en la mañana o tarde
+- **Verificación Múltiple**: Confirmar estados varios días después de vencimientos
+- **Respaldo Manual**: Mantener comprobantes físicos de presentación
+- **Coordinación con Contador**: Validar información crítica externamente
+
+## 🔧 Solución de Problemas
+
+### Problema: No se actualizan las declaraciones juradas
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificaciones Básicas">
+- ✅ Confirmar conexión a internet estable
+- ✅ Verificar que certificados digitales estén vigentes
+- ✅ Validar permisos de representación en SII
+- ✅ Revisar configuración de fecha y hora del sistema
+</Accordion>
+
+<Accordion title="Soluciones Avanzadas">
+- 🔧 Reiniciar navegador y limpiar caché
+- 🔧 Verificar configuración de firewall empresarial
+- 🔧 Contactar administrador de sistemas para revisar conectividad
+- 📞 Contactar soporte técnico si el problema persiste
+</Accordion>
+</AccordionGroup>
+
+### Problema: Error 409 en actualización
+
+**Pasos de resolución**:
+
+1. **Identificar Conflicto**: Revisar mensaje específico del error
+2. **Verificar Datos**: Confirmar integridad de información en SII
+3. **Reintento Posterior**: Esperar 30 minutos y volver a intentar
+4. **Validación Manual**: Verificar directamente en sitio web del SII
+
+### Problema: Declaraciones aparecen con estado incorrecto
+
+**Proceso de validación**:
+
+<Steps>
+  <Step title="Verificación Cruzada">
+    Comparar estado mostrado con información directa del SII
+  </Step>
+  <Step title="Actualización Forzada">
+    Ejecutar actualización manual para sincronizar datos
+  </Step>
+  <Step title="Tiempo de Espera">
+    Considerar que cambios en SII pueden tomar tiempo en propagarse
+  </Step>
+  <Step title="Documentación">
+    Si persiste, documentar para reporte técnico
+  </Step>
+</Steps>
+
+## 📞 Soporte Especializado
+
+### Contacto de Soporte Tributario
+
+<Card title="Equipo de Integración SII" icon="building-columns">
+  - **Email Especializado**: tributario@contago.cl - **Teléfono Directo**: +56 2
+  1234 5684 - **Horario**: Lunes a Viernes, 8:00 - 19:00 - **Especialidad**:
+  Integración SII, declaraciones juradas, compliance tributario
+</Card>
+
+### Recursos Adicionales
+
+- **Guía de Configuración**: Setup completo de certificados y permisos
+- **Calendario Tributario**: Fechas importantes y vencimientos
+- **Webinar Mensual**: "Novedades Tributarias y Tecnológicas"
+- **Mesa de Ayuda SII**: Contactos directos para problemas de conectividad
+
+### Red de Expertos Tributarios
+
+- **Contadores Certificados**: Con experiencia en integración tecnológica
+- **Especialistas SII**: Conocimiento profundo de sistemas tributarios
+- **Consultores IT**: Expertos en conectividad y certificados digitales
+- **Soporte 24/7**: Para períodos críticos de vencimientos
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Declaraciones Juradas es esencial para:
+
+- **Cumplimiento Tributario**: Gestión centralizada de obligaciones fiscales
+- **Eficiencia Operacional**: Automatización de procesos de actualización
+- **Control de Gestión**: Monitoreo continuo de estados y vencimientos
+- **Auditoría**: Trazabilidad completa para procesos de fiscalización
+
+<Tip>
+  **Valor Estratégico**: Este módulo no solo facilita el cumplimiento
+  tributario, sino que transforma la gestión de declaraciones juradas en un
+  proceso proactivo y automatizado, reduciendo significativamente el riesgo de
+  incumplimientos.
+</Tip>
+
+<Info>
+  **Evolución Continua**: El módulo se actualiza automáticamente para adaptarse
+  a cambios en la normativa tributaria y mejoras en los sistemas del SII,
+  asegurando siempre el cumplimiento de las últimas regulaciones.
+</Info>

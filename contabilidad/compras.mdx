@@ -1,35 +1,299 @@
 ---
 title: "Compras"
-description: "Gestión y registro de compras en el sistema"
+description: "Sistema avanzado de gestión de compras que automatiza la descarga desde el SII y genera asientos contables de forma inteligente."
 ---
 
-# Compras
+## 🏠 Vista Principal de Compras
 
-Aprende a gestionar y registrar las compras de tu empresa de manera eficiente.
+### Acceso al Sistema
 
-## ¿Qué son las compras?
+- **Ruta**: Dashboard → Compras
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Usuario de Operaciones, Auditor, Supervisor
 
-Las compras representan todos los gastos y adquisiciones que realiza tu empresa para su operación.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Asientos Pendientes**: Contador visual que indica cuántos asientos contables faltan por generar
+- **Tabla de compras**: Lista completa con filtros avanzados y acciones detalladas
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Registro de compras" icon="plus">
-    Registra nuevas compras y facturas de proveedores
+  <Card title="Obtener Compras Automáticas" icon="download" color="#0066cc">
+    Descarga automática desde el SII del mes actual
   </Card>
-  <Card title="Consulta de compras" icon="search">
-    Busca y filtra compras registradas
+  <Card title="Asignación Masiva de Centros" icon="sitemap" color="#17a2b8">
+    Asigna centros de costo a múltiples compras simultáneamente
   </Card>
-  <Card title="Reportes" icon="chart-bar">
-    Genera reportes de compras por período
+  <Card title="Generación Masiva de Asientos" icon="calculator" color="#17a2b8">
+    Crea asientos contables para todas las compras del mes
   </Card>
-  <Card title="Proveedores" icon="users">
-    Gestiona información de proveedores
+  <Card title="Gestión Individual" icon="edit" color="#6c757d">
+    Administra cada compra con precisión y detalle
   </Card>
 </CardGroup>
 
-## Próximos pasos
+### 2.1 Obtener Compras Automáticas
 
-- [Gestión de Proveedores](/gestion/proveedores)
-- [Asientos Contables](/contabilidad/asientos-contables)
-- [Conciliación Bancaria](/contabilidad/conciliacion-bancaria)
+- **Botón**: "Obtener Compras Automáticas" (Azul/Primary)
+- **Función**: Conecta automáticamente con el SII para descargar compras del mes actual
+- **Parámetros**: Utiliza empresa y fecha seleccionadas en el sistema
+- **Indicador visual**: Animación de carga especializada con mensaje "Procesando..."
+- **Respuesta**: Mensaje de éxito al completar la descarga
+
+### 2.2 Asignación Masiva de Centros de Costo
+
+**Botón**: "Asignar Centro de Costo Masivo" (Info/Celeste)
+
+**Proceso completo**:
+
+1. **Diálogo con filtros avanzados**:
+
+   - Tipo de Documento: Factura de compra, Nota de débito, etc.
+   - Tipo de Compra: Normal, activo fijo, servicios, etc.
+   - Rango de Fechas: Desde y hasta (documento, recepción, acuse)
+   - Rango de Montos: Mínimo y máximo
+   - Proveedor: Filtrar por RUT o razón social específica
+
+2. **Selección y confirmación**:
+   - Seleccionar el Centro de Costo a aplicar masivamente
+   - **Vista previa**: Sistema muestra exactamente qué compras serán afectadas
+   - **Confirmar**: Aplica el centro de costo a todas las compras filtradas
+
+### 2.3 Generación Masiva de Asientos Contables
+
+- **Botón**: "Generar Asientos Contables Masivo" (Info/Celeste)
+- **Función**: Crea automáticamente todos los asientos contables para las compras del mes
+- **Requisitos**: Las compras deben tener asignados tanto cuenta contable como centro de costo
+- **Scope**: Procesa todas las compras elegibles del mes y año actual
+- **Validación**: Solo genera asientos para registros completos y válidos
+
+## 📋 Gestión Detallada de Compras Individuales
+
+### 3.1 Información Completa por Compra
+
+Cada fila de la tabla presenta:
+
+- **Identificación del Documento**: Tipo, folio, fechas múltiples
+- **Datos del Proveedor**: RUT, razón social completa
+- **Información Fiscal**: Montos netos, exentos, IVA recuperable/no recuperable
+- **Datos Especializados**: Activos fijos, impuestos especiales, tabaco
+- **Estado Contable**: Situación del asiento (generado, pendiente, desbalanceado)
+
+### 3.2 Campos Financieros Detallados
+
+<CardGroup cols={2}>
+  <Card title="Montos Base" icon="dollar-sign">
+    Monto Exento, Monto Neto, valores sin IVA
+  </Card>
+  <Card title="IVA Diferenciado" icon="percent">
+    IVA Recuperable vs IVA No Recuperable
+  </Card>
+  <Card title="Activos Fijos" icon="building">
+    Montos e IVA de bienes de capital
+  </Card>
+  <Card title="Impuestos Especiales" icon="exclamation-triangle">
+    Tabaco (puros, cigarrillos, procesado)
+  </Card>
+</CardGroup>
+
+### 3.3 Acciones Individuales por Compra
+
+#### Ver DTE (Documento Tributario Electrónico)
+
+- **Botón**: 👁️ (ícono de ojo)
+- **Función**: Abre el documento original en formato XML
+- **Contenido detallado**:
+  - Datos completos del emisor y receptor
+  - Detalle línea por línea de productos/servicios
+  - Cálculos de impuestos paso a paso
+  - Totales y validaciones fiscales
+
+#### Asignación Individual de Centro de Costo
+
+- **Campo**: Dropdown "Centro de Costo"
+- **Opciones**: Lista completa de centros de costo de la empresa
+- **Estado dinámico**:
+  - ✅ **Activo**: Cuando no hay asiento generado
+  - 🔒 **Bloqueado**: Una vez generado el asiento contable (fondo gris)
+
+#### Asignación Individual de Cuenta Contable
+
+- **Campo**: Dropdown "Cuenta" (más amplio que centro de costo)
+- **Formato**: Muestra "(código) nombre completo de la cuenta"
+- **Opciones**: Plan de cuentas completo de la empresa
+- **Estado dinámico**: Similar al centro de costo
+
+#### Gestión Avanzada de Asientos Contables
+
+**Botón dinámico**: "Generar Asiento" / "Ver Asiento"
+
+**Estados del sistema**:
+
+- 🔵 **Azul**: "Generar Asiento" - Listo para crear
+- 🟢 **Verde**: "Ver Asiento" - Asiento generado y balanceado
+- 🔴 **Rojo**: "Ver Asiento" - Asiento desbalanceado (requiere atención)
+
+**Validaciones automáticas**:
+
+- ✅ Centro de costo debe estar seleccionado
+- ✅ Cuenta contable debe estar asignada
+- ⚠️ Sistema valida balance debe = haber
+
+## 🔍 Funciones de Control y Navegación
+
+### 4.1 Filtro Inteligente por Estado de Asientos
+
+- **Ubicación**: Flecha en columna "Asiento"
+- **Función**: Ordena dinámicamente por estado contable
+- **Opciones**:
+  - ⬆️ **Ascendente**: Asientos generados primero
+  - ⬇️ **Descendente**: Asientos pendientes primero
+
+### 4.2 Sistema de Paginación Avanzado
+
+- **Opciones flexibles**: 10, 25, 50 registros por página
+- **Navegación**: Anterior/Siguiente con contador detallado
+- **Información**: "Mostrando X-Y de Z registros totales"
+
+### 4.3 Indicadores Visuales del Sistema
+
+- **Asientos Pendientes**: Card destacado con número en rojo/verde
+- **Estados de carga**: Skeleton loaders para mejor UX
+- **Animaciones**: Loader personalizado durante procesos largos
+
+## 📄 Visualización Avanzada de Documentos
+
+### 5.1 Visor de DTE Especializado
+
+**Características técnicas**:
+
+- **Formato**: XML estructurado del SII
+- **Información completa**:
+  - Datos del emisor (proveedor) y receptor (empresa)
+  - Detalle completo de productos/servicios comprados
+  - Cálculos paso a paso de impuestos
+  - Totales, subtotales y validaciones fiscales
+- **Navegación**: Scroll dentro del diálogo para documentos extensos
+
+### 5.2 Vista de Asientos Contables
+
+- **Acceso**: Botón "Ver Asiento" (verde/rojo según estado)
+- **Contenido**: Detalle completo del asiento generado
+- **Información**: Debe, haber, cuentas, fechas, referencias
+
+## ⚠️ Sistema de Alertas y Validaciones
+
+### 6.1 Alertas de Estado Crítico
+
+- **Asiento Desbalanceado**: Banner rojo con mensaje "Asiento Desbalanceado"
+- **Causa común**: Configuración incorrecta del plan de cuentas
+- **Solución**: Revisar parametrización contable
+
+### 6.2 Validaciones Preventivas
+
+Al generar asientos individuales:
+
+- **Sin centro de costo**: "Debe seleccionar un centro de costo para generar el asiento"
+- **Sin cuenta**: "Debe seleccionar una cuenta para generar el asiento"
+- **Asiento duplicado**: Sistema previene duplicaciones
+
+### 6.3 Mensajes de Confirmación
+
+- **Compras obtenidas**: "Compras automáticas generadas correctamente"
+- **Asiento creado**: "Documento generado correctamente"
+- **Asignación masiva**: Confirmación con número de registros afectados
+
+## 💡 Mejores Prácticas y Flujo Recomendado
+
+### 7.1 Proceso Mensual Optimizado
+
+1. **Inicio de mes**: Obtener compras automáticas del SII
+2. **Clasificación**: Asignar centros de costo masivamente por tipo de gasto
+3. **Contabilización**: Asignar cuentas contables por categoría de compra
+4. **Generación**: Crear asientos masivamente
+5. **Revisión**: Verificar asientos desbalanceados individualmente
+6. **Cierre**: Confirmar que no queden asientos pendientes
+
+<Tip>
+  **Estrategia recomendada**: Procesa primero las compras recurrentes con
+  asignación masiva, luego revisa casos especiales individualmente.
+</Tip>
+
+### 7.2 Estrategias de Organización
+
+**Centros de costo por**:
+
+- **Tipo de gasto**: Operacional, administrativo, ventas
+- **Ubicación**: Sucursal, departamento, proyecto
+- **Responsabilidad**: Área que autoriza el gasto
+
+**Cuentas contables por**:
+
+- **Naturaleza del gasto**: Servicios, materiales, activos
+- **Deducibilidad fiscal**: Gastos aceptados/rechazados
+- **Tipo de proveedor**: Nacional, extranjero, relacionado
+
+### 7.3 Control de Calidad Mensual
+
+- **Revisar diariamente**: Asientos desbalanceados
+- **Verificar semanalmente**: Asignaciones de cuentas similares
+- **Confirmar mensualmente**: Cero asientos pendientes antes de cierre
+- **Auditar trimestralmente**: Consistencia en criterios de asignación
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: Compras no se descargan del SII
+
+**Diagnóstico y solución**:
+
+- ✅ Verificar conectividad con SII
+- ✅ Confirmar certificados digitales vigentes
+- ✅ Validar que existen compras en el período
+- ✅ Revisar configuración de empresa en sistema
+- 📞 Contactar soporte técnico si persiste
+
+### Problema: No se pueden generar asientos
+
+**Lista de verificación**:
+
+- ✅ Centro de costo debe estar asignado
+- ✅ Cuenta contable debe estar seleccionada
+- ✅ La compra no debe tener asiento previo
+- ✅ Plan de cuentas debe estar configurado correctamente
+
+### Problema: Asientos aparecen desbalanceados
+
+**Pasos de solución**:
+
+1. **Revisar configuración**: Plan de cuentas de la empresa
+2. **Verificar cuenta**: Que sea apropiada para el tipo de gasto
+3. **Validar IVA**: Configuración de cuentas de IVA recuperable/no recuperable
+4. **Consultar contador**: Para revisar parametrización contable
+5. **Documentar**: Para ajustes futuros en configuración
+
+<Warning>
+  **Campos bloqueados (grises)**: Indica que ya existe un asiento contable
+  generado. Para modificar, primero debe eliminar el asiento existente.
+</Warning>
+
+## 🚨 Casos Especiales y Consideraciones
+
+### 9.1 Compras de Activos Fijos
+
+- **Campos especiales**: "Importe neto de activos fijos", "IVA sobre activos fijos"
+- **Tratamiento**: Requieren cuentas específicas en balance
+- **Consideración**: IVA puede tener tratamiento diferencial
+
+### 9.2 Impuestos Especiales
+
+- **Tabaco**: Campos separados para puros, cigarrillos y procesado
+- **Otros impuestos**: Valor y tasa configurables
+- **Tratamiento**: Requieren cuentas específicas según tipo
+
+### 9.3 IVA No Recuperable
+
+- **Identificación**: Campo específico en la compra
+- **Tratamiento contable**: Va directo a gasto, no a cuenta de IVA
+- **Configuración**: Requiere cuentas diferenciadas en plan de cuentas

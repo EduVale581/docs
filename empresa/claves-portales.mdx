@@ -1,141 +1,431 @@
 ---
 title: "Claves de Portales"
-description: "Gestión de claves y accesos a portales del SII y otros servicios"
+description: "Sistema seguro de gestión de credenciales para portales externos con encriptación avanzada, control de acceso por aplicación y funciones de copiado seguro."
 ---
 
-# Claves de Portales
+## 🏠 Vista Principal de Claves de Portales
 
-Gestiona de forma segura todas las claves y accesos a portales tributarios y servicios gubernamentales.
+### Acceso al Sistema
 
-## ¿Para qué sirven las claves de portales?
+- **Ruta**: Dashboard → Claves de Portales
+- **Permisos requeridos**: Administrador, Analista Financiero, Contador General, Jefe Contable, Contadores Junior, Usuario de Operaciones, Usuario de Tesorería, Usuario de RRHH, Auditor, Supervisor
 
-Las claves de portales permiten acceder a servicios online del SII, bancos y otros organismos para realizar trámites y obtener información automáticamente.
+### Panel de Control
 
-## Portales disponibles
+La vista principal presenta:
+
+- **Lista Segura de Claves**: Tabla con credenciales de acceso a portales externos
+- **Funciones de Copiado**: Botones seguros para copiar usuarios y contraseñas
+- **Filtros Avanzados**: Herramientas de búsqueda y filtrado por aplicación
+- **Gestión Completa**: Creación, edición y eliminación controlada de credenciales
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="SII" icon="building-flag">
-    Servicio de Impuestos Internos
+  <Card
+    title="Gestión Segura de Credenciales"
+    icon="shield-lock"
+    color="#0066cc"
+  >
+    Almacenamiento encriptado de usuarios y contraseñas para portales externos
   </Card>
-  <Card title="Bancos" icon="university">
-    Portales bancarios para consultas
+  <Card title="Copiado Seguro" icon="copy" color="#17a2b8">
+    Funciones de copiado al portapapeles con desencriptación en tiempo real
   </Card>
-  <Card title="Previred" icon="shield">
-    Declaración de cotizaciones
+  <Card title="Control por Aplicación" icon="apps" color="#28a745">
+    Organización por tipo de portal y aplicación web específica
   </Card>
-  <Card title="Otros servicios" icon="globe">
-    Portales gubernamentales adicionales
+  <Card title="Acceso Controlado" icon="users-cog" color="#6c757d">
+    Permisos diferenciados según rol organizacional del usuario
   </Card>
 </CardGroup>
 
-## Portal SII
+### 2.1 Información de Credenciales
 
-### Tipos de certificados
+**Datos gestionados por cada clave**:
 
-- **Certificado digital**: Para persona jurídica
-- **Clave tributaria**: Usuario y contraseña
-- **Clave única**: Del Registro Civil
+| Campo          | Descripción                     | Seguridad                             |
+| -------------- | ------------------------------- | ------------------------------------- |
+| **Aplicación** | Portal o sistema web específico | Visible - Identificación del servicio |
+| **Usuario**    | Nombre de usuario para acceso   | Visible - Con función de copiado      |
+| **Contraseña** | Clave de acceso encriptada      | Oculta - Solo copiado encriptado      |
 
-### Funcionalidades disponibles
+### 2.2 Aplicaciones Soportadas
 
-- **Consulta de documentos**: DTEs emitidos y recibidos
-- **Declaraciones**: Formularios 29, 22, etc.
-- **Timbraje**: Autorización de documentos
-- **Consultas RUT**: Verificación de terceros
-- **Propuesta F29**: Formularios pre-llenados
+**Tipos de portales gestionados**:
 
-### Configuración SII
+<Tabs>
+  <Tab title="Portales Gubernamentales">
+    - **SII**: Servicio de Impuestos Internos - **ChileCompra**: Portal de
+    compras públicas - **DT (Dirección del Trabajo)**: Gestión laboral -
+    **SUSESO**: Superintendencia de Seguridad Social - **INE**: Instituto
+    Nacional de Estadísticas
+  </Tab>
+  <Tab title="Portales Bancarios">
+    - **Banco Estado**: Banca corporativa - **Banco de Chile**: Servicios
+    empresariales - **Santander**: Plataforma comercial - **BCI**: Banca
+    empresarial - **Otros Bancos**: Según necesidades específicas
+  </Tab>
+  <Tab title="Servicios Especializados">
+    - **Previred**: Gestión previsional - **FONASA**: Fondo Nacional de Salud -
+    **Mutual de Seguridad**: Gestión de accidentes laborales - **Registros
+    Públicos**: Conservadores y notarías - **Otros Servicios**: Según industria
+    específica
+  </Tab>
+</Tabs>
 
-1. **Certificado digital**: Instala certificado válido
-2. **Credenciales**: RUT y clave tributaria
-3. **Configuración**: Parámetros de conexión
-4. **Pruebas**: Verifica conectividad
-5. **Activación**: Habilita servicios
+## 🔒 Seguridad y Encriptación
 
-## Portales bancarios
+### 3.1 Protección de Contraseñas
 
-### Información requerida
+**Sistema de encriptación avanzado**:
 
-- **Usuario**: Código de usuario
-- **Contraseña**: Clave de acceso
-- **Token**: Dispositivo de seguridad
-- **Certificados**: Si los requiere
+<Info>
+  **Encriptación de Grado Empresarial**: Las contraseñas se almacenan con
+  encriptación AES-256 y solo se desencriptan temporalmente durante el proceso
+  de copiado, nunca se muestran en pantalla.
+</Info>
 
-### Servicios disponibles
+**Características de seguridad**:
 
-- **Consulta saldos**: Saldos de cuentas
-- **Movimientos**: Cartola de cuenta
-- **Transferencias**: Pagos electrónicos
-- **Confirmación pagos**: Validación de transacciones
+- **Almacenamiento Encriptado**: Contraseñas nunca almacenadas en texto plano
+- **Desencriptación Bajo Demanda**: Solo durante proceso de copiado autorizado
+- **Sesiones Seguras**: Timeouts automáticos para proteger acceso
+- **Auditoría Completa**: Log de todos los accesos y copias realizadas
 
-## Previred
+### 3.2 Funciones de Copiado Seguro
 
-### Para qué se usa
+**Proceso de copiado de credenciales**:
 
-- **Declaración cotizaciones**: DDJJ de cotizaciones
-- **Consulta AFP**: Estados de cotizaciones
-- **Licencias médicas**: Tramitación online
-- **Subsidios**: Gestión de subsidios
+<Steps>
+  <Step title="Solicitud de Copia">
+    Usuario hace click en botón de copiado junto a usuario o contraseña
+  </Step>
+  <Step title="Autenticación">
+    Sistema valida permisos y sesión activa del usuario
+  </Step>
+  <Step title="Desencriptación Temporal">
+    Contraseña se desencripta temporalmente en memoria segura
+  </Step>
+  <Step title="Copiado al Portapapeles">
+    Credencial se copia al portapapeles del sistema operativo
+  </Step>
+  <Step title="Limpieza Automática">
+    Portapapeles se limpia automáticamente después de tiempo configurado
+  </Step>
+</Steps>
 
-### Configuración
+### 3.3 Control de Acceso Diferenciado
 
-- **RUT empresa**: Identificación fiscal
-- **Clave**: Proporcionada por Previred
-- **Certificado**: Si corresponde
-- **Autorizaciones**: Poderes requeridos
+**Permisos por rol organizacional**:
 
-## Seguridad y mejores prácticas
+```
+┌─────────────────────────────────────────┐
+│ MATRIZ DE PERMISOS                      │
+├─────────────────────────────────────────┤
+│ Administrador:        Acceso Total      │
+│ Contador General:     SII + Bancos      │
+│ Jefe Contable:        SII + Tributarios │
+│ Usuario Tesorería:    Bancos + Finanzas │
+│ Usuario RRHH:         DT + Previred     │
+│ Auditor:             Solo Lectura       │
+│ Otros Roles:         Según Asignación  │
+└─────────────────────────────────────────┘
+```
 
-### Protección de credenciales
+## 🔍 Funciones de Búsqueda y Filtrado
 
-- **Encriptación**: Claves encriptadas en base de datos
-- **Acceso limitado**: Solo usuarios autorizados
-- **Respaldo**: Copia de seguridad de certificados
-- **Actualización**: Renovación periódica
+### 4.1 Toolbar de Filtros Avanzados
 
-### Control de acceso
+**Herramientas de búsqueda disponibles**:
 
-- **Perfiles**: Diferentes niveles de acceso
-- **Auditoría**: Registro de accesos
-- **Tiempo de sesión**: Sesiones con tiempo límite
-- **Notificaciones**: Alertas de accesos
+- **Búsqueda por Texto**: Campo de búsqueda libre en nombres y aplicaciones
+- **Filtro por Aplicación**: Selección específica de portal o servicio
+- **Estado Activo/Inactivo**: Filtrar credenciales vigentes o desactivadas
+- **Ordenamiento**: Por aplicación, fecha de creación o última actualización
 
-## Configuración paso a paso
+### 4.2 Gestión de Estados
 
-### 1. Portal SII
+**Estados de credenciales**:
 
-1. **Obtener certificado**: En sitio SII
-2. **Instalar certificado**: En el sistema
-3. **Configurar conexión**: Parámetros técnicos
-4. **Probar conexión**: Verificar funcionamiento
-5. **Activar servicios**: Habilitar funciones
+<CardGroup cols={2}>
+  <Card title="Activas" icon="check-circle" color="#28a745">
+    - Credenciales en uso actual - Disponibles para copiado - Visibles en
+    filtros normales
+  </Card>
+  <Card title="Inactivas" icon="pause-circle" color="#6c757d">
+    - Credenciales temporalmente deshabilitadas - No disponibles para copiado -
+    Requieren filtro específico para visualizar
+  </Card>
+</CardGroup>
 
-### 2. Portal bancario
+### 4.3 Paginación y Organización
 
-1. **Solicitar acceso**: Al banco
-2. **Configurar credenciales**: En el sistema
-3. **Configurar servicios**: Qué servicios usar
-4. **Probar conexión**: Verificar acceso
-5. **Programar consultas**: Automatización
+**Navegación eficiente**:
 
-## Troubleshooting común
+- **Paginación Customizable**: 10, 25, 50 registros por página
+- **Navegación Rápida**: Saltos directos a páginas específicas
+- **Contadores**: Información clara de total de registros
+- **Ordenamiento Dinámico**: Click en headers para ordenar columnas
 
-### Problemas frecuentes
+## 💼 Casos de Uso Operacionales
 
-- **Certificado vencido**: Renovar certificado
-- **Credenciales incorrectas**: Verificar datos
-- **Conexión fallida**: Revisar conectividad
-- **Servicios no disponibles**: Verificar con proveedor
+### 5.1 Gestión Diaria de Portales
 
-### Soluciones
+**Para usuarios operacionales**:
 
-- **Logs de error**: Revisar mensajes detallados
-- **Soporte técnico**: Contactar proveedores
-- **Documentación**: Consultar manuales
-- **Actualización**: Mantener sistema actualizado
+<Steps>
+  <Step title="Acceso al Sistema">
+    Ingresar al módulo según permisos asignados por rol
+  </Step>
+  <Step title="Localizar Portal">
+    Usar filtros o búsqueda para encontrar el portal requerido
+  </Step>
+  <Step title="Copiar Credenciales">
+    Usar botones de copiado para usuario y contraseña
+  </Step>
+  <Step title="Acceder al Portal Externo">
+    Pegar credenciales en el sitio web correspondiente
+  </Step>
+</Steps>
 
-## Próximos pasos
+### 5.2 Gestión de Credenciales Críticas
 
-- [Impuestos](/contabilidad/impuestos)
-- [Declaraciones Juradas](/utilidades/declaraciones-juradas)
-- [Integraciones](/empresa/integraciones)
+**Para administradores y jefaturas**:
+
+- **Rotación de Contraseñas**: Actualización periódica de credenciales críticas
+- **Auditoría de Accesos**: Revisión de logs de uso por usuario
+- **Gestión de Permisos**: Asignación y revocación de accesos por rol
+- **Backup de Seguridad**: Respaldo de credenciales críticas fuera del sistema
+
+### 5.3 Compliance y Auditoría
+
+**Para procesos de control interno**:
+
+- **Segregación de Funciones**: Diferentes usuarios para diferentes portales
+- **Trazabilidad Completa**: Log de todos los accesos y modificaciones
+- **Políticas de Contraseñas**: Cumplimiento de estándares de seguridad
+- **Revisión Periódica**: Validación de vigencia y necesidad de accesos
+
+## 🔧 Proceso de Gestión de Credenciales
+
+### 6.1 Creación de Nuevas Credenciales
+
+**Formulario de nueva clave de portal**:
+
+<Steps>
+  <Step title="Seleccionar Aplicación">
+    Elegir el portal o servicio web desde catálogo predefinido
+  </Step>
+  <Step title="Ingresar Usuario">
+    Capturar nombre de usuario para acceso al portal
+  </Step>
+  <Step title="Configurar Contraseña">
+    Ingresar contraseña que será automáticamente encriptada
+  </Step>
+  <Step title="Validar y Confirmar">
+    Revisar información y confirmar creación de credencial
+  </Step>
+</Steps>
+
+### 6.2 Actualización de Credenciales
+
+**Proceso de modificación**:
+
+- **Identificar Credencial**: Localizar la credencial a actualizar
+- **Editar Información**: Modificar usuario, contraseña o estado
+- **Re-encriptar**: Sistema automáticamente re-encripta nuevas contraseñas
+- **Validar Cambios**: Confirmar que actualizaciones sean correctas
+
+### 6.3 Eliminación Segura
+
+**Proceso de eliminación controlada**:
+
+<Warning>
+  **Eliminación Permanente**: La eliminación de credenciales es irreversible.
+  Asegúrese de tener respaldos alternativos antes de proceder con la
+  eliminación.
+</Warning>
+
+- **Confirmación Obligatoria**: Diálogo de confirmación para prevenir eliminaciones accidentales
+- **Verificación de Uso**: Validar que credencial no esté en uso activo
+- **Eliminación Segura**: Borrado completo incluyendo versiones encriptadas
+- **Log de Auditoría**: Registro de eliminación para trazabilidad
+
+## 📊 Monitoreo y Análisis de Uso
+
+### 7.1 Métricas de Uso
+
+**Indicadores automáticos disponibles**:
+
+- **Frecuencia de Acceso**: Credenciales más utilizadas por período
+- **Usuarios Más Activos**: Personal que más accede a portales externos
+- **Portales Críticos**: Servicios con mayor dependencia operacional
+- **Patrones Temporales**: Horarios y días de mayor uso de credenciales
+
+### 7.2 Alertas de Seguridad
+
+**Notificaciones automáticas**:
+
+- **Accesos Inusuales**: Patrones de uso fuera de lo normal
+- **Credenciales Antiguas**: Contraseñas que requieren actualización
+- **Fallos de Acceso**: Múltiples intentos fallidos de copiado
+- **Cuentas Bloqueadas**: Credenciales que podrían estar comprometidas
+
+### 7.3 Reportes de Auditoría
+
+**Documentación para compliance**:
+
+```
+┌─────────────────────────────────────────┐
+│ REPORTE DE AUDITORÍA DE CREDENCIALES    │
+├─────────────────────────────────────────┤
+│ Usuario: Juan Pérez                     │
+│ Portal: SII                             │
+│ Acción: Copiado de Contraseña          │
+│ Fecha: 15/03/2024 10:30:25             │
+│ IP: 192.168.1.100                      │
+│ Resultado: Exitoso                      │
+└─────────────────────────────────────────┘
+```
+
+## 🚨 Mejores Prácticas de Seguridad
+
+### 8.1 Políticas de Contraseñas
+
+**Estándares recomendados**:
+
+<Steps>
+  <Step title="Complejidad Mínima">
+    Mínimo 12 caracteres con mayúsculas, minúsculas, números y símbolos
+  </Step>
+  <Step title="Rotación Regular">
+    Cambio obligatorio cada 90 días para credenciales críticas
+  </Step>
+  <Step title="No Reutilización">
+    Evitar reutilizar contraseñas entre diferentes portales
+  </Step>
+  <Step title="Verificación Periódica">
+    Validar funcionamiento de credenciales mensualmente
+  </Step>
+</Steps>
+
+### 8.2 Control de Acceso
+
+**Principios de seguridad**:
+
+- **Principio de Menor Privilegio**: Solo acceso a portales necesarios por rol
+- **Segregación de Funciones**: Diferentes personas para diferentes portales críticos
+- **Revisión Periódica**: Auditoría trimestral de permisos asignados
+- **Desactivación Inmediata**: Revocación de accesos al término de contrato laboral
+
+### 8.3 Gestión de Incidentes
+
+<Warning>
+  **Protocolo de Seguridad**: En caso de sospecha de compromiso de credenciales,
+  desactive inmediatamente el acceso y notifique al administrador de sistemas.
+</Warning>
+
+**Procedimiento de incidentes**:
+
+1. **Detección**: Identificar posible compromiso de credencial
+2. **Contención**: Desactivar acceso inmediatamente en el sistema
+3. **Investigación**: Revisar logs para determinar alcance del incidente
+4. **Recuperación**: Cambiar contraseñas en portales externos afectados
+5. **Prevención**: Implementar medidas para evitar recurrencia
+
+## 🔧 Solución de Problemas
+
+### Problema: No se puede copiar contraseña
+
+**Proceso de diagnóstico**:
+
+<AccordionGroup>
+<Accordion title="Verificaciones Básicas">
+- ✅ Confirmar que la credencial esté activa
+- ✅ Verificar permisos de usuario para esa aplicación específica
+- ✅ Validar que la sesión no haya expirado
+- ✅ Revisar que el navegador permita acceso al portapapeles
+</Accordion>
+
+<Accordion title="Soluciones Técnicas">
+- 🔧 Refrescar la página y volver a intentar
+- 🔧 Verificar configuración de seguridad del navegador
+- 🔧 Limpiar caché y cookies del sitio
+- 📞 Contactar soporte si persiste el problema
+</Accordion>
+</AccordionGroup>
+
+### Problema: Credencial no aparece en la lista
+
+**Pasos de resolución**:
+
+1. **Verificar Filtros**: Confirmar que filtros no excluyan la credencial buscada
+2. **Revisar Estado**: Verificar si credencial está marcada como inactiva
+3. **Validar Permisos**: Confirmar acceso a la aplicación específica
+4. **Búsqueda Amplia**: Usar términos de búsqueda más generales
+
+### Problema: Error al crear nueva credencial
+
+**Solución de creación**:
+
+<Steps>
+  <Step title="Validar Campos">
+    Verificar que todos los campos obligatorios estén completos
+  </Step>
+  <Step title="Revisar Duplicados">
+    Confirmar que no exista credencial duplicada para misma aplicación
+  </Step>
+  <Step title="Verificar Permisos">
+    Validar que usuario tenga permisos de creación
+  </Step>
+  <Step title="Contactar Soporte">
+    Si persiste, reportar error con detalles específicos
+  </Step>
+</Steps>
+
+## 📞 Soporte Especializado en Seguridad
+
+### Contacto de Seguridad de Sistemas
+
+<Card title="Equipo de Seguridad IT" icon="shield-alt">
+  - **Email Especializado**: seguridad@contago.cl - **Teléfono de Emergencia**:
+  +56 2 1234 5688 - **Horario**: Lunes a Viernes, 24/7 para emergencias críticas
+  - **Especialidad**: Seguridad de credenciales, encriptación, auditoría de
+  accesos
+</Card>
+
+### Recursos de Capacitación en Seguridad
+
+- **Curso Obligatorio**: "Gestión Segura de Credenciales Empresariales"
+- **Webinar Trimestral**: "Mejores Prácticas en Seguridad de Accesos"
+- **Políticas de Seguridad**: Documentación completa de estándares
+- **Simulacros**: Ejercicios de respuesta a incidentes de seguridad
+
+### Red de Expertos en Ciberseguridad
+
+- **Especialistas en Encriptación**: Expertos en protección de datos
+- **Auditores de Seguridad**: Profesionales en compliance y control
+- **Consultores en Ciberseguridad**: Asesores en mejores prácticas
+- **Respuesta a Incidentes**: Equipo 24/7 para emergencias de seguridad
+
+## 📋 Resumen Ejecutivo
+
+El módulo de Claves de Portales es fundamental para:
+
+- **Seguridad Empresarial**: Protección avanzada de credenciales críticas
+- **Eficiencia Operacional**: Acceso rápido y seguro a portales externos
+- **Compliance de Seguridad**: Cumplimiento de estándares de protección de datos
+- **Control de Accesos**: Gestión centralizada de permisos por rol organizacional
+
+<Tip>
+  **Seguridad como Prioridad**: Este módulo maneja información altamente
+  sensible. Siempre siga las mejores prácticas de seguridad y reporte
+  inmediatamente cualquier actividad sospechosa.
+</Tip>
+
+<Info>
+  **Evolución de Seguridad**: El sistema se actualiza constantemente con los
+  últimos estándares de seguridad y encriptación para mantener siempre el máximo
+  nivel de protección de sus credenciales empresariales.
+</Info>

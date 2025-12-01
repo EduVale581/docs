@@ -1,35 +1,262 @@
 ---
 title: "Ventas"
-description: "Gestión y registro de ventas en el sistema"
+description: "Sistema avanzado de gestión de ventas que automatiza la descarga desde el SII y genera asientos contables de forma inteligente."
 ---
 
-# Ventas
+## 🏠 Vista Principal de Ventas
 
-Gestiona y registra todas las ventas de tu empresa de manera eficiente.
+### Acceso al Sistema
 
-## ¿Qué son las ventas?
+- **Ruta**: Dashboard → Ventas
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Usuario de Operaciones, Auditor, Supervisor
 
-Las ventas representan todos los ingresos generados por la actividad comercial de tu empresa.
+### Panel de Control
 
-## Funcionalidades principales
+La vista principal presenta:
+
+- **Asientos Pendientes**: Contador de asientos contables que faltan por generar
+- **Tabla de ventas**: Lista completa de todas las ventas con filtros y acciones
+
+## 🔧 Funciones Principales del Sistema
 
 <CardGroup cols={2}>
-  <Card title="Registro de ventas" icon="plus">
-    Registra nuevas ventas y facturas emitidas
+  <Card title="Obtener Ventas Automáticas" icon="download" color="#0066cc">
+    Descarga automática desde el SII del mes actual
   </Card>
-  <Card title="Consulta de ventas" icon="search">
-    Busca y filtra ventas registradas
+  <Card title="Asignación Masiva de Centros" icon="sitemap" color="#17a2b8">
+    Asigna centros de costo a múltiples ventas simultáneamente
   </Card>
-  <Card title="Reportes" icon="chart-line">
-    Genera reportes de ventas por período
+  <Card title="Asignación Masiva de Cuentas" icon="list" color="#17a2b8">
+    Asigna cuentas contables a múltiples ventas
   </Card>
-  <Card title="Clientes" icon="user-group">
-    Gestiona información de clientes
+  <Card title="Generación Masiva de Asientos" icon="calculator" color="#28a745">
+    Crea asientos contables para todas las ventas del mes
   </Card>
 </CardGroup>
 
-## Próximos pasos
+### 2.1 Obtener Ventas Automáticas
 
-- [Gestión de Clientes](/gestion/clientes)
-- [Boletas y Documentos](/contabilidad/boletas/index)
-- [Asientos Contables](/contabilidad/asientos-contables)
+- **Botón**: "Obtener Ventas Automáticas"
+- **Función**: Conecta con el SII para descargar automáticamente las ventas del mes actual
+- **Parámetros**: Utiliza la empresa y fecha seleccionadas en el sistema
+- **Indicador**: Muestra una animación de carga con mensaje "Procesando..."
+
+### 2.2 Asignación Masiva de Centros de Costo
+
+**Botón**: "Asignar Centro de Costo Masivo"
+
+**Proceso completo**:
+
+1. **Diálogo con filtros avanzados**:
+
+   - Tipo de Documento: Factura, Boleta, Nota de Crédito, etc.
+   - Rango de Fechas: Desde y hasta
+   - Rango de Montos: Mínimo y máximo
+
+2. **Selección y confirmación**:
+   - Seleccionar el Centro de Costo a asignar
+   - **Vista previa**: Muestra las ventas que serán afectadas
+   - **Confirmar**: Aplica el centro de costo a todas las ventas filtradas
+
+### 2.3 Asignación Masiva de Cuentas Contables
+
+**Botón**: "Asignar Cuenta Contable Masiva"
+
+**Proceso**:
+
+- Diálogo con los mismos filtros que centros de costo
+- Seleccionar la Cuenta Contable del plan de cuentas
+- Vista previa de ventas afectadas
+- Confirmar asignación masiva
+
+### 2.4 Generación Masiva de Asientos Contables
+
+- **Botón**: "Generar Asientos Contables Masivo"
+- **Función**: Crea automáticamente todos los asientos contables para las ventas del mes
+- **Requisito**: Las ventas deben tener tanto cuenta contable como centro de costo asignados
+
+## 📋 Gestión Individual de Ventas
+
+### 3.1 Información de cada Venta
+
+Cada fila de la tabla muestra:
+
+- **Datos del Documento**: Tipo, folio, fechas, montos
+- **Cliente**: RUT, razón social
+- **Impuestos**: IVA, montos netos, exentos, totales
+- **Estado del Asiento**: Generado, pendiente, o desbalanceado
+
+### 3.2 Acciones por Venta
+
+#### Ver DTE (Documento Tributario Electrónico)
+
+- **Botón**: 👁️ (ícono de ojo)
+- **Función**: Abre el documento tributario electrónico original
+- **Contenido**: XML del DTE con toda la información fiscal
+
+#### Asignar Centro de Costo Individual
+
+- **Campo**: Dropdown "Centro de Costo"
+- **Opciones**: Lista de todos los centros de costo de la empresa
+- **Estado**: Se deshabilita una vez generado el asiento contable
+
+#### Asignar Cuenta Contable Individual
+
+- **Campo**: Dropdown "Cuenta"
+- **Formato**: Muestra "(código) nombre de la cuenta"
+- **Estado**: Se deshabilita una vez generado el asiento contable
+
+#### Gestión de Asientos Contables
+
+**Botón**: "Generar Asiento" / "Ver Asiento"
+
+**Estados del sistema**:
+
+- 🔵 **Azul**: "Generar Asiento" - No se ha creado aún
+- 🟢 **Verde**: "Ver Asiento" - Asiento generado correctamente
+- 🔴 **Rojo**: "Ver Asiento" - Asiento desbalanceado (con alerta)
+
+**Requisitos para generar**:
+
+- ✅ Centro de costo seleccionado
+- ✅ Cuenta contable seleccionada
+
+## 🔍 Funciones de Filtrado y Ordenamiento
+
+### 4.1 Filtro por Asientos
+
+- **Botón**: Flecha arriba/abajo en columna "Asiento"
+- **Función**: Ordena por estado de asientos contables (generados primero o pendientes primero)
+
+### 4.2 Paginación
+
+- **Opciones**: 10, 25, 50 registros por página
+- **Navegación**: Anterior/Siguiente con contador de páginas
+
+## 📄 Visualización de Documentos
+
+### 5.1 Visor de DTE
+
+**Características**:
+
+- **Formato**: XML del documento tributario estructurado y legible
+- **Información incluida**:
+  - Datos del emisor y receptor
+  - Detalle de productos/servicios
+  - Cálculos de impuestos
+  - Totales y subtotales
+
+<CardGroup cols={2}>
+  <Card title="Información Fiscal Completa" icon="file-invoice">
+    Datos del emisor, receptor y detalles fiscales
+  </Card>
+  <Card title="Cálculos Detallados" icon="calculator">
+    Impuestos, totales y validaciones del SII
+  </Card>
+</CardGroup>
+
+## ⚠️ Alertas y Validaciones
+
+### 6.1 Asientos Desbalanceados
+
+- **Alerta roja**: "Asiento Desbalanceado"
+- **Causa**: El debe y haber del asiento no coinciden
+- **Solución**: Revisar la configuración contable o contactar soporte
+
+### 6.2 Validaciones de Generación
+
+Al intentar generar asientos:
+
+- **Sin centro de costo**: "Debe seleccionar un centro de costo para generar el asiento"
+- **Sin cuenta**: "Debe seleccionar una cuenta para generar el asiento"
+
+### 6.3 Mensajes de Éxito
+
+- **Ventas obtenidas**: "Ventas automáticas generadas correctamente"
+- **Asiento creado**: "Documento generado correctamente"
+- **Asignación masiva**: Confirmación de registros actualizados
+
+## 💡 Mejores Prácticas y Flujo Recomendado
+
+### 7.1 Flujo Recomendado
+
+1. **Obtener ventas**: Del SII automáticamente
+2. **Asignar centros de costo**: Masivamente por tipo de documento o cliente
+3. **Asignar cuentas contables**: Masivamente según clasificación
+4. **Generar asientos**: Masivamente para todas las ventas preparadas
+5. **Revisar**: Asientos desbalanceados individualmente
+
+<Tip>
+  **Estrategia eficiente**: Procesa las ventas recurrentes con asignación masiva
+  primero, luego atiende casos especiales individualmente.
+</Tip>
+
+### 7.2 Organización
+
+**Centros de costo por**:
+
+- **Tipo de negocio**: Producto A, Servicio B, etc.
+- **Sucursal**: Santiago, Valparaíso, Concepción
+- **Canal de venta**: Online, presencial, mayorista
+
+**Cuentas contables por**:
+
+- **Tipo de venta**: Productos, servicios, exportaciones
+- **Tipo de cliente**: Nacional, extranjero, relacionado
+- **Modalidad**: Contado, crédito, consignación
+
+### 7.3 Control de Calidad
+
+- **Verificar**: Que no queden asientos pendientes
+- **Revisar**: Asientos desbalanceados antes de cerrar el período
+- **Mantener**: Consistencia en asignaciones de cuentas similares
+
+## 🔧 Solución de Problemas Comunes
+
+### Problema: Ventas no se descargan automáticamente
+
+**Diagnóstico y solución**:
+
+- ✅ Verificar conexión con SII
+- ✅ Confirmar que la empresa tiene ventas en el período
+- ✅ Validar certificados digitales vigentes
+- 📞 Contactar soporte técnico si persiste
+
+### Problema: No puedo generar asientos
+
+**Lista de verificación**:
+
+- ✅ Centro de costo asignado
+- ✅ Cuenta contable asignada
+- ✅ La venta no tiene asiento previo
+- ✅ Plan de cuentas configurado correctamente
+
+### Problema: Asiento aparece desbalanceado
+
+**Pasos de solución**:
+
+1. **Revisar configuración**: Del plan de cuentas
+2. **Verificar cuenta**: Que la cuenta seleccionada sea correcta para el tipo de venta
+3. **Validar IVA**: Configuración de cuentas de IVA
+4. **Contactar contador**: Para revisar la parametrización contable
+
+<Warning>
+  **Asientos desbalanceados**: Indica problemas en la configuración del plan de
+  cuentas. Es crítico resolverlos antes de proceder con el cierre contable.
+</Warning>
+
+## 🚀 Características Avanzadas
+
+### Tipos de Documentos Soportados
+
+- **Facturas de Venta**: Documento principal para ventas gravadas
+- **Boletas**: Para ventas a consumidores finales
+- **Notas de Crédito**: Anulaciones y descuentos
+- **Notas de Débito**: Recargos y ajustes
+- **Facturas de Exportación**: Ventas al exterior
+
+### Gestión de IVA
+
+- **IVA Débito Fiscal**: Automáticamente calculado por el sistema
+- **Ventas Exentas**: Identificación y tratamiento especial
+- **Facturas de Exportación**: Tratamiento de 0% IVA

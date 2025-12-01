@@ -1,0 +1,448 @@
+---
+title: "Gestión de Pagos"
+description: "Sistema especializado de gestión de pagos que optimiza procesos de tesorería, automatiza flujos de aprobación y controla múltiples métodos de pago desde una plataforma unificada."
+---
+
+## 🏠 Vista Principal de Gestión de Pagos
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Pagos → Gestión de Pagos
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Tesorero, Jefe de Finanzas
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Diálogos especializados**: Herramientas para agregar y listar pagos
+- **Control centralizado**: Gestión unificada de múltiples métodos de pago
+- **Workflows de aprobación**: Procesos controlados por niveles de autorización
+
+## 💳 Sistema Integral de Pagos
+
+<CardGroup cols={2}>
+  <Card title="Registro de Pagos" icon="plus-circle" color="#28a745">
+    Captura eficiente de pagos con validaciones automáticas
+  </Card>
+  <Card title="Gestión de Lotes" icon="list" color="#17a2b8">
+    Organización y procesamiento de pagos en grupos
+  </Card>
+  <Card title="Control de Aprobaciones" icon="check-circle" color="#ffc107">
+    Workflows configurables según políticas empresariales
+  </Card>
+  <Card title="Múltiples Métodos" icon="credit-card" color="#6f42c1">
+    Soporte completo para diversos medios de pago
+  </Card>
+</CardGroup>
+
+## ➕ Diálogo de Agregar Pago
+
+### 2.1 Formulario de Nuevo Pago
+
+**Captura integral de información**:
+
+#### Información Básica del Pago
+
+- **Fecha de pago**: Cuándo se realizará o realizó el pago
+- **Beneficiario**: Proveedor o destinatario del pago
+- **Concepto**: Descripción del motivo del pago
+- **Monto**: Valor total a pagar
+- **Moneda**: Pesos, dólares, euros, UF
+
+#### Método de Pago
+
+- **Transferencia bancaria**: TEF, ACH, SWIFT
+- **Cheque**: Físico o diferido
+- **Efectivo**: Caja chica o pagos menores
+- **Tarjeta corporativa**: Gastos empresariales
+- **Compensación**: Offset con cuentas por cobrar
+
+#### Datos Bancarios (para transferencias)
+
+- **Banco destinatario**: Institución financiera del beneficiario
+- **Tipo de cuenta**: Corriente, vista, ahorro
+- **Número de cuenta**: Cuenta de destino
+- **RUT del titular**: Validación de titularidad
+- **Email de notificación**: Para confirmación del beneficiario
+
+### 2.2 Documentos Relacionados
+
+**Vinculación con documentos fuente**:
+
+#### Facturas por Pagar
+
+- **Selección múltiple**: Pago de varias facturas simultáneamente
+- **Aplicación parcial**: Pagos parciales con saldo pendiente
+- **Descuentos**: Aplicación de descuentos por pronto pago
+- **Retenciones**: Cálculo automático de impuestos retenidos
+
+#### Documentos de Respaldo
+
+- **Orden de compra**: Referencia al pedido original
+- **Recepción de mercancías**: Confirmación de entrega
+- **Factura del proveedor**: Documento tributario original
+- **Autorización de pago**: Aprobación interna documentada
+
+### 2.3 Configuración Avanzada
+
+**Opciones especializadas**:
+
+#### Programación de Pagos
+
+- **Pago inmediato**: Procesamiento en el día
+- **Pago programado**: Fecha futura específica
+- **Pago recurrente**: Automatización para pagos regulares
+- **Condiciones**: Pagos condicionados a eventos específicos
+
+#### Control de Aprobaciones
+
+- **Nivel requerido**: Según monto y tipo de pago
+- **Aprobadores**: Lista de usuarios autorizados
+- **Workflow**: Secuencia de aprobaciones necesarias
+- **Delegación**: Sustitutos en caso de ausencias
+
+#### Notificaciones
+
+- **Beneficiario**: Aviso de pago realizado
+- **Aprobadores**: Notificación de pagos pendientes
+- **Contabilidad**: Información para registro contable
+- **Auditoría**: Log para control interno
+
+## 📝 Diálogo de Listado de Pagos
+
+### 3.1 Vista Consolidada de Pagos
+
+**Tabla integral con filtros avanzados**:
+
+#### Información Displayed
+
+- **ID del pago**: Identificador único del sistema
+- **Fecha**: De creación, programación y ejecución
+- **Beneficiario**: Proveedor o destinatario
+- **Concepto**: Descripción resumida
+- **Monto**: Valor y moneda
+- **Estado**: Pendiente, aprobado, ejecutado, rechazado
+
+#### Estados de Pago
+
+- 🔵 **Borrador**: Pago creado pero no enviado a aprobación
+- 🟡 **Pendiente de aprobación**: En proceso de workflow
+- 🟢 **Aprobado**: Autorizado para ejecución
+- 🟣 **Ejecutado**: Pago procesado exitosamente
+- 🔴 **Rechazado**: No aprobado por política o criterio
+- ⚫ **Cancelado**: Anulado antes de ejecución
+
+### 3.2 Filtros y Búsqueda Avanzada
+
+**Herramientas de localización**:
+
+#### Filtros Temporales
+
+- **Por fecha de creación**: Cuándo se registró el pago
+- **Por fecha de ejecución**: Cuándo se realizó el pago
+- **Por período**: Rangos predefinidos (mes, trimestre, año)
+- **Fechas personalizadas**: Rangos específicos definidos por usuario
+
+#### Filtros por Estado
+
+- **Todos los estados**: Vista completa sin filtros
+- **Solo pendientes**: Pagos que requieren acción
+- **Solo aprobados**: Pagos listos para ejecución
+- **Solo ejecutados**: Pagos ya procesados
+- **Rechazados/Cancelados**: Pagos no procesados
+
+#### Filtros Comerciales
+
+- **Por beneficiario**: RUT o razón social específica
+- **Por método de pago**: Transferencia, cheque, efectivo
+- **Por monto**: Rangos de valores
+- **Por moneda**: Pesos, dólares, euros, UF
+- **Por aprobador**: Quién autorizó el pago
+
+### 3.3 Acciones Disponibles por Pago
+
+**Operaciones según estado**:
+
+#### Pagos en Borrador
+
+- ✏️ **Editar**: Modificar información antes de envío
+- 📤 **Enviar a aprobación**: Iniciar workflow de autorización
+- 🗑️ **Eliminar**: Borrar pago no requerido
+- 📋 **Duplicar**: Crear pago similar con mismos datos
+
+#### Pagos Pendientes de Aprobación
+
+- ✅ **Aprobar**: Autorizar pago (si tiene permisos)
+- ❌ **Rechazar**: Negar autorización con motivo
+- 👁️ **Ver detalles**: Información completa del pago
+- 📧 **Recordar**: Notificar a aprobadores pendientes
+
+#### Pagos Aprobados
+
+- ▶️ **Ejecutar**: Procesar pago inmediatamente
+- 📅 **Programar**: Definir fecha de ejecución
+- ❌ **Cancelar**: Anular antes de ejecución
+- 📄 **Imprimir**: Generar documentos (cheques, órdenes)
+
+#### Pagos Ejecutados
+
+- 👁️ **Ver comprobante**: Documento de confirmación bancaria
+- 📧 **Reenviar notificación**: Al beneficiario si es necesario
+- 📊 **Ver contabilización**: Asiento contable generado
+- 📋 **Generar reporte**: Documentación para auditoría
+
+## 🔄 Workflows de Aprobación
+
+### 4.1 Configuración de Niveles
+
+**Sistema jerárquico de autorizaciones**:
+
+#### Niveles por Monto
+
+- **Hasta $100.000**: Auto-aprobación para usuarios autorizados
+- **$100.001 - $500.000**: Aprobación de supervisor directo
+- **$500.001 - $2.000.000**: Aprobación de gerencia
+- **Sobre $2.000.000**: Aprobación de dirección general
+
+#### Niveles por Tipo de Pago
+
+- **Pagos operacionales**: Menor nivel de aprobación
+- **Pagos de inversión**: Mayor nivel de autorización
+- **Pagos extraordinarios**: Aprobación especial requerida
+- **Pagos internacionales**: Validaciones adicionales
+
+### 4.2 Proceso de Aprobación
+
+**Flujo estructurado**:
+
+#### Envío a Aprobación
+
+1. **Validación automática**: Sistema verifica completitud de datos
+2. **Asignación**: Determina aprobador según reglas configuradas
+3. **Notificación**: Envío de email al aprobador correspondiente
+4. **Plazo**: Tiempo límite para aprobación (configurable)
+
+#### Proceso de Revisión
+
+1. **Acceso**: Aprobador recibe link directo al pago
+2. **Validación**: Revisión de documentos y justificación
+3. **Decisión**: Aprobar, rechazar o solicitar información adicional
+4. **Registro**: Log de decisión con timestamp y comentarios
+
+#### Escalamiento
+
+- **Timeout**: Escalamiento automático si no hay respuesta
+- **Delegación**: Sustitutos predefinidos por ausencias
+- **Excepciones**: Proceso de aprobación de emergencia
+- **Anulación**: Cancelación de aprobaciones por cambios
+
+### 4.3 Control y Auditoría
+
+**Trazabilidad completa**:
+
+#### Log de Actividades
+
+- **Creación**: Usuario, fecha, datos iniciales
+- **Modificaciones**: Cambios realizados antes de aprobación
+- **Aprobaciones**: Secuencia completa de autorizaciones
+- **Ejecución**: Confirmación y método de procesamiento
+
+#### Reportes de Control
+
+- **Pagos por aprobar**: Dashboard para cada aprobador
+- **Tiempos de aprobación**: Métricas de eficiencia del proceso
+- **Rechazos**: Análisis de motivos y frecuencia
+- **Excepciones**: Pagos que requirieron procesos especiales
+
+## 💰 Métodos de Pago Soportados
+
+### 5.1 Transferencias Electrónicas
+
+**Pagos bancarios automatizados**:
+
+#### TEF (Transferencia Electrónica de Fondos)
+
+- **Procesamiento**: Mismo día hábil si se envía antes de horario de corte
+- **Límites**: Según acuerdos con cada banco
+- **Comisiones**: Fijas por transacción o por monto
+- **Confirmación**: Comprobante automático del banco
+
+#### Transferencias Internacionales
+
+- **SWIFT**: Para pagos al extranjero
+- **Corresponsales**: Red de bancos intermediarios
+- **Regulaciones**: Cumplimiento de normativas cambiarias
+- **Documentación**: Formularios requeridos por Banco Central
+
+### 5.2 Cheques
+
+**Gestión integral de documentos**:
+
+#### Cheques al Día
+
+- **Impresión**: Generación automática desde el sistema
+- **Numeración**: Control secuencial de folios
+- **Firmas**: Validación de firmas autorizadas
+- **Entrega**: Control de retiro por beneficiario
+
+#### Cheques a Fecha
+
+- **Programación**: Emisión con fecha futura
+- **Control**: Seguimiento hasta fecha de cobro
+- **Renovación**: Reemplazo por vencimiento
+- **Protección**: Medidas contra uso indebido
+
+### 5.3 Pagos Electrónicos
+
+**Medios digitales modernos**:
+
+#### Tarjetas Corporativas
+
+- **Asignación**: Por empleado o departamento
+- **Límites**: Montos máximos configurables
+- **Categorías**: Restricciones por tipo de gasto
+- **Conciliación**: Matching automático con facturas
+
+#### Plataformas Digitales
+
+- **Webpay**: Pagos online seguros
+- **Transferencias app**: Mediante aplicaciones bancarias
+- **Billeteras digitales**: Mercado Pago, PayPal, otros
+- **Criptomonedas**: Para casos especiales autorizados
+
+## 📊 Reportes y Analytics
+
+### 6.1 Dashboards de Tesorería
+
+**Métricas en tiempo real**:
+
+#### Indicadores Principales
+
+- **Pagos pendientes**: Monto total por ejecutar
+- **Pagos del día**: Valor a procesar hoy
+- **Saldos bancarios**: Posición de caja actualizada
+- **Flujo proyectado**: Estimación de pagos próximos días
+
+#### Análisis por Método
+
+- **Distribución**: Porcentaje por tipo de pago
+- **Costos**: Comisiones por método de pago
+- **Eficiencia**: Tiempo promedio de procesamiento
+- **Errores**: Tasa de rechazos por método
+
+### 6.2 Reportes Especializados
+
+**Informes de gestión**:
+
+#### Reporte de Pagos Ejecutados
+
+- **Por período**: Resumen mensual, trimestral, anual
+- **Por beneficiario**: Consolidado por proveedor
+- **Por método**: Agrupado por forma de pago
+- **Por aprobador**: Análisis de autorizaciones
+
+#### Análisis de Eficiencia
+
+- **Tiempos de aprobación**: Métricas de workflow
+- **Cumplimiento de pagos**: Porcentaje a tiempo
+- **Ahorro por descuentos**: Beneficios capturados
+- **Costo total de proceso**: Análisis de eficiencia operativa
+
+### 6.3 Inteligencia de Negocio
+
+**Analytics avanzados**:
+
+#### Análisis Predictivo
+
+- **Flujo de caja**: Proyección basada en históricos
+- **Patrones de pago**: Identificación de tendencias
+- **Optimización**: Sugerencias de mejora de procesos
+- **Riesgos**: Identificación de potenciales problemas
+
+#### Benchmarking
+
+- **Comparación temporal**: Performance versus períodos anteriores
+- **Estándares de industria**: Comparación con mejores prácticas
+- **Objetivos**: Seguimiento de metas de eficiencia
+- **Oportunidades**: Identificación de mejoras potenciales
+
+## 🔒 Seguridad y Control Interno
+
+### 7.1 Medidas de Seguridad
+
+**Protección integral**:
+
+#### Autenticación
+
+- **Doble factor**: Verificación adicional para pagos grandes
+- **Biometría**: Huellas o reconocimiento facial
+- **Tokens**: Dispositivos de seguridad bancaria
+- **Certificados digitales**: Para firmas electrónicas
+
+#### Autorización
+
+- **Segregación de funciones**: Separación entre quien registra y aprueba
+- **Límites individuales**: Montos máximos por usuario
+- **Horarios restringidos**: Ventanas de operación autorizadas
+- **IP whitelisting**: Acceso solo desde ubicaciones autorizadas
+
+### 7.2 Controles Preventivos
+
+**Validaciones automáticas**:
+
+#### Validaciones de Datos
+
+- **RUT**: Verificación de dígito verificador
+- **Cuentas bancarias**: Validación con base de datos bancaria
+- **Montos**: Verificación de límites y disponibilidad
+- **Duplicados**: Detección de pagos duplicados
+
+#### Controles de Negocio
+
+- **Presupuesto**: Verificación de disponibilidad presupuestaria
+- **Facturas**: Validación de documentos pendientes
+- **Proveedores**: Verificación de estado activo
+- **Compliance**: Cumplimiento de políticas internas
+
+## 💡 Mejores Prácticas y Optimización
+
+### 8.1 Optimización de Procesos
+
+**Eficiencia operativa**:
+
+1. **Automatización**: Maximizar procesos automáticos vs. manuales
+2. **Lotes**: Agrupar pagos para reducir costos de transacción
+3. **Timing**: Optimizar fechas de pago para aprovechar descuentos
+4. **Métodos**: Seleccionar forma de pago más económica y eficiente
+5. **Aprovechamiento**: Capturar todos los descuentos por pronto pago disponibles
+
+### 8.2 Gestión de Liquidez
+
+**Optimización financiera**:
+
+- **Cash pooling**: Concentración de fondos para optimizar rendimientos
+- **Sweep accounts**: Transferencias automáticas de excedentes
+- **Netting**: Compensación entre cuentas por cobrar y pagar
+- **Float management**: Aprovechamiento de tiempos de procesamiento
+
+<Tip>
+  **Estrategia de pagos centralizados**: Implementa un centro de pagos que
+  permita aprovechar economías de escala, mejorar controles y optimizar la
+  gestión de liquidez corporativa.
+</Tip>
+
+### 8.3 KPIs Críticos
+
+**Métricas para monitorear**:
+
+- **DPO (Days Payable Outstanding)**: Días promedio de pago
+- **Costo de procesamiento**: Costo total por pago procesado
+- **Tasa de errores**: Porcentaje de pagos con problemas
+- **Tiempo de aprobación**: Promedio desde solicitud hasta aprobación
+- **Aprovechamiento de descuentos**: Porcentaje de descuentos capturados
+
+<Warning>
+  **Segregación de funciones crítica**: Nunca permitas que la misma persona que
+  registra pagos también los apruebe. Mantén separación clara entre funciones de
+  registro, aprobación y ejecución de pagos.
+</Warning>

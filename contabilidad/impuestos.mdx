@@ -1,82 +1,312 @@
 ---
-title: "Impuestos"
-description: "Gestión de impuestos y obligaciones tributarias"
+title: "Gestión de Impuestos"
+description: "Sistema integral de gestión tributaria que automatiza cálculos, controla cumplimientos fiscales y optimiza la carga tributaria bajo normativa chilena vigente."
 ---
 
-# Impuestos
+## 🏠 Vista Principal de Impuestos
 
-Gestiona todos los impuestos y obligaciones tributarias de tu empresa de manera eficiente.
+### Acceso al Sistema
 
-## Tipos de impuestos
+- **Ruta**: Dashboard → Impuestos → Gestión Tributaria
+- **Permisos requeridos**: Administrador, Jefe Contable, Contador General, Contador Junior, Especialista Tributario
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Formulario F29**: Se puede revisar el fomulario 29 si ya se encuentra pagado. Si no se encuentra pagado, avisará que no esta disponible
+
+## 🏛️ Sistema Integral de Gestión Tributaria
 
 <CardGroup cols={2}>
-  <Card title="IVA" icon="percent">
-    Impuesto al Valor Agregado
+  <Card title="IVA y Retenciones" icon="percentage" color="#dc3545">
+    Revisión completa de IVA débito/crédito y retenciones aplicadas
   </Card>
-  <Card title="PPM" icon="calendar">
-    Pagos Provisionales Mensuales
+  <Card title="Impuesto a la Renta" icon="calculator" color="#28a745">
+    Revisión del cálculo de Primera Categoría, PPM y base imponible
   </Card>
-  <Card title="Retenciones" icon="minus-circle">
-    Retenciones de impuestos a terceros
-  </Card>
-  <Card title="Impuesto Renta" icon="building">
-    Impuesto anual de primera categoría
+  <Card title="Declaraciones SII" icon="file-alt" color="#17a2b8">
+    Formularios 29
   </Card>
 </CardGroup>
 
-## Funcionalidades principales
+## 📋 Lista Principal de Impuestos
 
-- **Cálculo automático**: Calcula impuestos automáticamente
-- **Declaraciones**: Genera formularios de declaración
-- **Pagos**: Registra pagos de impuestos
-- **Reportes**: Informes para análisis tributario
-- **Calendario tributario**: Fechas importantes de vencimiento
+### 2.1 Control de Obligaciones Tributarias
 
-## Gestión de IVA
+**Vista consolidada de impuestos**:
 
-### IVA Débito Fiscal
+#### Impuestos Mensuales
 
-- Ventas gravadas con IVA
-- Servicios prestados
-- Otros ingresos gravados
+- **IVA (Formulario 29)**: Débito fiscal menos crédito fiscal
+- **PPM (Pagos Provisionales Mensuales)**: Anticipo Primera Categoría
+- **Retenciones 2° Categoría**: Impuestos retenidos trabajadores
+- **Retenciones por honorarios**: 10.75% sobre pagos profesionales
+- **Otros impuestos específicos**: Según actividad de la empresa
 
-### IVA Crédito Fiscal
+#### Períodos Fiscales
 
-- Compras con derecho a crédito
-- Servicios recibidos
-- Importaciones
+- **Mes actual**: Impuestos del período en curso
+- **Períodos anteriores**: Historial de cumplimientos
+- **Rectificatorias**: Declaraciones que requieren corrección
+- **Complementarias**: Información adicional presentada
 
-### IVA a pagar o favor
+### 2.2 Cálculo Automático de Impuestos
 
-El sistema calcula automáticamente:
+**Determinación inteligente de obligaciones**:
 
-- IVA remanente de períodos anteriores
-- IVA débito fiscal del período
-- IVA crédito fiscal del período
-- IVA a pagar o saldo a favor
+#### IVA Débito Fiscal
 
-## PPM (Pagos Provisionales Mensuales)
+- **Base imponible**: Ventas afectas netas del período
+- **Tasa aplicable**: 19% general, 0% exportaciones
+- **Ajustes**: Notas de crédito, devoluciones, descuentos
+- **Débito total**: IVA determinado sobre ventas
 
-Los PPM son anticipos del impuesto anual que se pagan mensualmente:
+#### IVA Crédito Fiscal
 
-- **Base de cálculo**: Ingresos del mes
-- **Tasa**: Según tabla vigente
-- **Créditos**: PPM pagados anteriormente
-- **Pago final**: Diferencia a pagar
+- **Compras afectas**: IVA soportado en adquisiciones
+- **Activo fijo**: IVA recuperable de inversiones
+- **Servicios**: IVA en servicios profesionales recibidos
+- **Remanente**: Crédito no utilizado períodos anteriores
 
-## Calendario tributario
+#### Determinación Final IVA
+
+- **IVA a pagar**: Débito menos crédito (si positivo)
+- **Remanente**: Crédito a favor (si negativo)
+- **Proporcionalidad**: Ajustes por uso mixto de bienes
+- **Recuperación**: Solicitudes de devolución tramitadas
+
+## 📊 Cálculos y Determinaciones Automáticas
+
+### 3.1 Regímenes Especiales
+
+**Tratamientos tributarios específicos**:
+
+#### Régimen Pro Pyme
+
+- **Requisitos**: Ventas anuales bajo límite establecido
+- **Beneficios**: Tasa reducida Primera Categoría
+- **Postergación**: Pago diferido de impuestos
+- **Simplificación**: Menos obligaciones formales
+
+#### Régimen 14 ter
+
+- **Aplicabilidad**: Empresas que califiquen
+- **Tributación**: Sobre retiros efectivos
+- **Registro**: Control de utilidades acumuladas
+- **Créditos**: Aprovechamiento de beneficios
+
+#### Zonas Francas
+
+- **Exenciones**: Liberación de ciertos impuestos
+- **Controles**: Cumplimiento de obligaciones especiales
+- **Internación**: Tributación al salir de zona franca
+- **Reportes**: Informes específicos requeridos
+
+## 📝 Declaraciones y Formularios
+
+### 4.1 Formulario 29 (IVA Mensual)
+
+**Declaración automática mensual**:
+
+#### Código 150: Débito Fiscal
+
+- **Ventas afectas**: Montos netos de ventas gravadas
+- **Débito fiscal**: IVA determinado sobre ventas
+- **Ajustes**: Por notas de crédito y devoluciones
+- **Total débito**: Suma consolidada del período
+
+#### Código 456: Crédito Fiscal
+
+- **Compras afectas**: IVA soportado recuperable
+- **Activo fijo**: IVA inversiones del período
+- **Remanente anterior**: Crédito no utilizado
+- **Total crédito**: Suma disponible para imputar
+
+#### Otros Códigos Relevantes
+
+- **Código 574**: Retenciones de honorarios
+- **Código 695**: PPM del período
+- **Código 109**: IVA retenido por percepción
+- **Código 115**: Multas e intereses
+
+### 4.2 Declaraciones Especiales
+
+**Formularios específicos según actividad**:
+
+#### Formulario 50 (Trabajadores)
+
+- **Remuneraciones**: Detalle de pagos a trabajadores
+- **Retenciones**: Impuestos descontados por empleado
+- **Cotizaciones**: AFP, salud, cesantía
+- **Certificados**: Generación automática para trabajadores
+
+#### Formulario 1879 (Honorarios)
+
+- **Pagos efectuados**: A profesionales independientes
+- **Retenciones aplicadas**: 10.75% sobre honorarios
+- **Detalle por beneficiario**: RUT, montos, retenciones
+- **Certificados**: Documentos para profesionales
+
+#### Declaraciones de Información
+
+- **Operaciones con relacionadas**: Precios de transferencia
+- **Beneficiarios finales**: Para cumplimiento anti-lavado
+- **Operaciones relevantes**: Según umbrales establecidos
+- **Contratos de derivados**: Instrumentos financieros
+
+## 📅 Calendario Fiscal y Vencimientos
+
+### 5.1 Obligaciones Mensuales
+
+**Cronograma de cumplimientos**:
+
+#### Formulario 29 (IVA)
+
+- **Vencimiento**: Día 20 del mes siguiente
+- **Prórroga**: Después día 20 con recargo
+- **Pago**: Junto con presentación de formulario
+- **Rectificatorias**: Hasta 3 años posteriores
+
+#### Pagos Provisionales Mensuales
+
+- **Empresas grandes**: Día 12 del mes siguiente
+- **Empresas menores**: Día 20 del mes siguiente
+- **Monto mínimo**: Según facturación anual
+- **Exenciones**: Pro Pyme y otros regímenes
+
+### 5.2 Obligaciones Anuales
+
+**Declaraciones de ejercicio completo**:
+
+#### Formulario 22 (Renta)
+
+- **Presentación**: 30 de abril del año siguiente
+- **Pago**: Junto con declaración o en cuotas
+- **Rectificatorias**: Hasta 3 años posteriores
+- **Balance tributario**: Obligatorio para ciertas empresas
+
+#### Operación Renta (Personal)
+
+- **Socios/Accionistas**: Declaración personal obligatoria
+- **Certificados**: Empresa debe emitir comprobantes
+- **Plazos**: Según calendario diferido SII
+- **Asesoría**: Apoyo a socios en declaraciones
+
+### 5.3 Alertas y Recordatorios
+
+**Sistema proactivo de notificaciones**:
+
+#### Alertas Críticas
+
+- 🚨 **Vencimiento hoy**: Obligaciones que vencen en el día
+- 🚨 **Atraso**: Declaraciones fuera de plazo
+- 🚨 **Multas**: Sanciones aplicadas por SII
+- 🚨 **Fiscalización**: Requerimientos de información
+
+#### Alertas Preventivas
+
+- ⚠️ **Próximo vencimiento**: 1-5 días antes
+- ⚠️ **Documentación faltante**: Para completar declaraciones
+- ⚠️ **Inconsistencias**: Datos que requieren revisión
+- ⚠️ **Cambios normativos**: Actualizaciones legislativas
+
+## 🔍 Análisis y Planificación Fiscal
+
+### 6.1 Análisis de Carga Tributaria
+
+**Evaluación de impacto fiscal**:
+
+#### Carga Tributaria Efectiva
+
+- **Tasa efectiva**: Impuestos pagados / Utilidad contable
+- **Comparación sectorial**: Versus empresas similares
+- **Evolución temporal**: Tendencia en últimos ejercicios
+- **Componentes**: Desglose por tipo de impuesto
+
+#### Optimización Tributaria
+
+- **Oportunidades identificadas**: Beneficios no aprovechados
+- **Timing**: Optimización temporal de operaciones
+- **Estructura**: Reorganizaciones que reduzcan carga
+- **Incentivos**: Beneficios fiscales disponibles
+
+### 6.2 Contingencias Tributarias
+
+**Gestión de riesgos fiscales**:
+
+#### Posiciones Tributarias Inciertas
+
+- **Interpretaciones**: Criterios que pueden ser objetados
+- **Provisiones**: Estimación de pasivos contingentes
+- **Probabilidades**: Evaluación de riesgo por posición
+- **Documentación**: Respaldo de posiciones adoptadas
+
+#### Fiscalizaciones y Auditorías
+
+- **Historial**: Revisiones anteriores del SII
+- **Temas sensibles**: Áreas de mayor riesgo
+- **Preparación**: Documentación para eventual revisión
+- **Estrategia**: Plan de respuesta a requerimientos
+
+### 6.3 Planificación Estratégica
+
+**Optimización fiscal de largo plazo**:
+
+#### Escenarios Futuros
+
+- **Proyecciones**: Carga tributaria en diferentes escenarios
+- **Cambios normativos**: Impacto de modificaciones legales
+- **Crecimiento**: Efecto del crecimiento en carga fiscal
+- **Estructura óptima**: Organización eficiente desde punto de vista tributario
+
+#### Decisiones de Inversión
+
+- **Incentivos fiscales**: Beneficios por tipo de inversión
+- **Depreciación acelerada**: Optimización de flujos
+- **Ubicación**: Beneficios por zona geográfica
+- **Timing**: Momento óptimo para inversiones
+
+## 💡 Mejores Prácticas Tributarias
+
+### 7.1 Estrategias de Cumplimiento
+
+**Excelencia en gestión fiscal**:
+
+1. **Cumplimiento proactivo**: Adelantarse a vencimientos y obligaciones
+2. **Documentación completa**: Respaldar todas las posiciones adoptadas
+3. **Revisión periódica**: Validar cálculos y declaraciones regularmente
+4. **Capacitación continua**: Mantenerse actualizado en normativa
+5. **Asesoría especializada**: Contar con apoyo experto cuando sea necesario
+
+### 7.2 Optimización Fiscal Legítima
+
+**Estrategias de eficiencia tributaria**:
+
+- **Planificación temporal**: Optimizar timing de operaciones
+- **Aprovechamiento de incentivos**: Utilizar beneficios disponibles
+- **Estructura eficiente**: Organización que minimice carga tributaria
+- **Gestión de pérdidas**: Aprovechamiento de arrastre de pérdidas
+- **Inversiones inteligentes**: Considerar impacto fiscal en decisiones
 
 <Tip>
-  Mantente al día con las fechas de vencimiento de tus obligaciones tributarias.
+  **Planificación fiscal proactiva**: La gestión tributaria eficiente requiere
+  planificación anticipada. No esperes al cierre de ejercicio para evaluar
+  estrategias de optimización fiscal.
 </Tip>
 
-- **Formulario 29**: Mensual (día 12 del mes siguiente)
-- **PPM**: Mensual (día 12 del mes siguiente)
-- **Renta**: Anual (abril del año siguiente)
-- **Patente comercial**: Anual (según comuna)
+### 7.3 Gestión de Riesgos Tributarios
 
-## Próximos pasos
+**Control de contingencias fiscales**:
 
-- [Claves de Portales](/empresa/claves-portales)
-- [Declaraciones Juradas](/utilidades/declaraciones-juradas)
-- [Renta](/utilidades/renta)
+- **Identificación temprana**: Detectar posiciones de riesgo
+- **Cuantificación**: Estimar impacto potencial de contingencias
+- **Mitigación**: Estrategias para reducir exposición al riesgo
+- **Provisiones**: Reconocer pasivos contingentes cuando corresponda
+- **Monitoreo continuo**: Seguimiento regular de evolución de riesgos
+
+<Warning>
+  **Riesgo de fiscalización**: Mantén documentación completa y actualizada de
+  todas las posiciones tributarias. El SII puede requerir información hasta 3
+  años después de presentada la declaración.
+</Warning>

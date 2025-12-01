@@ -1,0 +1,396 @@
+---
+title: "Flujo de Efectivo"
+description: "Sistema avanzado de análisis del flujo de efectivo con clasificación por actividades operacionales, de inversión y financiamiento según estándares contables internacionales."
+---
+
+## 🏠 Vista Principal del Flujo de Efectivo
+
+### Acceso al Sistema
+
+- **Ruta**: Dashboard → Información → Flujo de Efectivo
+- **Permisos requeridos**: Administrador, Analista Financiero, Jefe Contable, Contador General, Auditor, Supervisor
+
+### Panel de Control
+
+La vista principal presenta:
+
+- **Información Corporativa**: Datos de la empresa y período analizado
+- **Tabla Mensual**: Flujos organizados por meses del año
+- **Clasificación por Actividades**: Operacionales, inversión y financiamiento
+- **Totales Consolidados**: Resumen por categoría y período
+
+## 🔧 Estructura del Flujo de Efectivo
+
+<CardGroup cols={2}>
+  <Card title="Clasificación Estándar" icon="sitemap" color="#0066cc">
+    Organización según actividades: operacionales, inversión y financiamiento
+  </Card>
+  <Card title="Vista Mensual" icon="calendar" color="#17a2b8">
+    Análisis temporal mes a mes para identificar patrones
+  </Card>
+  <Card title="Información Corporativa" icon="building" color="#28a745">
+    Contexto empresarial con datos de la compañía
+  </Card>
+  <Card title="Totales Automáticos" icon="calculator" color="#6c757d">
+    Consolidación automática por categorías y períodos
+  </Card>
+</CardGroup>
+
+### 2.1 Información Corporativa
+
+**Encabezado del reporte**:
+
+```
+┌─────────────────────────────────────────┐
+│ EMPRESA S.A.                            │
+│ RUT: XX.XXX.XXX-X                       │
+│ Dirección: Dirección Completa           │
+│ Teléfono: +56 X XXXX XXXX              │
+│                                         │
+│ ESTADO DE FLUJO DE EFECTIVO             │
+│ Período: Enero - Diciembre 2024        │
+└─────────────────────────────────────────┘
+```
+
+### 2.2 Estructura de Clasificación por Actividades
+
+**Las tres categorías principales**:
+
+<Tabs>
+  <Tab title="Actividades Operacionales">
+    - **Definición**: Flujos de las actividades principales del negocio -
+    **Incluye**: Cobros de clientes, pagos a proveedores, sueldos, impuestos -
+    **Indicador**: Capacidad de generar efectivo desde operaciones core -
+    **Color**: Azul en la presentación
+  </Tab>
+  <Tab title="Actividades de Inversión">
+    - **Definición**: Flujos relacionados con activos de largo plazo -
+    **Incluye**: Compra/venta de equipos, inversiones, préstamos otorgados -
+    **Indicador**: Estrategia de crecimiento e inversión de la empresa -
+    **Color**: Verde en la presentación
+  </Tab>
+  <Tab title="Actividades de Financiamiento">
+    - **Definición**: Flujos con propietarios y acreedores financieros -
+    **Incluye**: Préstamos, aportes de capital, dividendos pagados -
+    **Indicador**: Estructura de financiamiento y política de dividendos -
+    **Color**: Naranja en la presentación
+  </Tab>
+</Tabs>
+
+## 📊 Tabla de Análisis Mensual
+
+### 3.1 Estructura de la Tabla
+
+**Columnas organizadas**:
+
+| Mes       | Operacionales | Inversión   | Financiamiento | Total Mensual |
+| --------- | ------------- | ----------- | -------------- | ------------- |
+| Enero     | $X.XXX        | $Y.YYY      | $Z.ZZZ         | $Total        |
+| Febrero   | $X.XXX        | $Y.YYY      | $Z.ZZZ         | $Total        |
+| ...       | ...           | ...         | ...            | ...           |
+| **TOTAL** | **$XX.XXX**   | **$YY.YYY** | **$ZZ.ZZZ**    | **$TOTAL**    |
+
+### 3.2 Interpretación de los Datos
+
+**Análisis por columnas**:
+
+<CardGroup cols={3}>
+  <Card title="Flujo Operacional" icon="chart-line" color="#007bff">
+    - **Positivo**: La empresa genera efectivo de sus operaciones -
+    **Negativo**: Las operaciones consumen efectivo - **Tendencia**: Evaluar
+    estabilidad mes a mes
+  </Card>
+  <Card title="Flujo de Inversión" icon="trending-up" color="#28a745">
+    - **Negativo**: Inversión en crecimiento (típicamente negativo) -
+    **Positivo**: Desinversión o venta de activos - **Análisis**: Estrategia de
+    expansión de la empresa
+  </Card>
+  <Card title="Flujo de Financiamiento" icon="dollar-sign" color="#fd7e14">
+    - **Positivo**: Ingreso de financiamiento externo - **Negativo**: Pago de
+    deudas o dividendos - **Balance**: Política de endeudamiento y
+    distribuciones
+  </Card>
+</CardGroup>
+
+### 3.3 Total Mensual y Acumulado
+
+**Interpretación del flujo total**:
+
+- **Positivo**: Aumento en la posición de efectivo
+- **Negativo**: Disminución en la posición de efectivo
+- **Tendencia**: Patrón de generación/consumo de efectivo
+- **Estacionalidad**: Identificación de patrones por temporada
+
+## 🔍 Análisis Financiero Avanzado
+
+### 4.1 Patrones Estacionales
+
+**Identificación de tendencias**:
+
+<Steps>
+  <Step title="Análisis Mensual">
+    Revisar variaciones mes a mes para identificar patrones recurrentes
+  </Step>
+  <Step title="Picos y Valles">
+    Identificar meses de mayor/menor generación de efectivo
+  </Step>
+  <Step title="Causas Operacionales">
+    Relacionar patrones con ciclos de negocio estacionales
+  </Step>
+  <Step title="Planificación">
+    Usar patrones históricos para planificación futura
+  </Step>
+</Steps>
+
+### 4.2 Indicadores de Liquidez
+
+**Métricas derivadas del flujo de efectivo**:
+
+- **Flujo Operacional Promedio**: Total operacional / 12 meses
+- **Cobertura de Inversión**: Flujo operacional / Inversiones realizadas
+- **Capacidad de Autofinanciamiento**: % de inversión cubierta por operaciones
+- **Dependencia de Financiamiento**: Proporción de flujo externo vs interno
+
+### 4.3 Análisis de Calidad del Efectivo
+
+<Info>
+  **Calidad de los Flujos**: Un flujo de efectivo de alta calidad proviene
+  principalmente de actividades operacionales positivas y sostenidas en el
+  tiempo.
+</Info>
+
+**Evaluación de calidad**:
+
+- **Flujo Operacional Consistente**: Actividades operacionales positivas la mayoría de meses
+- **Inversión Estratégica**: Flujos de inversión negativos que indican crecimiento
+- **Financiamiento Balanceado**: Uso inteligente de financiamiento externo
+- **Tendencia Sostenible**: Patrones que pueden mantenerse en el tiempo
+
+## 💡 Casos de Uso Estratégicos
+
+### 5.1 Planificación de Tesorería
+
+**Para gestión de liquidez**:
+
+<Steps>
+  <Step title="Proyección Mensual">
+    Usar patrones históricos para proyectar necesidades futuras de efectivo
+  </Step>
+  <Step title="Identificación de Brechas">
+    Localizar meses con déficit proyectado de efectivo
+  </Step>
+  <Step title="Estrategias de Cobertura">
+    Planificar líneas de crédito o financiamiento para cubrir brechas
+  </Step>
+  <Step title="Optimización">
+    Ajustar timing de inversiones según disponibilidad de efectivo
+  </Step>
+</Steps>
+
+### 5.2 Evaluación de Inversiones
+
+**Para decisiones de capital**:
+
+- **Capacidad de Financiamiento**: Evaluar si flujo operacional puede cubrir nuevas inversiones
+- **Timing Óptimo**: Identificar mejores meses para realizar inversiones grandes
+- **Impacto en Liquidez**: Simular efecto de inversiones en flujo total
+- **Retorno Requerido**: Calcular retorno mínimo según costo de financiamiento
+
+### 5.3 Análisis de Rentabilidad vs Liquidez
+
+**Relación con otros estados**:
+
+<Tabs>
+  <Tab title="vs Estado de Resultados">
+    - **Utilidad vs Efectivo**: Comparar rentabilidad contable con generación
+    real de efectivo - **Ajustes por Devengos**: Identificar diferencias entre
+    ganancia y efectivo - **Calidad de Ingresos**: Evaluar qué porcentaje de
+    utilidades se convierte en efectivo
+  </Tab>
+  <Tab title="vs Balance General">
+    - **Cambios en Activos**: Impacto de variaciones en inventarios y cuentas
+    por cobrar - **Variaciones en Pasivos**: Efecto de cambios en cuentas por
+    pagar - **Estructura de Capital**: Relación entre endeudamiento y generación
+    de efectivo
+  </Tab>
+</Tabs>
+
+## 🔧 Configuración y Personalización
+
+### 6.1 Clasificación Automática de Cuentas
+
+**Criterios de clasificación**:
+
+<CardGroup cols={3}>
+  <Card title="Operacionales" icon="cogs" color="#007bff">
+    - Ventas y cobros a clientes - Compras y pagos a proveedores - Sueldos y
+    gastos operacionales - Impuestos operacionales
+  </Card>
+  <Card title="Inversión" icon="chart-line" color="#28a745">
+    - Compra/venta de activos fijos - Inversiones financieras - Préstamos
+    otorgados - Adquisición de subsidiarias
+  </Card>
+  <Card title="Financiamiento" icon="university" color="#fd7e14">
+    - Préstamos bancarios - Emisión/pago de bonos - Aportes de capital -
+    Dividendos pagados
+  </Card>
+</CardGroup>
+
+### 6.2 Configuración del Plan de Cuentas
+
+**Mapeo requerido**:
+
+- **Cuentas de Efectivo**: Identificación de todas las cuentas de caja y bancos
+- **Clasificación por Actividad**: Cada cuenta debe estar mapeada a una actividad
+- **Validación Automática**: Sistema verifica completitud del mapeo
+- **Actualizaciones**: Capacidad de reclasificar cuentas según cambios en el negocio
+
+## 📊 Análisis Comparativo
+
+### 7.1 Comparación Interanual
+
+**Análisis temporal**:
+
+- **Mismo Período Año Anterior**: Evaluar crecimiento/decrecimiento
+- **Tendencias de Largo Plazo**: Identificar patrones de varios años
+- **Estacionalidad Recurrente**: Confirmar patrones estacionales consistentes
+- **Cambios Estructurales**: Identificar modificaciones en modelo de negocio
+
+### 7.2 Benchmarking Sectorial
+
+**Comparación con industria**:
+
+<Warning>
+  **Contexto Sectorial**: Los patrones de flujo de efectivo varían
+  significativamente entre industrias. Compare siempre con empresas del mismo
+  sector para obtener conclusiones válidas.
+</Warning>
+
+**Métricas de comparación**:
+
+- **Flujo Operacional / Ventas**: Eficiencia en generación de efectivo
+- **Inversión / Activos**: Intensidad de inversión vs competidores
+- **Endeudamiento Neto**: Posición relativa de financiamiento
+- **Ciclo de Conversión**: Rapidez en convertir ventas a efectivo
+
+## 🚨 Mejores Prácticas
+
+### 8.1 Frecuencia de Análisis
+
+**Recomendaciones por rol**:
+
+- **CFO**: Análisis mensual completo con proyecciones
+- **Tesorero**: Seguimiento semanal de tendencias
+- **Controller**: Revisión mensual de clasificaciones
+- **CEO**: Revisión trimestral de tendencias estratégicas
+
+### 8.2 Proceso de Control de Calidad
+
+<Steps>
+  <Step title="Validación de Clasificación">
+    Verificar que todas las cuentas estén correctamente clasificadas por
+    actividad
+  </Step>
+  <Step title="Coherencia Temporal">
+    Asegurar consistencia en criterios de clasificación mes a mes
+  </Step>
+  <Step title="Reconciliación">
+    Validar que cambios en efectivo coincidan con balance general
+  </Step>
+  <Step title="Análisis de Variaciones">
+    Investigar cambios significativos en patrones históricos
+  </Step>
+</Steps>
+
+### 8.3 Indicadores de Alerta Temprana
+
+<Warning>
+  **Señales de Riesgo de Liquidez**: - Flujo operacional negativo por más de 3
+  meses consecutivos - Dependencia excesiva de financiamiento externo -
+  Disminución sostenida en generación operacional de efectivo - Inversiones que
+  superan significativamente la generación operacional
+</Warning>
+
+## 🔧 Solución de Problemas
+
+### Problema: Datos no cuadran con balance general
+
+**Proceso de validación**:
+
+<AccordionGroup>
+<Accordion title="Verificación Básica">
+- ✅ Confirmar que el período sea idéntico en ambos reportes
+- ✅ Verificar que todas las cuentas de efectivo estén incluidas
+- ✅ Validar que no hay asientos pendientes de contabilización
+</Accordion>
+
+<Accordion title="Análisis Detallado">
+- 🔍 Comparar saldo inicial + flujo neto = saldo final
+- 🔍 Revisar que todas las cuentas de efectivo estén mapeadas
+- 🔍 Verificar clasificación de movimientos por actividad
+- 🔍 Contactar soporte si persisten discrepancias
+</Accordion>
+</AccordionGroup>
+
+### Problema: Clasificación incorrecta de actividades
+
+**Pasos de corrección**:
+
+1. **Identificar Cuenta**: Localizar la cuenta mal clasificada
+2. **Revisar Naturaleza**: Determinar si es operacional, inversión o financiamiento
+3. **Actualizar Configuración**: Corregir clasificación en configuración del sistema
+4. **Validar Resultado**: Refrescar flujo de efectivo para ver corrección
+
+### Problema: Falta información corporativa
+
+**Solución**:
+
+- **Verificar Configuración**: Revisar datos de la empresa en configuración
+- **Completar Información**: Actualizar datos faltantes (RUT, dirección, teléfono)
+- **Validar Formato**: Confirmar que formato sea correcto
+- **Refrescar Sistema**: Actualizar para ver cambios reflejados
+
+## 📞 Soporte Especializado
+
+### Contacto de Flujo de Efectivo
+
+<Card title="Equipo de Análisis de Tesorería" icon="money-bill-wave">
+  - **Email Especializado**: flujo@contago.cl - **Teléfono Directo**: +56 2 1234
+  5683 - **Horario**: Lunes a Viernes, 9:00 - 18:00 - **Expertise**: Flujo de
+  efectivo, tesorería, planificación financiera
+</Card>
+
+### Recursos de Capacitación
+
+- **Masterclass**: "Análisis Avanzado del Flujo de Efectivo"
+- **Plantillas Excel**: Proyecciones y análisis de sensibilidad
+- **Webinar Bimensual**: "Gestión Estratégica de Tesorería"
+- **Casos de Estudio**: Análisis por sectores industriales
+
+### Servicios Adicionales
+
+- **Consultoría en Tesorería**: Optimización de gestión de efectivo
+- **Modelos de Proyección**: Desarrollo de modelos predictivos personalizados
+- **Dashboards Ejecutivos**: Cuadros de mando para seguimiento diario
+- **Capacitación Especializada**: Entrenamiento en análisis de flujos
+
+## 📋 Resumen Ejecutivo
+
+El Flujo de Efectivo es esencial para:
+
+- **Gestión de Liquidez**: Control preciso de la posición de efectivo
+- **Planificación Estratégica**: Base para decisiones de inversión y financiamiento
+- **Evaluación de Calidad**: Análisis de la sostenibilidad del modelo de negocio
+- **Cumplimiento**: Reporte según estándares contables internacionales
+
+<Tip>
+  **Clave Estratégica**: El flujo de efectivo es el "pulso" de su empresa. Un
+  flujo operacional positivo y consistente es el mejor indicador de la salud
+  financiera de largo plazo, más allá de la rentabilidad contable.
+</Tip>
+
+<Info>
+  **Integración Total**: Use el flujo de efectivo junto con el estado de
+  resultados y balance general para obtener una visión tridimensional completa
+  del desempeño financiero de su empresa.
+</Info>
