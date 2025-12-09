@@ -1,80 +1,121 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Guía de Inicio Rápido"
+description: "Configure su empresa y comience a gestionar su contabilidad en minutos con integración automática al SII"
 ---
 
-## Get started in three steps
+## Primeros pasos para usar el sistema
 
-Get your documentation site running locally and make your first customization.
+Configure su empresa y comience a operar con el sistema contable en solo tres pasos.
 
-### Step 1: Set up your local environment
+### Paso 1: Configurar información básica de la empresa
 
 <AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
+  <Accordion icon="building" title="Registrar datos de la empresa">
+    Configure la información fundamental de su empresa: 1. **RUT de la
+    empresa**: Ingrese el RUT sin puntos ni guión 2. **Razón social**: Nombre
+    legal completo de la empresa 3. **Dirección comercial**: Dirección principal
+    de operaciones 4. **Actividad económica**: Seleccione su giro principal 5.
+    **Representante legal**: Datos del administrador
+    <Tip>
+      Esta información se usará para todas las integraciones con el SII.
+    </Tip>
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
+  <Accordion icon="certificate" title="Configurar certificados digitales">
+    Para la integración automática con el SII necesita: 1. **Certificado digital
+    (.p12)**: Obténgalo desde el sitio del SII 2. **Clave del certificado**:
+    Password del archivo .p12 3. **Validar conexión**: Pruebe la conectividad
+    con el SII
+    <Warning>
+      Sin certificados válidos no podrá descargar documentos automáticamente.
+    </Warning>
   </Accordion>
 </AccordionGroup>
 
-### Step 2: Deploy your changes
+### Paso 2: Configurar plan de cuentas y estructura
 
 <AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+  <Accordion icon="list" title="Establecer plan de cuentas">
+    Configure su estructura contable personalizada:
     
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+    1. **Plan de cuentas base**: Seleccione plantilla según su actividad
+    2. **Cuentas personalizadas**: Agregue cuentas específicas de su negocio
+    3. **Cuentas de integración**: Configure cuentas para SII (IVA, retenciones)
+    4. **Validar estructura**: Verifique que el plan esté balanceado
+    
+    <Tip>Use la plantilla "Comercial" si no está seguro - puede modificarla después.</Tip>
+  </Accordion>
+  <Accordion icon="sitemap" title="Crear centros de costo">
+    Organice su estructura de centros de costo:
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+    1. **Centros principales**: Administración, Ventas, Producción
+    2. **Subcentros**: Departamentos específicos o proyectos
+    3. **Asignación por defecto**: Configure centros automáticos por tipo de gasto
+    4. **Jerarquía**: Establezca relaciones padre-hijo si es necesario
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
+    <Info>Los centros de costo son obligatorios para generar asientos contables.</Info>
+
   </Accordion>
 </AccordionGroup>
 
-### Step 3: Go live
+### Paso 3: Comenzar operaciones
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
+<Accordion icon="rocket" title="Primera descarga automática del SII">
+  1. **Ir al módulo de compras**: Dashboard → Contabilidad → Compras 2.
+  **Obtener compras automáticas**: Clic en el botón azul "Obtener Compras
+  Automáticas" 3. **Verificar descarga**: Revise que aparezcan las facturas del
+  mes actual 4. **Asignar centros de costo**: Use "Asignar Centro de Costo
+  Masivo" 5. **Generar asientos**: Clic en "Generar Asientos Contables Masivo"
 </Accordion>
 
-## Next steps
+## Próximos pasos
 
-Now that you have your docs running, explore these key features:
+Ahora que tiene el sistema configurado, explore estas funcionalidades clave:
 
 <CardGroup cols={2}>
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
+<Card
+  title="Gestión de Compras"
+  icon="shopping-cart"
+  href="/contabilidad/compras"
+>
+  Descargue y gestione sus facturas de compra automáticamente desde el SII.
 </Card>
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
+<Card title="Gestión de Ventas" icon="chart-line" href="/contabilidad/ventas">
+  Administre sus facturas de venta con integración automática y asientos
+  masivos.
 </Card>
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
+<Card
+  title="Conciliación Bancaria"
+  icon="balance-scale"
+  href="/contabilidad/conciliacion-bancaria"
+>
+  Concilie automáticamente sus movimientos bancarios con registros contables.
 </Card>
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
+<Card
+  title="Reportes Financieros"
+  icon="chart-bar"
+  href="/contabilidad/estado-resultados"
+>
+  Genere reportes profesionales: Balance, Estado de Resultados, Flujo de Caja.
 </Card>
 
 </CardGroup>
 
+## Validación del Setup Inicial
+
+Antes de comenzar operaciones masivas, verifique que:
+
+- ✅ **Empresa configurada**: RUT, razón social y certificados válidos
+- ✅ **Plan de cuentas**: Estructura contable completa y balanceada
+- ✅ **Centros de costo**: Al menos un centro configurado por área
+- ✅ **Conexión SII**: Prueba exitosa de descarga de documentos
+- ✅ **Primera conciliación**: Al menos un asiento generado correctamente
+
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  **¿Necesita ayuda?** Contacte nuestro soporte técnico: **soporte@empresa.cl**
+  o revise la [documentación completa](/contabilidad/compras) para casos
+  específicos.
 </Note>
